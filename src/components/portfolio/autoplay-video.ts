@@ -5,10 +5,26 @@
 
 let initialised = false;
 
+/**
+ * Start videos only once the page has loaded and gone idle, so the large
+ * remote downloads never compete with the LCP still or block the main thread.
+ */
+function whenSettled(callback: () => void): void {
+  const idle = () => {
+    if ('requestIdleCallback' in window) requestIdleCallback(callback, { timeout: 2000 });
+    else setTimeout(callback, 200);
+  };
+  if (document.readyState === 'complete') idle();
+  else addEventListener('load', idle, { once: true });
+}
+
 export function initAutoplayVideos(): void {
   if (initialised) return;
   initialised = true;
+  whenSettled(start);
+}
 
+function start(): void {
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const videos = [...document.querySelectorAll<HTMLVideoElement>('video[data-autoplay-video]')];
 
