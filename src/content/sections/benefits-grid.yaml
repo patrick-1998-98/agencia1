@@ -1,0 +1,30 @@
+type: benefits
+header:
+  eyebrow: Why us
+  title: Built around outcomes, not deliverables
+  description: Every engagement is structured to make your team faster, sharper, and more confident in the work that ships.
+items:
+  - icon: sparkles
+    title: Strategic Craft
+    description: Every visual decision is rooted in research, brand strategy, and audience insight — never just aesthetics.
+    stat: 98% retention
+  - icon: bolt
+    title: Senior-Led Teams
+    description: You always work with seniors. No handoffs to juniors after the kickoff call — the people who pitched are the people who execute.
+    stat: 10+ yrs avg.
+  - icon: layer-group
+    title: Systems-First
+    description: We deliver design systems, not artifacts. Everything ships with documentation, components, and guidelines.
+    stat: Token-ready
+  - icon: clock
+    title: Predictable Pace
+    description: Weekly milestones, transparent timelines, no slipped deadlines. Your team always knows what's next.
+    stat: On-time, every time
+  - icon: globe
+    title: Global Network
+    description: Photographers, illustrators, and motion artists in 14 cities — assembled for the project at hand.
+    stat: 14 cities
+  - icon: shield
+    title: Long-term Partnership
+    description: Most clients stay with us for 3+ years. We invest in understanding your business, not just your brief.
+    stat: 3+ yr avg.

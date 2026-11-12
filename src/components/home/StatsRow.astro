@@ -1,0 +1,25 @@
+---
+import type { Section } from '@/lib/sections';
+import Odometer from './Odometer.astro';
+
+interface Props {
+  stats: Section<'stats'>;
+}
+
+const { stats } = Astro.props;
+---
+
+<section class="px-6 py-16">
+  <div
+    class="mx-auto grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-4"
+    data-reveal-stagger="0.08"
+    data-reveal-y="20"
+  >
+    {stats.items.map((item) => (
+      <div class="flex flex-col items-center text-center">
+        <Odometer value={item.value} suffix={item.suffix} class="font-medium tracking-tight" />
+        <div class="mt-2 text-xs tracking-label text-muted-foreground uppercase">{item.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

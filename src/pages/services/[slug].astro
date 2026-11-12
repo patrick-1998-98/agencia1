@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServiceDetail from '@/components/services/ServiceDetail.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({ params: { slug: service.id }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const og = await getImage({
+  src: service.data.image,
+  width: 1200,
+  height: 630,
+  fit: 'cover',
+  format: 'jpg',
+});
+---
+
+<BaseLayout
+  title={`${service.data.title} — Services`}
+  description={service.data.summary}
+  image={og.src}
+>
+  <ServiceDetail service={service} />
+</BaseLayout>

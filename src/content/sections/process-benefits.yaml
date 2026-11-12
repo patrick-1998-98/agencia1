@@ -1,0 +1,17 @@
+type: process
+header:
+  eyebrow: How we work
+  title: A predictable shape, every time
+  description: Three phases, weekly milestones, transparent timelines.
+discovery:
+  current: 20%
+  target: 67%
+  summary: Stakeholder interviews, audit, and a written brief signed off before craft begins
+design:
+  stat: 70%
+  label: Design time
+  description: Concepting, design, and production with weekly working sessions and two rounds of revision.
+delivery: { step: Hand off, duration: 1 week + 30d }
+reliability: { percent: 100, label: Discovery → written brief }
+pace: { value: 1 week + 30d, label: Average sprint }
+stack: [Astro, React, Tailwind, GSAP]

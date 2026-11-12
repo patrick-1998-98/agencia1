@@ -1,0 +1,11 @@
+---
+/** Zypher "Z" mark (decorative). */
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-4 w-4' } = Astro.props;
+---
+
+<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" class={className}>
+  <path d="M30 90 L90 30 L90 60 L60 60 L60 90 Z" fill="currentColor"></path>
+</svg>

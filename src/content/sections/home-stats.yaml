@@ -1,0 +1,6 @@
+type: stats
+items:
+  - { value: 240, suffix: '+', label: Projects shipped }
+  - { value: 60, label: Brands launched }
+  - { value: 18, label: Awards }
+  - { value: 8, label: Years in studio }

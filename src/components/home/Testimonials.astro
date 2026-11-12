@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Section from '@/components/ui/Section.astro';
+import type { Section as SectionData } from '@/lib/sections';
+
+interface Props {
+  header: SectionData<'header'>;
+}
+
+const { header } = Astro.props;
+const testimonials = await getCollection('testimonials');
+
+/** Each column scrolls at its own speed; even columns run in reverse. */
+const columns = [
+  { duration: '55s', reverse: false, visibility: '' },
+  { duration: '74s', reverse: true, visibility: 'hidden sm:block' },
+  { duration: '62s', reverse: false, visibility: 'hidden lg:block' },
+  { duration: '82s', reverse: true, visibility: 'hidden xl:block' },
+].map((column, i) => ({
+  ...column,
+  items: testimonials
+    .filter((t) => t.data.column === i + 1)
+    .sort((a, b) => a.data.order - b.data.order),
+}));
+---
+
+<Section
+  id="testimonials"
+  eyebrow={header.eyebrow}
+  title={header.title}
+  description={header.description}
+>
+  <div class="relative h-150 overflow-hidden md:h-165">
+    <div class="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-linear-to-b from-background to-transparent"></div>
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-background to-transparent"></div>
+    <div class="grid h-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {columns.map((column) => (
+        <div class:list={['marquee-col relative overflow-hidden', column.visibility]}>
+          <div
+            class:list={['marquee-col-track flex flex-col', column.reverse && 'is-reverse']}
+            style={{ '--marquee-duration': column.duration }}
+          >
+            {[false, true].map((duplicate) => (
+              <div class="flex flex-col gap-5 pb-5" aria-hidden={duplicate ? 'true' : undefined}>
+                {column.items.map(({ data }) => (
+                  <figure class="rounded-3xl border border-border bg-card p-6">
+                    <figcaption class="flex items-center gap-3">
+                      <div class="relative shrink-0">
+                        <Image
+                          src={data.avatar}
+                          alt=""
+                          width={44}
+                          height={44}
+                          densities={[1, 2]}
+                          class="h-11 w-11 rounded-full bg-muted object-contain"
+                        />
+                        <span
+                          class="absolute -right-0.5 -bottom-0.5 grid h-4.5 w-4.5 place-items-center rounded-full bg-foreground text-[8px] leading-none font-bold text-background ring-2 ring-card"
+                          aria-hidden="true"
+                        >
+                          {data.badge}
+                        </span>
+                      </div>
+                      <div class="min-w-0">
+                        <div class="truncate text-sm font-semibold text-foreground">
+                          {data.name}
+                        </div>
+                        <div class="truncate text-xs text-muted-foreground">{data.company}</div>
+                      </div>
+                    </figcaption>
+                    <blockquote class="mt-4 text-sm leading-relaxed text-foreground/90">
+                      {data.quote}
+                    </blockquote>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Section>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee-col-track {
+      animation: marquee-y var(--marquee-duration) linear infinite;
+    }
+    .marquee-col-track.is-reverse {
+      animation-direction: reverse;
+    }
+    .marquee-col:hover .marquee-col-track {
+      animation-play-state: paused;
+    }
+  }
+  @keyframes marquee-y {
+    to {
+      transform: translateY(-50%);
+    }
+  }
+</style>

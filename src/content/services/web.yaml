@@ -1,0 +1,16 @@
+order: 2
+title: Web
+summary: Marketing sites and landing pages on Astro + React — fast, accessible, easy to update.
+intro: Marketing sites that load fast, rank well, and read like an extension of the brand. Astro for speed, React for interactivity, and a CMS your team can actually use.
+tags: [Astro, React, CMS]
+image: ../../assets/images/services/web.jpg
+deliverables:
+  - Information architecture
+  - Custom design system
+  - Astro / React build
+  - CMS handoff & training
+process:
+  - { step: Audit, description: 'Current state, analytics, and goals.' }
+  - { step: Design, description: 'Wireframes, prototypes, polish.' }
+  - { step: Build, description: Production-ready code. }
+  - { step: Launch, description: 'QA, deploy, post-launch tuning.' }

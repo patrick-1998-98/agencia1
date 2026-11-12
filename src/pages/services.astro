@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import ServicesGrid from '@/components/sections/ServicesGrid.astro';
+import CtaBanner from '@/components/sections/CtaBanner.astro';
+import Pricing from '@/components/services/Pricing.astro';
+import RoiCompare from '@/components/services/RoiCompare.astro';
+import { getSection } from '@/lib/sections';
+
+const page = await getEntry('pages', 'services');
+if (!page) throw new Error('Missing src/content/pages/services.yaml');
+const { seo, hero, cta } = page.data;
+
+const [services, pricing, roi] = await Promise.all([
+  getSection('services-page', 'header'),
+  getSection('pricing', 'pricing'),
+  getSection('roi', 'roi'),
+]);
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <PageHero {...hero} />
+  <ServicesGrid header={services} />
+  <Pricing pricing={pricing} />
+  <RoiCompare roi={roi} />
+  {cta && <CtaBanner {...cta} />}
+</BaseLayout>

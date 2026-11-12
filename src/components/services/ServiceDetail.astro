@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { title, summary, intro, tags, image, deliverables, process } = Astro.props.service.data;
+const label = 'text-xs font-medium tracking-eyebrow text-muted-foreground uppercase';
+---
+
+<article class="px-6 py-20">
+  <div class="mx-auto max-w-5xl">
+    <a href="/services" class="text-sm text-muted-foreground hover:text-foreground">
+      ← All services
+    </a>
+
+    <header class="mt-8 grid gap-8 md:grid-cols-[1.4fr_1fr]">
+      <div>
+        <ul class="flex flex-wrap gap-2" aria-label="Focus areas">
+          {tags.map((tag) => (
+            <li class="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">{tag}</li>
+          ))}
+        </ul>
+        <h1 class="mt-4 text-4xl font-medium tracking-tight text-balance md:text-6xl">{title}</h1>
+        <p class="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">{intro}</p>
+        <p class="mt-3 max-w-xl text-sm text-muted-foreground">{summary}</p>
+      </div>
+      <div class="aspect-4/5 overflow-hidden rounded-3xl">
+        <Image
+          src={image}
+          alt={title}
+          widths={[400, 736]}
+          sizes="(min-width: 768px) 400px, calc(100vw - 3rem)"
+          loading="eager"
+          fetchpriority="high"
+          class="block h-full w-full object-cover"
+        />
+      </div>
+    </header>
+
+    <div class="mt-20 grid gap-12 md:grid-cols-2" data-reveal-stagger="0.1" data-reveal-y="24">
+      <section>
+        <h2 class={label}>Deliverables</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          {deliverables.map((item) => (
+            <li class="flex items-start gap-3 border-b border-border pb-3">
+              <span
+                class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground"
+                aria-hidden="true"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2 class={label}>Process</h2>
+        <ol class="mt-4 space-y-5">
+          {process.map((step, i) => (
+            <li class="flex gap-4">
+              <span
+                class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-foreground text-xs text-background"
+                aria-hidden="true"
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="text-sm font-medium">{step.step}</h3>
+                <p class="text-sm text-muted-foreground">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </div>
+
+    <div class="mt-20 grid auto-rows-fr gap-5 md:grid-cols-2">
+      <div class="md:col-span-2" data-reveal data-reveal-y="24">
+        <div class="relative aspect-video w-full overflow-hidden rounded-3xl bg-muted">
+          <Image
+            src={image}
+            alt={`${title} 1`}
+            widths={[640, 1024]}
+            sizes="(min-width: 1072px) 1024px, calc(100vw - 3rem)"
+            class="absolute inset-0 block h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

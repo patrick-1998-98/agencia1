@@ -1,0 +1,39 @@
+---
+import Section from '@/components/ui/Section.astro';
+import Icon from '@/components/ui/Icon.astro';
+import type { Section as SectionData } from '@/lib/sections';
+
+interface Props {
+  benefits: SectionData<'benefits'>;
+}
+
+const { header, items } = Astro.props.benefits;
+---
+
+<Section
+  id="benefits"
+  eyebrow={header.eyebrow}
+  title={header.title}
+  description={header.description}
+>
+  <div
+    class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+    data-reveal-stagger="0.08"
+    data-reveal-y="28"
+  >
+    {items.map((item) => (
+      <div class="flex">
+        <div class="group flex w-full flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]">
+          <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+            <Icon name={item.icon} class="h-5 w-5" />
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-medium tracking-tight">{item.title}</h3>
+            <p class="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+          </div>
+          <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">{item.stat}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>

@@ -1,0 +1,41 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import ServicesGrid from '@/components/sections/ServicesGrid.astro';
+import PortfolioCarousel from '@/components/sections/PortfolioCarousel.astro';
+import CtaBanner from '@/components/sections/CtaBanner.astro';
+import StatsRow from '@/components/home/StatsRow.astro';
+import ProcessSteps from '@/components/home/ProcessSteps.astro';
+import FeatureShowcase from '@/components/home/FeatureShowcase.astro';
+import Testimonials from '@/components/home/Testimonials.astro';
+import { getSection } from '@/lib/sections';
+
+const page = await getEntry('pages', 'home');
+if (!page) throw new Error('Missing src/content/pages/home.yaml');
+const { seo, hero, cta } = page.data;
+
+const [stats, services, process, showcaseHeader, showcase, testimonials] = await Promise.all([
+  getSection('home-stats', 'stats'),
+  getSection('services-home', 'header'),
+  getSection('process-home', 'process'),
+  getSection('showcase-home', 'header'),
+  getSection('showcase', 'showcase'),
+  getSection('testimonials-home', 'header'),
+]);
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <PageHero {...hero} />
+  <StatsRow stats={stats} />
+  <ServicesGrid header={services} />
+  <ProcessSteps process={process} />
+  <FeatureShowcase header={showcaseHeader} showcase={showcase} />
+  <PortfolioCarousel
+    eyebrow="Featured work"
+    title="Recent client work"
+    description="A selection of digital projects — brand systems, marketing sites, and product apps."
+  />
+  <Testimonials header={testimonials} />
+  {cta && <CtaBanner {...cta} />}
+</BaseLayout>

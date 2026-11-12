@@ -1,0 +1,79 @@
+---
+import Section from '@/components/ui/Section.astro';
+import Icon from '@/components/ui/Icon.astro';
+import type { Section as SectionData } from '@/lib/sections';
+
+interface Props {
+  pricing: SectionData<'pricing'>;
+}
+
+const { header, plans } = Astro.props.pricing;
+---
+
+<Section
+  id="pricing"
+  eyebrow={header.eyebrow}
+  title={header.title}
+  description={header.description}
+>
+  <div class="grid gap-5 md:grid-cols-3" data-reveal-stagger="0.08" data-reveal-y="28">
+    {plans.map((plan) => (
+      <div
+        class:list={[
+          'flex flex-col gap-6 rounded-3xl border p-8 transition-all',
+          plan.featured
+            ? 'border-foreground bg-foreground text-background'
+            : 'border-border bg-card',
+        ]}
+      >
+        <div>
+          <h3 class="text-lg font-medium tracking-tight">{plan.name}</h3>
+          <p
+            class:list={[
+              'mt-1 text-sm',
+              plan.featured ? 'text-background/70' : 'text-muted-foreground',
+            ]}
+          >
+            {plan.description}
+          </p>
+        </div>
+        <div class="flex items-end gap-1">
+          <span class="text-4xl font-medium tracking-tight">{plan.price}</span>
+          <span
+            class:list={[
+              'pb-1.5 text-sm',
+              plan.featured ? 'text-background/60' : 'text-muted-foreground',
+            ]}
+          >
+            /{plan.period}
+          </span>
+        </div>
+        <ul class="space-y-2.5 text-sm">
+          {plan.features.map((feature) => (
+            <li class="flex items-start gap-2">
+              <Icon
+                name="check"
+                class:list={[
+                  'mt-0.5 h-4 w-4 shrink-0',
+                  plan.featured ? 'text-background' : 'text-foreground',
+                ]}
+              />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+        <a
+          href={plan.cta.href}
+          class:list={[
+            'mt-auto inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-transform hover:-translate-y-0.5',
+            plan.featured
+              ? 'bg-background text-foreground'
+              : 'border border-border bg-card hover:border-foreground hover:bg-foreground hover:text-background',
+          ]}
+        >
+          {plan.cta.label}
+        </a>
+      </div>
+    ))}
+  </div>
+</Section>

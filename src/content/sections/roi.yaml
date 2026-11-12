@@ -1,0 +1,24 @@
+type: roi
+header:
+  eyebrow: ROI calculation
+  title: What one engagement replaces
+  description: In-house hires or AI-assisted DIY — see what a single $45k project buys back either way.
+columns:
+  - icon: users
+    title: Building in-house
+    hours: 2000
+    points:
+      - 3–4 months recruiting a senior design & engineering team
+      - ~10 months of design and engineering effort
+      - $180K–$240K a year in salaries before anything ships
+      - Management, tooling, and retention overhead on top
+    roi: 5
+  - icon: sparkles
+    title: Building with AI
+    hours: 700
+    points:
+      - ~4–5 months of prompting and polishing
+      - AI-generated output, endlessly revised
+      - Most effort burns on UI polish, not your business
+      - $45K–$65K in tooling and rework, plus your own hours
+    roi: 3

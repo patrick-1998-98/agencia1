@@ -1,0 +1,282 @@
+---
+import Section from '@/components/ui/Section.astro';
+import type { Section as SectionData } from '@/lib/sections';
+import BrandMark from './BrandMark.astro';
+
+interface Props {
+  process: SectionData<'process'>;
+}
+
+const { process } = Astro.props;
+const { header, discovery, design, delivery, reliability, pace, stack } = process;
+
+const ringRadius = 38;
+const ringLength = 2 * Math.PI * ringRadius;
+const card = 'rounded-3xl border border-border bg-card';
+---
+
+<Section
+  id="process"
+  eyebrow={header.eyebrow}
+  title={header.title}
+  description={header.description}
+>
+  <div
+    class="process-grid grid gap-4 md:grid-cols-3 md:gap-5"
+    data-reveal-stagger="0.07"
+    data-reveal-y="28"
+    data-process
+  >
+    <!-- Brand mark on a grid -->
+    <div class="md:row-span-2">
+      <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+        <div class="process-gridlines absolute inset-0"></div>
+        <div class="relative grid h-full min-h-[300px] place-items-center p-10">
+          <BrandMark class="process-float h-[120px] w-[120px] text-background" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Discovery progress -->
+    <div class={`${card} flex min-h-[220px] flex-col justify-between gap-4 p-6 md:p-7`}>
+      <div class="flex items-center gap-3">
+        <span data-bar class="inline-block h-2 w-8 rounded-full bg-foreground/30"></span>
+        <span class="text-base font-semibold text-foreground">{discovery.current}</span>
+        <span class="ml-auto text-base font-semibold text-foreground/40">{discovery.target}</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span data-bar class="inline-block h-2 w-8 rounded-full bg-foreground/15"></span>
+        <span class="text-base font-semibold text-foreground/30">·</span>
+      </div>
+      <p class="text-sm leading-snug text-muted-foreground">{discovery.summary}…</p>
+    </div>
+
+    <!-- Senior designer -->
+    <div class="md:row-span-2">
+      <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.08),transparent_60%)]"></div>
+        <div class="relative grid h-full min-h-[300px] place-items-end p-8">
+          <div class="flex flex-col items-center gap-3 text-background">
+            <div class="grid h-24 w-24 place-items-center rounded-full bg-background/10 backdrop-blur-sm">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"></circle>
+                <path
+                  d="M4 21c0-4 4-7 8-7s8 3 8 7"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-xs tracking-eyebrow text-background/70 uppercase">Senior designer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design time -->
+    <div class="md:row-span-2">
+      <div class={`${card} flex min-h-[300px] flex-col justify-between gap-6 p-6 md:p-8`}>
+        <p class="text-6xl leading-none font-medium tracking-tight text-foreground md:text-7xl">
+          {design.stat}
+        </p>
+        <p class="text-sm leading-relaxed text-muted-foreground">
+          <span class="text-foreground">{design.label}.</span> {design.description}
+        </p>
+      </div>
+    </div>
+
+    <!-- Wordmark with glow -->
+    <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+      <div class="process-glow absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(79,70,229,0.55),transparent_60%)]"></div>
+      <div class="process-glow process-glow-delay absolute inset-0 bg-[radial-gradient(circle_at_75%_70%,rgba(169,50,237,0.4),transparent_60%)]"></div>
+      <div class="relative grid h-full min-h-[220px] place-items-center p-8">
+        <span class="text-3xl font-semibold tracking-tight text-background md:text-4xl">
+          zypher<span class="text-background/40">®</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Delivery toasts -->
+    <div class={`${card} relative h-full min-h-[220px] overflow-hidden p-6 md:p-7`}>
+      <div class="absolute inset-x-6 top-6 flex flex-col gap-2">
+        <div
+          data-toast
+          class="rounded-xl bg-green-50 px-3 py-2 text-xs font-medium text-green-700 shadow-sm dark:bg-green-950/40 dark:text-green-400"
+        >
+          ✓ Assets delivered
+        </div>
+        <div
+          data-toast
+          class="translate-x-2 rounded-xl bg-amber-50 px-3 py-2 text-xs font-medium text-amber-700 shadow-sm dark:bg-amber-950/40 dark:text-amber-400"
+        >
+          ↺ System handoff
+        </div>
+        <div
+          data-toast
+          class="translate-x-1 rounded-xl border border-border bg-card px-3 py-2 text-xs font-medium text-foreground shadow-sm"
+        >
+          <p class="font-semibold">{delivery.step}</p>
+          <p class="mt-0.5 text-[10px] text-muted-foreground">{delivery.duration}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reliability ring -->
+    <div
+      class={`${card} flex h-full min-h-[220px] flex-col items-start justify-between gap-4 p-6 md:p-7`}
+    >
+      <span class="text-xs tracking-eyebrow text-muted-foreground uppercase">Reliability</span>
+      <div class="relative grid place-items-center">
+        <svg width="96" height="96" class="-rotate-90" aria-hidden="true">
+          <circle
+            cx="48"
+            cy="48"
+            r={ringRadius}
+            fill="none"
+            stroke-width="6"
+            class="stroke-border"
+          ></circle>
+          <circle
+            data-ring
+            cx="48"
+            cy="48"
+            r={ringRadius}
+            fill="none"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-dasharray={ringLength}
+            stroke-dashoffset={ringLength * (1 - reliability.percent / 100)}
+            style={{ '--ring-length': ringLength }}
+            class="stroke-foreground"
+          ></circle>
+        </svg>
+        <span class="absolute text-sm font-semibold text-foreground">{reliability.percent}%</span>
+      </div>
+      <p class="text-sm text-muted-foreground">{reliability.label}</p>
+    </div>
+
+    <!-- Pace -->
+    <div class={`${card} flex h-full min-h-[220px] flex-col justify-between gap-4 p-6 md:p-7`}>
+      <span class="text-xs tracking-eyebrow text-muted-foreground uppercase">Pace</span>
+      <div>
+        <p class="text-4xl font-medium tracking-tight text-foreground md:text-5xl">{pace.value}</p>
+        <p class="mt-2 text-sm text-muted-foreground">{pace.label}</p>
+      </div>
+      <div class="flex gap-1.5">
+        {Array.from({ length: 10 }, () => (
+          <span data-bar class="h-1.5 flex-1 rounded-full bg-foreground/15" />
+        ))}
+      </div>
+    </div>
+
+    <!-- Stack -->
+    <div class={`${card} flex h-full min-h-[220px] flex-col justify-between gap-4 p-6 md:p-7`}>
+      <span class="text-xs tracking-eyebrow text-muted-foreground uppercase">
+        Stack we ship with
+      </span>
+      <div class="flex flex-wrap gap-2">
+        {stack.map((tool) => (
+          <span
+            data-pill
+            class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground"
+          >
+            {tool}
+          </span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        A focused stack — fast to build with, easy to hand off.
+      </p>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .process-gridlines {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 33.333% 33.333%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.process-float) {
+      transform-origin: 50%;
+      animation: process-float 5s ease-in-out infinite;
+    }
+    .process-glow {
+      animation: process-glow 6s ease-in-out infinite;
+    }
+    .process-glow-delay {
+      animation-delay: -3s;
+    }
+
+    /* Micro-animations play once the grid scrolls into view (class set by script). */
+    :global(.js) [data-process]:not(.is-active) [data-bar] {
+      scale: 0 1;
+    }
+    :global(.js) [data-process]:not(.is-active) :is([data-toast], [data-pill]) {
+      opacity: 0;
+    }
+    :global(.js) [data-process]:not(.is-active) [data-ring] {
+      stroke-dashoffset: var(--ring-length);
+    }
+    [data-bar] {
+      transform-origin: left center;
+      transition: scale 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    }
+    [data-toast] {
+      transition: opacity 0.55s ease-out;
+    }
+    [data-toast]:nth-child(2) {
+      transition-delay: 0.52s;
+    }
+    [data-toast]:nth-child(3) {
+      transition-delay: 0.64s;
+    }
+    [data-pill] {
+      transition: opacity 0.4s ease-out 0.45s;
+    }
+    [data-ring] {
+      transition: stroke-dashoffset 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.35s;
+    }
+  }
+
+  @keyframes process-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-6px) rotate(-2deg);
+    }
+  }
+  @keyframes process-glow {
+    0%,
+    100% {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+  }
+</style>
+
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLElement>('[data-process]').forEach((grid) => {
+    if (reduce) return grid.classList.add('is-active');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        observer.disconnect();
+        grid.classList.add('is-active');
+      },
+      { rootMargin: '0px 0px -18% 0px' },
+    );
+    observer.observe(grid);
+  });
+</script>

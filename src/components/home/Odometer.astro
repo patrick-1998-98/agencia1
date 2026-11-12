@@ -1,0 +1,109 @@
+---
+/**
+ * Rolling-digit counter. Each digit is a vertical strip (9,0…9,0) shifted to
+ * the target digit. Server-rendered at its final value (no-JS / reduced motion);
+ * the script rolls the strips up from 0 the first time it scrolls into view.
+ */
+interface Props {
+  value: number;
+  suffix?: string;
+  class?: string;
+  fontSize?: string;
+}
+
+const {
+  value,
+  suffix = '',
+  class: className,
+  fontSize = 'clamp(2.25rem, 4vw, 3.25rem)',
+} = Astro.props;
+const text = `${value}${suffix}`;
+const strip = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+---
+
+<span class:list={['odo-root', className]} style={{ '--font-size': fontSize }} data-odometer>
+  <span class="sr-only">{text}</span>
+  <span aria-hidden="true" class="odo-characters">
+    {[...text].map((char) =>
+      /\d/.test(char) ? (
+        <span class="odo-character">
+          <span class="odo-track" style={{ '--v': char }} data-digit={char}>
+            {strip.map((d) => (
+              <span>{d}</span>
+            ))}
+          </span>
+        </span>
+      ) : (
+        <span class="odo-character odo-symbol">{char}</span>
+      ),
+    )}
+  </span>
+</span>
+
+<style>
+  .odo-root {
+    --line-height: calc(var(--font-size) * 1.2);
+    display: inline-flex;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .odo-characters {
+    display: inline-flex;
+    gap: 1px;
+    align-items: center;
+  }
+  .odo-character {
+    display: inline-grid;
+    height: 1lh;
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+    overflow: hidden;
+    mask: linear-gradient(transparent, white calc(1lh * 0.15) calc(100% - 1lh * 0.15), transparent);
+  }
+  .odo-symbol {
+    overflow: visible;
+    mask: none;
+    line-height: 1;
+    height: auto;
+  }
+  .odo-track {
+    display: grid;
+    translate: 0 calc((var(--v) + 1) * var(--line-height) * -1);
+    transition: translate 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .odo-track > span {
+    height: 1lh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+<script>
+  const counters = document.querySelectorAll<HTMLElement>('[data-odometer]');
+  if (counters.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const tracks = (root: Element) => root.querySelectorAll<HTMLElement>('.odo-track');
+
+    counters.forEach((counter) =>
+      tracks(counter).forEach((track) => {
+        track.style.transition = 'none';
+        track.style.setProperty('--v', '0');
+      }),
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          tracks(entry.target).forEach((track) => {
+            track.style.transition = '';
+            track.style.setProperty('--v', track.dataset['digit'] ?? '0');
+          });
+        }
+      },
+      { rootMargin: '0px 0px -10% 0px' },
+    );
+    counters.forEach((counter) => observer.observe(counter));
+  }
+</script>

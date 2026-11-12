@@ -1,0 +1,30 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import BenefitsGrid from '@/components/benefits/BenefitsGrid.astro';
+import TestimonialFeature from '@/components/benefits/TestimonialFeature.astro';
+import ProcessSteps from '@/components/home/ProcessSteps.astro';
+import FeatureShowcase from '@/components/home/FeatureShowcase.astro';
+import { getSection } from '@/lib/sections';
+
+const page = await getEntry('pages', 'benefits');
+if (!page) throw new Error('Missing src/content/pages/benefits.yaml');
+const { seo, hero } = page.data;
+
+const [benefits, process, showcaseHeader, showcase, quote] = await Promise.all([
+  getSection('benefits-grid', 'benefits'),
+  getSection('process-benefits', 'process'),
+  getSection('showcase-benefits', 'header'),
+  getSection('showcase', 'showcase'),
+  getSection('benefits-quote', 'quote'),
+]);
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <PageHero {...hero} />
+  <BenefitsGrid benefits={benefits} />
+  <ProcessSteps process={process} />
+  <FeatureShowcase header={showcaseHeader} showcase={showcase} />
+  <TestimonialFeature quote={quote} />
+</BaseLayout>

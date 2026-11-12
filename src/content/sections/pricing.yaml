@@ -1,0 +1,25 @@
+type: pricing
+header:
+  eyebrow: Pricing
+  title: Simple, scoped engagements
+  description: Three formats, every brief. Custom scopes available for larger work.
+plans:
+  - name: Sprint
+    description: A focused two-week burst — single deliverable.
+    price: $15k
+    period: project
+    features: [1 discipline, 2-week timeline, 1 round of revision, Senior-led]
+    cta: { label: Start a sprint, href: /contact }
+  - name: Project
+    description: Full-cycle creative — most common engagement.
+    price: $45k
+    period: project
+    features: [Up to 3 disciplines, 8–10 week timeline, 2 rounds of revision, Design system handoff, 30-day support window]
+    cta: { label: Talk about a project, href: /contact }
+    featured: true
+  - name: Retainer
+    description: Ongoing creative leadership for in-house teams.
+    price: $9k
+    period: month
+    features: [Embedded creative direction, Weekly working sessions, Quarterly roadmap, All disciplines on call]
+    cta: { label: Discuss retainer, href: /contact }

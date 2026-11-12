@@ -1,0 +1,16 @@
+order: 1
+title: Brand
+summary: Identity systems for digital products — tokens, type, and voice teams can ship with.
+intro: We build identities as working systems — tokens, components, and rules teams can actually ship with, not a deck that lives in a Figma archive.
+tags: [Identity, Tokens, Guidelines]
+image: ../../assets/images/services/brand.jpg
+deliverables:
+  - Brand strategy & positioning
+  - Visual identity system
+  - Typography & color tokens
+  - Component-ready guidelines
+process:
+  - { step: Discovery, description: Stakeholder interviews and audit. }
+  - { step: Strategy, description: 'Positioning, voice, and narrative.' }
+  - { step: Design, description: 'Mark, type, color, and motion.' }
+  - { step: System, description: Tokens and component handoff. }
