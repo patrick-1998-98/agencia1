@@ -18,7 +18,7 @@ const { config } = Astro.props;
   <form method="post" action="/api/contact" data-contact-form>
     <FormMeta flow="specialist" />
     <h3 id="specialist-title" class={stepTitle}>
-      What can we help with?
+      ¿En qué te podemos ayudar?
     </h3>
     <div class="mt-5 grid gap-2" role="radiogroup" aria-labelledby="specialist-title">
       {config.services.map((service) => (
@@ -26,7 +26,7 @@ const { config } = Astro.props;
           name="service"
           value={service.id}
           title={service.label}
-          description={`Goes to the ${service.owner.toLowerCase()} · ${service.role}`}
+          description={`Lo recibe el ${service.owner.toLowerCase()} · ${service.role}`}
           required
           data={{ owner: service.owner, role: service.role }}
         />
@@ -39,8 +39,8 @@ const { config } = Astro.props;
         data-specialist-initial
       ></span>
       <p class="text-sm text-muted-foreground" aria-live="polite">
-        You'll hear from <span class="font-medium text-foreground" data-specialist-owner></span>{' '}
-        directly.
+        Te va a escribir directamente{' '}
+        <span class="font-medium text-foreground" data-specialist-owner></span>.
       </p>
     </div>
     <div class="mt-5">
@@ -49,7 +49,7 @@ const { config } = Astro.props;
           for="specialist-email"
           class="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase"
         >
-          Your email
+          Tu email
         </label>
         <div class:list={[fieldShell, 'items-center px-4']}>
           <input
@@ -74,9 +74,9 @@ const { config } = Astro.props;
       <span
         class="inline-flex shrink-0 items-center justify-center px-1"
         data-submit-label
-        data-idle="Send"
+        data-idle="Enviar"
       >
-        Send
+        Enviar
       </span>
       <Icon name="arrow-up-right" class="size-5 shrink-0" />
     </button>

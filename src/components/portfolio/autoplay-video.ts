@@ -32,7 +32,7 @@ function start(): void {
     const button = video.parentElement?.querySelector<HTMLButtonElement>('[data-video-toggle]');
     if (!button) return;
     const playing = !video.paused;
-    button.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+    button.setAttribute('aria-label', playing ? 'Pausar video' : 'Reproducir video');
     button.querySelector('[data-icon-play]')?.classList.toggle('hidden', playing);
     button.querySelector('[data-icon-pause]')?.classList.toggle('hidden', !playing);
   };

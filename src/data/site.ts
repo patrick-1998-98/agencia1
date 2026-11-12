@@ -8,10 +8,10 @@ export const site = {
   shortName: 'Zypher',
   titleSuffix: ' | Zypher Agency',
   description:
-    'Zypher is a digital design & development agency. We design and build product sites, web apps, and brand systems for ambitious teams.',
-  keywords: 'creative agency, photography, branding, design studio, web design, portfolio',
-  locale: 'en_US',
-  lang: 'en',
+    'Zypher es una agencia de diseño y desarrollo digital. Diseñamos y construimos sitios de producto, web apps y sistemas de marca para equipos ambiciosos.',
+  keywords: 'agencia creativa, fotografía, branding, estudio de diseño, diseño web, portfolio',
+  locale: 'es_AR',
+  lang: 'es',
   email: 'hello@zypher.example',
   defaultOgImage: '/og-image.jpg',
   themeColor: '#ffffff',
@@ -26,33 +26,33 @@ export interface NavLink {
 }
 
 export const mainNav: NavLink[] = [
-  { label: 'Benefits', href: '/benefits' },
-  { label: 'Services', href: '/services' },
-  { label: 'Portfolios', href: '/portfolios' },
-  { label: 'Faq', href: '/faq' },
+  { label: 'Beneficios', href: '/benefits' },
+  { label: 'Servicios', href: '/services' },
+  { label: 'Portfolio', href: '/portfolios' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 export const footerNav: { title: string; links: NavLink[] }[] = [
   {
-    title: 'Studio',
+    title: 'Estudio',
     links: [
-      { label: 'Benefits', href: '/benefits' },
-      { label: 'Services', href: '/services' },
-      { label: 'Portfolios', href: '/portfolios' },
+      { label: 'Beneficios', href: '/benefits' },
+      { label: 'Servicios', href: '/services' },
+      { label: 'Portfolio', href: '/portfolios' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Recursos',
     links: [
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Preguntas frecuentes', href: '/faq' },
+      { label: 'Contacto', href: '/contact' },
     ],
   },
 ];
 
 export const legalNav: NavLink[] = [
-  { label: 'Privacy', href: '/privacy' },
-  { label: 'Terms', href: '/terms' },
+  { label: 'Privacidad', href: '/privacy' },
+  { label: 'Términos', href: '/terms' },
   { label: 'Cookies', href: '/cookies' },
 ];
 

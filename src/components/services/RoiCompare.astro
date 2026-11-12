@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { header, columns } = Astro.props.roi;
-const format = new Intl.NumberFormat('en-US');
+const format = new Intl.NumberFormat('es-AR');
 ---
 
 <Section id="roi" eyebrow={header.eyebrow} title={header.title} description={header.description}>
@@ -21,13 +21,13 @@ const format = new Intl.NumberFormat('en-US');
             <h3 class="text-sm font-medium text-foreground">{column.title}</h3>
           </div>
           <p class="mt-8 text-xs tracking-eyebrow text-muted-foreground uppercase">
-            Precious hours saved
+            Horas valiosas ahorradas
           </p>
           <p class="mt-2 flex items-baseline gap-2">
             <span class="text-6xl leading-none font-medium tracking-tight text-foreground md:text-7xl">
               {format.format(column.hours)}+
             </span>
-            <span class="text-lg text-muted-foreground">hours</span>
+            <span class="text-lg text-muted-foreground">horas</span>
           </p>
           <ul class="mt-8 space-y-3">
             {column.points.map((point) => (
@@ -42,7 +42,7 @@ const format = new Intl.NumberFormat('en-US');
           </ul>
           <div class="mt-8 border-t border-dashed border-border pt-6">
             <p class="text-xs tracking-eyebrow text-muted-foreground uppercase">
-              Return on investment
+              Retorno de la inversión
             </p>
             <p class="mt-3 text-5xl leading-none font-medium tracking-tight text-foreground md:text-6xl">
               {column.roi}x

@@ -13,12 +13,12 @@ const label = 'text-xs font-medium tracking-eyebrow text-muted-foreground upperc
 <article class="px-6 py-20">
   <div class="mx-auto max-w-5xl">
     <a href="/services" class="text-sm text-muted-foreground hover:text-foreground">
-      ← All services
+      ← Todos los servicios
     </a>
 
     <header class="mt-8 grid gap-8 md:grid-cols-[1.4fr_1fr]">
       <div>
-        <ul class="flex flex-wrap gap-2" aria-label="Focus areas">
+        <ul class="flex flex-wrap gap-2" aria-label="Áreas de foco">
           {tags.map((tag) => (
             <li class="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">{tag}</li>
           ))}
@@ -42,7 +42,7 @@ const label = 'text-xs font-medium tracking-eyebrow text-muted-foreground upperc
 
     <div class="mt-20 grid gap-12 md:grid-cols-2" data-reveal-stagger="0.1" data-reveal-y="24">
       <section>
-        <h2 class={label}>Deliverables</h2>
+        <h2 class={label}>Entregables</h2>
         <ul class="mt-4 space-y-3 text-sm">
           {deliverables.map((item) => (
             <li class="flex items-start gap-3 border-b border-border pb-3">
@@ -56,7 +56,7 @@ const label = 'text-xs font-medium tracking-eyebrow text-muted-foreground upperc
         </ul>
       </section>
       <section>
-        <h2 class={label}>Process</h2>
+        <h2 class={label}>Proceso</h2>
         <ol class="mt-4 space-y-5">
           {process.map((step, i) => (
             <li class="flex gap-4">

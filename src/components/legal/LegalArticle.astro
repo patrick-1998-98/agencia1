@@ -7,13 +7,19 @@ interface Props {
 
 const { page } = Astro.props;
 const updated = page.updated.toISOString().slice(0, 10);
+const updatedLabel = page.updated.toLocaleDateString('es-AR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <article class="px-6 py-20 md:py-28">
   <div class="mx-auto max-w-3xl">
     <header class="mb-12">
       <p class="text-xs tracking-eyebrow text-muted-foreground uppercase">
-        Last updated · <time datetime={updated}>{updated}</time>
+        Última actualización · <time datetime={updated}>{updatedLabel}</time>
       </p>
       <h1 class="mt-4 text-4xl font-medium tracking-tight text-balance md:text-6xl">
         {page.title}

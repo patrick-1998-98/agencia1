@@ -3,7 +3,7 @@
  * All user text is HTML-escaped in the HTML body; header values are
  * single-line and length-capped.
  */
-import type { ContactSubmission } from './schema';
+import { choiceLabel, type ContactSubmission } from './schema';
 import { escapeHtml, headerSafe } from './sanitize';
 
 export interface LeadEmail {
@@ -14,35 +14,43 @@ export interface LeadEmail {
 }
 
 const FLOW_LABEL = {
-  project: 'Project enquiry',
-  specialist: 'Specialist request',
-  brief: 'Project brief',
+  project: 'Consulta de proyecto',
+  specialist: 'Pedido de especialista',
+  brief: 'Brief de proyecto',
 } as const;
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+/** Labels for the project type / specialist service ids. */
+const AREA_LABEL: Record<string, string> = {
+  brand: 'Marca',
+  web: 'Web',
+  product: 'Producto',
+  other: 'Otro',
+};
+const area = (id: string) => AREA_LABEL[id] ?? id;
+const usd = (n: number) => `$${n.toLocaleString('es-AR')}`;
 
 function rows(data: ContactSubmission): [string, string][] {
   switch (data.flow) {
     case 'project':
       return [
-        ['Name', data.name],
+        ['Nombre', data.name],
         ['Email', data.email],
-        ['Project type', data.projectType],
-        ['Budget', usd(data.budget)],
-        ['Timeline', data.timeline],
-        ['Goals', data.goals || '—'],
+        ['Tipo de proyecto', area(data.projectType)],
+        ['Presupuesto', usd(data.budget)],
+        ['Plazos', choiceLabel(data.timeline)],
+        ['Objetivos', data.goals || '—'],
       ];
     case 'specialist':
       return [
         ['Email', data.email],
-        ['Service', data.service],
+        ['Servicio', area(data.service)],
       ];
     case 'brief':
       return [
-        ['Name', data.name],
+        ['Nombre', data.name],
         ['Email', data.email],
-        ['Company', data.company || '—'],
-        ['Budget', data.budget || '—'],
-        ['Needs', data.services.join(', ') || '—'],
+        ['Empresa', data.company || '—'],
+        ['Presupuesto', data.budget ? choiceLabel(data.budget) : '—'],
+        ['Necesidades', data.services.map(choiceLabel).join(', ') || '—'],
         ['Brief', data.message],
       ];
   }

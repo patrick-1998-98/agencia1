@@ -5,6 +5,7 @@
  */
 import type { CollectionEntry } from 'astro:content';
 import Icon from '@/components/ui/Icon.astro';
+import { choiceLabel } from '@/lib/contact/schema';
 import FormMeta from './FormMeta.astro';
 import RadioCard from './RadioCard.astro';
 import SuccessCard from './SuccessCard.astro';
@@ -27,12 +28,12 @@ interface Props {
 const { config } = Astro.props;
 const { budget } = config;
 const steps = [
-  'What are you planning?',
-  "What's your budget?",
-  'When do you want to start?',
-  'Tell us about the project',
+  '¿Qué tenés en mente?',
+  '¿Cuál es tu presupuesto?',
+  '¿Cuándo querés arrancar?',
+  'Contanos sobre el proyecto',
 ];
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const usd = (n: number) => `$${n.toLocaleString('es-AR')}`;
 const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
 ---
 
@@ -52,7 +53,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
     <FormMeta flow="project" />
     <div class="js-only">
       <p class={eyebrow} data-step-label aria-live="polite">
-        Step 1 of {steps.length}
+        Paso 1 de {steps.length}
       </p>
       <div class="mt-3 flex gap-1.5" aria-hidden="true">
         {steps.map((_, i) => (
@@ -72,7 +73,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
         {steps[0]}
       </h3>
       <div class="mt-5">
-        <div class="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Project type">
+        <div class="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Tipo de proyecto">
           {config.projectTypes.map((type) => (
             <RadioCard
               name="projectType"
@@ -93,7 +94,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
       <div class="mt-5">
         <div class="space-y-3">
           <label for="planner-budget" class:list={[fieldLabel, 'block']}>
-            Budget
+            Presupuesto
           </label>
           <div class="budget relative mt-[42px] h-8 w-full" style={`--pct:${pct}%`} data-budget>
             <input
@@ -135,7 +136,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
         {steps[2]}
       </h3>
       <div class="mt-5">
-        <div class="grid gap-2.5" role="radiogroup" aria-label="Timeline">
+        <div class="grid gap-2.5" role="radiogroup" aria-label="Plazos">
           {config.timelines.map((timeline) => (
             <label class="group relative inline-flex w-fit cursor-pointer items-center gap-2 select-none">
               <input type="radio" class="sr-only" name="timeline" value={timeline} required />
@@ -147,7 +148,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
                 <span class="absolute inset-0 rounded-full bg-foreground opacity-0 transition-opacity duration-200 group-has-checked:opacity-100" />
                 <span class="absolute top-1/2 left-1/2 size-1.5 -translate-1/2 scale-0 rounded-full bg-card opacity-0 transition-[scale,opacity] duration-200 group-has-checked:scale-100 group-has-checked:opacity-100" />
               </span>
-              <span class="text-sm font-medium text-foreground">{timeline}</span>
+              <span class="text-sm font-medium text-foreground">{choiceLabel(timeline)}</span>
             </label>
           ))}
         </div>
@@ -162,7 +163,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
         <div class="space-y-3">
           <div class="flex w-full flex-col items-start gap-1">
             <label for="planner-goals" class={fieldLabel}>
-              Goals
+              Objetivos
             </label>
             <div class:list={[fieldShell, 'flex-col px-3']}>
               <textarea
@@ -170,7 +171,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
                 name="goals"
                 rows="3"
                 maxlength="2000"
-                placeholder="What should the project achieve?"
+                placeholder="¿Qué tiene que lograr el proyecto?"
                 class:list={[fieldControl, 'resize-y']}
               ></textarea>
             </div>
@@ -178,7 +179,7 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
           <div class="grid gap-3 sm:grid-cols-2">
             <div class="flex w-full flex-col items-start gap-1">
               <label for="planner-name" class={fieldLabel}>
-                Name
+                Nombre
               </label>
               <div class:list={[fieldShell, 'items-center px-4']}>
                 <input
@@ -216,18 +217,18 @@ const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
 
     <div class="mt-8 flex items-center justify-between">
       <button type="button" class:list={[buttonSecondary, 'js-only']} data-step-back disabled>
-        <span class="inline-flex shrink-0 items-center justify-center px-1">Back</span>
+        <span class="inline-flex shrink-0 items-center justify-center px-1">Atrás</span>
       </button>
       <button type="button" class:list={[buttonPrimary, 'js-only']} data-step-next disabled>
-        <span class="inline-flex shrink-0 items-center justify-center px-1">Next</span>
+        <span class="inline-flex shrink-0 items-center justify-center px-1">Siguiente</span>
       </button>
       <button type="submit" class:list={[buttonPrimary, 'planner-submit ml-auto']} data-submit>
         <span
           class="inline-flex shrink-0 items-center justify-center px-1"
           data-submit-label
-          data-idle="Send enquiry"
+          data-idle="Enviar consulta"
         >
-          Send enquiry
+          Enviar consulta
         </span>
         <Icon name="arrow-up-right" class="size-5 shrink-0" />
       </button>

@@ -39,6 +39,26 @@ export const BRIEF_SERVICES = [
 ] as const;
 export const BUDGET_RANGE = { min: 5000, max: 150000, step: 5000 } as const;
 
+/**
+ * Spanish display labels for the enum values above. The submitted values stay
+ * in English (they are what the schema validates); only the UI shows these.
+ */
+const CHOICE_LABELS: Record<string, string> = {
+  ASAP: 'Lo antes posible',
+  '1–3 months': '1–3 meses',
+  '3–6 months': '3–6 meses',
+  'Just exploring': 'Solo estoy explorando',
+  'Under $15k': 'Menos de $15k',
+  Brand: 'Marca',
+  Product: 'Producto',
+  'Design system': 'Sistema de diseño',
+  'Front-end build': 'Desarrollo front-end',
+  'Not sure yet': 'Todavía no sé',
+};
+
+/** Human-readable (Spanish) label for an enum value; falls back to the value itself. */
+export const choiceLabel = (value: string): string => CHOICE_LABELS[value] ?? value;
+
 const project = z.object({
   flow: z.literal('project'),
   projectType: z.enum(PROJECT_TYPES),

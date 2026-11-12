@@ -8,7 +8,7 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
 
 <header class="sticky top-0 z-50 w-full px-4 pt-4">
   <nav
-    aria-label="Main"
+    aria-label="Principal"
     class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/60 bg-foreground/95 px-2 py-2 text-background shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur"
   >
     <a href="/" class="flex items-center gap-2 pr-2 pl-3 text-sm font-medium tracking-tight">
@@ -41,12 +41,12 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
         href="/contact"
         class="hidden rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5 hover:shadow-md sm:inline-flex"
       >
-        Get In Touch
+        Hablemos
       </a>
       <button
         type="button"
         id="mobile-menu-toggle"
-        aria-label="Open menu"
+        aria-label="Abrir menú"
         aria-expanded="false"
         aria-controls="mobile-menu"
         class="grid h-9 w-9 place-items-center rounded-full bg-background text-foreground md:hidden"
@@ -106,7 +106,7 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
       href="/contact"
       class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground"
     >
-      Get In Touch
+      Hablemos
     </a>
   </div>
 </header>
@@ -118,7 +118,7 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
   if (toggle && menu) {
     const setOpen = (open: boolean) => {
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
       toggle.querySelector('.menu-icon')?.classList.toggle('hidden', open);
       toggle.querySelector('.close-icon')?.classList.toggle('hidden', !open);
       menu.toggleAttribute('data-open', open);

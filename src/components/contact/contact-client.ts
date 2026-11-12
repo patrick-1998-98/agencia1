@@ -8,11 +8,11 @@ import { PUBLIC_TURNSTILE_SITE_KEY } from 'astro:env/client';
 type SubmitResult =
   { ok: true; ticket: string } | { ok: false; message: string; fields?: string[] };
 
-const GENERIC_ERROR = 'Something went wrong. Please try again.';
+const GENERIC_ERROR = 'Algo salió mal. Probá de nuevo.';
 const ERRORS: Record<string, string> = {
-  invalid: 'Please check the highlighted fields and try again.',
-  'rate-limited': 'Too many messages in a short time. Please try again in a few minutes.',
-  verification: 'We could not verify you are human. Please try again.',
+  invalid: 'Revisá los campos marcados y probá de nuevo.',
+  'rate-limited': 'Demasiados mensajes en poco tiempo. Probá de nuevo en unos minutos.',
+  verification: 'No pudimos verificar que seas una persona. Probá de nuevo.',
 };
 
 const $ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) =>
@@ -20,7 +20,7 @@ const $ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) =>
 const $$ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => [
   ...root.querySelectorAll<T & Element>(sel),
 ];
-const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const usd = (n: number) => `$${n.toLocaleString('es-AR')}`;
 
 /* ------------------------------------------------------------------ tabs */
 
@@ -221,11 +221,11 @@ function wireSubmit(flow: HTMLElement, form: HTMLFormElement, hooks: FlowHooks) 
     const data = payload(form);
     form.setAttribute('aria-busy', 'true');
     if (button) button.disabled = true;
-    if (label) label.textContent = 'Sending…';
+    if (label) label.textContent = 'Enviando…';
 
     const result = await send(form);
     form.removeAttribute('aria-busy');
-    if (label) label.textContent = label.dataset['idle'] ?? 'Send';
+    if (label) label.textContent = label.dataset['idle'] ?? 'Enviar';
 
     if (result.ok) {
       const view = hooks.render(result.ticket, data);
@@ -317,7 +317,7 @@ function initPlanner(flow: HTMLElement, form: HTMLFormElement) {
       b.classList.toggle('bg-foreground', i < step);
       b.classList.toggle('bg-muted', i >= step);
     });
-    if (stepLabel) stepLabel.textContent = `Step ${step} of ${count}`;
+    if (stepLabel) stepLabel.textContent = `Paso ${step} de ${count}`;
     form.toggleAttribute('data-last-step', step === count);
     if (back) back.disabled = step === 1;
     if (next) {
@@ -375,18 +375,18 @@ function initPlanner(flow: HTMLElement, form: HTMLFormElement) {
         ? genericSuccess(
             'project-success',
             ticket,
-            'Looks like a great fit',
-            "Pick a time for an intro call and we'll come prepared.",
+            'Parece que encajamos muy bien',
+            'Elegí un horario para una primera llamada y vamos a llegar preparados.',
             {
-              label: 'Book a call',
+              label: 'Agendar una llamada',
               href: bookingUrl,
             },
           )
         : genericSuccess(
             'project-success',
             ticket,
-            "Thanks, we've got your details",
-            "We'll email you some resources that fit your budget and timeline.",
+            'Gracias, ya tenemos tus datos',
+            'Te vamos a mandar por email recursos acordes a tu presupuesto y plazos.',
           ),
   });
   render();
@@ -409,9 +409,9 @@ function initSpecialist(flow: HTMLElement, form: HTMLFormElement) {
     if (route) route.hidden = !lead;
     if (lead) {
       if (initial) initial.textContent = lead.charAt(0).toUpperCase();
-      if (owner) owner.textContent = `the ${lead.toLowerCase()}`;
+      if (owner) owner.textContent = `el ${lead.toLowerCase()}`;
     }
-    const idle = lead ? `Send to the ${lead.toLowerCase()}` : 'Send';
+    const idle = lead ? `Enviar al ${lead.toLowerCase()}` : 'Enviar';
     if (label) {
       label.dataset['idle'] = idle;
       if (form.getAttribute('aria-busy') !== 'true') label.textContent = idle;
@@ -428,13 +428,13 @@ function initSpecialist(flow: HTMLElement, form: HTMLFormElement) {
     onIdle: update,
     render: (ticket, data) => {
       const radio = selected();
-      const lead = (radio?.dataset['owner'] ?? 'Studio lead').toLowerCase();
+      const lead = (radio?.dataset['owner'] ?? 'Director del estudio').toLowerCase();
       const role = radio?.dataset['role'] ?? '';
       return genericSuccess(
         'specialist-success',
         ticket,
-        `Sent to the ${lead}`,
-        `The ${lead}${role ? ` (${role})` : ''} will reply to ${String(data['email'] ?? '')} directly.`,
+        `Enviado al ${lead}`,
+        `El ${lead}${role ? ` (${role})` : ''} te va a responder directamente a ${String(data['email'] ?? '')}.`,
       );
     },
   });
@@ -449,9 +449,13 @@ function initBrief(flow: HTMLElement, form: HTMLFormElement) {
       const first =
         String(data['name'] ?? '')
           .trim()
-          .split(/\s+/)[0] || 'there';
+          .split(/\s+/)[0] || '';
       fill(view, 'ticket', ticket);
-      fill(view, 'title', `Thanks, ${first}. Here's what happens next`);
+      fill(
+        view,
+        'title',
+        first ? `Gracias, ${first}. Esto es lo que sigue` : 'Gracias. Esto es lo que sigue',
+      );
       return view;
     },
   });
