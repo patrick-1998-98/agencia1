@@ -37,10 +37,10 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
           0{index + 1}
         </span>
         <span
-          class="service-label pointer-events-none absolute top-1/2 left-1/2 z-10 text-base font-medium tracking-eyebrow whitespace-nowrap text-white uppercase transition-opacity duration-300 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]"
+          class="service-label pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-2 py-10 text-base font-medium tracking-eyebrow text-white uppercase transition-opacity duration-300 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)]"
           aria-hidden="true"
         >
-          {service.data.title}
+          <span class="service-label-text">{service.data.title}</span>
         </span>
         <div class="service-details absolute inset-x-0 bottom-0 z-10 p-5 transition-all duration-300">
           <h3 class="text-lg leading-tight font-medium text-white md:text-xl">
@@ -66,18 +66,20 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
     flex: 3;
   }
 
-  .service-label {
+  /* Vertical, bottom-to-top label; long names wrap onto a second column. */
+  .service-label-text {
     writing-mode: vertical-rl;
-    /* Offset twice (translate + transform) to match the original placement. */
-    translate: -50% -50%;
-    transform: translate(-50%, -50%) rotate(180deg);
+    transform: rotate(180deg);
+    max-height: 100%;
+    text-align: center;
   }
   .service-card:is(:hover, :focus-visible) .service-label {
     opacity: 0;
   }
 
   .service-details {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+    padding-top: 4rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 60%, transparent);
     transform: translateY(12px);
     opacity: 0;
   }

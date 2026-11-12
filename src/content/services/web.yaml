@@ -1,8 +1,8 @@
-order: 2
+order: 3
 title: Web
-summary: Sitios de marketing y landing pages en Astro + React — rápidos, accesibles y fáciles de actualizar.
+summary: Diseño y desarrollo de webs rápidas y cuidadas, conectadas a tus procesos para que cada contacto o venta entre directo a tu sistema.
 intro: Sitios de marketing que cargan rápido, posicionan bien y se sienten parte de la marca. Astro para la velocidad, React para la interactividad y un CMS que tu equipo realmente pueda usar.
-tags: [Astro, React, CMS]
+tags: [Diseño, Desarrollo, Integraciones]
 image: ../../assets/images/services/web.jpg
 deliverables:
   - Arquitectura de información

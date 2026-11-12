@@ -1,8 +1,8 @@
-order: 3
-title: Producto
-summary: Diseño de producto e ingeniería front-end para SaaS y apps de consumo.
+order: 2
+title: Software a medida
+summary: CRMs, paneles de gestión y tableros adaptados a cómo trabaja tu empresa, conectados a tu ERP y con los números que necesitas para decidir.
 intro: Trabajo de producto de punta a punta — investigación, flujos y UI fiel al detalle, con un equipo front-end que lo lleva a producción. Nos sumamos a tu equipo de ingeniería o nos encargamos de todo el stack.
-tags: [UX, UI, Front-end]
+tags: [CRM, Paneles, ERP]
 image: ../../assets/images/services/product.jpg
 deliverables:
   - Descubrimiento e investigación UX
