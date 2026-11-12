@@ -1,10 +1,10 @@
 order: 4
-title: Axone Studio — Product Site
+title: 'Axone Studio — Sitio de producto'
 category: Web
 client: Axone Studio
 year: 2025
-role: Design, front-end engineering, art direction
-description: 'A marketing site for a product photography studio — minimal and elegant with a pinch of playful illustration, built on a strict grid that keeps the work neat without losing its light, editorial vibe. Designed and shipped end-to-end: art direction, UI, and a fast Astro + React front end with a custom CMS-driven gallery.'
+role: 'Diseño, ingeniería front-end, dirección de arte'
+description: 'Un sitio de marketing para un estudio de fotografía de producto: minimalista y elegante, con un toque de ilustración lúdica, sobre una grilla estricta que ordena el trabajo sin perder su aire liviano y editorial. Diseñado y lanzado de punta a punta: dirección de arte, UI y un front-end rápido en Astro + React con una galería a medida conectada al CMS.'
 cover:
   image: ../../assets/images/portfolio/axone-studio-1.png
   video: https://cdn.dribbble.com/userupload/45799417/file/794c8a23488158b22c543bc83256f51b.mp4

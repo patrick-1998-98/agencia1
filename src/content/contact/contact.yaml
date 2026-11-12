@@ -1,42 +1,47 @@
 section:
-  eyebrow: Get in touch
-  title: Pick your way in
-  description: Start a project, reach the right lead, or send a brief. Every route lands with a person, and we reply within a working day. Studio details are on the right.
+  eyebrow: Contacto
+  title: Elegí cómo empezar
+  description: Arrancá un proyecto, hablá con la persona indicada o mandanos un brief. Cada mensaje lo lee una persona y respondemos en un día hábil. Los datos del estudio están a la derecha.
 tabs:
-  - { id: project, label: Start a project, shortLabel: Project }
-  - { id: specialist, label: Talk to a specialist, shortLabel: Specialist }
-  - { id: brief, label: Send a brief, shortLabel: Brief }
+  - { id: project, label: Iniciar un proyecto, shortLabel: Proyecto }
+  - { id: specialist, label: Hablar con un especialista, shortLabel: Especialista }
+  - { id: brief, label: Enviar un brief, shortLabel: Brief }
 project:
   projectTypes:
-    - { id: brand, title: Brand, description: Identity systems and tokens }
-    - { id: web, title: Web, description: Marketing sites and landing pages }
-    - { id: product, title: Product, description: Product design and front-end }
-    - { id: other, title: Not sure yet, description: Tell us below }
+    - { id: brand, title: Marca, description: Sistemas de identidad y tokens }
+    - { id: web, title: Web, description: Sitios institucionales y landing pages }
+    - { id: product, title: Producto, description: Diseño de producto y front-end }
+    - { id: other, title: Todavía no sé, description: Contanos abajo }
   budget: { min: 5000, max: 150000, step: 5000, initial: 5000, qualifiedFrom: 15000 }
   timelines: [ASAP, 1–3 months, 3–6 months, Just exploring]
   bookingUrl: https://cal.com/your-studio/intro
 specialist:
   services:
-    - { id: brand, label: Brand, owner: Brand lead, role: identity systems }
-    - { id: web, label: Web, owner: Web lead, role: marketing sites }
-    - { id: product, label: Product, owner: Product lead, role: product design and front-end }
-    - { id: other, label: Something else, owner: Studio lead, role: new projects }
+    - { id: brand, label: Marca, owner: Líder de marca, role: sistemas de identidad }
+    - { id: web, label: Web, owner: Líder web, role: sitios institucionales }
+    - {
+        id: product,
+        label: Producto,
+        owner: Líder de producto,
+        role: diseño de producto y front-end,
+      }
+    - { id: other, label: Otra cosa, owner: Director del estudio, role: proyectos nuevos }
 brief:
   budgets: [Under $15k, $15k – $45k, $45k – $120k, $120k+]
   services: [Brand, Web, Product, Design system, Front-end build, Not sure yet]
-  submitLabel: Send brief
+  submitLabel: Enviar brief
   success:
     steps:
-      - We read your brief and check it against the studio calendar.
-      - You get a short reply with questions or a rough estimate.
-      - If it's a fit, we book a 30-minute call to scope the work.
-    replyWithin: one working day
+      - Leemos tu brief y lo cruzamos con el calendario del estudio.
+      - Te mandamos una respuesta breve con preguntas o un presupuesto estimado.
+      - Si encaja, agendamos una llamada de 30 minutos para definir el alcance.
+    replyWithin: un día hábil
     bookingUrl: https://cal.com/your-studio/intro
     caseStudies:
-      - { title: Alva Commerce — Website Redesign, href: /portfolios/alva-commerce }
-      - { title: Axone Studio — Product Site, href: /portfolios/axone-studio }
+      - { title: Alva Commerce — Rediseño del sitio web, href: /portfolios/alva-commerce }
+      - { title: Axone Studio — Sitio de producto, href: /portfolios/axone-studio }
 studio:
-  title: Studio
+  title: Estudio
   items:
     - {
         label: Email,
@@ -44,10 +49,10 @@ studio:
         href: 'mailto:studio@zypher-agency.online',
         icon: envelope,
       }
-    - { label: Phone, value: +1 (415) 555 0118, href: 'tel:+14155550118', icon: phone }
-    - { label: Hours, value: Mon – Fri · 09:00 – 18:00 PT, icon: clock }
+    - { label: Teléfono, value: +1 (415) 555 0118, href: 'tel:+14155550118', icon: phone }
+    - { label: Horario, value: Lun – Vie · 09:00 – 18:00 PT, icon: clock }
     - {
-        label: Address,
+        label: Dirección,
         value: "1055 W Georgia St, Suite 2400\nVancouver, BC V6E 3P3",
         icon: map-pin,
       }

@@ -1,21 +1,21 @@
-seoTitle: Cookies Policy — Zypher
-seoDescription: What cookies zypher.agency uses, why, and how to control them.
-title: Cookies Policy
+seoTitle: Política de cookies — Zypher
+seoDescription: Qué cookies usa zypher.agency, para qué y cómo podés controlarlas.
+title: Política de cookies
 updated: 2026-05-09
-intro: This page explains what cookies and similar technologies zypher.agency uses, why we use them, and how you can control them.
+intro: Esta página explica qué cookies y tecnologías similares usa zypher.agency, por qué las usamos y cómo podés controlarlas.
 sections:
-  - heading: What are cookies
-    body: Cookies are small text files placed on your device when you visit a site. They help the site remember your preferences and give us anonymous information about how the site is used.
-  - heading: Cookies we use
+  - heading: Qué son las cookies
+    body: Las cookies son pequeños archivos de texto que se guardan en tu dispositivo cuando visitás un sitio. Ayudan a que el sitio recuerde tus preferencias y nos dan información anónima sobre cómo se usa.
+  - heading: Cookies que usamos
     items:
-      - Essential — keep the site running and remember your theme preference
-      - Analytics — anonymous traffic data so we can improve the site
-      - Preference — remember settings like accepted cookies
-  - heading: Third-party cookies
-    body: Some cookies are set by services we use (analytics, embedded video). These third parties have their own privacy and cookie policies.
-  - heading: Your choices
-    body: You can block or delete cookies at any time through your browser settings. Disabling essential cookies may affect how parts of the site work.
-  - heading: Changes
-    body: We update this policy as we adjust the tools we use. The date at the top reflects the most recent revision.
-  - heading: Contact
-    body: Questions about cookies? Email hello@zypher.example.
+      - Esenciales — mantienen el sitio funcionando y recuerdan tu preferencia de tema
+      - Analíticas — datos de tráfico anónimos para mejorar el sitio
+      - De preferencias — recuerdan configuraciones, como si aceptaste las cookies
+  - heading: Cookies de terceros
+    body: Algunas cookies las establecen servicios que usamos (analítica, videos embebidos). Esos terceros tienen sus propias políticas de privacidad y de cookies.
+  - heading: Tus opciones
+    body: Podés bloquear o borrar las cookies cuando quieras desde la configuración de tu navegador. Desactivar las cookies esenciales puede afectar el funcionamiento de algunas partes del sitio.
+  - heading: Cambios
+    body: Actualizamos esta política a medida que cambiamos las herramientas que usamos. La fecha de arriba indica la última revisión.
+  - heading: Contacto
+    body: ¿Tenés preguntas sobre las cookies? Escribinos a hello@zypher.example.

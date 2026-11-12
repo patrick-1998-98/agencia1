@@ -1,14 +1,14 @@
 seo:
-  title: Zypher — Digital Design & Development Agency
-  description: Zypher is a digital design & development agency. We design and build product sites, web apps, and brand systems for ambitious teams.
+  title: Zypher — Agencia de diseño y desarrollo digital
+  description: Zypher es una agencia de diseño y desarrollo digital. Diseñamos y construimos sitios de producto, web apps y sistemas de marca para equipos ambiciosos.
 hero:
   eyebrow: Procesos, software y diseño web
   title: Sistemas para que tu empresa crezca
   description: Primero entendemos tu negocio; después construimos lo que de verdad aporta. Auditoría de procesos, automatización, software a medida y webs que convierten.
   background: ../../assets/images/hero-helmet-1.png
 cta:
-  eyebrow: Start a project
-  title: Got a brief? Let's talk.
-  description: Most projects kick off within four weeks. Even if you're early, we'd rather hear about it now than later.
-  primary: { label: Get in touch, href: /contact }
-  secondary: { label: View work, href: /portfolios }
+  eyebrow: Empezá un proyecto
+  title: ¿Tenés un brief? Hablemos.
+  description: La mayoría de los proyectos arranca en menos de cuatro semanas. Aunque estés en una etapa temprana, preferimos enterarnos ahora.
+  primary: { label: Contactanos, href: /contact }
+  secondary: { label: Ver trabajos, href: /portfolios }

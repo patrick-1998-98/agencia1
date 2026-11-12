@@ -1,34 +1,34 @@
 type: showcase
 cells:
   team:
-    title: One team, every discipline
-    description: A single brief fans out to brand, web, product, and motion — one point of contact, zero agency ping-pong.
-    disciplines: [Brand, Web, Product, Motion]
+    title: Un equipo, todas las disciplinas
+    description: Un solo brief se reparte entre marca, web, producto y motion — un único contacto, cero idas y vueltas entre agencias.
+    disciplines: [Marca, Web, Producto, Motion]
   brief:
-    title: Start with a single brief
-    description: 'Send a rough brief — even a paragraph — and get a scoped plan back within a day: team, timeline, and price.'
+    title: Empezá con un solo brief
+    description: 'Mandanos un brief, aunque sea un párrafo, y en un día te devolvemos un plan con alcance: equipo, plazos y precio.'
     studio: Zypher Studio
-    status: Replies within a day
+    status: Responde en un día
     request:
-      text: We're rebranding and need a new marketing site before the Q3 launch. Rough scope attached — can you take it end to end?
-      time: Tue 9:14 AM
-    reply: "Got it — here's the shape we'd propose:"
+      text: Estamos haciendo un rebranding y necesitamos un sitio nuevo antes del lanzamiento del Q3. Adjunto un alcance tentativo, ¿pueden encargarse de todo?
+      time: Mar 9:14
+    reply: 'Perfecto, esta es la propuesta que armamos:'
     plan:
-      title: Scoped plan
+      title: Plan con alcance
       rows:
-        - { label: Team, value: 3 seniors }
-        - { label: Timeline, value: 8–10 weeks }
-        - { label: Price, value: $45k fixed }
-      tags: [Brand, Web, Motion]
-      time: Tue 9:58 AM · same day
-    draft: Sounds great — when can we start?
+        - { label: Equipo, value: 3 seniors }
+        - { label: Plazo, value: 8–10 semanas }
+        - { label: Precio, value: $45k fijo }
+      tags: [Marca, Web, Motion]
+      time: Mar 9:58 · mismo día
+    draft: ¡Genial! ¿Cuándo arrancamos?
   handoff:
-    title: Handoff that actually lands
-    description: Every project closes with a complete kit — Figma libraries, documented repos, and living guidelines.
-    kit: Handoff kit
+    title: Una entrega que realmente sirve
+    description: Cada proyecto cierra con un kit completo — librerías de Figma, repos documentados y guías vivas.
+    kit: Kit de entrega
   code:
-    title: Figma to production code
-    description: No throw-it-over-the-wall handoff — the same team takes every screen from Figma to shipped front-end.
+    title: De Figma a código en producción
+    description: Nada de tirar el diseño por encima de la pared — el mismo equipo lleva cada pantalla de Figma al front-end lanzado.
   stack:
-    title: Plugs into your stack
-    description: We work inside your tools — design files to repos — so nothing gets lost in translation.
+    title: Se integra a tu stack
+    description: Trabajamos dentro de tus herramientas, de los archivos de diseño a los repos, para que nada se pierda en el camino.

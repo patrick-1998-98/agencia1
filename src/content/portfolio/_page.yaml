@@ -1,6 +1,6 @@
-# Copy for the /portfolios page. Projects live in the other files of this folder.
+# Textos de la página /portfolios. Los proyectos están en los demás archivos de esta carpeta.
 tools:
-  label: Tools we ship with
+  label: Herramientas con las que trabajamos
   items:
     - { name: Astro, logo: astro }
     - { name: React, logo: react }
@@ -15,19 +15,19 @@ tools:
     - { name: Notion, logo: notion }
     - { name: Linear, logo: linear }
 carousel:
-  eyebrow: Case studies
-  title: Recent projects
-  description: A small slice of recent client work — open any card for the full case study.
+  eyebrow: Casos de estudio
+  title: Proyectos recientes
+  description: Una muestra de trabajos recientes para clientes — abrí cualquier tarjeta para ver el caso completo.
 highlights:
-  eyebrow: Beyond the case studies
-  title: Every project ships with proof
-  description: The outcomes behind the visuals — what actually lands when an engagement wraps.
+  eyebrow: Más allá de los casos
+  title: Cada proyecto llega con resultados
+  description: Los resultados detrás de lo visual — lo que realmente queda cuando termina un proyecto.
   cards:
-    - title: Launch-ready, not just design-ready.
-      text: Every site in this portfolio shipped to production — designed, built, and live.
-    - title: Scoped and priced before we start.
-      text: Fixed scopes and milestone billing — no surprise invoices at the end.
-    - title: A senior team on every brief.
-      text: The people who shipped this work — no juniors, no handoffs to strangers.
-    - title: One partner from brief to launch.
-      text: Strategy, design, and build under one roof — the studio behind every case study above.
+    - title: Listo para lanzar, no solo para mostrar.
+      text: Cada sitio de este portfolio llegó a producción — diseñado, desarrollado y online.
+    - title: Alcance y precio definidos antes de empezar.
+      text: Alcances cerrados y facturación por hitos — sin facturas sorpresa al final.
+    - title: Un equipo senior en cada brief.
+      text: Las personas que hicieron este trabajo — sin juniors ni traspasos a desconocidos.
+    - title: Un solo socio del brief al lanzamiento.
+      text: Estrategia, diseño y desarrollo bajo un mismo techo — el estudio detrás de cada caso.

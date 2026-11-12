@@ -1,38 +1,38 @@
 type: pricing
 header:
-  eyebrow: Pricing
-  title: Simple, scoped engagements
-  description: Three formats, every brief. Custom scopes available for larger work.
+  eyebrow: Precios
+  title: Proyectos simples y bien definidos
+  description: Tres formatos para cualquier brief. Alcances a medida para trabajos más grandes.
 plans:
   - name: Sprint
-    description: A focused two-week burst — single deliverable.
+    description: Dos semanas intensivas, con un único entregable.
     price: $15k
-    period: project
-    features: [1 discipline, 2-week timeline, 1 round of revision, Senior-led]
-    cta: { label: Start a sprint, href: /contact }
-  - name: Project
-    description: Full-cycle creative — most common engagement.
+    period: proyecto
+    features: [1 disciplina, Plazo de 2 semanas, 1 ronda de revisión, Liderado por seniors]
+    cta: { label: Empezar un sprint, href: /contact }
+  - name: Proyecto
+    description: Ciclo creativo completo, el formato más elegido.
     price: $45k
-    period: project
+    period: proyecto
     features:
       [
-        Up to 3 disciplines,
-        8–10 week timeline,
-        2 rounds of revision,
-        Design system handoff,
-        30-day support window,
+        Hasta 3 disciplinas,
+        Plazo de 8–10 semanas,
+        2 rondas de revisión,
+        Entrega del sistema de diseño,
+        30 días de soporte,
       ]
-    cta: { label: Talk about a project, href: /contact }
+    cta: { label: Hablemos de un proyecto, href: /contact }
     featured: true
   - name: Retainer
-    description: Ongoing creative leadership for in-house teams.
+    description: Liderazgo creativo continuo para equipos internos.
     price: $9k
-    period: month
+    period: mes
     features:
       [
-        Embedded creative direction,
-        Weekly working sessions,
-        Quarterly roadmap,
-        All disciplines on call,
+        Dirección creativa integrada,
+        Sesiones de trabajo semanales,
+        Roadmap trimestral,
+        Todas las disciplinas disponibles,
       ]
-    cta: { label: Discuss retainer, href: /contact }
+    cta: { label: Consultar retainer, href: /contact }

@@ -1,10 +1,10 @@
 order: 1
-title: Liquid Brokers — Trading Landing Page
+title: 'Liquid Brokers — Landing de trading'
 category: Web
 client: Liquid Brokers
 year: 2024
-role: Web design, motion direction, art direction
-description: 'A trading landing page for Liquid Brokers — designed around engaging motion, clean information hierarchy, and a confident financial-product tone. Built to convert: hero with live data accents, clear product narrative, and conversion-focused CTAs paced by subtle scroll-triggered motion.'
+role: 'Diseño web, dirección de motion, dirección de arte'
+description: 'Una landing de trading para Liquid Brokers, diseñada con motion atractivo, una jerarquía de información clara y el tono seguro de un producto financiero. Pensada para convertir: hero con detalles de datos en vivo, una narrativa de producto clara y CTAs orientados a conversión, acompañados por animaciones sutiles al hacer scroll.'
 cover:
   image: ../../assets/images/portfolio/liquid-brokers-1.png
 gallery:

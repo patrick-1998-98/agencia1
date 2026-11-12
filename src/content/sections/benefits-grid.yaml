@@ -1,30 +1,30 @@
 type: benefits
 header:
-  eyebrow: Why us
-  title: Built around outcomes, not deliverables
-  description: Every engagement is structured to make your team faster, sharper, and more confident in the work that ships.
+  eyebrow: Por qué nosotros
+  title: Pensado para resultados, no para entregables
+  description: Cada proyecto está armado para que tu equipo sea más rápido, más preciso y tenga más confianza en lo que lanza.
 items:
   - icon: sparkles
-    title: Strategic Craft
-    description: Every visual decision is rooted in research, brand strategy, and audience insight — never just aesthetics.
-    stat: 98% retention
+    title: Oficio estratégico
+    description: Cada decisión visual parte de investigación, estrategia de marca y conocimiento de la audiencia — nunca de la estética sola.
+    stat: 98% de retención
   - icon: bolt
-    title: Senior-Led Teams
-    description: You always work with seniors. No handoffs to juniors after the kickoff call — the people who pitched are the people who execute.
-    stat: 10+ yrs avg.
+    title: Equipos senior
+    description: Siempre trabajás con seniors. Nada de pasarle el proyecto a juniors después del kickoff — quienes presentan son quienes ejecutan.
+    stat: 10+ años prom.
   - icon: layer-group
-    title: Systems-First
-    description: We deliver design systems, not artifacts. Everything ships with documentation, components, and guidelines.
-    stat: Token-ready
+    title: Sistemas primero
+    description: Entregamos sistemas de diseño, no piezas sueltas. Todo sale con documentación, componentes y guías.
+    stat: Listo para tokens
   - icon: clock
-    title: Predictable Pace
-    description: Weekly milestones, transparent timelines, no slipped deadlines. Your team always knows what's next.
-    stat: On-time, every time
+    title: Ritmo predecible
+    description: Hitos semanales, plazos transparentes y cero fechas incumplidas. Tu equipo siempre sabe qué viene.
+    stat: Siempre a tiempo
   - icon: globe
-    title: Global Network
-    description: Photographers, illustrators, and motion artists in 14 cities — assembled for the project at hand.
-    stat: 14 cities
+    title: Red global
+    description: Fotógrafos, ilustradores y artistas de motion en 14 ciudades, reunidos según lo que pida el proyecto.
+    stat: 14 ciudades
   - icon: shield
-    title: Long-term Partnership
-    description: Most clients stay with us for 3+ years. We invest in understanding your business, not just your brief.
-    stat: 3+ yr avg.
+    title: Relación a largo plazo
+    description: La mayoría de los clientes se queda con nosotros más de 3 años. Invertimos en entender tu negocio, no solo tu brief.
+    stat: 3+ años prom.

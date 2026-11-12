@@ -1,13 +1,13 @@
 section:
-  eyebrow: Before you ask
-  title: Quick answers
-  description: The three questions we hear most before a project kicks off.
+  eyebrow: Antes de preguntar
+  title: Respuestas rápidas
+  description: Las tres preguntas que más escuchamos antes de arrancar un proyecto.
 groups:
-  - title: Quick answers
+  - title: Respuestas rápidas
     items:
-      - question: How fast can you start?
-        answer: Most engagements kick off within four weeks of the first call. For sprints, two weeks is usually possible.
-      - question: Do you sign NDAs?
-        answer: Yes — we sign mutual NDAs as a matter of course before any sensitive scoping begins.
-      - question: Where are you based?
-        answer: San Francisco, but the team works remote-first across North America and EU.
+      - question: ¿Qué tan rápido pueden empezar?
+        answer: La mayoría de los proyectos arrancan dentro de las cuatro semanas posteriores a la primera llamada. Para sprints, en general podemos hacerlo en dos semanas.
+      - question: ¿Firman acuerdos de confidencialidad?
+        answer: Sí, firmamos NDAs mutuos como algo habitual antes de entrar en cualquier detalle sensible.
+      - question: ¿Dónde están ubicados?
+        answer: En San Francisco, pero el equipo trabaja de forma remota en Norteamérica y la UE.

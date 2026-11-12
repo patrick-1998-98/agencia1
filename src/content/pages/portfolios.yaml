@@ -1,16 +1,16 @@
 seo:
-  title: Portfolios — Selected work
-  description: Selected projects from Zypher — a digital design & development agency building product sites, web apps, and design systems for ambitious teams.
+  title: Portfolios — Trabajos seleccionados
+  description: Proyectos seleccionados de Zypher, una agencia de diseño y desarrollo digital que crea sitios de producto, web apps y sistemas de diseño para equipos ambiciosos.
 hero:
   eyebrow: Portfolios
-  title: Selected work, 2018 — present
-  description: A curated set of digital projects spanning product sites, web apps, and design systems.
-  trust: 60 brands · 14 cities
+  title: Trabajos seleccionados, 2018 — hoy
+  description: Una selección de proyectos digitales que abarca sitios de producto, web apps y sistemas de diseño.
+  trust: 60 marcas · 14 ciudades
   background: ../../assets/images/hero-helmet-1.png
   thumbnail: ../../assets/images/hero-helmet-3.png
 cta:
-  eyebrow: New work, every season
-  title: Want to be the next case study?
-  description: We pick a small number of clients each quarter. If you've got a brief, we'd love to read it.
-  primary: { label: Start a project, href: /contact }
-  secondary: { label: See services, href: /services }
+  eyebrow: Trabajos nuevos, cada temporada
+  title: ¿Querés ser el próximo caso de estudio?
+  description: Cada trimestre elegimos pocos clientes. Si tenés un brief, nos encantaría leerlo.
+  primary: { label: Empezá un proyecto, href: /contact }
+  secondary: { label: Ver servicios, href: /services }

@@ -1,16 +1,16 @@
 seo:
-  title: Contact — Start a project with Zypher
-  description: Tell us about your project. We answer most inquiries within four hours and kick off most engagements within four weeks.
+  title: Contacto — Empezá un proyecto con Zypher
+  description: Contanos sobre tu proyecto. Respondemos la mayoría de las consultas en menos de cuatro horas y arrancamos casi todos los proyectos en menos de cuatro semanas.
 hero:
-  eyebrow: Contact
-  title: Let's start something
-  description: Tell us about your project. Even rough briefs are welcome — we'd rather hear early than late.
-  trust: Average response · 4 hours
+  eyebrow: Contacto
+  title: Empecemos algo
+  description: Contanos sobre tu proyecto. Aunque el brief esté en borrador, preferimos enterarnos temprano que tarde.
+  trust: Respuesta promedio · 4 horas
   background: ../../assets/images/hero-helmet-1.png
   thumbnail: ../../assets/images/hero-helmet-2.png
 cta:
-  eyebrow: Prefer to read first?
-  title: See what we've shipped
-  description: Browse the case studies before you write — it'll sharpen the brief.
-  primary: { label: View portfolios, href: /portfolios }
-  secondary: { label: Read the FAQ, href: /faq }
+  eyebrow: ¿Preferís leer primero?
+  title: Mirá lo que entregamos
+  description: Recorré los casos de estudio antes de escribirnos; te va a ayudar a afinar el brief.
+  primary: { label: Ver portfolios, href: /portfolios }
+  secondary: { label: Leer las preguntas frecuentes, href: /faq }

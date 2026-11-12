@@ -1,24 +1,24 @@
 type: roi
 header:
-  eyebrow: ROI calculation
-  title: What one engagement replaces
-  description: In-house hires or AI-assisted DIY — see what a single $45k project buys back either way.
+  eyebrow: Cálculo de ROI
+  title: Lo que reemplaza un solo proyecto
+  description: Contratar un equipo interno o hacerlo vos con IA — mirá lo que te ahorra un proyecto de $45k en cualquiera de los dos casos.
 columns:
   - icon: users
-    title: Building in-house
+    title: Con equipo interno
     hours: 2000
     points:
-      - 3–4 months recruiting a senior design & engineering team
-      - ~10 months of design and engineering effort
-      - $180K–$240K a year in salaries before anything ships
-      - Management, tooling, and retention overhead on top
+      - 3–4 meses buscando un equipo senior de diseño e ingeniería
+      - ~10 meses de trabajo de diseño e ingeniería
+      - $180K–$240K al año en sueldos antes de lanzar nada
+      - Además, costos de gestión, herramientas y retención
     roi: 5
   - icon: sparkles
-    title: Building with AI
+    title: Con IA
     hours: 700
     points:
-      - ~4–5 months of prompting and polishing
-      - AI-generated output, endlessly revised
-      - Most effort burns on UI polish, not your business
-      - $45K–$65K in tooling and rework, plus your own hours
+      - ~4–5 meses de prompts y retoques
+      - Resultados generados por IA, revisados sin fin
+      - Casi todo el esfuerzo se va en pulir la UI, no en tu negocio
+      - $45K–$65K en herramientas y retrabajo, más tus propias horas
     roi: 3

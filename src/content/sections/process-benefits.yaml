@@ -1,17 +1,17 @@
 type: process
 header:
-  eyebrow: How we work
-  title: A predictable shape, every time
-  description: Three phases, weekly milestones, transparent timelines.
+  eyebrow: Cómo trabajamos
+  title: Una forma predecible, siempre
+  description: Tres fases, hitos semanales y plazos transparentes.
 discovery:
   current: 20%
   target: 67%
-  summary: Stakeholder interviews, audit, and a written brief signed off before craft begins
+  summary: Entrevistas con stakeholders, auditoría y un brief escrito aprobado antes de empezar a diseñar
 design:
   stat: 70%
-  label: Design time
-  description: Concepting, design, and production with weekly working sessions and two rounds of revision.
-delivery: { step: Hand off, duration: 1 week + 30d }
-reliability: { percent: 100, label: Discovery → written brief }
-pace: { value: 1 week + 30d, label: Average sprint }
+  label: Tiempo de diseño
+  description: Conceptualización, diseño y producción con sesiones de trabajo semanales y dos rondas de revisión.
+delivery: { step: Entrega, duration: 1 semana + 30 d }
+reliability: { percent: 100, label: Descubrimiento → brief escrito }
+pace: { value: 1 semana + 30 d, label: Sprint promedio }
 stack: [Astro, React, Tailwind, GSAP]

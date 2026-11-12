@@ -1,16 +1,16 @@
 seo:
-  title: FAQ — Frequently asked questions
-  description: Answers to the questions we hear most about working with Zypher — pricing, timelines, scope, and how engagements run.
+  title: Preguntas frecuentes — FAQ
+  description: Respuestas a lo que más nos preguntan sobre trabajar con Zypher — precios, plazos, alcance y cómo funcionan los proyectos.
 hero:
   eyebrow: FAQ
-  title: Questions, answered
-  description: Everything teams typically ask before kicking off a project. If you don't see your question here, just ask.
-  trust: Average response · 4 hours
+  title: Preguntas, respondidas
+  description: Todo lo que los equipos suelen preguntar antes de arrancar un proyecto. Si no encontrás tu pregunta, escribinos.
+  trust: Respuesta promedio · 4 horas
   background: ../../assets/images/hero-helmet-3.png
   thumbnail: ../../assets/images/hero-helmet-2.png
 cta:
-  eyebrow: Still have questions?
-  title: Talk to a real human, not a form
-  description: We answer most inquiries within four hours. If your question isn't here, send it directly.
-  primary: { label: Get in touch, href: /contact }
-  secondary: { label: See services, href: /services }
+  eyebrow: ¿Te quedaron dudas?
+  title: Hablá con una persona, no con un formulario
+  description: Respondemos la mayoría de las consultas en menos de cuatro horas. Si tu pregunta no está acá, mandala directo.
+  primary: { label: Contactanos, href: /contact }
+  secondary: { label: Ver servicios, href: /services }

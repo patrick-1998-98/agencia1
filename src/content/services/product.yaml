@@ -1,16 +1,16 @@
 order: 3
-title: Product
-summary: Product design and front-end engineering for SaaS and consumer apps.
-intro: End-to-end product work — research, flows, and pixel-honest UI, paired with a front-end team that ships it. We embed alongside in-house engineering or take the whole stack.
+title: Producto
+summary: Diseño de producto e ingeniería front-end para SaaS y apps de consumo.
+intro: Trabajo de producto de punta a punta — investigación, flujos y UI fiel al detalle, con un equipo front-end que lo lleva a producción. Nos sumamos a tu equipo de ingeniería o nos encargamos de todo el stack.
 tags: [UX, UI, Front-end]
 image: ../../assets/images/services/product.jpg
 deliverables:
-  - Discovery & UX research
-  - Flows, wireframes, prototypes
-  - Production UI design
-  - Front-end engineering
+  - Descubrimiento e investigación UX
+  - Flujos, wireframes y prototipos
+  - Diseño de UI para producción
+  - Ingeniería front-end
 process:
-  - { step: Research, description: 'Users, jobs, and signals.' }
-  - { step: Design, description: Flows to high-fidelity UI. }
-  - { step: Build, description: Front-end implementation. }
-  - { step: Iterate, description: 'Ship, measure, refine.' }
+  - { step: Investigación, description: 'Usuarios, necesidades y señales.' }
+  - { step: Diseño, description: De flujos a UI en alta fidelidad. }
+  - { step: Desarrollo, description: Implementación front-end. }
+  - { step: Iteración, description: 'Lanzar, medir, ajustar.' }

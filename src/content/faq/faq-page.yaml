@@ -1,29 +1,29 @@
 section:
-  eyebrow: FAQ
-  title: Frequently asked questions
-  description: Everything you need to know before starting a project with us.
+  eyebrow: Preguntas frecuentes
+  title: Preguntas frecuentes
+  description: Todo lo que necesitás saber antes de arrancar un proyecto con nosotros.
 groups:
-  - title: Engagement
+  - title: Cómo trabajamos
     items:
-      - question: How do projects typically start?
-        answer: Most engagements begin with a 30-minute scoping call. From there we send a written proposal within 3–5 business days outlining scope, timeline, and price.
-      - question: Do you take on retainers?
-        answer: Yes. Most clients move to a monthly retainer after the first project — it's how we do our best work, and how teams get the most predictable creative cadence.
-      - question: What does pricing look like?
-        answer: Project-based pricing typically ranges from $15k for a focused identity sprint to $120k+ for full multi-discipline campaigns. Retainers start at $9k/mo.
-  - title: Process
+      - question: ¿Cómo suele empezar un proyecto?
+        answer: La mayoría arranca con una llamada de 30 minutos para definir el alcance. Después te mandamos una propuesta escrita en 3 a 5 días hábiles, con alcance, plazos y precio.
+      - question: ¿Trabajan con abonos mensuales?
+        answer: Sí. La mayoría de los clientes pasa a un abono mensual después del primer proyecto; así hacemos nuestro mejor trabajo y los equipos logran un ritmo creativo más previsible.
+      - question: ¿Cuánto cuesta trabajar con ustedes?
+        answer: Los proyectos van desde USD 15k para un sprint de identidad acotado hasta más de USD 120k para campañas integrales multidisciplinarias. Los abonos arrancan en USD 9k por mes.
+  - title: Proceso
     items:
-      - question: Who actually does the work?
-        answer: The seniors on the pitch are the seniors on the project. We don't hand off to juniors after kickoff.
-      - question: How are revisions handled?
-        answer: Two structured rounds per major milestone. Additional rounds are quoted transparently — but they're rare when briefs are sharp.
-      - question: What's your typical timeline?
-        answer: 'Identity sprints: 4–6 weeks. Photography campaigns: 6–10 weeks. Full multi-discipline engagements: 10–14 weeks.'
-  - title: Working together
+      - question: ¿Quién hace el trabajo en realidad?
+        answer: Los seniors que conocés en la propuesta son los que trabajan en el proyecto. No le pasamos el trabajo a juniors después del kickoff.
+      - question: ¿Cómo manejan las revisiones?
+        answer: Dos rondas estructuradas por cada hito importante. Las rondas adicionales se cotizan con total transparencia, aunque son raras cuando el brief es claro.
+      - question: ¿Cuáles son los plazos habituales?
+        answer: 'Sprints de identidad: 4 a 6 semanas. Campañas fotográficas: 6 a 10 semanas. Proyectos integrales multidisciplinarios: 10 a 14 semanas.'
+  - title: Trabajar juntos
     items:
-      - question: Do you work with startups?
-        answer: Yes — though we work best with teams that have shipped a product and are ready to invest in the brand around it.
-      - question: Can you work on-site?
-        answer: We're remote-first but available for kickoffs, key shoots, and milestone reviews on-site anywhere in North America or EU.
-      - question: What does a great client look like?
-        answer: One who briefs sharply, decides quickly, and trusts craft. The best work always comes from teams who treat us like collaborators, not vendors.
+      - question: ¿Trabajan con startups?
+        answer: Sí, aunque nos va mejor con equipos que ya lanzaron un producto y están listos para invertir en la marca que lo rodea.
+      - question: ¿Pueden trabajar de forma presencial?
+        answer: Somos remotos por naturaleza, pero viajamos para kickoffs, sesiones de fotos clave y revisiones de hitos en cualquier lugar de Norteamérica o la UE.
+      - question: ¿Cómo es un cliente ideal?
+        answer: Alguien que da briefs claros, decide rápido y confía en el oficio. El mejor trabajo siempre sale de equipos que nos tratan como colaboradores, no como proveedores.

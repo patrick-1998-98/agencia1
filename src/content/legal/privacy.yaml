@@ -1,25 +1,25 @@
-seoTitle: Privacy Policy — Zypher
-seoDescription: How Zypher collects, uses, and protects your information.
-title: Privacy Policy
+seoTitle: Política de privacidad — Zypher
+seoDescription: Cómo Zypher recopila, usa y protege tu información.
+title: Política de privacidad
 updated: 2026-05-09
-intro: Your privacy matters. This policy explains what data we collect when you visit zypher.agency or hire us for a project, why we collect it, and how we keep it safe.
+intro: Tu privacidad nos importa. Esta política explica qué datos recopilamos cuando visitás zypher.agency o nos contratás para un proyecto, por qué los recopilamos y cómo los protegemos.
 sections:
-  - heading: Who we are
-    body: Zypher is a digital design & development agency based in Vancouver, BC. References to "we", "us", and "our" mean Zypher Agency.
-  - heading: What we collect
-    body: 'We collect only what we need to run the studio and respond to your project briefs:'
+  - heading: Quiénes somos
+    body: Zypher es una agencia de diseño y desarrollo digital con base en Vancouver, BC. Cuando decimos "nosotros" o "nuestro", nos referimos a Zypher Agency.
+  - heading: Qué recopilamos
+    body: 'Recopilamos solo lo necesario para operar el estudio y responder a tus briefs:'
     items:
-      - Contact details you submit through forms (name, email, company, message)
-      - Project information shared during scoping and engagement
-      - Anonymous analytics — page views, country, device type — to improve the site
-      - Cookies set by us or our partners (see Cookies Policy)
-  - heading: How we use it
-    body: We use your information to reply to your inquiries, fulfill engagements, send project updates, and keep our infrastructure secure. We do not sell or rent personal data to third parties.
-  - heading: Where it lives
-    body: Your information is stored on services we trust — our project tools, email provider, and analytics provider. All transit is encrypted (TLS 1.2+) and access is limited to the team.
-  - heading: Your rights
-    body: You can ask us to access, correct, or delete the data we hold about you at any time. Email hello@zypher.example and we'll respond within 30 days.
-  - heading: Changes
-    body: We update this policy as we evolve. The date at the top reflects the most recent revision.
-  - heading: Contact
-    body: Questions about privacy? Email hello@zypher.example.
+      - Datos de contacto que enviás a través de formularios (nombre, email, empresa, mensaje)
+      - Información del proyecto compartida durante la definición del alcance y el trabajo
+      - Analítica anónima (páginas vistas, país, tipo de dispositivo) para mejorar el sitio
+      - Cookies nuestras o de nuestros socios (ver Política de cookies)
+  - heading: Cómo la usamos
+    body: Usamos tu información para responder tus consultas, llevar adelante los proyectos, enviarte novedades y mantener segura nuestra infraestructura. No vendemos ni alquilamos datos personales a terceros.
+  - heading: Dónde se guarda
+    body: Tu información se guarda en servicios de confianza (nuestras herramientas de gestión de proyectos, el proveedor de email y el de analítica). Toda la transmisión está cifrada (TLS 1.2+) y solo el equipo tiene acceso.
+  - heading: Tus derechos
+    body: Podés pedirnos en cualquier momento acceder, corregir o eliminar los datos que tenemos sobre vos. Escribinos a hello@zypher.example y te respondemos dentro de los 30 días.
+  - heading: Cambios
+    body: Actualizamos esta política a medida que evolucionamos. La fecha de arriba indica la última revisión.
+  - heading: Contacto
+    body: ¿Tenés preguntas sobre privacidad? Escribinos a hello@zypher.example.

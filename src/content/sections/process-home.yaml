@@ -1,17 +1,17 @@
 type: process
 header:
-  eyebrow: Process
-  title: From brief to launch
-  description: Every engagement runs the same shape — discovery, craft, delivery. Predictable for you, focused for us.
+  eyebrow: Proceso
+  title: Del brief al lanzamiento
+  description: Todos los proyectos siguen la misma forma — descubrimiento, oficio y entrega. Predecible para vos, enfocado para nosotros.
 discovery:
   current: 20%
   target: 100%
-  summary: Stakeholder interviews, audits, and a written creative brief
+  summary: Entrevistas con stakeholders, auditorías y un brief creativo por escrito
 design:
   stat: 70%
-  label: design time, 30% revision time
-  description: Concepting, design, and production. Weekly milestones, two structured rounds of revision per stage.
-delivery: { step: Delivery, duration: Week 9–10 }
-reliability: { percent: 100, label: of projects start with a written brief }
-pace: { value: Week 9–10, label: Average sprint }
+  label: de diseño, 30% de revisión
+  description: Conceptualización, diseño y producción. Hitos semanales y dos rondas de revisión estructuradas por etapa.
+delivery: { step: Entrega, duration: Semana 9–10 }
+reliability: { percent: 100, label: de los proyectos arranca con un brief escrito }
+pace: { value: Semana 9–10, label: Sprint promedio }
 stack: [Astro, React, Tailwind, GSAP]
