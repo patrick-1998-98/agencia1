@@ -107,21 +107,21 @@ export const setupCodes: Record<string, string> = (() => {
 export function relativeTime(iso: string | null, now = Date.now()): string | null {
   if (!iso) return null;
   const seconds = Math.round((now - new Date(iso).getTime()) / 1000);
-  if (seconds < 60) return 'just now';
-  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
-  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  if (seconds < 60) return 'recién';
+  if (seconds < 3600) return `hace ${Math.floor(seconds / 60)} min`;
+  if (seconds < 86400) return `hace ${Math.floor(seconds / 3600)} h`;
+  return new Date(iso).toLocaleDateString('es-AR', { month: 'short', day: 'numeric' });
 }
 
 export const timestamp = (iso: string) =>
-  new Date(iso).toLocaleString('en-US', {
+  new Date(iso).toLocaleString('es-AR', {
     month: 'short',
     day: 'numeric',
     hour: 'numeric',
     minute: '2-digit',
   });
 
-const money = (n: SubmissionValue | undefined) => `$${Number(n).toLocaleString('en-US')}`;
+const money = (n: SubmissionValue | undefined) => `US$ ${Number(n).toLocaleString('es-AR')}`;
 
 export type ChipTone = 'lime' | 'rose' | 'neutral';
 
@@ -142,8 +142,8 @@ export function summarize(slug: string, data: Record<string, SubmissionValue>): 
         detail: `${s('projectType')} · ${money(data['budget'])} · ${s('timeline')}`,
         body: s('goals'),
         chip: data['qualified']
-          ? { label: 'Qualified', tone: 'lime' }
-          : { label: 'Below budget', tone: 'neutral' },
+          ? { label: 'Calificado', tone: 'lime' }
+          : { label: 'Bajo presupuesto', tone: 'neutral' },
       };
     case 'lead-routing':
       return { title: s('email'), detail: `${s('service')} → ${s('owner')}, ${s('role')}` };
@@ -157,14 +157,14 @@ export function summarize(slug: string, data: Record<string, SubmissionValue>): 
             s('budget'),
           ]
             .filter(Boolean)
-            .join(' · ') || 'General brief',
+            .join(' · ') || 'Consulta general',
         body: s('message'),
       };
     case 'client-onboarding': {
       const { clientName, ...answers } = data;
       return {
-        title: clientName ? `${String(clientName)} · onboarding` : 'Onboarding questionnaire',
-        detail: `${Object.keys(answers).length} answers`,
+        title: clientName ? `${String(clientName)} · onboarding` : 'Cuestionario de onboarding',
+        detail: `${Object.keys(answers).length} respuestas`,
         body: Object.values(answers).map(String).join(' · '),
       };
     }
@@ -172,7 +172,7 @@ export function summarize(slug: string, data: Record<string, SubmissionValue>): 
       const score = Number(data['score']);
       return {
         title: `Feedback · ${score}/5`,
-        detail: data['reviewAsked'] ? 'Asked for a public review' : 'Follow up personally',
+        detail: data['reviewAsked'] ? 'Se pidió una reseña pública' : 'Hacer seguimiento personal',
         body: s('comment'),
         chip: {
           label: `${score}/5`,
@@ -181,14 +181,31 @@ export function summarize(slug: string, data: Record<string, SubmissionValue>): 
       };
     }
     default:
-      return { title: 'Submission', body: Object.values(data).map(String).join(' · ') };
+      return { title: 'Envío', body: Object.values(data).map(String).join(' · ') };
   }
 }
 
 const FIELD_LABELS: Record<string, string> = {
-  projectType: 'Project type',
-  clientName: 'Client',
-  reviewAsked: 'Review asked',
+  projectType: 'Tipo de proyecto',
+  clientName: 'Cliente',
+  reviewAsked: 'Reseña pedida',
+  name: 'Nombre',
+  email: 'Email',
+  company: 'Empresa',
+  message: 'Mensaje',
+  services: 'Servicios',
+  budget: 'Presupuesto',
+  timeline: 'Plazo',
+  goals: 'Objetivos',
+  qualified: 'Calificado',
+  service: 'Servicio',
+  owner: 'Responsable',
+  role: 'Rol',
+  brand: 'Marca',
+  audience: 'Público',
+  assets: 'Archivos',
+  score: 'Puntaje',
+  comment: 'Comentario',
 };
 
 /** Submission as label/value rows for the ticket panel. */
@@ -199,7 +216,7 @@ export function submissionRows(data: Record<string, SubmissionValue>): [string, 
     const text =
       typeof value === 'boolean'
         ? value
-          ? 'Yes'
+          ? 'Sí'
           : 'No'
         : Array.isArray(value)
           ? value.join(', ')
@@ -249,30 +266,30 @@ export function ticketStats(tickets: Ticket[], now = Date.now()): Stat[] {
   return [
     {
       icon: 'inbox',
-      label: 'New',
+      label: 'Nuevos',
       value: String(count('new')),
-      delta: `+${createdToday} today`,
+      delta: `+${createdToday} hoy`,
       tone: createdToday ? 'lime' : 'neutral',
     },
     {
       icon: 'hourglass-half',
-      label: 'In progress',
+      label: 'En curso',
       value: String(count('in_progress')),
-      delta: 'open',
+      delta: 'abiertos',
       tone: 'neutral',
     },
     {
       icon: 'clock',
-      label: 'Waiting',
+      label: 'En espera',
       value: String(count('waiting')),
-      delta: 'on the client',
+      delta: 'del cliente',
       tone: 'neutral',
     },
     {
       icon: 'check-circle',
-      label: 'Done',
+      label: 'Listos',
       value: String(doneRecently),
-      delta: 'last 7 days',
+      delta: 'últimos 7 días',
       tone: 'neutral',
     },
   ];
@@ -286,30 +303,30 @@ export function setupStats(board: Record<string, SetupState>): Stat[] {
   return [
     {
       icon: 'play-circle',
-      label: 'Live',
+      label: 'Activos',
       value: String(count('live')),
-      delta: `of ${total}`,
+      delta: `de ${total}`,
       tone: 'lime',
     },
     {
       icon: 'flask',
-      label: 'Testing',
+      label: 'En prueba',
       value: String(count('testing')),
-      delta: `of ${total}`,
+      delta: `de ${total}`,
       tone: 'neutral',
     },
     {
       icon: 'wrench',
-      label: 'Setting up',
+      label: 'Configurando',
       value: String(count('setup')),
-      delta: `of ${total}`,
+      delta: `de ${total}`,
       tone: 'neutral',
     },
     {
       icon: 'pause-circle',
-      label: 'Paused',
+      label: 'Pausados',
       value: String(paused),
-      delta: `of ${total}`,
+      delta: `de ${total}`,
       tone: paused ? 'rose' : 'neutral',
     },
   ];

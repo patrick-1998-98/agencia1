@@ -76,7 +76,7 @@ export function initSetup(app: HTMLElement) {
     const a = automationBySlug[slug];
     if (!a || getState().board[slug]?.stage === stage) return;
     patchBoard(slug, (b) => ({ ...b, stage }));
-    announce(`${a.title} moved to ${stageLabel(stage)}.`);
+    announce(`${a.title} movido a ${stageLabel(stage)}.`);
   }
 
   function open(slug: string) {
@@ -120,8 +120,8 @@ export function initSetup(app: HTMLElement) {
   toolbar.querySelector('[data-action="reset-board"]')?.addEventListener('click', () => {
     reset('board');
     if (openSlug) draft = { ...(getState().board[openSlug]?.settings ?? {}) };
-    toast('Board reset to the sample data');
-    announce('Board reset.');
+    toast('Tablero restablecido con los datos de ejemplo');
+    announce('Tablero restablecido.');
   });
 
   panelRoot.addEventListener('change', (e) => {
@@ -144,7 +144,7 @@ export function initSetup(app: HTMLElement) {
     if (form.dataset['form'] === 'settings') {
       const settings = { ...draft };
       patchBoard(openSlug, (b) => ({ ...b, settings }));
-      toast('Saved');
+      toast('Cambios guardados');
     } else {
       const text = new FormData(form).get('note')?.toString().trim();
       if (!text) return;
@@ -152,7 +152,7 @@ export function initSetup(app: HTMLElement) {
         ...b,
         notes: [...b.notes, { text, at: new Date().toISOString() }],
       }));
-      toast('Note added');
+      toast('Nota agregada');
       document.getElementById('admin-note-input')?.focus();
     }
   });

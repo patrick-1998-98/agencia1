@@ -110,24 +110,24 @@ export function initTickets(app: HTMLElement) {
   function setStatus(id: string, status: TicketStatus, focus = false) {
     const t = getState().tickets.find((x) => x.id === id);
     if (!t || t.status === status) return;
-    const text = `Moved from ${statusLabel(t.status)} to ${statusLabel(status)}`;
+    const text = `Movido de ${statusLabel(t.status)} a ${statusLabel(status)}`;
     update((s) => ({
       ...s,
       tickets: s.tickets.map((x) => (x.id === id ? touch(x, text, { status }) : x)),
     }));
     if (focus) boardEl!.querySelector<HTMLElement>(`[data-id="${CSS.escape(id)}"]`)?.focus();
-    announce(`${t.key} moved to ${statusLabel(status)}.`);
+    announce(`${t.key} movido a ${statusLabel(status)}.`);
   }
 
   function setAssignee(id: string, assignee: string | null) {
     const t = getState().tickets.find((x) => x.id === id);
     if (!t || t.assignee === assignee) return;
-    const text = assignee ? `Assigned to ${assignee}` : 'Unassigned';
+    const text = assignee ? `Asignado a ${assignee}` : 'Sin asignar';
     update((s) => ({
       ...s,
       tickets: s.tickets.map((x) => (x.id === id ? touch(x, text, { assignee }) : x)),
     }));
-    announce(`${t.key} ${assignee ? `assigned to ${assignee}` : 'unassigned'}.`);
+    announce(`${t.key} ${assignee ? `asignado a ${assignee}` : 'sin asignar'}.`);
   }
 
   function addNote(id: string, text: string) {
@@ -140,7 +140,7 @@ export function initTickets(app: HTMLElement) {
           : x,
       ),
     }));
-    toast('Note added');
+    toast('Nota agregada');
   }
 
   function remove(id: string) {
@@ -149,7 +149,7 @@ export function initTickets(app: HTMLElement) {
     confirming = false;
     panel.close();
     update((s) => ({ ...s, tickets: s.tickets.filter((x) => x.id !== id) }));
-    if (t) toast(`${t.key} deleted`);
+    if (t) toast(`${t.key} eliminado`);
   }
 
   function open(id: string) {

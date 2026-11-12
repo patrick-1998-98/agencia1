@@ -4,9 +4,9 @@
     "lead-qualification": {
       "stage": "live",
       "settings": {
-        "Questions": "Configured",
-        "Qualified when": "Configured",
-        "Unqualified leads": "Configured"
+        "Preguntas": "Configurado",
+        "Calificado si": "Configurado",
+        "Leads no calificados": "Configurado"
       },
       "notes": [],
       "updatedAt": "2026-10-07T03:50:32.668Z"
@@ -14,13 +14,13 @@
     "instant-enquiry-replies": {
       "stage": "live",
       "settings": {
-        "Reply email": "hello@studio.example",
-        "Send from": "Configured",
-        "Include": "Configured"
+        "Email de respuesta": "hello@studio.example",
+        "Enviar desde": "Configurado",
+        "Incluir": "Configurado"
       },
       "notes": [
         {
-          "text": "Switched the reply template to the new brand voice.",
+          "text": "Cambiamos la plantilla de respuesta al nuevo tono de marca.",
           "at": "2026-10-06T23:50:32.668Z"
         }
       ],
@@ -29,9 +29,9 @@
     "lead-routing": {
       "stage": "testing",
       "settings": {
-        "Send to": "Configured",
-        "Rules": "Configured",
-        "Notify": "Configured"
+        "Enviar a": "Configurado",
+        "Reglas": "Configurado",
+        "Avisar a": "Configurado"
       },
       "notes": [],
       "updatedAt": "2026-10-07T03:50:32.668Z"
@@ -39,9 +39,9 @@
     "client-onboarding": {
       "stage": "live",
       "settings": {
-        "Welcome email": "hello@studio.example",
-        "Questionnaire": "Configured",
-        "Kickoff call": "Configured"
+        "Email de bienvenida": "hello@studio.example",
+        "Cuestionario": "Configurado",
+        "Llamada inicial": "Configurado"
       },
       "notes": [],
       "updatedAt": "2026-10-07T03:50:32.668Z"
@@ -49,13 +49,13 @@
     "follow-up-reminders": {
       "stage": "setup",
       "settings": {
-        "Proposal follow-up": "Configured",
-        "Feedback request": "",
-        "Check-in": ""
+        "Seguimiento de propuesta": "Configurado",
+        "Pedido de feedback": "",
+        "Control": ""
       },
       "notes": [
         {
-          "text": "Waiting on API keys before testing.",
+          "text": "Esperando las API keys para empezar a probar.",
           "at": "2026-10-06T23:50:32.668Z"
         }
       ],
@@ -115,11 +115,11 @@
       "key": "FUR-3",
       "slug": "follow-up-reminders",
       "status": "waiting",
-      "assignee": "Product lead",
+      "assignee": "Líder de producto",
       "stageAtCreation": "live",
       "data": {
         "score": 2,
-        "comment": "The team was brilliant and very responsive.",
+        "comment": "El equipo fue genial y respondió siempre rápido.",
         "reviewAsked": false
       },
       "createdAt": "2026-10-08T05:47:32.668Z",
@@ -128,17 +128,17 @@
         {
           "at": "2026-10-08T05:47:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-08T05:48:32.668Z",
           "type": "event",
-          "text": "Moved from New to Waiting"
+          "text": "Movido de Nuevos a En espera"
         },
         {
           "at": "2026-10-08T05:49:32.668Z",
           "type": "event",
-          "text": "Assigned to Product lead"
+          "text": "Asignado a Líder de producto"
         }
       ]
     },
@@ -147,11 +147,11 @@
       "key": "FUR-2",
       "slug": "follow-up-reminders",
       "status": "in_progress",
-      "assignee": "Web lead",
+      "assignee": "Líder web",
       "stageAtCreation": "live",
       "data": {
         "score": 4,
-        "comment": "Great work, a couple of handover docs were late.",
+        "comment": "Muy buen trabajo, aunque un par de documentos de entrega llegaron tarde.",
         "reviewAsked": true
       },
       "createdAt": "2026-10-08T05:02:32.668Z",
@@ -160,22 +160,22 @@
         {
           "at": "2026-10-08T05:02:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-08T05:18:12.668Z",
           "type": "event",
-          "text": "Moved from New to In progress"
+          "text": "Movido de Nuevos a En curso"
         },
         {
           "at": "2026-10-08T05:33:52.668Z",
           "type": "event",
-          "text": "Assigned to Web lead"
+          "text": "Asignado a Líder web"
         },
         {
           "at": "2026-10-08T05:49:32.668Z",
           "type": "note",
-          "text": "Waiting on their brand assets."
+          "text": "Esperando sus archivos de marca."
         }
       ]
     },
@@ -188,7 +188,7 @@
       "stageAtCreation": "live",
       "data": {
         "score": 5,
-        "comment": "Smooth from start to finish, thank you!",
+        "comment": "Todo fluyó de principio a fin, ¡gracias!",
         "reviewAsked": true
       },
       "createdAt": "2026-10-08T04:01:32.668Z",
@@ -197,7 +197,7 @@
         {
           "at": "2026-10-08T04:01:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         }
       ]
     },
@@ -206,13 +206,13 @@
       "key": "CO-2",
       "slug": "client-onboarding",
       "status": "in_progress",
-      "assignee": "Studio lead",
+      "assignee": "Líder de estudio",
       "stageAtCreation": "live",
       "data": {
         "clientName": "Brandt & Co",
-        "brand": "Calm, confident and a little playful.",
-        "audience": "Patagonia and Arc'teryx, but we want to feel warmer.",
-        "goals": "Launch on March 3rd for the spring campaign.",
+        "brand": "Tranquila, segura y un poco lúdica.",
+        "audience": "Patagonia y Arc'teryx, pero queremos sentirnos más cálidos.",
+        "goals": "Lanzar el 3 de marzo para la campaña de primavera.",
         "assets": "brand-guidelines.pdf"
       },
       "createdAt": "2026-10-08T02:29:32.668Z",
@@ -221,17 +221,17 @@
         {
           "at": "2026-10-08T02:29:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-08T03:08:32.668Z",
           "type": "event",
-          "text": "Moved from New to In progress"
+          "text": "Movido de Nuevos a En curso"
         },
         {
           "at": "2026-10-08T03:47:32.668Z",
           "type": "event",
-          "text": "Assigned to Studio lead"
+          "text": "Asignado a Líder de estudio"
         }
       ]
     },
@@ -240,13 +240,13 @@
       "key": "CO-1",
       "slug": "client-onboarding",
       "status": "new",
-      "assignee": "Product lead",
+      "assignee": "Líder de producto",
       "stageAtCreation": "live",
       "data": {
         "clientName": "Northwind Outdoor",
-        "brand": "We sell premium outdoor gear to people who hike most weekends.",
-        "audience": "Calm, confident and a little playful.",
-        "goals": "Patagonia and Arc'teryx, but we want to feel warmer.",
+        "brand": "Vendemos equipo outdoor premium para gente que hace trekking casi todos los fines de semana.",
+        "audience": "Tranquila, segura y un poco lúdica.",
+        "goals": "Patagonia y Arc'teryx, pero queremos sentirnos más cálidos.",
         "assets": "brand-guidelines.pdf"
       },
       "createdAt": "2026-10-08T00:02:32.668Z",
@@ -255,12 +255,12 @@
         {
           "at": "2026-10-08T00:02:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-08T00:02:32.669Z",
           "type": "event",
-          "text": "Assigned to Product lead"
+          "text": "Asignado a Líder de producto"
         }
       ]
     },
@@ -269,13 +269,13 @@
       "key": "LR-2",
       "slug": "lead-routing",
       "status": "waiting",
-      "assignee": "Web lead",
+      "assignee": "Líder web",
       "stageAtCreation": "live",
       "data": {
         "service": "Web",
         "email": "diego@kinetic.example",
-        "owner": "Web lead",
-        "role": "marketing sites"
+        "owner": "Líder web",
+        "role": "sitios de marketing"
       },
       "createdAt": "2026-10-07T14:08:32.668Z",
       "updatedAt": "2026-10-07T15:59:32.668Z",
@@ -283,12 +283,12 @@
         {
           "at": "2026-10-07T14:08:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-07T15:59:32.668Z",
           "type": "event",
-          "text": "Moved from New to Waiting"
+          "text": "Movido de Nuevos a En espera"
         }
       ]
     },
@@ -297,13 +297,13 @@
       "key": "LR-1",
       "slug": "lead-routing",
       "status": "in_progress",
-      "assignee": "Brand lead",
+      "assignee": "Líder de marca",
       "stageAtCreation": "live",
       "data": {
-        "service": "Brand",
+        "service": "Marca",
         "email": "priya@orbit.example",
-        "owner": "Brand lead",
-        "role": "identity systems"
+        "owner": "Líder de marca",
+        "role": "sistemas de identidad"
       },
       "createdAt": "2026-10-07T05:41:32.668Z",
       "updatedAt": "2026-10-07T07:43:32.668Z",
@@ -311,12 +311,12 @@
         {
           "at": "2026-10-07T05:41:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-07T07:43:32.668Z",
           "type": "event",
-          "text": "Moved from New to In progress"
+          "text": "Movido de Nuevos a En curso"
         }
       ]
     },
@@ -331,7 +331,7 @@
         "name": "Priya Nair",
         "email": "priya@orbit.example",
         "company": "Orbit Travel",
-        "message": "We loved your recent work. Are you taking on new projects next month?"
+        "message": "Nos encantó su trabajo reciente. ¿Están tomando proyectos nuevos para el mes que viene?"
       },
       "createdAt": "2026-10-06T17:54:32.668Z",
       "updatedAt": "2026-10-06T17:54:32.668Z",
@@ -339,7 +339,7 @@
         {
           "at": "2026-10-06T17:54:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         }
       ]
     },
@@ -348,13 +348,13 @@
       "key": "IER-2",
       "slug": "instant-enquiry-replies",
       "status": "in_progress",
-      "assignee": "Web lead",
+      "assignee": "Líder web",
       "stageAtCreation": "live",
       "data": {
         "name": "Sam Okoro",
         "email": "sam@atlaslabs.example",
         "company": "Atlas Labs",
-        "message": "Could you share a rough timeline and cost for a five-page marketing site?"
+        "message": "¿Nos pasan un plazo y costo aproximados para un sitio de marketing de cinco páginas?"
       },
       "createdAt": "2026-10-06T04:27:32.668Z",
       "updatedAt": "2026-10-06T06:51:32.668Z",
@@ -362,22 +362,22 @@
         {
           "at": "2026-10-06T04:27:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-06T05:15:32.668Z",
           "type": "event",
-          "text": "Moved from New to In progress"
+          "text": "Movido de Nuevos a En curso"
         },
         {
           "at": "2026-10-06T06:03:32.668Z",
           "type": "event",
-          "text": "Assigned to Web lead"
+          "text": "Asignado a Líder web"
         },
         {
           "at": "2026-10-06T06:51:32.668Z",
           "type": "note",
-          "text": "Waiting on their brand assets."
+          "text": "Esperando sus archivos de marca."
         }
       ]
     },
@@ -386,13 +386,13 @@
       "key": "IER-1",
       "slug": "instant-enquiry-replies",
       "status": "new",
-      "assignee": "Brand lead",
+      "assignee": "Líder de marca",
       "stageAtCreation": "live",
       "data": {
         "name": "Maya Chen",
         "email": "maya@bloom.example",
         "company": "Bloom & Co",
-        "message": "Hi! We're planning a rebrand for spring and would love to hear how you'd approach it."
+        "message": "¡Hola! Estamos planeando un rebranding para la primavera y nos encantaría saber cómo lo encararían."
       },
       "createdAt": "2026-10-05T13:20:32.668Z",
       "updatedAt": "2026-10-05T13:20:32.668Z",
@@ -400,12 +400,12 @@
         {
           "at": "2026-10-05T13:20:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-05T13:20:32.669Z",
           "type": "event",
-          "text": "Assigned to Brand lead"
+          "text": "Asignado a Líder de marca"
         }
       ]
     },
@@ -414,13 +414,13 @@
       "key": "LQ-3",
       "slug": "lead-qualification",
       "status": "waiting",
-      "assignee": "Product lead",
+      "assignee": "Líder de producto",
       "stageAtCreation": "live",
       "data": {
-        "projectType": "Product",
+        "projectType": "Producto",
         "budget": 70000,
-        "timeline": "3–6 months",
-        "goals": "Refresh the identity and build a launch campaign for our new range.",
+        "timeline": "3–6 meses",
+        "goals": "Renovar la identidad y armar una campaña de lanzamiento para nuestra nueva línea.",
         "name": "Maya Chen",
         "email": "maya@bloom.example",
         "qualified": true
@@ -431,17 +431,17 @@
         {
           "at": "2026-10-04T02:06:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-04T03:35:02.668Z",
           "type": "event",
-          "text": "Moved from New to Waiting"
+          "text": "Movido de Nuevos a En espera"
         },
         {
           "at": "2026-10-04T05:03:32.668Z",
           "type": "event",
-          "text": "Assigned to Product lead"
+          "text": "Asignado a Líder de producto"
         }
       ]
     },
@@ -450,13 +450,13 @@
       "key": "LQ-2",
       "slug": "lead-qualification",
       "status": "in_progress",
-      "assignee": "Web lead",
+      "assignee": "Líder web",
       "stageAtCreation": "live",
       "data": {
         "projectType": "Web",
         "budget": 25000,
-        "timeline": "This quarter",
-        "goals": "We need a new website that turns trade-show traffic into booked demos.",
+        "timeline": "Este trimestre",
+        "goals": "Necesitamos un sitio nuevo que convierta el tráfico de ferias en demos agendadas.",
         "name": "Owen Brandt",
         "email": "owen@brandt.example",
         "qualified": true
@@ -467,22 +467,22 @@
         {
           "at": "2026-10-03T04:19:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-03T05:22:12.668Z",
           "type": "event",
-          "text": "Moved from New to In progress"
+          "text": "Movido de Nuevos a En curso"
         },
         {
           "at": "2026-10-03T06:24:52.668Z",
           "type": "event",
-          "text": "Assigned to Web lead"
+          "text": "Asignado a Líder web"
         },
         {
           "at": "2026-10-03T07:27:32.668Z",
           "type": "note",
-          "text": "Waiting on their brand assets."
+          "text": "Esperando sus archivos de marca."
         }
       ]
     },
@@ -494,10 +494,10 @@
       "assignee": null,
       "stageAtCreation": "live",
       "data": {
-        "projectType": "Brand",
+        "projectType": "Marca",
         "budget": 105000,
-        "timeline": "1–3 months",
-        "goals": "Relaunch the brand before our Series A and make the site explain the product in one scroll.",
+        "timeline": "1–3 meses",
+        "goals": "Relanzar la marca antes de nuestra Serie A y que el sitio explique el producto en un solo scroll.",
         "name": "Lena Hart",
         "email": "lena@northwind.example",
         "qualified": true
@@ -508,7 +508,7 @@
         {
           "at": "2026-10-02T08:12:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         }
       ]
     },
@@ -517,13 +517,13 @@
       "key": "LR-3",
       "slug": "lead-routing",
       "status": "done",
-      "assignee": "Product lead",
+      "assignee": "Líder de producto",
       "stageAtCreation": "live",
       "data": {
-        "service": "Product",
+        "service": "Producto",
         "email": "lena@northwind.example",
-        "owner": "Product lead",
-        "role": "product design and front-end"
+        "owner": "Líder de producto",
+        "role": "diseño de producto y front-end"
       },
       "createdAt": "2026-10-07T19:05:32.668Z",
       "updatedAt": "2026-10-07T20:45:32.668Z",
@@ -531,17 +531,17 @@
         {
           "at": "2026-10-07T19:05:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-07T19:55:32.668Z",
           "type": "event",
-          "text": "Moved from New to Done"
+          "text": "Movido de Nuevos a Listos"
         },
         {
           "at": "2026-10-07T20:45:32.668Z",
           "type": "note",
-          "text": "Waiting on their brand assets."
+          "text": "Esperando sus archivos de marca."
         }
       ]
     },
@@ -550,13 +550,13 @@
       "key": "LQ-4",
       "slug": "lead-qualification",
       "status": "done",
-      "assignee": "Studio lead",
+      "assignee": "Líder de estudio",
       "stageAtCreation": "live",
       "data": {
-        "projectType": "Not sure yet",
+        "projectType": "Todavía no sé",
         "budget": 135000,
-        "timeline": "As soon as possible",
-        "goals": "Rebuild the onboarding flow; most trials drop off on day two.",
+        "timeline": "Lo antes posible",
+        "goals": "Rehacer el flujo de onboarding: la mayoría de las pruebas se cae el segundo día.",
         "name": "Sam Okoro",
         "email": "sam@atlaslabs.example",
         "qualified": true
@@ -567,17 +567,17 @@
         {
           "at": "2026-10-04T22:13:32.668Z",
           "type": "event",
-          "text": "Created from a visitor's submission"
+          "text": "Creado a partir del envío de un visitante"
         },
         {
           "at": "2026-10-04T23:36:32.668Z",
           "type": "event",
-          "text": "Moved from New to Done"
+          "text": "Movido de Nuevos a Listos"
         },
         {
           "at": "2026-10-05T00:59:32.668Z",
           "type": "event",
-          "text": "Assigned to Studio lead"
+          "text": "Asignado a Líder de estudio"
         }
       ]
     }

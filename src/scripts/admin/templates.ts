@@ -30,7 +30,7 @@ import {
   type TicketFilters,
 } from './model';
 
-export const NOTE_TEXT = 'Preview with sample data. Nothing you change here is saved.';
+export const NOTE_TEXT = 'Vista previa con datos de ejemplo. Nada de lo que cambies se guarda.';
 export const DND_HINT_ID = 'admin-dnd-hint';
 
 /* ---- Small pieces ----------------------------------------------------- */
@@ -101,7 +101,7 @@ export function navItems(active: AdminSection, filter: string, counts: Record<st
   return html`<p class="admin-nav-label">Tickets</p>
     ${item(
       '/admin/automations',
-      html`${icon('ticket-perforated')}<span>All tickets</span>`,
+      html`${icon('ticket-perforated')}<span>Todos los tickets</span>`,
       active === 'tickets' && filter === 'all',
       total,
       'all',
@@ -115,10 +115,10 @@ export function navItems(active: AdminSection, filter: string, counts: Record<st
         a.slug,
       ),
     )}
-    <p class="admin-nav-label admin-nav-label--gap">Request types</p>
+    <p class="admin-nav-label admin-nav-label--gap">Tipos de solicitud</p>
     ${item(
       '/admin/automations/setup',
-      html`${icon('layout1')}<span>Setup board</span>`,
+      html`${icon('layout1')}<span>Tablero de configuración</span>`,
       active === 'setup',
     )}`;
 }
@@ -156,7 +156,7 @@ function column<Id extends string>(
     <header class="admin-column-head">
       <span class="${cx('admin-dot', `admin-dot--${col.dot}`)}" aria-hidden="true"></span>
       <h2 class="admin-column-title" id="admin-col-${col.id}">${col.label}</h2>
-      <span class="admin-count" aria-label="${count} ${count === 1 ? 'item' : 'items'}"
+      <span class="admin-count" aria-label="${count} ${count === 1 ? 'elemento' : 'elementos'}"
         >${count}</span
       >
       ${icon(col.icon, 'admin-icon admin-column-icon')}
@@ -194,7 +194,7 @@ export function ticketCard(t: Ticket, now: number): SafeHtml {
           ${
             t.assignee
               ? html`<span class="admin-assignee">${avatar(t.assignee)}${t.assignee}</span>`
-              : html`<span class="admin-faint">Unassigned</span>`
+              : html`<span class="admin-faint">Sin asignar</span>`
           }
         </span>
         <span class="admin-faint" data-time="${t.createdAt}"
@@ -212,36 +212,36 @@ export function ticketBoard(tickets: Ticket[], total: number, now: number): Safe
       ? html`${list.map((t) => ticketCard(t, now))}`
       : empty(
           col.id === 'new' && total === 0
-            ? 'No tickets yet. Every submission on the site opens one here.'
-            : 'Drag a ticket here',
+            ? 'Todavía no hay tickets. Cada envío desde el sitio abre uno acá.'
+            : 'Arrastrá un ticket acá',
         );
     return column(col, list.length, body, true);
   })}`;
 }
 
 export const automationOptions: SelectOption[] = [
-  { value: 'all', label: 'All request types' },
+  { value: 'all', label: 'Todos los tipos' },
   ...automations.map((a) => ({ value: a.slug, label: a.title })),
 ];
 
 export const assigneeOptions: SelectOption[] = [
-  { value: 'anyone', label: 'Anyone' },
-  { value: 'none', label: 'Unassigned' },
+  { value: 'anyone', label: 'Cualquiera' },
+  { value: 'none', label: 'Sin asignar' },
   ...team.map((m) => ({ value: m.name, label: m.name })),
 ];
 
 export function ticketToolbar(f: TicketFilters): SafeHtml {
   const filtered = f.automation !== 'all' || f.assignee !== 'anyone' || f.query.trim() !== '';
-  return html`${searchField('Search tickets', 'Search tickets, names, emails…', f.query)}
-    ${select({ label: 'Request type', name: 'automation', value: f.automation, options: automationOptions })}
-    ${select({ label: 'Assignee', name: 'assignee', value: f.assignee, options: assigneeOptions })}
+  return html`${searchField('Buscar tickets', 'Buscá tickets, nombres, emails…', f.query)}
+    ${select({ label: 'Tipo de solicitud', name: 'automation', value: f.automation, options: automationOptions })}
+    ${select({ label: 'Responsable', name: 'assignee', value: f.assignee, options: assigneeOptions })}
     <button
       type="button"
       class="admin-ghost"
       data-action="clear-filters"
       ${filtered ? '' : 'hidden'}
     >
-      Clear filters
+      Limpiar filtros
     </button>`;
 }
 
@@ -285,15 +285,15 @@ export function setupCard(a: Automation, state: AdminState, now: number): SafeHt
       <span class="admin-card-stackrow"
         >${logos(a.stack)}${
           updated
-            ? html`<span class="admin-faint" data-time="${updated}" data-prefix="Updated "
-                >Updated ${relativeTime(updated, now)}</span
+            ? html`<span class="admin-faint" data-time="${updated}" data-prefix="Actualizado "
+                >Actualizado ${relativeTime(updated, now)}</span
               >`
             : ''
         }</span
       >
       <span class="admin-card-stats"
-        ><span><b>${open}</b> open ticket${open === 1 ? '' : 's'}</span
-        ><span>${week} this week</span></span
+        ><span><b>${open}</b> ${open === 1 ? 'ticket abierto' : 'tickets abiertos'}</span
+        ><span>${week} esta semana</span></span
       >
     </button>
   </li>`;
@@ -304,23 +304,23 @@ export function setupBoard(list: Automation[], state: AdminState, now: number): 
     const items = list.filter((a) => (state.board[a.slug]?.stage ?? 'backlog') === col.id);
     const body = items.length
       ? html`${items.map((a) => setupCard(a, state, now))}`
-      : empty('Drag a request type here');
+      : empty('Arrastrá un tipo de solicitud acá');
     return column(col, items.length, body, false);
   })}`;
 }
 
 export const setupSortOptions: SelectOption[] = [
-  { value: 'board', label: 'Board order' },
-  { value: 'name', label: 'Name A–Z' },
-  { value: 'recent', label: 'Recently updated' },
-  { value: 'open', label: 'Most open tickets' },
+  { value: 'board', label: 'Orden del tablero' },
+  { value: 'name', label: 'Nombre A–Z' },
+  { value: 'recent', label: 'Más recientes' },
+  { value: 'open', label: 'Más tickets abiertos' },
 ];
 
 export const setupToolbar = (query: string, sort: string) =>
-  html`${searchField('Search request types', 'Search request types', query, false)}
-    ${select({ label: 'Sort', name: 'sort', value: sort, options: setupSortOptions })}
+  html`${searchField('Buscar tipos de solicitud', 'Buscar tipos de solicitud', query, false)}
+    ${select({ label: 'Ordenar', name: 'sort', value: sort, options: setupSortOptions })}
     <button type="button" class="admin-ghost admin-ghost--end" data-action="reset-board">
-      ${icon('arrows-rotate', 'admin-icon admin-icon--lg')}Reset board
+      ${icon('arrows-rotate', 'admin-icon admin-icon--lg')}Restablecer tablero
     </button>`;
 
 /* ---- Panels ----------------------------------------------------------- */
@@ -362,20 +362,20 @@ export function ticketPanel(t: Ticket, now: number, confirming = false): SafeHtm
   const body = html`<div>
       <h2 class="admin-panel-title">${s.title}</h2>
       <p class="admin-panel-sub">
-        Opened <span data-time="${t.createdAt}">${relativeTime(t.createdAt, now)}</span> ·
+        Abierto <span data-time="${t.createdAt}">${relativeTime(t.createdAt, now)}</span> ·
         ${timestamp(t.createdAt)}
       </p>
-      ${t.stageAtCreation === 'paused' ? html`<p class="admin-panel-warn">Received while this request type was paused.</p>` : ''}
+      ${t.stageAtCreation === 'paused' ? html`<p class="admin-panel-warn">Llegó mientras este tipo de solicitud estaba pausado.</p>` : ''}
     </div>
     <dl class="admin-fields">
-      <dt>Status</dt>
+      <dt>Estado</dt>
       <dd>
-        ${select({ label: 'Status', name: 'status', value: t.status, options: statusOptions, small: true, id: 'admin-panel-status' })}
+        ${select({ label: 'Estado', name: 'status', value: t.status, options: statusOptions, small: true, id: 'admin-panel-status' })}
       </dd>
-      <dt>Assignee</dt>
+      <dt>Responsable</dt>
       <dd>
         ${select({
-          label: 'Assignee',
+          label: 'Responsable',
           name: 'assignee',
           value: t.assignee ?? 'none',
           options: assigneeOptions.slice(1),
@@ -383,20 +383,20 @@ export function ticketPanel(t: Ticket, now: number, confirming = false): SafeHtm
           id: 'admin-panel-assignee',
         })}
       </dd>
-      <dt>Request type</dt>
+      <dt>Tipo de solicitud</dt>
       <dd>${type}</dd>
     </dl>
     ${
       email
         ? html`<a
             class="admin-button"
-            href="mailto:${email}?subject=${encodeURIComponent(`Re: your enquiry [${t.key}]`)}"
-            >${icon('envelope')}Reply by email</a
+            href="mailto:${email}?subject=${encodeURIComponent(`Re: tu consulta [${t.key}]`)}"
+            >${icon('envelope')}Responder por email</a
           >`
         : ''
     }
     <section class="admin-section">
-      ${sectionTitle('file-text', 'Submission')}
+      ${sectionTitle('file-text', 'Envío')}
       <dl class="admin-rows">
         ${submissionRows(t.data).map(
           ([label, value]) =>
@@ -408,13 +408,13 @@ export function ticketPanel(t: Ticket, now: number, confirming = false): SafeHtm
       </dl>
     </section>
     <section class="admin-section">
-      ${sectionTitle('time-history', 'Activity')}
+      ${sectionTitle('time-history', 'Actividad')}
       <ol class="admin-activity">
         ${t.activity.map((a) =>
           a.type === 'note'
             ? html`<li class="admin-activity-note">
                 <p class="admin-activity-meta">
-                  ${icon('chat', 'admin-icon admin-icon--xs')} Note ·
+                  ${icon('chat', 'admin-icon admin-icon--xs')} Nota ·
                   <span data-time="${a.at}">${relativeTime(a.at, now)}</span>
                 </p>
                 <p>${a.text}</p>
@@ -426,34 +426,35 @@ export function ticketPanel(t: Ticket, now: number, confirming = false): SafeHtm
         )}
       </ol>
       <form class="admin-note-form" data-form="note">
-        <label class="sr-only" for="admin-note-input">Add a note</label>
+        <label class="sr-only" for="admin-note-input">Agregar una nota</label>
         <textarea
           id="admin-note-input"
           name="note"
           rows="2"
-          placeholder="Add a note…"
+          placeholder="Agregá una nota…"
           maxlength="2000"
         ></textarea>
-        <button type="submit" class="admin-button">Add note</button>
+        <button type="submit" class="admin-button">Agregar nota</button>
       </form>
     </section>`;
   const foot = confirming
-    ? html`<p class="admin-confirm" role="alert">Delete ${t.key} for good?</p>
+    ? html`<p class="admin-confirm" role="alert">¿Eliminar ${t.key} para siempre?</p>
         <span class="admin-actions">
-          <button type="button" class="admin-button" data-action="cancel-delete">Cancel</button>
+          <button type="button" class="admin-button" data-action="cancel-delete">Cancelar</button>
           <button
             type="button"
             class="admin-button admin-button--danger"
             data-action="confirm-delete"
           >
-            Delete ticket
+            Eliminar ticket
           </button>
         </span>`
     : html`<span class="admin-faint"
-          >Updated <span data-time="${t.updatedAt}">${relativeTime(t.updatedAt, now)}</span></span
+          >Actualizado
+          <span data-time="${t.updatedAt}">${relativeTime(t.updatedAt, now)}</span></span
         >
         <button type="button" class="admin-button admin-button--ghost-danger" data-action="delete">
-          ${icon('trash')}Delete
+          ${icon('trash')}Eliminar
         </button>`;
   return panelShell(
     `Ticket ${t.key}`,
@@ -461,7 +462,7 @@ export function ticketPanel(t: Ticket, now: number, confirming = false): SafeHtm
       ><span class="admin-tag">${type}</span>`,
     body,
     foot,
-    'Close ticket',
+    'Cerrar ticket',
   );
 }
 
@@ -470,7 +471,7 @@ function weekChart(daily: Record<string, number> | undefined, now: number): Safe
   const max = Math.max(1, ...days.map((d) => d.count));
   const total = days.reduce((sum, d) => sum + d.count, 0);
   const weekday = (key: string) =>
-    new Date(`${key}T12:00:00Z`).toLocaleDateString('en-US', {
+    new Date(`${key}T12:00:00Z`).toLocaleDateString('es-AR', {
       weekday: 'narrow',
       timeZone: 'UTC',
     });
@@ -489,7 +490,7 @@ function weekChart(daily: Record<string, number> | undefined, now: number): Safe
       )}
     </div>
     <figcaption class="admin-faint">
-      ${total} ticket${total === 1 ? '' : 's'} opened in the last 7 days (UTC).
+      ${total} ${total === 1 ? 'ticket abierto' : 'tickets abiertos'} en los últimos 7 días (UTC).
     </figcaption>
   </figure>`;
 }
@@ -508,35 +509,35 @@ export function setupPanel(
       <p class="admin-panel-lede">${a.summary}</p>
     </div>
     <dl class="admin-fields">
-      <dt>Stage</dt>
+      <dt>Etapa</dt>
       <dd>
-        ${select({ label: 'Stage', name: 'stage', value: board?.stage ?? 'backlog', options: stageOptions, small: true, id: 'admin-panel-stage' })}
+        ${select({ label: 'Etapa', name: 'stage', value: board?.stage ?? 'backlog', options: stageOptions, small: true, id: 'admin-panel-stage' })}
       </dd>
-      <dt>Component</dt>
+      <dt>Componente</dt>
       <dd class="admin-mono">&lt;${a.component} /&gt;</dd>
-      <dt>Sends to</dt>
+      <dt>Envía a</dt>
       <dd class="admin-mono">POST /api/automations/${a.slug}</dd>
-      <dt>Runs when</dt>
+      <dt>Se ejecuta</dt>
       <dd>${a.trigger}</dd>
-      <dt>Goes on</dt>
+      <dt>Dónde va</dt>
       <dd>${a.placement}</dd>
-      <dt>Tools</dt>
+      <dt>Herramientas</dt>
       <dd class="admin-tools">
         ${logos(a.stack)}<span class="admin-faint">${a.stack.join(', ')}</span>
       </dd>
     </dl>
     <section class="admin-section">
-      ${sectionTitle('chart-square', 'Tickets · last 7 days')}
+      ${sectionTitle('chart-square', 'Tickets · últimos 7 días')}
       ${weekChart(state.daily[a.slug], now)}
       <div class="admin-open-row">
-        <span><b>${open}</b> open ticket${open === 1 ? '' : 's'}</span>
+        <span><b>${open}</b> ${open === 1 ? 'ticket abierto' : 'tickets abiertos'}</span>
         <a class="admin-button" href="/admin/automations?automation=${a.slug}"
-          >${icon('ticket-perforated')}View tickets</a
+          >${icon('ticket-perforated')}Ver tickets</a
         >
       </div>
     </section>
     <section class="admin-section">
-      ${sectionTitle('wrench', 'Settings')}
+      ${sectionTitle('wrench', 'Ajustes')}
       <form class="admin-settings" data-form="settings">
         ${a.settings.map(
           (label, i) =>
@@ -547,7 +548,7 @@ export function setupPanel(
                 name="setting-${i}"
                 data-setting="${label}"
                 value="${draft[label] ?? ''}"
-                placeholder="Not set"
+                placeholder="Sin definir"
                 autocomplete="off"
               />
             </label>`,
@@ -558,14 +559,14 @@ export function setupPanel(
             class="admin-button admin-button--primary"
             ${dirty ? '' : 'disabled'}
           >
-            Save changes
+            Guardar cambios
           </button>
-          ${dirty ? html`<button type="button" class="admin-button" data-action="discard">Discard</button>` : ''}
+          ${dirty ? html`<button type="button" class="admin-button" data-action="discard">Descartar</button>` : ''}
         </span>
       </form>
     </section>
     <section class="admin-section">
-      ${sectionTitle('chat', 'Notes')}
+      ${sectionTitle('chat', 'Notas')}
       ${
         board?.notes.length
           ? html`<ol class="admin-activity">
@@ -582,23 +583,23 @@ export function setupPanel(
           : ''
       }
       <form class="admin-note-form" data-form="note">
-        <label class="sr-only" for="admin-note-input">Add a note</label>
+        <label class="sr-only" for="admin-note-input">Agregar una nota</label>
         <textarea
           id="admin-note-input"
           name="note"
           rows="2"
-          placeholder="Add a note…"
+          placeholder="Agregá una nota…"
           maxlength="2000"
         ></textarea>
-        <button type="submit" class="admin-button">Add note</button>
+        <button type="submit" class="admin-button">Agregar nota</button>
       </form>
     </section>`;
   const foot = html`<span class="admin-faint"
       >${
         board?.updatedAt
-          ? html`Updated
+          ? html`Actualizado
               <span data-time="${board.updatedAt}">${relativeTime(board.updatedAt, now)}</span>`
-          : 'Not updated yet'
+          : 'Sin cambios todavía'
       }</span
     >
     <a
@@ -606,7 +607,7 @@ export function setupPanel(
       href="https://flux-theme.online/automations/${a.slug}"
       target="_blank"
       rel="noopener noreferrer"
-      >${icon('arrow-up-right')}Live preview</a
+      >${icon('arrow-up-right')}Ver en vivo</a
     >`;
   return panelShell(
     a.title,
@@ -614,6 +615,6 @@ export function setupPanel(
       ><span class="admin-tag">${a.tag}</span>`,
     body,
     foot,
-    'Close panel',
+    'Cerrar panel',
   );
 }

@@ -31,7 +31,7 @@ Astro.csp?.insertScriptHash(`sha256-${createHash('sha256').update(bootScript).di
 const switchLink =
   section === 'setup'
     ? { href: '/admin/automations', label: 'Tickets' }
-    : { href: '/admin/automations/setup', label: 'Setup board' };
+    : { href: '/admin/automations/setup', label: 'Tablero de configuración' };
 ---
 
 <!doctype html>
@@ -48,18 +48,21 @@ const switchLink =
       crossorigin
     />
     <title>{title} · Admin</title>
-    <meta name="description" content="Sample admin demo for Zypher's website automations." />
+    <meta
+      name="description"
+      content="Demo del panel de administración de las automatizaciones del sitio de Zypher."
+    />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <meta name="theme-color" content={site.themeColor} />
   </head>
   <body class="admin">
     <a href="#main" class="admin-skip">
-      Skip to content
+      Saltar al contenido
     </a>
     <aside class="admin-sidebar">
       <div class="admin-sidebar-top">
-        <a href="/" class="admin-brand-link" aria-label="Zypher home">
+        <a href="/" class="admin-brand-link" aria-label="Inicio de Zypher">
           <span class="admin-brand">Zypher</span>
           <sup aria-hidden="true">z</sup>
         </a>
@@ -71,16 +74,16 @@ const switchLink =
       <div class="admin-sidebar-foot">
         <a href="/" class="admin-nav-item admin-back">
           <Fragment set:html={icon('arrow-left').value} />
-          <span>Back to site</span>
+          <span>Volver al sitio</span>
         </a>
       </div>
     </aside>
     <div class="admin-content">
       <header class="admin-header">
-        <nav aria-label="Breadcrumb" class="admin-crumbs">
+        <nav aria-label="Ruta de navegación" class="admin-crumbs">
           <ol>
             <li>
-              <a href="/">Site</a>
+              <a href="/">Sitio</a>
             </li>
             <li aria-current="page">
               <Fragment set:html={icon(crumbIcon).value} />
@@ -96,17 +99,17 @@ const switchLink =
         <h1 class="admin-title">{title}</h1>
         <p class="admin-note">
           <Fragment set:html={icon('info-circle').value} />
-          Preview with sample data. Nothing you change here is saved.
+          Vista previa con datos de ejemplo. Nada de lo que cambies se guarda.
         </p>
         <slot />
       </main>
     </div>
     <div id="admin-panel-root" hidden></div>
-    <div id="admin-toasts" class="admin-toasts" role="region" aria-label="Notifications"></div>
+    <div id="admin-toasts" class="admin-toasts" role="region" aria-label="Notificaciones"></div>
     <div id="admin-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <p id={DND_HINT_ID} class="sr-only">
-      Press Enter to open. To move it to another column, drag it or press Alt with the left or right
-      arrow key.
+      Presioná Enter para abrir. Para moverlo a otra columna, arrastralo o presioná Alt con la
+      flecha izquierda o derecha.
     </p>
   </body>
 </html>
