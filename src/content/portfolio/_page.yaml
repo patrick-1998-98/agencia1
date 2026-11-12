@@ -1,0 +1,33 @@
+# Copy for the /portfolios page. Projects live in the other files of this folder.
+tools:
+  label: Tools we ship with
+  items:
+    - { name: Astro, logo: astro }
+    - { name: React, logo: react }
+    - { name: Next.js, logo: nextjs }
+    - { name: Tailwind CSS, logo: tailwindcss }
+    - { name: GSAP, logo: gsap }
+    - { name: Figma, logo: figma }
+    - { name: Node.js, logo: nodejs }
+    - { name: GitHub, logo: github }
+    - { name: Netlify, logo: netlify }
+    - { name: Stripe, logo: stripe }
+    - { name: Notion, logo: notion }
+    - { name: Linear, logo: linear }
+carousel:
+  eyebrow: Case studies
+  title: Recent projects
+  description: A small slice of recent client work — open any card for the full case study.
+highlights:
+  eyebrow: Beyond the case studies
+  title: Every project ships with proof
+  description: The outcomes behind the visuals — what actually lands when an engagement wraps.
+  cards:
+    - title: Launch-ready, not just design-ready.
+      text: Every site in this portfolio shipped to production — designed, built, and live.
+    - title: Scoped and priced before we start.
+      text: Fixed scopes and milestone billing — no surprise invoices at the end.
+    - title: A senior team on every brief.
+      text: The people who shipped this work — no juniors, no handoffs to strangers.
+    - title: One partner from brief to launch.
+      text: Strategy, design, and build under one roof — the studio behind every case study above.

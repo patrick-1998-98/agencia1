@@ -1,0 +1,14 @@
+order: 2
+title: A Logo Revamp
+category: Brand
+client: Zypher
+year: 2025
+role: Identity, mark construction, motion
+description: The internet is changing. Your website should too. A first sneak peek at our portfolio revamp — leaning heavily into a modern, holographic aesthetic to match the new era of the web.
+cover:
+  image: ../../assets/images/portfolio/logo-revamp-1.png
+  video: https://cdn.dribbble.com/userupload/47524909/file/ada088b4cf17a5069cacfafa4dee95cf.mp4
+gallery:
+  - image: ../../assets/images/portfolio/logo-revamp-1.png
+  - image: ../../assets/images/portfolio/logo-revamp-2.png
+  - image: ../../assets/images/portfolio/logo-revamp-3.png

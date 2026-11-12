@@ -1,0 +1,13 @@
+order: 3
+title: Alva Commerce — Website Redesign
+category: Web
+client: Alva Commerce
+year: 2025
+role: Design system, art direction, web design
+description: "A full website redesign for Alva Commerce, delivered as part of the Hobro Digital team. Alva is a custom eCommerce development team — the previous site was content-heavy, visually inconsistent, and lacked a clear design system or strong brand expression. We reimagined the experience from the ground up: a clean typographic system, a bold but balanced color palette, and a cohesive visual language aligned with Alva's positioning."
+cover:
+  image: ../../assets/images/portfolio/alva-commerce-1.png
+  video: https://cdn.dribbble.com/userupload/46667564/file/7c54ea590990fbfc067bf77e57314509.mp4
+gallery:
+  - image: ../../assets/images/portfolio/alva-commerce-1.png
+  - image: ../../assets/images/portfolio/alva-commerce-2.png

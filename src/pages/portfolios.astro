@@ -1,0 +1,31 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import PortfolioCarousel from '@/components/sections/PortfolioCarousel.astro';
+import CtaBanner from '@/components/sections/CtaBanner.astro';
+import ToolsMarquee from '@/components/portfolio/ToolsMarquee.astro';
+import HighlightCards from '@/components/portfolio/HighlightCards.astro';
+
+const page = (await getEntry('pages', 'portfolios'))!.data;
+const tools = (await getEntry('portfolioPage', 'tools'))!.data;
+const carousel = (await getEntry('portfolioPage', 'carousel'))!.data;
+const highlights = (await getEntry('portfolioPage', 'highlights'))!.data;
+---
+
+<BaseLayout title={page.seo.title} description={page.seo.description}>
+  <PageHero {...page.hero} />
+  <ToolsMarquee label={tools.label ?? ''} items={tools.items ?? []} />
+  <PortfolioCarousel
+    eyebrow={carousel.eyebrow}
+    title={carousel.title}
+    description={carousel.description}
+  />
+  <HighlightCards
+    eyebrow={highlights.eyebrow ?? ''}
+    title={highlights.title ?? ''}
+    description={highlights.description ?? ''}
+    cards={highlights.cards ?? []}
+  />
+  {page.cta && <CtaBanner {...page.cta} />}
+</BaseLayout>

@@ -1,11 +1,174 @@
 ---
-/** STUB — replaced by the portfolio work stream (3D drag-to-rotate carousel). */
+/**
+ * "Drag to rotate" ring of case-study cards.
+ * Card positions are pure CSS (cos/sin of each card's angle + a shared
+ * --rot angle), so the ring renders correctly without JavaScript;
+ * scripts/portfolio-carousel.ts only drives --rot (pointer drag with
+ * inertia, arrow keys) and starts the intro animation.
+ */
+import { getCollection } from 'astro:content';
+import MediaFrame from '@/components/portfolio/MediaFrame.astro';
+
 interface Props {
-  eyebrow?: string;
-  title?: string;
-  description?: string;
+  eyebrow?: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 }
-const { title } = Astro.props;
+
+const { eyebrow, title, description } = Astro.props;
+
+const projects = (await getCollection('portfolio')).sort((a, b) => a.data.order - b.data.order);
+const count = projects.length;
 ---
 
-<section class="px-6 py-20 md:py-28"><div class="mx-auto max-w-6xl"><h2 class="text-3xl">{title}</h2></div></section>
+<section class="relative overflow-x-clip px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    {
+      eyebrow && (
+        <p class="mb-3 text-center text-xs tracking-eyebrow text-muted-foreground uppercase">{eyebrow}</p>
+      )
+    }
+    {
+      title && (
+        <h2 class="text-center text-3xl font-medium tracking-tight text-balance md:text-5xl">{title}</h2>
+      )
+    }
+    {
+      description && (
+        <p class="mx-auto mt-3 max-w-2xl text-center text-base text-muted-foreground md:text-lg">
+          {description}
+        </p>
+      )
+    }
+
+    <div
+      class="carousel-stage relative mt-12 select-none"
+      role="group"
+      aria-roledescription="carousel"
+      aria-label="Case studies — drag or use the arrow keys to rotate"
+      data-portfolio-carousel
+      style={{ '--count': count }}
+    >
+      <div class="carousel-ring absolute top-1/2 left-1/2" data-carousel-ring>
+        {
+          projects.map((project, index) => (
+            <a
+              href={`/portfolios/${project.id}`}
+              class="carousel-card absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
+              style={{ '--i': index, zIndex: 100 + (count - 1 - index) }}
+              draggable="false"
+            >
+              <MediaFrame
+                media={project.data.cover}
+                alt=""
+                widths={[320, 640]}
+                sizes="320px"
+                class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+              />
+              <span class="absolute top-3 left-3 z-10 text-xs font-bold text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+                {String(index + 1).padStart(3, '0')}
+              </span>
+              <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4">
+                <p class="text-[10px] tracking-label text-white/70 uppercase">{project.data.category}</p>
+                <p class="mt-1 truncate text-sm font-medium text-white">{project.data.title}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-xs tracking-eyebrow text-muted-foreground uppercase" aria-hidden="true">
+      Drag to rotate
+    </p>
+  </div>
+</section>
+
+<style>
+  @property --rot {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+  }
+  @property --scale {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0.8;
+  }
+  @property --spread {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 1;
+  }
+
+  .carousel-stage {
+    height: min(95vh, 900px);
+    perspective: 2500px;
+    container-type: size;
+    touch-action: pan-y;
+    cursor: grab;
+  }
+  .carousel-stage.is-dragging {
+    cursor: grabbing;
+  }
+  .carousel-stage.is-stepping {
+    transition: --rot 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .carousel-card {
+    /* Ring radius: 32% of the stage's shorter side (as in the original). */
+    --radius: calc(min(100cqw, 100cqh) * 0.32);
+    --angle: calc(360deg / var(--count) * var(--i) + var(--rot));
+    width: min(70vw, 320px);
+    height: min(85vh, 460px);
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%)
+      translate3d(
+        calc(var(--radius) * cos(var(--angle)) * var(--spread)),
+        calc(var(--radius) * sin(var(--angle)) * var(--spread)),
+        0
+      )
+      scale(var(--scale));
+  }
+  .carousel-card:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 4px;
+  }
+
+  /* Intro: cards pop in at the centre one by one, then fan out to the ring. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .carousel-stage:not(.is-visible) .carousel-card {
+      opacity: 0;
+      --scale: 0;
+      --spread: 0;
+    }
+    .carousel-stage.is-visible .carousel-card {
+      --pop-delay: calc((var(--count) - 1 - var(--i)) * 0.08s);
+      --spread-delay: calc((var(--count) - 1) * 0.08s + 0.7s);
+      animation:
+        card-pop 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--pop-delay) both,
+        card-spread 1.1s cubic-bezier(0.455, 0.03, 0.515, 0.955) var(--spread-delay) both;
+    }
+  }
+
+  @keyframes card-pop {
+    from {
+      opacity: 0;
+      --scale: 0;
+    }
+  }
+  @keyframes card-spread {
+    from {
+      --spread: 0;
+    }
+    to {
+      --spread: 1;
+    }
+  }
+</style>
+
+<script>
+  import { initPortfolioCarousels } from '@/components/portfolio/carousel';
+  initPortfolioCarousels();
+</script>
