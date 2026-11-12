@@ -1,0 +1,27 @@
+---
+/** Request type setup board (/admin/automations/setup), server-rendered. */
+import AdminLayout from '@/layouts/AdminLayout.astro';
+import { loadSample, setupStats, sortAutomations } from '@/scripts/admin/model';
+import { setupBoard, setupToolbar, stats } from '@/scripts/admin/templates';
+
+const now = Date.now();
+const state = loadSample(now);
+---
+
+<AdminLayout title="Request type setup" section="setup" crumbIcon="layout1" state={state}>
+  <div class="admin-app" data-admin-app="setup">
+    <div class="admin-stats" data-region="stats" set:html={stats(setupStats(state.board)).value} />
+    <div class="admin-toolbar" data-region="toolbar" set:html={setupToolbar('', 'board').value} />
+    <div
+      class="admin-board"
+      data-region="board"
+      set:html={setupBoard(sortAutomations(state, '', 'board'), state, now).value}
+    />
+  </div>
+</AdminLayout>
+
+<script>
+  import { initSetup } from '@/scripts/admin/setup';
+  const app = document.querySelector<HTMLElement>('[data-admin-app="setup"]');
+  if (app) initSetup(app);
+</script>

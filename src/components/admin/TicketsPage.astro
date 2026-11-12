@@ -1,0 +1,35 @@
+---
+/**
+ * Tickets board (shared by /admin and /admin/automations). Rendered on the
+ * server with the sample data so it shows before any JavaScript runs.
+ */
+import AdminLayout from '@/layouts/AdminLayout.astro';
+import { filterTickets, loadSample, ticketStats } from '@/scripts/admin/model';
+import { stats, ticketBoard, ticketToolbar } from '@/scripts/admin/templates';
+
+const now = Date.now();
+const state = loadSample(now);
+const filters = { automation: 'all', assignee: 'anyone', query: '' };
+---
+
+<AdminLayout title="Tickets" section="tickets" crumbIcon="ticket-perforated" state={state}>
+  <div class="admin-app" data-admin-app="tickets">
+    <div
+      class="admin-stats"
+      data-region="stats"
+      set:html={stats(ticketStats(state.tickets, now)).value}
+    />
+    <div class="admin-toolbar" data-region="toolbar" set:html={ticketToolbar(filters).value} />
+    <div
+      class="admin-board"
+      data-region="board"
+      set:html={ticketBoard(filterTickets(state.tickets, filters), state.tickets.length, now).value}
+    />
+  </div>
+</AdminLayout>
+
+<script>
+  import { initTickets } from '@/scripts/admin/tickets';
+  const app = document.querySelector<HTMLElement>('[data-admin-app="tickets"]');
+  if (app) initTickets(app);
+</script>

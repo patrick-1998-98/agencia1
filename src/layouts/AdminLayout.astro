@@ -1,0 +1,112 @@
+---
+/**
+ * Shell for the public admin demo (/admin…): sidebar, breadcrumb header and
+ * the panel / toast / live regions. No marketing header or footer, and the
+ * pages are `noindex, nofollow` (and left out of the sitemap).
+ */
+import '@/styles/global.css';
+import '@/styles/admin.css';
+import { createHash } from 'node:crypto';
+import { site } from '@/data/site';
+import { THEME_STORAGE_KEY } from '@/scripts/theme';
+import { icon } from '@/scripts/admin/icons';
+import { openCounts, type AdminState } from '@/scripts/admin/model';
+import { DND_HINT_ID, navItems, type AdminSection } from '@/scripts/admin/templates';
+
+interface Props {
+  title: string;
+  section: AdminSection;
+  /** Breadcrumb icon for the current page. */
+  crumbIcon: string;
+  state: AdminState;
+  filter?: string;
+}
+
+const { title, section, crumbIcon, state, filter = 'all' } = Astro.props;
+
+// Same theme boot as the marketing site (stored preference, no flash).
+const bootScript = `(()=>{try{document.documentElement.classList.toggle('dark',localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)})==='dark')}catch{}})();`;
+Astro.csp?.insertScriptHash(`sha256-${createHash('sha256').update(bootScript).digest('base64')}`);
+
+const switchLink =
+  section === 'setup'
+    ? { href: '/admin/automations', label: 'Tickets' }
+    : { href: '/admin/automations/setup', label: 'Setup board' };
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline set:html={bootScript} />
+    <link
+      rel="preload"
+      href="/fonts/neue-haas-grotesk-display-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>{title} · Admin</title>
+    <meta name="description" content="Sample admin demo for Zypher's website automations." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <meta name="theme-color" content={site.themeColor} />
+  </head>
+  <body class="admin">
+    <a href="#main" class="admin-skip">
+      Skip to content
+    </a>
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-top">
+        <a href="/" class="admin-brand-link" aria-label="Zypher home">
+          <span class="admin-brand">Zypher</span>
+          <sup aria-hidden="true">z</sup>
+        </a>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <nav class="admin-nav" aria-label="Admin">
+        <Fragment set:html={navItems(section, filter, openCounts(state.tickets)).value} />
+      </nav>
+      <div class="admin-sidebar-foot">
+        <a href="/" class="admin-nav-item admin-back">
+          <Fragment set:html={icon('arrow-left').value} />
+          <span>Back to site</span>
+        </a>
+      </div>
+    </aside>
+    <div class="admin-content">
+      <header class="admin-header">
+        <nav aria-label="Breadcrumb" class="admin-crumbs">
+          <ol>
+            <li>
+              <a href="/">Site</a>
+            </li>
+            <li aria-current="page">
+              <Fragment set:html={icon(crumbIcon).value} />
+              {title}
+            </li>
+          </ol>
+        </nav>
+        <a class="admin-switch" href={switchLink.href}>
+          {switchLink.label}
+        </a>
+      </header>
+      <main id="main" class="admin-main">
+        <h1 class="admin-title">{title}</h1>
+        <p class="admin-note">
+          <Fragment set:html={icon('info-circle').value} />
+          Preview with sample data. Nothing you change here is saved.
+        </p>
+        <slot />
+      </main>
+    </div>
+    <div id="admin-panel-root" hidden></div>
+    <div id="admin-toasts" class="admin-toasts" role="region" aria-label="Notifications"></div>
+    <div id="admin-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    <p id={DND_HINT_ID} class="sr-only">
+      Press Enter to open. To move it to another column, drag it or press Alt with the left or right
+      arrow key.
+    </p>
+  </body>
+</html>
