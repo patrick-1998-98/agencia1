@@ -40,7 +40,8 @@ const sections = defineCollection({
           team: z.object({
             title: z.string(),
             description: z.string(),
-            disciplines: z.array(z.string()),
+            hub: z.string(),
+            disciplines: z.array(z.object({ icon: z.string(), label: z.string() })),
           }),
           brief: z.object({
             title: z.string(),
@@ -51,15 +52,34 @@ const sections = defineCollection({
             reply: z.string(),
             plan: z.object({
               title: z.string(),
-              rows: z.array(z.object({ label: z.string(), value: z.string() })),
+              rows: z.array(
+                z.object({ label: z.string(), value: z.string(), muted: z.boolean().optional() }),
+              ),
               tags: z.array(z.string()),
               time: z.string(),
             }),
             draft: z.string(),
           }),
-          handoff: z.object({ title: z.string(), description: z.string(), kit: z.string() }),
-          code: z.object({ title: z.string(), description: z.string() }),
-          stack: z.object({ title: z.string(), description: z.string() }),
+          handoff: z.object({
+            title: z.string(),
+            description: z.string(),
+            kit: z.string(),
+            items: z.array(z.object({ icon: z.string(), label: z.string() })),
+          }),
+          code: z.object({
+            title: z.string(),
+            description: z.string(),
+            before: z.object({
+              label: z.string(),
+              items: z.array(z.object({ icon: z.string(), label: z.string() })),
+            }),
+            after: z.object({ label: z.string(), title: z.string() }),
+          }),
+          stack: z.object({
+            title: z.string(),
+            description: z.string(),
+            tools: z.array(z.object({ icon: z.string(), label: z.string() })),
+          }),
         }),
       }),
       z.object({

@@ -1,34 +1,58 @@
 type: showcase
 cells:
   team:
-    title: Un equipo, todas las disciplinas
-    description: Un solo brief se reparte entre marca, web, producto y motion — un único contacto, cero idas y vueltas entre agencias.
-    disciplines: [Marca, Web, Producto, Motion]
+    title: Un equipo, todas las áreas
+    description: 'Procesos, software y web los resuelve el mismo equipo: un único interlocutor y una visión completa de tu negocio, sin coordinar proveedores.'
+    hub: Tu empresa
+    disciplines:
+      - { icon: search, label: Diagnóstico }
+      - { icon: arrows-rotate, label: Procesos }
+      - { icon: desktop, label: Software }
+      - { icon: globe, label: Web }
   brief:
-    title: Empezá con un solo brief
-    description: 'Mandanos un brief, aunque sea un párrafo, y en un día te devolvemos un plan con alcance: equipo, plazos y precio.'
+    title: Empieza con una conversación
+    description: Cuéntanos qué te frena. Antes de proponerte nada, analizamos cómo trabaja tu empresa y te decimos qué conviene hacer, y qué no.
     studio: Zypher Studio
     status: Responde en un día
     request:
-      text: Estamos haciendo un rebranding y necesitamos un sitio nuevo antes del lanzamiento del Q3. Adjunto un alcance tentativo, ¿pueden encargarse de todo?
+      text: Llevamos los pedidos en Excel y WhatsApp, facturamos a mano y nunca sabemos bien cómo vamos. ¿Nos podéis ayudar?
       time: Mar 9:14
-    reply: 'Perfecto, esta es la propuesta que armamos:'
+    reply: 'Claro. Primero hacemos un diagnóstico; esto es lo que encontramos:'
     plan:
-      title: Plan con alcance
+      title: Diagnóstico
       rows:
-        - { label: Equipo, value: 3 seniors }
-        - { label: Plazo, value: 8–10 semanas }
-        - { label: Precio, value: $45k fijo }
-      tags: [Marca, Web, Motion]
+        - { label: Ordenar, value: Flujo de pedidos }
+        - { label: Automatizar, value: Facturación }
+        - { label: Software, value: Panel de ventas }
+        - { label: No tocar, value: Atención al cliente, muted: true }
+      tags: [Procesos, Software, Web]
       time: Mar 9:58 · mismo día
-    draft: ¡Genial! ¿Cuándo arrancamos?
+    draft: ¡Perfecto! ¿Cuándo empezamos?
   handoff:
     title: Una entrega que realmente sirve
-    description: Cada proyecto cierra con un kit completo — librerías de Figma, repos documentados y guías vivas.
+    description: 'Cada proyecto se cierra con todo documentado: procesos, manuales de uso para tu equipo, código accesible y un panel para medir resultados.'
     kit: Kit de entrega
+    items:
+      - { icon: file-text, label: Procesos y manuales }
+      - { icon: chart-square, label: Panel de métricas }
+      - { icon: code, label: Repositorio de código }
   code:
-    title: De Figma a código en producción
-    description: Nada de tirar el diseño por encima de la pared — el mismo equipo lleva cada pantalla de Figma al front-end lanzado.
+    title: Del caos al sistema en producción
+    description: El mismo equipo que analiza tus procesos los convierte en herramientas funcionando, sin intermediarios ni pérdidas por el camino.
+    before:
+      label: Antes
+      items:
+        - { icon: file-xls, label: pedidos_v3.xlsx }
+        - { icon: chat, label: WhatsApp }
+        - { icon: file-list, label: Notas sueltas }
+    after:
+      label: Después
+      title: Panel de ventas
   stack:
-    title: Se integra a tu stack
-    description: Trabajamos dentro de tus herramientas, de los archivos de diseño a los repos, para que nada se pierda en el camino.
+    title: Se integra con tus herramientas
+    description: Trabajamos con lo que ya usas (tu ERP, tu correo, tu tienda online, tus hojas de cálculo) para que nada se pierda y tu equipo no tenga que empezar de cero.
+    tools:
+      - { icon: layer-group, label: ERP }
+      - { icon: envelope, label: Correo }
+      - { icon: basket-shopping, label: Tienda online }
+      - { icon: file-xls, label: Hojas de cálculo }
