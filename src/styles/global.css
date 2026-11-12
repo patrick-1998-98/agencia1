@@ -41,7 +41,7 @@
   --card: #fff;
   --card-foreground: #0a0a0a;
   --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted-foreground: #6f6f79; /* #71717a in the original; nudged to pass WCAG AA (4.5:1) on --background and --muted */
   --border: #e4e4e7;
   --accent: #18181b;
   --accent-foreground: #fafafa;
