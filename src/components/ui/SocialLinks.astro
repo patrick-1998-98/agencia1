@@ -1,0 +1,36 @@
+---
+import { socials, type SocialLink } from '@/data/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  /** footer: on the dark footer card · hero: on top of the hero image · plain: on page background */
+  variant?: 'footer' | 'hero' | 'plain';
+  items?: SocialLink[];
+  class?: string;
+}
+
+const { variant = 'footer', items = socials, class: className } = Astro.props;
+
+const styles = {
+  footer:
+    'h-9 w-9 border-background/20 text-background/80 hover:border-background hover:bg-background hover:text-foreground',
+  hero: 'h-8 w-8 border-white/20 text-white/80 hover:bg-white/10 hover:text-white',
+  plain:
+    'h-9 w-9 border-border text-muted-foreground hover:border-foreground hover:bg-foreground hover:text-background',
+} as const;
+---
+
+<div class:list={['flex', variant === 'hero' ? 'gap-2' : 'gap-3', className]}>
+  {
+    items.map((social) => (
+      <a
+        href={social.href}
+        aria-label={social.label}
+        rel="noopener noreferrer"
+        class:list={['grid place-items-center rounded-full border transition-colors', styles[variant]]}
+      >
+        <Icon name={social.icon} class="h-4 w-4" />
+      </a>
+    ))
+  }
+</div>

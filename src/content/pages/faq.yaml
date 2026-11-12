@@ -1,0 +1,16 @@
+seo:
+  title: FAQ — Frequently asked questions
+  description: Answers to the questions we hear most about working with Zypher — pricing, timelines, scope, and how engagements run.
+hero:
+  eyebrow: FAQ
+  title: Questions, answered
+  description: Everything teams typically ask before kicking off a project. If you don't see your question here, just ask.
+  trust: Average response · 4 hours
+  background: ../../assets/images/hero-helmet-3.png
+  thumbnail: ../../assets/images/hero-helmet-2.png
+cta:
+  eyebrow: Still have questions?
+  title: Talk to a real human, not a form
+  description: We answer most inquiries within four hours. If your question isn't here, send it directly.
+  primary: { label: Get in touch, href: /contact }
+  secondary: { label: See services, href: /services }

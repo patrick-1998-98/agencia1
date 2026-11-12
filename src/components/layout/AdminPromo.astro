@@ -1,0 +1,423 @@
+---
+/**
+ * Floating card that advertises the admin dashboard demo. It plays a short
+ * CSS-only drag-and-drop loop built from five still frames, appears one
+ * second after load and stays hidden for a week once dismissed.
+ */
+const frames = ['board', 'dragging', 'over', 'dropped', 'ticket'] as const;
+
+/** Ticket position in the frames, as % of the frame (from → to column). */
+const motion = {
+  '--from-x': '23.44%',
+  '--from-y': '66.1%',
+  '--to-x': '75.31%',
+  '--to-y': '66.1%',
+  '--w': '23.75%',
+  '--h': '22.43%',
+  '--r': '20',
+};
+---
+
+<aside class="admin-promo" aria-label="Admin dashboard" data-admin-promo hidden>
+  <div class="admin-promo-card">
+    <button type="button" class="admin-promo-close" aria-label="Dismiss" data-admin-promo-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 18 18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <a href="/admin" class="admin-promo-link">
+      <span class="admin-promo-media" style={motion} data-admin-promo-media>
+        <span class="admin-promo-stage" aria-hidden="true">
+          {
+            frames.map((frame) => (
+              <img
+                alt=""
+                src={`/admin-preview/${frame}.webp`}
+                width="960"
+                height="540"
+                loading="lazy"
+                decoding="async"
+                class={`admin-promo-frame admin-promo-frame--${frame}`}
+              />
+            ))
+          }
+          <svg class="admin-promo-cursor" viewBox="0 0 17 24">
+            <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
+          </svg>
+        </span>
+      </span>
+      <span class="admin-promo-body">
+        <span class="admin-promo-badge">Admin dashboard</span>
+        <span class="admin-promo-title">A CRM built into Zypher</span>
+      </span>
+    </a>
+  </div>
+</aside>
+
+<style>
+  .admin-promo {
+    position: fixed;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    z-index: 30;
+    padding: 2px;
+    border-radius: 1rem;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.35);
+    animation: promo-in 400ms ease-out;
+  }
+  .admin-promo[hidden] {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .admin-promo {
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 60;
+    }
+  }
+  /* Metal edge: a slowly turning silver gradient behind the card. */
+  .admin-promo::before {
+    content: '';
+    position: absolute;
+    inset: -75%;
+    z-index: -1;
+    background: conic-gradient(#fafafa, #71717a, #e4e4e7, #3f3f46, #fafafa, #a1a1aa, #fafafa);
+    animation: promo-turn 8s linear infinite;
+  }
+  .admin-promo-card {
+    position: relative;
+    width: min(20rem, calc(100vw - 2rem));
+    border-radius: calc(1rem - 2px);
+    overflow: hidden;
+    background: #18181b;
+    color: #fff;
+  }
+  .admin-promo-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 999px;
+    background: rgb(0 0 0 / 0.55);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    transition: background-color 150ms;
+  }
+  .admin-promo-close:hover {
+    background: rgb(0 0 0 / 0.8);
+  }
+  .admin-promo-close svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  .admin-promo-link {
+    display: block;
+    color: inherit;
+  }
+  .admin-promo-media {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    container-type: inline-size;
+    background: #09090b;
+    --grab-x: calc(var(--from-x) + var(--w) * 0.5);
+    --grab-y: calc(var(--from-y) + var(--h) * 0.35);
+    --drop-x: calc(var(--to-x) + var(--w) * 0.5);
+    --drop-y: calc(var(--to-y) + var(--h) * 0.35);
+    --loop: 7s;
+  }
+  .admin-promo-stage {
+    position: absolute;
+    inset: 0;
+    transition: transform 500ms;
+  }
+  .admin-promo-link:hover .admin-promo-stage {
+    transform: scale(1.05);
+  }
+  .admin-promo-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  .admin-promo-frame--board {
+    opacity: 1;
+  }
+  .admin-promo-frame--ticket {
+    inset: auto;
+    left: var(--from-x);
+    top: var(--from-y);
+    width: var(--w);
+    height: auto;
+    border-radius: calc(var(--r) * 100cqw / 1280);
+    transform-origin: 50% 35%;
+  }
+  .admin-promo-cursor {
+    position: absolute;
+    left: 96%;
+    top: 104%;
+    width: 0.75rem;
+    margin: -1px 0 0 -1px;
+    overflow: visible;
+    transform-origin: 0 0;
+    filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.35));
+  }
+  .admin-promo-cursor path {
+    fill: #111;
+    stroke: #fff;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+  .is-playing .admin-promo-frame--dragging {
+    animation: promo-dragging var(--loop) infinite;
+  }
+  .is-playing .admin-promo-frame--over {
+    animation: promo-over var(--loop) infinite;
+  }
+  .is-playing .admin-promo-frame--dropped {
+    animation: promo-dropped var(--loop) infinite;
+  }
+  .is-playing .admin-promo-frame--ticket {
+    animation: promo-ticket var(--loop) infinite;
+  }
+  .is-playing .admin-promo-cursor {
+    animation: promo-cursor var(--loop) infinite;
+  }
+  .admin-promo-body {
+    display: block;
+    padding: 1rem;
+  }
+  .admin-promo-badge {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 11px;
+    line-height: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+  }
+  .admin-promo-title {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.375;
+  }
+  .admin-promo :focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+  }
+
+  /* One loop: pick the ticket up, carry it across, drop it, step back, reset. */
+  @keyframes promo-cursor {
+    0% {
+      left: 96%;
+      top: 104%;
+      transform: none;
+    }
+    16% {
+      left: var(--grab-x);
+      top: var(--grab-y);
+      transform: none;
+    }
+    18% {
+      transform: scale(0.8);
+    }
+    22% {
+      left: var(--grab-x);
+      top: var(--grab-y);
+      transform: scale(0.9);
+      animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1);
+    }
+    46% {
+      left: var(--drop-x);
+      top: var(--drop-y);
+      transform: scale(0.9);
+    }
+    50% {
+      left: var(--drop-x);
+      top: var(--drop-y);
+      transform: none;
+    }
+    62%,
+    86% {
+      left: calc(var(--drop-x) + 6%);
+      top: calc(var(--drop-y) + 10%);
+      transform: none;
+    }
+    100% {
+      left: 96%;
+      top: 104%;
+      transform: none;
+    }
+  }
+  @keyframes promo-ticket {
+    0%,
+    18% {
+      left: var(--from-x);
+      top: var(--from-y);
+      opacity: 0;
+      transform: none;
+      box-shadow: none;
+    }
+    19% {
+      left: var(--from-x);
+      top: var(--from-y);
+      opacity: 1;
+      transform: none;
+      box-shadow: none;
+    }
+    22% {
+      left: var(--from-x);
+      top: var(--from-y);
+      transform: scale(1.06) rotate(-3deg);
+      box-shadow: 0 10px 16px -6px rgb(0 0 0 / 0.35);
+      animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1);
+    }
+    46% {
+      left: var(--to-x);
+      top: var(--to-y);
+      opacity: 1;
+      transform: scale(1.06) rotate(-3deg);
+      box-shadow: 0 10px 16px -6px rgb(0 0 0 / 0.35);
+    }
+    50% {
+      left: var(--to-x);
+      top: var(--to-y);
+      opacity: 1;
+      transform: none;
+      box-shadow: none;
+    }
+    55%,
+    100% {
+      left: var(--to-x);
+      top: var(--to-y);
+      opacity: 0;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  @keyframes promo-dragging {
+    0%,
+    19% {
+      opacity: 0;
+    }
+    21%,
+    54% {
+      opacity: 1;
+    }
+    56%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes promo-over {
+    0%,
+    34% {
+      opacity: 0;
+    }
+    38%,
+    54% {
+      opacity: 1;
+    }
+    56%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes promo-dropped {
+    0%,
+    49% {
+      opacity: 0;
+    }
+    53%,
+    86% {
+      opacity: 1;
+    }
+    96%,
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes promo-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes promo-turn {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .admin-promo,
+    .admin-promo::before,
+    .is-playing .admin-promo-frame,
+    .is-playing .admin-promo-cursor {
+      animation: none;
+    }
+    .admin-promo-frame--ticket,
+    .admin-promo-cursor {
+      display: none;
+    }
+    .admin-promo-link:hover .admin-promo-stage {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'adminPromo:dismissedAt';
+  const HIDE_FOR_MS = 7 * 24 * 60 * 60 * 1000;
+  const SHOW_AFTER_MS = 1000;
+
+  const promo = document.querySelector<HTMLElement>('[data-admin-promo]');
+
+  const recentlyDismissed = () => {
+    try {
+      const at = Number(localStorage.getItem(STORAGE_KEY));
+      return Boolean(at) && Date.now() - at < HIDE_FOR_MS;
+    } catch {
+      return false;
+    }
+  };
+
+  if (promo && !recentlyDismissed()) {
+    window.setTimeout(async () => {
+      promo.hidden = false;
+      const media = promo.querySelector('[data-admin-promo-media]');
+      const images = [...promo.querySelectorAll('img')];
+      images.forEach((img) => (img.loading = 'eager'));
+      // Start the loop once every frame is decoded (or after 1.5s at the latest).
+      await Promise.race([
+        Promise.all(images.map((img) => img.decode().catch(() => undefined))),
+        new Promise((resolve) => window.setTimeout(resolve, 1500)),
+      ]);
+      media?.classList.add('is-playing');
+    }, SHOW_AFTER_MS);
+
+    promo.querySelector('[data-admin-promo-close]')?.addEventListener('click', () => {
+      promo.hidden = true;
+      try {
+        localStorage.setItem(STORAGE_KEY, String(Date.now()));
+      } catch {
+        // ignore unavailable storage
+      }
+    });
+  }
+</script>

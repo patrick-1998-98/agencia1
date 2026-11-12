@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  page: CollectionEntry<'legal'>['data'];
+}
+
+const { page } = Astro.props;
+const updated = page.updated.toISOString().slice(0, 10);
+---
+
+<article class="px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-3xl">
+    <header class="mb-12">
+      <p class="text-xs tracking-eyebrow text-muted-foreground uppercase">
+        Last updated · <time datetime={updated}>{updated}</time>
+      </p>
+      <h1 class="mt-4 text-4xl font-medium tracking-tight text-balance md:text-6xl">{page.title}</h1>
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+        {page.intro}
+      </p>
+    </header>
+
+    <div class="space-y-12">
+      {
+        page.sections.map((section) => (
+          <section data-reveal data-reveal-y="20">
+            <h2 class="text-xl font-medium tracking-tight md:text-2xl">{section.heading}</h2>
+            {section.body && (
+              <p class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                {section.body}
+              </p>
+            )}
+            {section.items && (
+              <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+                {section.items.map((item) => (
+                  <li class="flex gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</article>

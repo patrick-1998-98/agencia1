@@ -1,0 +1,83 @@
+---
+import { footerNav, legalNav, site, socials } from '@/data/site';
+import SocialLinks from '@/components/ui/SocialLinks.astro';
+---
+
+<footer class="px-4 pt-20 pb-4 md:pt-32">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-foreground text-background">
+    <div class="grid gap-10 px-8 pt-12 pb-0 md:grid-cols-[1.4fr_repeat(2,1fr)] md:gap-12 md:px-14 md:pt-16">
+      <div class="space-y-5">
+        <p class="text-xs tracking-eyebrow text-background/50 uppercase">Email</p>
+        <a
+          href={`mailto:${site.email}`}
+          class="block text-xl font-medium tracking-tight transition-opacity hover:opacity-70 md:text-2xl"
+        >
+          {site.email}
+        </a>
+      </div>
+
+      {
+        footerNav.map((group) => (
+          <div class="space-y-4">
+            <p class="text-xs tracking-eyebrow text-background/50 uppercase">{group.title}</p>
+            <ul class="space-y-2 text-sm">
+              {group.links.map((link) => (
+                <li>
+                  <a href={link.href} class="text-background/85 transition-colors hover:text-background">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      <div class="space-y-4">
+        <p class="text-xs tracking-eyebrow text-background/50 uppercase">Social</p>
+        <ul class="space-y-2 text-sm">
+          {
+            socials.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  rel="noopener noreferrer"
+                  class="text-background/85 transition-colors hover:text-background"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="px-8 pb-6 md:px-14">
+      <SocialLinks variant="footer" />
+    </div>
+
+    <div class="px-8 pb-2 md:px-14" aria-hidden="true">
+      <p
+        class="block max-w-full truncate text-[16vw] leading-none font-semibold tracking-tight select-none md:text-[13vw]"
+      >
+        ZYPHER<span class="text-background/40">®</span>
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col items-start justify-between gap-3 border-t border-background/10 px-8 py-5 text-xs text-background/60 md:flex-row md:items-center md:px-14"
+    >
+      <nav aria-label="Legal" class="flex flex-wrap gap-5">
+        {
+          legalNav.map((link) => (
+            <a href={link.href} class="transition-colors hover:text-background">
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+      <p>© {site.copyrightYear} {site.name}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

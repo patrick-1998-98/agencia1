@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LegalArticle from '@/components/legal/LegalArticle.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('legal');
+  return pages.map((page) => ({ params: { legal: page.id }, props: { page: page.data } }));
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.seoTitle} description={page.seoDescription}>
+  <LegalArticle page={page} />
+</BaseLayout>

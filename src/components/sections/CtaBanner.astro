@@ -1,0 +1,53 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+
+export interface CtaLink {
+  label: string;
+  href: string;
+}
+
+export interface CtaBannerProps {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primary: CtaLink;
+  secondary: CtaLink;
+}
+
+type Props = CtaBannerProps;
+
+const { eyebrow, title, description, primary, secondary } = Astro.props;
+---
+
+<section class="px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <div
+      class="relative overflow-hidden rounded-[2.5rem] bg-foreground px-8 py-16 text-background md:px-16 md:py-24"
+      data-reveal
+    >
+      <div class="hero-grain absolute inset-0 opacity-30"></div>
+      <div class="relative flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-xl">
+          <p class="text-xs tracking-eyebrow text-background/60 uppercase">{eyebrow}</p>
+          <h2 class="mt-4 text-3xl font-medium tracking-tight text-balance md:text-5xl">{title}</h2>
+          <p class="mt-4 max-w-md text-sm text-background/70 md:text-base">{description}</p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a
+            href={primary.href}
+            class="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5"
+          >
+            {primary.label}
+            <Icon name="arrow-up-right" class="h-4 w-4" />
+          </a>
+          <a
+            href={secondary.href}
+            class="inline-flex items-center gap-2 rounded-full border border-background/30 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
+          >
+            {secondary.label}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

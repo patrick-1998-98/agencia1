@@ -1,0 +1,16 @@
+seo:
+  title: Contact — Start a project with Zypher
+  description: Tell us about your project. We answer most inquiries within four hours and kick off most engagements within four weeks.
+hero:
+  eyebrow: Contact
+  title: Let's start something
+  description: Tell us about your project. Even rough briefs are welcome — we'd rather hear early than late.
+  trust: Average response · 4 hours
+  background: ../../assets/images/hero-helmet-1.png
+  thumbnail: ../../assets/images/hero-helmet-2.png
+cta:
+  eyebrow: Prefer to read first?
+  title: See what we've shipped
+  description: Browse the case studies before you write — it'll sharpen the brief.
+  primary: { label: View portfolios, href: /portfolios }
+  secondary: { label: Read the FAQ, href: /faq }

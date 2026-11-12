@@ -1,0 +1,54 @@
+---
+/**
+ * Standard page section: optional pill eyebrow, h2 title and lead paragraph,
+ * followed by the slot content.
+ */
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  align?: 'center' | 'left' | 'right';
+  class?: string;
+  containerClass?: string;
+}
+
+const {
+  id,
+  eyebrow,
+  title,
+  description,
+  align = 'center',
+  class: className,
+  containerClass = 'max-w-6xl',
+} = Astro.props;
+
+const alignment = {
+  center: 'items-center text-center',
+  left: 'items-start text-left',
+  right: 'items-end text-right',
+}[align];
+---
+
+<section id={id} class:list={['relative px-6 py-20 md:py-28', className]}>
+  <div class:list={['mx-auto', containerClass]}>
+    {
+      (eyebrow || title || description) && (
+        <div class:list={['mb-12 flex flex-col gap-4', alignment]}>
+          {eyebrow && (
+            <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+              {eyebrow}
+            </span>
+          )}
+          {title && (
+            <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">{title}</h2>
+          )}
+          {description && (
+            <p class="max-w-2xl text-base text-muted-foreground md:text-lg">{description}</p>
+          )}
+        </div>
+      )
+    }
+    <slot />
+  </div>
+</section>

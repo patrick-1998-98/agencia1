@@ -1,0 +1,16 @@
+seo:
+  title: Portfolios — Selected work
+  description: Selected projects from Zypher — a digital design & development agency building product sites, web apps, and design systems for ambitious teams.
+hero:
+  eyebrow: Portfolios
+  title: Selected work, 2018 — present
+  description: A curated set of digital projects spanning product sites, web apps, and design systems.
+  trust: 60 brands · 14 cities
+  background: ../../assets/images/hero-helmet-1.png
+  thumbnail: ../../assets/images/hero-helmet-3.png
+cta:
+  eyebrow: New work, every season
+  title: Want to be the next case study?
+  description: We pick a small number of clients each quarter. If you've got a brief, we'd love to read it.
+  primary: { label: Start a project, href: /contact }
+  secondary: { label: See services, href: /services }

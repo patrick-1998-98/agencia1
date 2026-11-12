@@ -1,0 +1,16 @@
+seo:
+  title: Services — Brand, Web, Product
+  description: Zypher's services — brand systems, marketing sites, and product design & front-end engineering for ambitious teams.
+hero:
+  eyebrow: Services
+  title: Digital services, end to end
+  description: 'From discovery to shipped product — every engagement runs on the same shape: brief, design, build, launch.'
+  trust: Three core practices
+  background: ../../assets/images/hero-helmet-3.png
+  thumbnail: ../../assets/images/hero-helmet-1.png
+cta:
+  eyebrow: Ready when you are
+  title: Let's scope your next project
+  description: Most projects kick off within four weeks. Send a brief — even a rough one — and we'll respond within a day.
+  primary: { label: Send a brief, href: /contact }
+  secondary: { label: See our work, href: /portfolios }

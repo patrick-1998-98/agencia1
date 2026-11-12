@@ -1,0 +1,37 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<button
+  type="button"
+  aria-label="Toggle theme"
+  aria-pressed="false"
+  data-theme-toggle
+  class:list={[
+    'grid h-9 w-9 place-items-center rounded-full border border-border bg-card text-foreground hover:bg-muted',
+    className,
+  ]}
+>
+  <Icon name="moon" class="h-4 w-4 dark:hidden" />
+  <Icon name="sun" class="hidden h-4 w-4 dark:block" />
+</button>
+
+<script>
+  import { setTheme, isDark } from '@/scripts/theme';
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]')) {
+    button.setAttribute('aria-pressed', String(isDark()));
+    button.addEventListener('click', () => {
+      setTheme(isDark() ? 'light' : 'dark');
+      document
+        .querySelectorAll('[data-theme-toggle]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(isDark())));
+    });
+  }
+</script>

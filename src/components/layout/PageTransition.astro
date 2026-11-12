@@ -1,0 +1,75 @@
+---
+/**
+ * Full-screen "ZYPHER®" curtain between pages.
+ * - Enter: pure CSS (the curtain lifts on load), so a failed script can never
+ *   leave the page covered. Only active when the inline head script has
+ *   added the `js` class to <html>.
+ * - Leave: scripts/page-transition.ts drops the curtain before navigating to
+ *   another internal page.
+ */
+---
+
+<div class="page-curtain pointer-events-none fixed inset-0 z-[100] grid place-items-center bg-foreground" aria-hidden="true">
+  <span class="text-[18vw] leading-none font-semibold tracking-tight text-background md:text-[14vw]">
+    ZYPHER<span class="text-background/40">®</span>
+  </span>
+</div>
+
+<style>
+  .page-curtain {
+    transform: translateY(-100%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .page-curtain {
+      animation: curtain-lift 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both;
+    }
+    :global(.js) :global(.page-content) {
+      animation: content-in 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s both;
+    }
+    :global(.is-leaving) .page-curtain {
+      animation: curtain-drop 0.6s cubic-bezier(0.76, 0, 0.24, 1) 0.2s both;
+    }
+    :global(.is-leaving) :global(.page-content) {
+      animation: content-out 0.45s cubic-bezier(0.76, 0, 0.24, 1) both;
+    }
+  }
+
+  @keyframes curtain-lift {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes curtain-drop {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes content-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes content-out {
+    to {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+  }
+</style>
+
+<script>
+  import { initPageTransitions } from '@/scripts/page-transition';
+  initPageTransitions();
+</script>

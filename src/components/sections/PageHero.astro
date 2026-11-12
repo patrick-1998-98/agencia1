@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import SocialLinks from '@/components/ui/SocialLinks.astro';
+import { socials } from '@/data/site';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  trust: string;
+  background: ImageMetadata;
+  /** Small square image bottom-left (inner pages). Omit for the home layout. */
+  thumbnail?: ImageMetadata | undefined;
+}
+
+const { eyebrow, title, description, trust, background, thumbnail } = Astro.props;
+const isHome = !thumbnail;
+const heroSocials = socials.filter((s) => s.icon !== 'globe');
+const corner = 'absolute h-5 w-5 border-white/40';
+---
+
+<div class="px-4 pt-4">
+  <div class="hero relative mx-auto max-w-360 overflow-hidden rounded-[2.5rem] bg-hero-bg">
+    <div class:list={['absolute inset-0', !isHome && 'hero-bg']}>
+      <Image
+        src={background}
+        alt=""
+        widths={[640, 960, 1376]}
+        sizes="(min-width: 1440px) 1408px, calc(100vw - 2rem)"
+        loading="eager"
+        fetchpriority="high"
+        class="block h-full w-full object-cover"
+      />
+      <div class="hero-grain absolute inset-0 mix-blend-overlay"></div>
+      <div
+        class:list={[
+          'absolute inset-0 bg-linear-to-b via-transparent',
+          isHome ? 'from-black/15 to-black/35' : 'from-black/10 to-black/30',
+        ]}
+      >
+      </div>
+    </div>
+
+    <div class="relative grid min-h-[640px] grid-rows-[auto_1fr_auto] gap-10 p-8 md:min-h-[720px] md:p-14">
+      <span class={`${corner} top-6 left-6 rounded-tl border-t border-l`}></span>
+      <span class={`${corner} top-6 right-6 rounded-tr border-t border-r`}></span>
+      <span class={`${corner} bottom-6 left-6 rounded-bl border-b border-l`}></span>
+      <span class={`${corner} right-6 bottom-6 rounded-br border-r border-b`}></span>
+
+      <div class="relative z-10 max-w-2xl pt-12 md:pt-20">
+        <div class="hero-eyebrow flex items-center gap-2 text-white/80">
+          <span class="h-1.5 w-1.5 rounded-full bg-white/80"></span>
+          <span class="text-xs tracking-eyebrow uppercase">{eyebrow}</span>
+        </div>
+        <h1
+          class="hero-title mt-4 text-4xl leading-[1.05] font-medium text-balance text-white md:text-6xl lg:text-7xl"
+        >
+          {title}
+        </h1>
+      </div>
+
+      <div
+        class:list={[
+          'relative z-10 mt-auto flex flex-col items-start',
+          isHome
+            ? 'gap-4 md:ml-auto md:items-end md:text-right'
+            : 'justify-between gap-10 md:flex-row md:items-end',
+        ]}
+      >
+        {
+          thumbnail && (
+            <div class="hero-thumb relative">
+              <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
+                <Image
+                  src={thumbnail}
+                  alt=""
+                  width={288}
+                  height={288}
+                  densities={[1, 2]}
+                  class="block h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          )
+        }
+        <div class:list={[!isHome && 'flex flex-col items-start gap-4 md:items-end md:text-right', isHome && 'contents']}>
+          <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base">
+            {description}
+          </p>
+          <div class="hero-trust flex items-center gap-4">
+            <span class="text-sm text-white/85">{trust}</span>
+            <SocialLinks variant="hero" items={heroSocials} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Entrance sequence (matches the original GSAP timeline). */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-eyebrow {
+      animation: hero-rise 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s both;
+      --rise: 18px;
+    }
+    .hero-title {
+      animation: hero-rise 0.95s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s both;
+      --rise: 28px;
+    }
+    .hero-description {
+      animation: hero-rise 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s both;
+      --rise: 18px;
+    }
+    .hero-trust {
+      animation: hero-rise 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 1.15s both;
+      --rise: 14px;
+    }
+    .hero-thumb {
+      animation: hero-pop 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) 1.05s both;
+    }
+    .hero-bg {
+      animation: hero-bg-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(var(--rise));
+    }
+  }
+  @keyframes hero-pop {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+  }
+  @keyframes hero-bg-in {
+    from {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+  }
+</style>
