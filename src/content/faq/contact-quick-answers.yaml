@@ -1,0 +1,13 @@
+section:
+  eyebrow: Before you ask
+  title: Quick answers
+  description: The three questions we hear most before a project kicks off.
+groups:
+  - title: Quick answers
+    items:
+      - question: How fast can you start?
+        answer: Most engagements kick off within four weeks of the first call. For sprints, two weeks is usually possible.
+      - question: Do you sign NDAs?
+        answer: Yes — we sign mutual NDAs as a matter of course before any sensitive scoping begins.
+      - question: Where are you based?
+        answer: San Francisco, but the team works remote-first across North America and EU.

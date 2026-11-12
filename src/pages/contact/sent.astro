@@ -1,0 +1,69 @@
+---
+/**
+ * Landing page for no-JS contact form posts (303 from /api/contact).
+ * Rendered on demand so it can show the ticket or the error; never indexed.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { buttonPrimary, buttonSecondary } from '@/components/contact/ui';
+import { TICKET_PATTERN } from '@/lib/contact/ticket';
+
+export const prerender = false;
+
+const params = Astro.url.searchParams;
+const rawTicket = params.get('ticket') ?? '';
+const ticket = TICKET_PATTERN.test(rawTicket) ? rawTicket : null;
+const flow = params.get('flow');
+const error = params.get('error');
+
+const ERRORS: Record<string, string> = {
+  invalid: 'Some fields were missing or invalid. Please go back and check the form.',
+  'rate-limited': 'Too many messages in a short time. Please try again in a few minutes.',
+  verification: 'We could not verify the submission. Please enable JavaScript and try again.',
+};
+const ok = Boolean(ticket) && !error;
+const title = ok ? (flow === 'brief' ? 'Brief received' : 'Message sent') : 'Something went wrong';
+const description = ok
+  ? "Thanks — a person on the team will reply within one working day."
+  : ((error && ERRORS[error]) ?? 'Something went wrong. Please try again.');
+
+Astro.response.headers.set('Cache-Control', 'no-store');
+if (!ok) Astro.response.status = 400;
+---
+
+<BaseLayout title={`${title} — Zypher`} description="Contact form status." noindex>
+  <section class="px-6 pt-40 pb-28">
+    <div class="mx-auto max-w-xl rounded-3xl border border-border bg-card p-6 md:p-10">
+      <div class="flex flex-col items-start gap-3" role={ok ? 'status' : 'alert'}>
+        {
+          ok && (
+            <span class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1 text-xs text-background">
+                <span class="size-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                Sent
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+                Ticket <span class="font-mono text-foreground">{ticket}</span>
+              </span>
+            </span>
+          )
+        }
+        <h1 class="text-2xl font-medium tracking-tight">{title}</h1>
+        <p class="max-w-md text-sm text-muted-foreground">{description}</p>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <a href={ok ? '/' : '/contact#contact'} class={buttonPrimary}>
+            <span class="px-1">{ok ? 'Back to home' : 'Back to the form'}</span>
+            <Icon name="arrow-up-right" class="size-5 shrink-0" />
+          </a>
+          {
+            ok && (
+              <a href="/portfolios" class={buttonSecondary}>
+                <span class="px-1">See our work</span>
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

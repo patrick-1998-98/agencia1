@@ -1,0 +1,102 @@
+---
+/**
+ * "Pick your way in": tabbed contact flows + studio card.
+ * Without JS the tab bar is hidden and all three forms are shown stacked,
+ * each posting to /api/contact as a regular form.
+ */
+import { getEntry } from 'astro:content';
+import Section from '@/components/ui/Section.astro';
+import ProjectPlanner from './ProjectPlanner.astro';
+import SpecialistForm from './SpecialistForm.astro';
+import BriefForm from './BriefForm.astro';
+import StudioCard from './StudioCard.astro';
+
+const entry = await getEntry('contact', 'contact');
+if (!entry) throw new Error('Missing src/content/contact/contact.yaml');
+const data = entry.data;
+---
+
+<Section id="contact" eyebrow={data.section.eyebrow} title={data.section.title} description={data.section.description} align="left">
+  <div class="grid gap-10 md:grid-cols-[1.4fr_1fr]" data-reveal>
+    <div class="min-w-0" data-contact-root>
+      <div
+        role="tablist"
+        aria-label="How would you like to start?"
+        class="js-only grid w-full grid-cols-3 gap-1 rounded-full border border-border bg-card p-1 sm:inline-grid sm:w-auto"
+      >
+        {
+          data.tabs.map((tab, i) => (
+            <button
+              type="button"
+              role="tab"
+              id={`contact-tab-${tab.id}`}
+              aria-controls={`contact-panel-${tab.id}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              tabindex={i === 0 ? 0 : -1}
+              class="cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground aria-selected:bg-foreground aria-selected:text-background aria-selected:hover:text-background"
+            >
+              <span class="sm:hidden">{tab.shortLabel}</span>
+              <span class="hidden sm:inline">{tab.label}</span>
+            </button>
+          ))
+        }
+      </div>
+      {
+        data.tabs.map((tab, i) => (
+          <div
+            role="tabpanel"
+            id={`contact-panel-${tab.id}`}
+            aria-labelledby={`contact-tab-${tab.id}`}
+            class="contact-panel mt-6"
+            data-active={i === 0 ? '' : undefined}
+          >
+            <h3 class="no-js-only mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">{tab.label}</h3>
+            {tab.id === 'project' && <ProjectPlanner config={data.project} />}
+            {tab.id === 'specialist' && <SpecialistForm config={data.specialist} />}
+            {tab.id === 'brief' && <BriefForm config={data.brief} />}
+          </div>
+        ))
+      }
+    </div>
+    <StudioCard studio={data.studio} />
+  </div>
+</Section>
+
+<style is:global>
+  /* Progressive enhancement switches for the contact flows. */
+  html:not(.js) .js-only,
+  html.js .no-js-only {
+    display: none !important;
+  }
+  html.js .contact-panel:not([data-active]) {
+    display: none;
+  }
+  .planner-step {
+    min-width: 0;
+  }
+  html.js .planner-step:not([data-current]) {
+    display: none;
+  }
+  html.js [data-contact-form]:not([data-last-step]) .planner-submit {
+    display: none;
+  }
+  /* Budget slider: native range is the real control; JS paints the visual. */
+  .budget-input {
+    appearance: none;
+    background: transparent;
+    opacity: 0;
+  }
+  html:not(.js) .budget-input {
+    appearance: auto;
+    accent-color: var(--color-foreground);
+    opacity: 1;
+  }
+  html:not(.js) .budget-visual {
+    display: none;
+  }
+</style>
+
+<script>
+  import { initContact } from './contact-client';
+  initContact();
+</script>

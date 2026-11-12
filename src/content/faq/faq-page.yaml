@@ -1,0 +1,29 @@
+section:
+  eyebrow: FAQ
+  title: Frequently asked questions
+  description: Everything you need to know before starting a project with us.
+groups:
+  - title: Engagement
+    items:
+      - question: How do projects typically start?
+        answer: Most engagements begin with a 30-minute scoping call. From there we send a written proposal within 3–5 business days outlining scope, timeline, and price.
+      - question: Do you take on retainers?
+        answer: Yes. Most clients move to a monthly retainer after the first project — it's how we do our best work, and how teams get the most predictable creative cadence.
+      - question: What does pricing look like?
+        answer: Project-based pricing typically ranges from $15k for a focused identity sprint to $120k+ for full multi-discipline campaigns. Retainers start at $9k/mo.
+  - title: Process
+    items:
+      - question: Who actually does the work?
+        answer: The seniors on the pitch are the seniors on the project. We don't hand off to juniors after kickoff.
+      - question: How are revisions handled?
+        answer: Two structured rounds per major milestone. Additional rounds are quoted transparently — but they're rare when briefs are sharp.
+      - question: What's your typical timeline?
+        answer: 'Identity sprints: 4–6 weeks. Photography campaigns: 6–10 weeks. Full multi-discipline engagements: 10–14 weeks.'
+  - title: Working together
+    items:
+      - question: Do you work with startups?
+        answer: Yes — though we work best with teams that have shipped a product and are ready to invest in the brand around it.
+      - question: Can you work on-site?
+        answer: We're remote-first but available for kickoffs, key shoots, and milestone reviews on-site anywhere in North America or EU.
+      - question: What does a great client look like?
+        answer: One who briefs sharply, decides quickly, and trusts craft. The best work always comes from teams who treat us like collaborators, not vendors.

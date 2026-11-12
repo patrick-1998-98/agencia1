@@ -1,0 +1,22 @@
+---
+/**
+ * Hidden plumbing shared by every contact form: the flow discriminator, a
+ * honeypot field bots tend to fill, the render timestamp (set by JS) and the
+ * slot where the Turnstile widget is mounted on first interaction.
+ */
+interface Props {
+  flow: 'project' | 'specialist' | 'brief';
+}
+
+const { flow } = Astro.props;
+---
+
+<input type="hidden" name="flow" value={flow} />
+<input type="hidden" name="_t" value="" data-contact-time />
+<div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+  <label>
+    Leave this field empty
+    <input type="text" name="website" tabindex="-1" autocomplete="off" value="" />
+  </label>
+</div>
+<div data-turnstile class="empty:hidden"></div>

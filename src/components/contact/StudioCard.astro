@@ -1,0 +1,40 @@
+---
+/** Contact page aside: studio details and social links. */
+import type { CollectionEntry } from 'astro:content';
+import Icon from '@/components/ui/Icon.astro';
+import SocialLinks from '@/components/ui/SocialLinks.astro';
+
+interface Props {
+  studio: CollectionEntry<'contact'>['data']['studio'];
+}
+
+const { studio } = Astro.props;
+---
+
+<aside class="flex flex-col gap-6 rounded-3xl border border-border bg-card p-6 md:p-10" aria-labelledby="studio-title">
+  <h3 id="studio-title" class="text-xs tracking-[0.18em] text-muted-foreground uppercase">{studio.title}</h3>
+  <ul class="space-y-5">
+    {
+      studio.items.map((item) => {
+        const Tag = item.href ? 'a' : 'div';
+        return (
+          <li>
+            <Tag href={item.href} class:list={['flex items-start gap-3', item.href && 'transition-colors hover:text-foreground']}>
+              <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border">
+                <Icon name={item.icon} class="h-4 w-4" />
+              </span>
+              <span class="block">
+                <span class="block text-xs tracking-[0.16em] text-muted-foreground uppercase">{item.label}</span>
+                <span class="mt-1 block text-sm whitespace-pre-line">{item.value}</span>
+              </span>
+            </Tag>
+          </li>
+        );
+      })
+    }
+  </ul>
+  <div class="mt-auto border-t border-border pt-5">
+    <p class="mb-3 text-xs tracking-[0.16em] text-muted-foreground uppercase">Follow</p>
+    <SocialLinks variant="plain" class="gap-2!" />
+  </div>
+</aside>

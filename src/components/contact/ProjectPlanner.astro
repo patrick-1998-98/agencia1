@@ -1,0 +1,187 @@
+---
+/**
+ * "Start a project": 4-step planner. It is a real <form>; without JS all
+ * steps are shown at once and it posts to /api/contact like a normal form.
+ */
+import type { CollectionEntry } from 'astro:content';
+import Icon from '@/components/ui/Icon.astro';
+import FormMeta from './FormMeta.astro';
+import RadioCard from './RadioCard.astro';
+import SuccessCard from './SuccessCard.astro';
+import { buttonPrimary, buttonSecondary, card, errorText, eyebrow, fieldControl, fieldLabel, fieldShell, stepTitle } from './ui';
+
+interface Props {
+  config: CollectionEntry<'contact'>['data']['project'];
+}
+
+const { config } = Astro.props;
+const { budget } = config;
+const steps = ['What are you planning?', "What's your budget?", 'When do you want to start?', 'Tell us about the project'];
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const pct = ((budget.initial - budget.min) / (budget.max - budget.min)) * 100;
+---
+
+<div
+  class:list={['contact-flow w-full', card]}
+  data-contact-flow="project"
+  data-booking-url={config.bookingUrl}
+  data-qualified-from={budget.qualifiedFrom}
+>
+  <form method="post" action="/api/contact" data-contact-form data-step-count={steps.length} data-step="1">
+    <FormMeta flow="project" />
+    <div class="js-only">
+      <p class={eyebrow} data-step-label aria-live="polite">Step 1 of {steps.length}</p>
+      <div class="mt-3 flex gap-1.5" aria-hidden="true">
+        {
+          steps.map((_, i) => (
+            <span
+              class:list={['h-1 flex-1 rounded-full transition-colors duration-300', i === 0 ? 'bg-foreground' : 'bg-muted']}
+              data-progress
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <fieldset class="planner-step" data-step-panel="1" data-current aria-labelledby="planner-t1">
+      <h3 id="planner-t1" class:list={[stepTitle, 'mt-8']} tabindex="-1">{steps[0]}</h3>
+      <div class="mt-5">
+        <div class="grid gap-2 sm:grid-cols-2" role="radiogroup" aria-label="Project type">
+          {
+            config.projectTypes.map((type) => (
+              <RadioCard name="projectType" value={type.id} title={type.title} description={type.description} required />
+            ))
+          }
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="planner-step" data-step-panel="2" aria-labelledby="planner-t2">
+      <h3 id="planner-t2" class:list={[stepTitle, 'mt-8']} tabindex="-1">{steps[1]}</h3>
+      <div class="mt-5">
+        <div class="space-y-3">
+          <label for="planner-budget" class:list={[fieldLabel, 'block']}>Budget</label>
+          <div class="budget relative mt-[42px] h-8 w-full" style={`--pct:${pct}%`} data-budget>
+            <input
+              id="planner-budget"
+              type="range"
+              name="budget"
+              min={budget.min}
+              max={budget.max}
+              step={budget.step}
+              value={budget.initial}
+              aria-valuetext={usd(budget.initial)}
+              class="peer budget-input absolute inset-0 z-10 m-0 h-full w-full cursor-pointer"
+            />
+            <span
+              aria-hidden="true"
+              class="budget-visual absolute inset-x-0 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-border shadow-[inset_0_1px_1px_rgb(0_0_0/0.06)]"
+            ></span>
+            <span
+              aria-hidden="true"
+              class="budget-visual absolute top-1/2 left-0 h-1.5 w-(--pct) -translate-y-1/2 rounded-full bg-linear-to-r from-[color-mix(in_oklab,var(--color-foreground)_80%,var(--color-background))] to-foreground"
+            ></span>
+            <span
+              aria-hidden="true"
+              class="budget-visual absolute top-1/2 left-(--pct) flex size-5 -translate-1/2 items-center justify-center rounded-full border border-border bg-card shadow-[0_2px_4px_rgb(0_0_0/0.10),inset_0_1px_0_rgb(255_255_255/0.8)] peer-focus-visible:ring-2 peer-focus-visible:ring-foreground peer-focus-visible:ring-offset-2"
+            >
+              <span
+                class="pointer-events-none absolute bottom-[calc(100%+9px)] left-1/2 flex h-7 min-w-8 -translate-x-1/2 items-center justify-center rounded-lg border border-border bg-card px-2 text-xs font-medium whitespace-nowrap text-foreground shadow-xs"
+              >
+                <span data-budget-value>{usd(budget.initial)}</span>
+                <span
+                  class="absolute -bottom-[4.5px] left-1/2 size-2 -translate-x-1/2 rotate-45 border-r border-b border-border bg-card"
+                ></span>
+              </span>
+              <span class="size-2 rounded-full bg-foreground"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="planner-step" data-step-panel="3" aria-labelledby="planner-t3">
+      <h3 id="planner-t3" class:list={[stepTitle, 'mt-8']} tabindex="-1">{steps[2]}</h3>
+      <div class="mt-5">
+        <div class="grid gap-2.5" role="radiogroup" aria-label="Timeline">
+          {
+            config.timelines.map((timeline) => (
+              <label class="group relative inline-flex w-fit cursor-pointer items-center gap-2 select-none">
+                <input type="radio" class="sr-only" name="timeline" value={timeline} required />
+                <span
+                  aria-hidden="true"
+                  class="relative flex size-4 shrink-0 items-center justify-center rounded-full group-has-focus-visible:ring-2 group-has-focus-visible:ring-foreground group-has-focus-visible:ring-offset-2"
+                >
+                  <span class="absolute inset-0 rounded-full border border-border bg-card shadow-xs transition-opacity duration-200 group-has-checked:opacity-0" />
+                  <span class="absolute inset-0 rounded-full bg-foreground opacity-0 transition-opacity duration-200 group-has-checked:opacity-100" />
+                  <span class="absolute top-1/2 left-1/2 size-1.5 -translate-1/2 scale-0 rounded-full bg-card opacity-0 transition-[scale,opacity] duration-200 group-has-checked:scale-100 group-has-checked:opacity-100" />
+                </span>
+                <span class="text-sm font-medium text-foreground">{timeline}</span>
+              </label>
+            ))
+          }
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="planner-step" data-step-panel="4" aria-labelledby="planner-t4">
+      <h3 id="planner-t4" class:list={[stepTitle, 'mt-8']} tabindex="-1">{steps[3]}</h3>
+      <div class="mt-5">
+        <div class="space-y-3">
+          <div class="flex w-full flex-col items-start gap-1">
+            <label for="planner-goals" class={fieldLabel}>Goals</label>
+            <div class:list={[fieldShell, 'flex-col px-3']}>
+              <textarea
+                id="planner-goals"
+                name="goals"
+                rows="3"
+                maxlength="2000"
+                placeholder="What should the project achieve?"
+                class:list={[fieldControl, 'resize-y']}></textarea>
+            </div>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="flex w-full flex-col items-start gap-1">
+              <label for="planner-name" class={fieldLabel}>Name</label>
+              <div class:list={[fieldShell, 'items-center px-4']}>
+                <input id="planner-name" name="name" type="text" autocomplete="name" required maxlength="100" class={fieldControl} />
+              </div>
+            </div>
+            <div class="flex w-full flex-col items-start gap-1">
+              <label for="planner-email" class={fieldLabel}>Email</label>
+              <div class:list={[fieldShell, 'items-center px-4']}>
+                <input
+                  id="planner-email"
+                  name="email"
+                  type="email"
+                  dir="ltr"
+                  autocomplete="email"
+                  required
+                  maxlength="254"
+                  class={fieldControl}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="mt-8 flex items-center justify-between">
+      <button type="button" class:list={[buttonSecondary, 'js-only']} data-step-back disabled>
+        <span class="inline-flex shrink-0 items-center justify-center px-1">Back</span>
+      </button>
+      <button type="button" class:list={[buttonPrimary, 'js-only']} data-step-next disabled>
+        <span class="inline-flex shrink-0 items-center justify-center px-1">Next</span>
+      </button>
+      <button type="submit" class:list={[buttonPrimary, 'planner-submit ml-auto']} data-submit>
+        <span class="inline-flex shrink-0 items-center justify-center px-1" data-submit-label data-idle="Send enquiry">
+          Send enquiry
+        </span>
+        <Icon name="arrow-up-right" class="size-5 shrink-0" />
+      </button>
+    </div>
+    <p class={errorText} role="alert" data-error hidden></p>
+  </form>
+  <SuccessCard id="project-success" />
+</div>
