@@ -17,24 +17,22 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
     </a>
 
     <ul class="hidden items-center gap-1 text-sm md:flex">
-      {
-        mainNav.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-current={isActive(link.href) ? 'page' : undefined}
-              class:list={[
-                'rounded-full px-3 py-1.5 transition-colors',
-                isActive(link.href)
-                  ? 'bg-background/15 text-background'
-                  : 'text-background/70 hover:text-background',
-              ]}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
+      {mainNav.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class:list={[
+              'rounded-full px-3 py-1.5 transition-colors',
+              isActive(link.href)
+                ? 'bg-background/15 text-background'
+                : 'text-background/70 hover:text-background',
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
     </ul>
 
     <div class="flex items-center gap-2 pr-1">
@@ -87,24 +85,22 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
     class="pointer-events-none fixed inset-x-4 top-20 z-40 origin-top scale-95 rounded-3xl border border-border/60 bg-foreground/95 p-6 text-background opacity-0 shadow-[0_20px_60px_rgb(0,0,0,0.25)] backdrop-blur transition-all duration-300 data-[open]:pointer-events-auto data-[open]:scale-100 data-[open]:opacity-100 md:hidden"
   >
     <ul class="flex flex-col gap-1 text-base">
-      {
-        mainNav.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-current={isActive(link.href) ? 'page' : undefined}
-              class:list={[
-                'block rounded-2xl px-4 py-3 transition-colors',
-                isActive(link.href)
-                  ? 'bg-background/15 text-background'
-                  : 'text-background/75 hover:bg-background/10 hover:text-background',
-              ]}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
+      {mainNav.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+            class:list={[
+              'block rounded-2xl px-4 py-3 transition-colors',
+              isActive(link.href)
+                ? 'bg-background/15 text-background'
+                : 'text-background/75 hover:bg-background/10 hover:text-background',
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
     </ul>
     <a
       href="/contact"
@@ -129,7 +125,9 @@ const isActive = (href: string) => current === href || current.startsWith(`${hre
       menu.inert = !open;
     };
 
-    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
     menu.addEventListener('click', (event) => {
       if ((event.target as Element).closest('a')) setOpen(false);
     });

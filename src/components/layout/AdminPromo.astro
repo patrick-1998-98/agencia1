@@ -21,26 +21,31 @@ const motion = {
 <aside class="admin-promo" aria-label="Admin dashboard" data-admin-promo hidden>
   <div class="admin-promo-card">
     <button type="button" class="admin-promo-close" aria-label="Dismiss" data-admin-promo-close>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
         <path d="M6 18 18 6M6 6l12 12"></path>
       </svg>
     </button>
     <a href="/admin" class="admin-promo-link">
       <span class="admin-promo-media" style={motion} data-admin-promo-media>
         <span class="admin-promo-stage" aria-hidden="true">
-          {
-            frames.map((frame) => (
-              <img
-                alt=""
-                src={`/admin-preview/${frame}.webp`}
-                width="960"
-                height="540"
-                loading="lazy"
-                decoding="async"
-                class={`admin-promo-frame admin-promo-frame--${frame}`}
-              />
-            ))
-          }
+          {frames.map((frame) => (
+            <img
+              alt=""
+              src={`/admin-preview/${frame}.webp`}
+              width="960"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              class={`admin-promo-frame admin-promo-frame--${frame}`}
+            />
+          ))}
           <svg class="admin-promo-cursor" viewBox="0 0 17 24">
             <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
           </svg>

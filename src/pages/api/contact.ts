@@ -6,7 +6,12 @@
  * or back to /contact with an error flag, so the brief form works without JS.
  */
 import type { APIRoute } from 'astro';
-import { CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL, RESEND_API_KEY, TURNSTILE_SECRET_KEY } from 'astro:env/server';
+import {
+  CONTACT_FROM_EMAIL,
+  CONTACT_TO_EMAIL,
+  RESEND_API_KEY,
+  TURNSTILE_SECRET_KEY,
+} from 'astro:env/server';
 import { PUBLIC_TURNSTILE_SITE_KEY } from 'astro:env/client';
 import { contactSchema } from '@/lib/contact/schema';
 import { checkSpam } from '@/lib/contact/spam';
@@ -22,12 +27,23 @@ const MAX_BODY_BYTES = 32 * 1024;
 const TRUSTED_PROXY_HOPS = 1;
 const limiter = createRateLimiter({ limit: 5, windowMs: 10 * 60 * 1000 });
 
-type ErrorCode = 'invalid' | 'forbidden' | 'too-large' | 'unsupported' | 'rate-limited' | 'unavailable' | 'verification';
+type ErrorCode =
+  | 'invalid'
+  | 'forbidden'
+  | 'too-large'
+  | 'unsupported'
+  | 'rate-limited'
+  | 'unavailable'
+  | 'verification';
 
 const json = (body: unknown, status = 200, headers: Record<string, string> = {}) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...headers },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...headers,
+    },
   });
 
 function formToObject(form: FormData): Record<string, string | string[]> {
@@ -49,12 +65,21 @@ function isSameOrigin(request: Request, url: URL): boolean {
 }
 
 export const POST: APIRoute = async ({ request, url, clientAddress, redirect }) => {
-  const contentType = request.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase() ?? '';
-  const isForm = contentType === 'application/x-www-form-urlencoded' || contentType === 'multipart/form-data';
+  const contentType =
+    request.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase() ?? '';
+  const isForm =
+    contentType === 'application/x-www-form-urlencoded' || contentType === 'multipart/form-data';
   const wantsHtml = isForm && (request.headers.get('accept') ?? '').includes('text/html');
 
-  const fail = (code: ErrorCode, status: number, extra: Record<string, unknown> = {}, headers: Record<string, string> = {}) =>
-    wantsHtml ? redirect(`/contact/sent?error=${code}`, 303) : json({ error: code, ...extra }, status, headers);
+  const fail = (
+    code: ErrorCode,
+    status: number,
+    extra: Record<string, unknown> = {},
+    headers: Record<string, string> = {},
+  ) =>
+    wantsHtml
+      ? redirect(`/contact/sent?error=${code}`, 303)
+      : json({ error: code, ...extra }, status, headers);
 
   if (!isSameOrigin(request, url)) return fail('forbidden', 403);
   if (!isForm && contentType !== 'application/json') return fail('unsupported', 415);
@@ -76,7 +101,8 @@ export const POST: APIRoute = async ({ request, url, clientAddress, redirect }) 
   let raw: unknown;
   try {
     const bodyText = await request.text();
-    if (new TextEncoder().encode(bodyText).byteLength > MAX_BODY_BYTES) return fail('too-large', 413);
+    if (new TextEncoder().encode(bodyText).byteLength > MAX_BODY_BYTES)
+      return fail('too-large', 413);
     if (isForm) {
       // Body is already size-checked; re-wrap it so the platform parser handles both encodings.
       const form = await new Response(bodyText, {
@@ -113,19 +139,27 @@ export const POST: APIRoute = async ({ request, url, clientAddress, redirect }) 
 
   if (!RESEND_API_KEY || !CONTACT_TO_EMAIL || !CONTACT_FROM_EMAIL) {
     if (import.meta.env.PROD) {
-      console.error('[contact] Email delivery is not configured (RESEND_API_KEY / CONTACT_TO_EMAIL / CONTACT_FROM_EMAIL).');
+      console.error(
+        '[contact] Email delivery is not configured (RESEND_API_KEY / CONTACT_TO_EMAIL / CONTACT_FROM_EMAIL).',
+      );
       return fail('unavailable', 503);
     }
     console.warn(`[contact] dev: email not configured, lead ${ticket} not sent:\n${mail.text}`);
   } else {
-    const sent = await sendViaResend(mail, { apiKey: RESEND_API_KEY, to: CONTACT_TO_EMAIL, from: CONTACT_FROM_EMAIL });
+    const sent = await sendViaResend(mail, {
+      apiKey: RESEND_API_KEY,
+      to: CONTACT_TO_EMAIL,
+      from: CONTACT_FROM_EMAIL,
+    });
     if (!sent.ok) {
       console.error(`[contact] Resend rejected lead ${ticket} (status ${sent.status}).`);
       return fail('unavailable', 502);
     }
   }
 
-  return wantsHtml ? redirect(`/contact/sent?ticket=${ticket}&flow=${data.flow}`, 303) : json({ ticket });
+  return wantsHtml
+    ? redirect(`/contact/sent?ticket=${ticket}&flow=${data.flow}`, 303)
+    : json({ ticket });
 };
 
 export const ALL: APIRoute = () => json({ error: 'method-not-allowed' }, 405, { Allow: 'POST' });

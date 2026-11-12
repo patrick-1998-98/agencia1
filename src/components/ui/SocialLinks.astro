@@ -21,16 +21,17 @@ const styles = {
 ---
 
 <div class:list={['flex', variant === 'hero' ? 'gap-2' : 'gap-3', className]}>
-  {
-    items.map((social) => (
-      <a
-        href={social.href}
-        aria-label={social.label}
-        rel="noopener noreferrer"
-        class:list={['grid place-items-center rounded-full border transition-colors', styles[variant]]}
-      >
-        <Icon name={social.icon} class="h-4 w-4" />
-      </a>
-    ))
-  }
+  {items.map((social) => (
+    <a
+      href={social.href}
+      aria-label={social.label}
+      rel="noopener noreferrer"
+      class:list={[
+        'grid place-items-center rounded-full border transition-colors',
+        styles[variant],
+      ]}
+    >
+      <Icon name={social.icon} class="h-4 w-4" />
+    </a>
+  ))}
 </div>

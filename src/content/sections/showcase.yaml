@@ -6,7 +6,7 @@ cells:
     disciplines: [Brand, Web, Product, Motion]
   brief:
     title: Start with a single brief
-    description: "Send a rough brief — even a paragraph — and get a scoped plan back within a day: team, timeline, and price."
+    description: 'Send a rough brief — even a paragraph — and get a scoped plan back within a day: team, timeline, and price.'
     studio: Zypher Studio
     status: Replies within a day
     request:

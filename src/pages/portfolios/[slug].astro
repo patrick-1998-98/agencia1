@@ -29,10 +29,16 @@ const facts = [
 ];
 ---
 
-<BaseLayout title={`${data.title} — ${data.client}`} description={data.description} image={ogImage.src}>
+<BaseLayout
+  title={`${data.title} — ${data.client}`}
+  description={data.description}
+  image={ogImage.src}
+>
   <article class="px-6 py-20">
     <div class="mx-auto max-w-5xl">
-      <a href="/portfolios" class="text-sm text-muted-foreground hover:text-foreground">← All projects</a>
+      <a href="/portfolios" class="text-sm text-muted-foreground hover:text-foreground">
+        ← All projects
+      </a>
 
       <header class="mt-8 flex flex-col gap-4">
         <p class="text-xs tracking-eyebrow text-muted-foreground uppercase">{data.category}</p>
@@ -41,14 +47,12 @@ const facts = [
       </header>
 
       <dl class="mt-10 flex flex-wrap gap-x-16 gap-y-6 rounded-3xl border border-border bg-card px-6 py-5 text-sm">
-        {
-          facts.map((fact) => (
-            <div>
-              <dt class="text-xs tracking-label text-muted-foreground uppercase">{fact.label}</dt>
-              <dd class="mt-1 font-medium">{fact.value}</dd>
-            </div>
-          ))
-        }
+        {facts.map((fact) => (
+          <div>
+            <dt class="text-xs tracking-label text-muted-foreground uppercase">{fact.label}</dt>
+            <dd class="mt-1 font-medium">{fact.value}</dd>
+          </div>
+        ))}
       </dl>
 
       <div class="mt-10 aspect-16/10 overflow-hidden rounded-3xl">
@@ -62,26 +66,24 @@ const facts = [
         />
       </div>
 
-      {
-        data.gallery.length > 0 && (
-          <div class="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2">
-            {data.gallery.map((media, index) => (
-              <div data-reveal data-reveal-y="28">
-                <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
-                  <MediaFrame
-                    media={media}
-                    alt={`${data.title} ${index + 1}`}
-                    widths={[512, 768, 1024]}
-                    sizes="(min-width: 768px) 502px, calc(100vw - 3rem)"
-                    toggle
-                    class="absolute inset-0 block h-full w-full object-cover"
-                  />
-                </div>
+      {data.gallery.length > 0 && (
+        <div class="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2">
+          {data.gallery.map((media, index) => (
+            <div data-reveal data-reveal-y="28">
+              <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
+                <MediaFrame
+                  media={media}
+                  alt={`${data.title} ${index + 1}`}
+                  widths={[512, 768, 1024]}
+                  sizes="(min-width: 768px) 502px, calc(100vw - 3rem)"
+                  toggle
+                  class="absolute inset-0 block h-full w-full object-cover"
+                />
               </div>
-            ))}
-          </div>
-        )
-      }
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </article>
 </BaseLayout>

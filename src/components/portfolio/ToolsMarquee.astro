@@ -15,22 +15,20 @@ const { label, items } = Astro.props;
       <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-background to-transparent"></div>
       <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-background to-transparent"></div>
       <div class="flex animate-marquee items-center gap-14 whitespace-nowrap motion-reduce:animate-none">
-        {
-          [0, 1].map((copy) =>
-            items.map((tool) => (
-              <img
-                src={`/icon-tech/${tool.logo}.svg`}
-                alt={copy === 0 ? tool.name : ''}
-                aria-hidden={copy === 1 ? 'true' : undefined}
-                width="40"
-                height="40"
-                loading="lazy"
-                decoding="async"
-                class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert"
-              />
-            )),
-          )
-        }
+        {[0, 1].map((copy) =>
+          items.map((tool) => (
+            <img
+              src={`/icon-tech/${tool.logo}.svg`}
+              alt={copy === 0 ? tool.name : ''}
+              aria-hidden={copy === 1 ? 'true' : undefined}
+              width="40"
+              height="40"
+              loading="lazy"
+              decoding="async"
+              class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert"
+            />
+          )),
+        )}
       </div>
     </div>
   </div>

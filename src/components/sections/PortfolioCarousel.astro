@@ -23,23 +23,21 @@ const count = projects.length;
 
 <section class="relative overflow-x-clip px-6 py-20">
   <div class="mx-auto max-w-6xl">
-    {
-      eyebrow && (
-        <p class="mb-3 text-center text-xs tracking-eyebrow text-muted-foreground uppercase">{eyebrow}</p>
-      )
-    }
-    {
-      title && (
-        <h2 class="text-center text-3xl font-medium tracking-tight text-balance md:text-5xl">{title}</h2>
-      )
-    }
-    {
-      description && (
-        <p class="mx-auto mt-3 max-w-2xl text-center text-base text-muted-foreground md:text-lg">
-          {description}
-        </p>
-      )
-    }
+    {eyebrow && (
+      <p class="mb-3 text-center text-xs tracking-eyebrow text-muted-foreground uppercase">
+        {eyebrow}
+      </p>
+    )}
+    {title && (
+      <h2 class="text-center text-3xl font-medium tracking-tight text-balance md:text-5xl">
+        {title}
+      </h2>
+    )}
+    {description && (
+      <p class="mx-auto mt-3 max-w-2xl text-center text-base text-muted-foreground md:text-lg">
+        {description}
+      </p>
+    )}
 
     <div
       class="carousel-stage relative mt-12 select-none"
@@ -50,35 +48,38 @@ const count = projects.length;
       style={{ '--count': count }}
     >
       <div class="carousel-ring absolute top-1/2 left-1/2" data-carousel-ring>
-        {
-          projects.map((project, index) => (
-            <a
-              href={`/portfolios/${project.id}`}
-              class="carousel-card absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
-              style={{ '--i': index, zIndex: 100 + (count - 1 - index) }}
-              draggable="false"
-            >
-              <MediaFrame
-                media={project.data.cover}
-                alt=""
-                widths={[320, 640]}
-                sizes="320px"
-                class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-              />
-              <span class="absolute top-3 left-3 z-10 text-xs font-bold text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-                {String(index + 1).padStart(3, '0')}
-              </span>
-              <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4">
-                <p class="text-[10px] tracking-label text-white/70 uppercase">{project.data.category}</p>
-                <p class="mt-1 truncate text-sm font-medium text-white">{project.data.title}</p>
-              </div>
-            </a>
-          ))
-        }
+        {projects.map((project, index) => (
+          <a
+            href={`/portfolios/${project.id}`}
+            class="carousel-card absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]"
+            style={{ '--i': index, zIndex: 100 + (count - 1 - index) }}
+            draggable="false"
+          >
+            <MediaFrame
+              media={project.data.cover}
+              alt=""
+              widths={[320, 640]}
+              sizes="320px"
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            />
+            <span class="absolute top-3 left-3 z-10 text-xs font-bold text-white/90 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+              {String(index + 1).padStart(3, '0')}
+            </span>
+            <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4">
+              <p class="text-[10px] tracking-label text-white/70 uppercase">
+                {project.data.category}
+              </p>
+              <p class="mt-1 truncate text-sm font-medium text-white">{project.data.title}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
 
-    <p class="mt-6 text-center text-xs tracking-eyebrow text-muted-foreground uppercase" aria-hidden="true">
+    <p
+      class="mt-6 text-center text-xs tracking-eyebrow text-muted-foreground uppercase"
+      aria-hidden="true"
+    >
       Drag to rotate
     </p>
   </div>

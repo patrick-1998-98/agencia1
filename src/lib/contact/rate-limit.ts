@@ -8,7 +8,15 @@ export interface RateLimitResult {
   retryAfter: number;
 }
 
-export function createRateLimiter({ limit, windowMs, maxKeys = 10_000 }: { limit: number; windowMs: number; maxKeys?: number }) {
+export function createRateLimiter({
+  limit,
+  windowMs,
+  maxKeys = 10_000,
+}: {
+  limit: number;
+  windowMs: number;
+  maxKeys?: number;
+}) {
   const hits = new Map<string, number[]>();
 
   function prune(now: number) {
@@ -43,7 +51,11 @@ export function createRateLimiter({ limit, windowMs, maxKeys = 10_000 }: { limit
  * the right-most X-Forwarded-For entry, so we count `trustedHops` from the
  * right; anything further left is client-controlled and ignored.
  */
-export function clientIp(forwardedFor: string | null, fallback: string | undefined, trustedHops = 1): string {
+export function clientIp(
+  forwardedFor: string | null,
+  fallback: string | undefined,
+  trustedHops = 1,
+): string {
   if (forwardedFor && trustedHops > 0) {
     const parts = forwardedFor
       .split(',')

@@ -5,7 +5,8 @@
  */
 import { PUBLIC_TURNSTILE_SITE_KEY } from 'astro:env/client';
 
-type SubmitResult = { ok: true; ticket: string } | { ok: false; message: string; fields?: string[] };
+type SubmitResult =
+  { ok: true; ticket: string } | { ok: false; message: string; fields?: string[] };
 
 const GENERIC_ERROR = 'Something went wrong. Please try again.';
 const ERRORS: Record<string, string> = {
@@ -14,8 +15,11 @@ const ERRORS: Record<string, string> = {
   verification: 'We could not verify you are human. Please try again.',
 };
 
-const $ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => root.querySelector<T & Element>(sel);
-const $$ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => [...root.querySelectorAll<T & Element>(sel)];
+const $ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) =>
+  root.querySelector<T & Element>(sel);
+const $$ = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => [
+  ...root.querySelectorAll<T & Element>(sel),
+];
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 /* ------------------------------------------------------------------ tabs */
@@ -36,7 +40,9 @@ function initTabs(root: HTMLElement) {
     tab.addEventListener('click', () => select(tab));
     tab.addEventListener('keydown', (e) => {
       const n = tabs.length;
-      const next = { ArrowRight: (i + 1) % n, ArrowLeft: (i - 1 + n) % n, Home: 0, End: n - 1 }[e.key];
+      const next = { ArrowRight: (i + 1) % n, ArrowLeft: (i - 1 + n) % n, Home: 0, End: n - 1 }[
+        e.key
+      ];
       if (next === undefined) return;
       e.preventDefault();
       const target = tabs[next];
@@ -59,14 +65,18 @@ declare global {
 
 const siteKey = PUBLIC_TURNSTILE_SITE_KEY;
 let turnstileLoad: Promise<TurnstileApi> | undefined;
-const widgets = new WeakMap<HTMLFormElement, { id?: string; token?: string; waiters: ((t: string) => void)[] }>();
+const widgets = new WeakMap<
+  HTMLFormElement,
+  { id?: string; token?: string; waiters: ((t: string) => void)[] }
+>();
 
 function loadTurnstile(): Promise<TurnstileApi> {
   turnstileLoad ??= new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
     s.async = true;
-    s.onload = () => (window.turnstile ? resolve(window.turnstile) : reject(new Error('turnstile')));
+    s.onload = () =>
+      window.turnstile ? resolve(window.turnstile) : reject(new Error('turnstile'));
     s.onerror = () => reject(new Error('turnstile'));
     document.head.append(s);
   });
@@ -141,7 +151,11 @@ async function send(form: HTMLFormElement): Promise<SubmitResult> {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(body),
     });
-    const data = (await res.json().catch(() => ({}))) as { ticket?: string; error?: string; fields?: string[] };
+    const data = (await res.json().catch(() => ({}))) as {
+      ticket?: string;
+      error?: string;
+      fields?: string[];
+    };
     if (res.ok && data.ticket) return { ok: true, ticket: data.ticket };
     const message = (data.error && ERRORS[data.error]) || GENERIC_ERROR;
     return data.fields ? { ok: false, message, fields: data.fields } : { ok: false, message };
@@ -162,7 +176,13 @@ function markInvalid(form: HTMLFormElement, names: string[]) {
 }
 
 function invalidFields(form: HTMLFormElement): string[] {
-  return [...new Set($$<HTMLInputElement>(form, 'input[name], textarea[name], select[name]').filter((el) => !el.checkValidity()).map((el) => el.name))];
+  return [
+    ...new Set(
+      $$<HTMLInputElement>(form, 'input[name], textarea[name], select[name]')
+        .filter((el) => !el.checkValidity())
+        .map((el) => el.name),
+    ),
+  ];
 }
 
 interface FlowHooks {
@@ -237,7 +257,13 @@ function fill(view: HTMLElement, slot: string, text: string) {
   if (el) el.textContent = text;
 }
 
-function genericSuccess(templateId: string, ticket: string, title: string, description: string, action?: { label: string; href: string }) {
+function genericSuccess(
+  templateId: string,
+  ticket: string,
+  title: string,
+  description: string,
+  action?: { label: string; href: string },
+) {
   const view = fromTemplate(templateId);
   fill(view, 'ticket', ticket);
   fill(view, 'title', title);
@@ -274,7 +300,13 @@ function initPlanner(flow: HTMLElement, form: HTMLFormElement) {
     if (n === 4) {
       const name = field('name');
       const email = field('email');
-      return name instanceof HTMLInputElement && email instanceof HTMLInputElement && name.value.trim() !== '' && email.checkValidity() && email.value !== '';
+      return (
+        name instanceof HTMLInputElement &&
+        email instanceof HTMLInputElement &&
+        name.value.trim() !== '' &&
+        email.checkValidity() &&
+        email.value !== ''
+      );
     }
     return true;
   };
@@ -340,10 +372,16 @@ function initPlanner(flow: HTMLElement, form: HTMLFormElement) {
     onIdle: () => render(),
     render: (ticket, data) =>
       Number(data['budget']) >= qualifiedFrom
-        ? genericSuccess('project-success', ticket, 'Looks like a great fit', "Pick a time for an intro call and we'll come prepared.", {
-            label: 'Book a call',
-            href: bookingUrl,
-          })
+        ? genericSuccess(
+            'project-success',
+            ticket,
+            'Looks like a great fit',
+            "Pick a time for an intro call and we'll come prepared.",
+            {
+              label: 'Book a call',
+              href: bookingUrl,
+            },
+          )
         : genericSuccess(
             'project-success',
             ticket,
@@ -408,7 +446,10 @@ function initBrief(flow: HTMLElement, form: HTMLFormElement) {
   wireSubmit(flow, form, {
     render: (ticket, data) => {
       const view = fromTemplate('brief-success');
-      const first = String(data['name'] ?? '').trim().split(/\s+/)[0] || 'there';
+      const first =
+        String(data['name'] ?? '')
+          .trim()
+          .split(/\s+/)[0] || 'there';
       fill(view, 'ticket', ticket);
       fill(view, 'title', `Thanks, ${first}. Here's what happens next`);
       return view;

@@ -38,8 +38,7 @@ const corner = 'absolute h-5 w-5 border-white/40';
           'absolute inset-0 bg-linear-to-b via-transparent',
           isHome ? 'from-black/15 to-black/35' : 'from-black/10 to-black/30',
         ]}
-      >
-      </div>
+      ></div>
     </div>
 
     <div class="relative grid min-h-[640px] grid-rows-[auto_1fr_auto] gap-10 p-8 md:min-h-[720px] md:p-14">
@@ -53,9 +52,7 @@ const corner = 'absolute h-5 w-5 border-white/40';
           <span class="h-1.5 w-1.5 rounded-full bg-white/80"></span>
           <span class="text-xs tracking-eyebrow uppercase">{eyebrow}</span>
         </div>
-        <h1
-          class="hero-title mt-4 text-4xl leading-[1.05] font-medium text-balance text-white md:text-6xl lg:text-7xl"
-        >
+        <h1 class="hero-title mt-4 text-4xl leading-[1.05] font-medium text-balance text-white md:text-6xl lg:text-7xl">
           {title}
         </h1>
       </div>
@@ -68,23 +65,26 @@ const corner = 'absolute h-5 w-5 border-white/40';
             : 'justify-between gap-10 md:flex-row md:items-end',
         ]}
       >
-        {
-          thumbnail && (
-            <div class="hero-thumb relative">
-              <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
-                <Image
-                  src={thumbnail}
-                  alt=""
-                  width={288}
-                  height={288}
-                  densities={[1, 2]}
-                  class="block h-full w-full object-cover"
-                />
-              </div>
+        {thumbnail && (
+          <div class="hero-thumb relative">
+            <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
+              <Image
+                src={thumbnail}
+                alt=""
+                width={288}
+                height={288}
+                densities={[1, 2]}
+                class="block h-full w-full object-cover"
+              />
             </div>
-          )
-        }
-        <div class:list={[!isHome && 'flex flex-col items-start gap-4 md:items-end md:text-right', isHome && 'contents']}>
+          </div>
+        )}
+        <div
+          class:list={[
+            !isHome && 'flex flex-col items-start gap-4 md:items-end md:text-right',
+            isHome && 'contents',
+          ]}
+        >
           <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base">
             {description}
           </p>

@@ -17,33 +17,38 @@ const { config } = Astro.props;
 <div class:list={['contact-flow w-full', card]} data-contact-flow="specialist">
   <form method="post" action="/api/contact" data-contact-form>
     <FormMeta flow="specialist" />
-    <h3 id="specialist-title" class={stepTitle}>What can we help with?</h3>
+    <h3 id="specialist-title" class={stepTitle}>
+      What can we help with?
+    </h3>
     <div class="mt-5 grid gap-2" role="radiogroup" aria-labelledby="specialist-title">
-      {
-        config.services.map((service) => (
-          <RadioCard
-            name="service"
-            value={service.id}
-            title={service.label}
-            description={`Goes to the ${service.owner.toLowerCase()} · ${service.role}`}
-            required
-            data={{ owner: service.owner, role: service.role }}
-          />
-        ))
-      }
+      {config.services.map((service) => (
+        <RadioCard
+          name="service"
+          value={service.id}
+          title={service.label}
+          description={`Goes to the ${service.owner.toLowerCase()} · ${service.role}`}
+          required
+          data={{ owner: service.owner, role: service.role }}
+        />
+      ))}
     </div>
     <div class="mt-4 flex items-center gap-3 rounded-2xl bg-muted p-3" data-specialist-route hidden>
       <span
         class="inline-flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-border text-center text-base font-semibold text-muted-foreground select-none"
         aria-hidden="true"
-        data-specialist-initial></span>
+        data-specialist-initial
+      ></span>
       <p class="text-sm text-muted-foreground" aria-live="polite">
-        You'll hear from <span class="font-medium text-foreground" data-specialist-owner></span> directly.
+        You'll hear from <span class="font-medium text-foreground" data-specialist-owner></span>{' '}
+        directly.
       </p>
     </div>
     <div class="mt-5">
       <div class="flex w-full flex-col items-start gap-1">
-        <label for="specialist-email" class="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase">
+        <label
+          for="specialist-email"
+          class="text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase"
+        >
           Your email
         </label>
         <div class:list={[fieldShell, 'items-center px-4']}>
@@ -60,8 +65,19 @@ const { config } = Astro.props;
         </div>
       </div>
     </div>
-    <button type="submit" class:list={[buttonPrimary, 'mt-6 w-full']} data-submit data-requires-valid>
-      <span class="inline-flex shrink-0 items-center justify-center px-1" data-submit-label data-idle="Send">Send</span>
+    <button
+      type="submit"
+      class:list={[buttonPrimary, 'mt-6 w-full']}
+      data-submit
+      data-requires-valid
+    >
+      <span
+        class="inline-flex shrink-0 items-center justify-center px-1"
+        data-submit-label
+        data-idle="Send"
+      >
+        Send
+      </span>
       <Icon name="arrow-up-right" class="size-5 shrink-0" />
     </button>
     <p class={errorText} role="alert" data-error hidden></p>

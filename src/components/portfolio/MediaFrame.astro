@@ -30,53 +30,67 @@ const {
 
 const maxWidth = Math.max(...widths);
 const poster = media.video
-  ? await getImage({ src: media.image, width: Math.min(maxWidth, media.image.width), format: 'webp' })
+  ? await getImage({
+      src: media.image,
+      width: Math.min(maxWidth, media.image.width),
+      format: 'webp',
+    })
   : undefined;
 ---
 
-{
-  media.video && poster ? (
-    <div class="relative h-full w-full overflow-hidden" data-video-frame>
-      <video
-        src={media.video}
-        poster={poster.src}
-        muted
-        loop
-        playsinline
-        preload="none"
-        aria-label={alt || undefined}
-        aria-hidden={alt ? undefined : 'true'}
-        class={className}
-        data-autoplay-video
-      />
-      {toggle && (
-        <button
-          type="button"
-          aria-label="Play video"
-          class="absolute right-3 bottom-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-foreground shadow-md transition-transform hover:scale-110"
-          data-video-toggle
-        >
-          <svg class="ml-0.5 h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-icon-play>
-            <path d="M8 5v14l11-7z" />
-          </svg>
-          <svg class="hidden h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-icon-pause>
-            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-          </svg>
-        </button>
-      )}
-    </div>
-  ) : (
-    <Image
-      src={media.image}
-      alt={alt}
-      widths={widths.filter((w) => w <= media.image.width)}
-      sizes={sizes}
-      loading={loading}
-      fetchpriority={loading === 'eager' ? 'high' : undefined}
+{media.video && poster ? (
+  <div class="relative h-full w-full overflow-hidden" data-video-frame>
+    <video
+      src={media.video}
+      poster={poster.src}
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-label={alt || undefined}
+      aria-hidden={alt ? undefined : 'true'}
       class={className}
+      data-autoplay-video
     />
-  )
-}
+    {toggle && (
+      <button
+        type="button"
+        aria-label="Play video"
+        class="absolute right-3 bottom-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-foreground shadow-md transition-transform hover:scale-110"
+        data-video-toggle
+      >
+        <svg
+          class="ml-0.5 h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          data-icon-play
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+        <svg
+          class="hidden h-3.5 w-3.5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          data-icon-pause
+        >
+          <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+        </svg>
+      </button>
+    )}
+  </div>
+) : (
+  <Image
+    src={media.image}
+    alt={alt}
+    widths={widths.filter((w) => w <= media.image.width)}
+    sizes={sizes}
+    loading={loading}
+    fetchpriority={loading === 'eager' ? 'high' : undefined}
+    class={className}
+  />
+)}
 
 <script>
   import { initAutoplayVideos } from './autoplay-video';

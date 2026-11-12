@@ -8,7 +8,10 @@ const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 export type SpamVerdict = 'ok' | 'honeypot' | 'too-fast';
 
-export function checkSpam(input: { website?: string | undefined; _t?: number | undefined }, now = Date.now()): SpamVerdict {
+export function checkSpam(
+  input: { website?: string | undefined; _t?: number | undefined },
+  now = Date.now(),
+): SpamVerdict {
   if (input.website && input.website.trim() !== '') return 'honeypot';
   if (input._t !== undefined && input._t > 0) {
     const elapsed = now - input._t;

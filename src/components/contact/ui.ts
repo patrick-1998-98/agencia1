@@ -22,7 +22,8 @@ export const fieldControl =
 export const briefInput =
   'w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none aria-[invalid=true]:border-red-500';
 
-export const briefLabel = 'mb-2 block text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase';
+export const briefLabel =
+  'mb-2 block text-xs font-medium tracking-[0.14em] text-muted-foreground uppercase';
 
 export const eyebrow = 'text-xs tracking-[0.18em] text-muted-foreground uppercase';
 

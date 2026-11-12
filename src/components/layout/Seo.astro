@@ -36,29 +36,27 @@ const organization = {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon.png" />
 <meta name="theme-color" content={site.themeColor} />
-{
-  noindex ? (
-    <meta name="robots" content="noindex, nofollow" />
-  ) : (
-    <>
-      <meta name="keywords" content={site.keywords} />
-      <meta name="author" content={site.name} />
-      <link rel="canonical" href={canonical} />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={site.name} />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:locale" content={site.locale} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonical} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-      <script type="application/ld+json" is:inline set:html={JSON.stringify(organization)} />
-    </>
-  )
-}
+{noindex ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <>
+    <meta name="keywords" content={site.keywords} />
+    <meta name="author" content={site.name} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={site.locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organization)} />
+  </>
+)}

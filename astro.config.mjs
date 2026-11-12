@@ -16,7 +16,7 @@ const site = process.env.SITE_URL ?? 'https://zypher-agency.online';
  */
 const turnstile = Boolean(
   process.env.PUBLIC_TURNSTILE_SITE_KEY ??
-    loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), 'PUBLIC_').PUBLIC_TURNSTILE_SITE_KEY,
+  loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), 'PUBLIC_').PUBLIC_TURNSTILE_SITE_KEY,
 );
 
 export default defineConfig({
@@ -46,7 +46,9 @@ export default defineConfig({
         "object-src 'none'",
         'upgrade-insecure-requests',
       ],
-      ...(turnstile ? { scriptDirective: { resources: ["'self'", 'https://challenges.cloudflare.com'] } } : {}),
+      ...(turnstile
+        ? { scriptDirective: { resources: ["'self'", 'https://challenges.cloudflare.com'] } }
+        : {}),
       // Inline style attributes (CSS custom properties on elements) need
       // 'unsafe-inline' for styles; scripts stay hash-locked.
       styleDirective: { resources: ["'self'", "'unsafe-inline'"] },
@@ -57,11 +59,20 @@ export default defineConfig({
       CONTACT_TO_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
       CONTACT_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
       RESEND_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
-      TURNSTILE_SECRET_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
-      PUBLIC_TURNSTILE_SITE_KEY: envField.string({ context: 'client', access: 'public', optional: true }),
+      TURNSTILE_SECRET_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+        optional: true,
+      }),
+      PUBLIC_TURNSTILE_SITE_KEY: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true,
+      }),
     },
   },
   devToolbar: { enabled: false },
+  markdown: { syntaxHighlight: false },
   vite: {
     plugins: [tailwindcss()],
     // Lets several dev servers run side by side without sharing a dep cache.

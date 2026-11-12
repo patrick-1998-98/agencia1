@@ -13,7 +13,11 @@ export interface LeadEmail {
   replyTo: string;
 }
 
-const FLOW_LABEL = { project: 'Project enquiry', specialist: 'Specialist request', brief: 'Project brief' } as const;
+const FLOW_LABEL = {
+  project: 'Project enquiry',
+  specialist: 'Specialist request',
+  brief: 'Project brief',
+} as const;
 const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
 
 function rows(data: ContactSubmission): [string, string][] {
@@ -48,7 +52,11 @@ export function buildLeadEmail(data: ContactSubmission, ticket: string): LeadEma
   const who = data.flow === 'specialist' ? data.email : data.name;
   const subject = headerSafe(`[${ticket}] ${FLOW_LABEL[data.flow]} — ${who}`, 160);
   const list = rows(data);
-  const text = [`${FLOW_LABEL[data.flow]} · ${ticket}`, '', ...list.map(([k, v]) => `${k}: ${v}`)].join('\n');
+  const text = [
+    `${FLOW_LABEL[data.flow]} · ${ticket}`,
+    '',
+    ...list.map(([k, v]) => `${k}: ${v}`),
+  ].join('\n');
   const html = `<!doctype html><html><body style="font-family:system-ui,sans-serif;color:#111">
 <h2 style="font-weight:500">${escapeHtml(FLOW_LABEL[data.flow])} · ${escapeHtml(ticket)}</h2>
 <table cellpadding="6" style="border-collapse:collapse">${list
@@ -77,7 +85,10 @@ export async function sendViaResend(
       headers: { Authorization: `Bearer ${config.apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         from: config.from,
-        to: config.to.split(',').map((s) => s.trim()).filter(Boolean),
+        to: config.to
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean),
         reply_to: mail.replyTo,
         subject: mail.subject,
         text: mail.text,

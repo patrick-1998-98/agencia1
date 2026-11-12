@@ -29,56 +29,75 @@ const pad = (n: number) => String(n).padStart(2, '0');
   containerClass="max-w-3xl"
 >
   <div class="space-y-12" data-reveal-stagger="0.05" data-reveal-y="20">
-    {
-      groups.map((group, g) => (
-        <div data-faq-group>
-          <h3 class="mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
-            {group.title}
-          </h3>
-          <div class="w-full">
-            {group.items.map((item, i) => {
-              const key = `${id}-${g}-${i}`;
-              const open = openFirst && g === 0 && i === 0;
-              return (
-                <div class="faq-item" data-faq-item data-open={open ? '' : undefined}>
-                  <h4>
-                    <button
-                      type="button"
-                      id={`faq-q-${key}`}
-                      aria-controls={`faq-a-${key}`}
-                      aria-expanded={open ? 'true' : 'false'}
-                      class="group relative w-full cursor-pointer text-left focus:outline-none focus-visible:rounded-2xl focus-visible:ring-2 focus-visible:ring-foreground"
-                    >
-                      <span class="flex items-center gap-6 px-1 py-5">
-                        <span class="relative grid h-10 w-10 shrink-0 place-items-center">
-                          <span class="faq-dot absolute inset-0 rounded-full bg-foreground" />
-                          <span class="faq-num relative z-10 text-sm font-medium tracking-wide">
-                            {pad(i + 1)}
-                          </span>
-                        </span>
-                        <span class="faq-q flex-1 text-2xl font-medium tracking-tight">{item.question}</span>
-                        <span class="ml-auto shrink-0">
-                          <span class="faq-plus grid h-8 w-8 place-items-center">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="text-foreground" aria-hidden="true">
-                              <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                            </svg>
-                          </span>
+    {groups.map((group, g) => (
+      <div data-faq-group>
+        <h3 class="mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
+          {group.title}
+        </h3>
+        <div class="w-full">
+          {group.items.map((item, i) => {
+            const key = `${id}-${g}-${i}`;
+            const open = openFirst && g === 0 && i === 0;
+            return (
+              <div class="faq-item" data-faq-item data-open={open ? '' : undefined}>
+                <h4>
+                  <button
+                    type="button"
+                    id={`faq-q-${key}`}
+                    aria-controls={`faq-a-${key}`}
+                    aria-expanded={open ? 'true' : 'false'}
+                    class="group relative w-full cursor-pointer text-left focus:outline-none focus-visible:rounded-2xl focus-visible:ring-2 focus-visible:ring-foreground"
+                  >
+                    <span class="flex items-center gap-6 px-1 py-5">
+                      <span class="relative grid h-10 w-10 shrink-0 place-items-center">
+                        <span class="faq-dot absolute inset-0 rounded-full bg-foreground" />
+                        <span class="faq-num relative z-10 text-sm font-medium tracking-wide">
+                          {pad(i + 1)}
                         </span>
                       </span>
-                    </button>
-                  </h4>
-                  <div id={`faq-a-${key}`} role="region" aria-labelledby={`faq-q-${key}`} class="faq-panel">
-                    <div class="overflow-hidden">
-                      <p class="py-6 pr-12 pl-16 leading-relaxed text-muted-foreground">{item.answer}</p>
-                    </div>
+                      <span class="faq-q flex-1 text-2xl font-medium tracking-tight">
+                        {item.question}
+                      </span>
+                      <span class="ml-auto shrink-0">
+                        <span class="faq-plus grid h-8 w-8 place-items-center">
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            class="text-foreground"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M8 1V15M1 8H15"
+                              stroke="currentColor"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </span>
+                  </button>
+                </h4>
+                <div
+                  id={`faq-a-${key}`}
+                  role="region"
+                  aria-labelledby={`faq-q-${key}`}
+                  class="faq-panel"
+                >
+                  <div class="overflow-hidden">
+                    <p class="py-6 pr-12 pl-16 leading-relaxed text-muted-foreground">
+                      {item.answer}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
 </Section>
 

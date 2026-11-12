@@ -16,7 +16,13 @@ if (!entry) throw new Error('Missing src/content/contact/contact.yaml');
 const data = entry.data;
 ---
 
-<Section id="contact" eyebrow={data.section.eyebrow} title={data.section.title} description={data.section.description} align="left">
+<Section
+  id="contact"
+  eyebrow={data.section.eyebrow}
+  title={data.section.title}
+  description={data.section.description}
+  align="left"
+>
   <div class="grid gap-10 md:grid-cols-[1.4fr_1fr]" data-reveal>
     <div class="min-w-0" data-contact-root>
       <div
@@ -24,39 +30,37 @@ const data = entry.data;
         aria-label="How would you like to start?"
         class="js-only grid w-full grid-cols-3 gap-1 rounded-full border border-border bg-card p-1 sm:inline-grid sm:w-auto"
       >
-        {
-          data.tabs.map((tab, i) => (
-            <button
-              type="button"
-              role="tab"
-              id={`contact-tab-${tab.id}`}
-              aria-controls={`contact-panel-${tab.id}`}
-              aria-selected={i === 0 ? 'true' : 'false'}
-              tabindex={i === 0 ? 0 : -1}
-              class="cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground aria-selected:bg-foreground aria-selected:text-background aria-selected:hover:text-background"
-            >
-              <span class="sm:hidden">{tab.shortLabel}</span>
-              <span class="hidden sm:inline">{tab.label}</span>
-            </button>
-          ))
-        }
-      </div>
-      {
-        data.tabs.map((tab, i) => (
-          <div
-            role="tabpanel"
-            id={`contact-panel-${tab.id}`}
-            aria-labelledby={`contact-tab-${tab.id}`}
-            class="contact-panel mt-6"
-            data-active={i === 0 ? '' : undefined}
+        {data.tabs.map((tab, i) => (
+          <button
+            type="button"
+            role="tab"
+            id={`contact-tab-${tab.id}`}
+            aria-controls={`contact-panel-${tab.id}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            class="cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground aria-selected:bg-foreground aria-selected:text-background aria-selected:hover:text-background"
           >
-            <h3 class="no-js-only mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">{tab.label}</h3>
-            {tab.id === 'project' && <ProjectPlanner config={data.project} />}
-            {tab.id === 'specialist' && <SpecialistForm config={data.specialist} />}
-            {tab.id === 'brief' && <BriefForm config={data.brief} />}
-          </div>
-        ))
-      }
+            <span class="sm:hidden">{tab.shortLabel}</span>
+            <span class="hidden sm:inline">{tab.label}</span>
+          </button>
+        ))}
+      </div>
+      {data.tabs.map((tab, i) => (
+        <div
+          role="tabpanel"
+          id={`contact-panel-${tab.id}`}
+          aria-labelledby={`contact-tab-${tab.id}`}
+          class="contact-panel mt-6"
+          data-active={i === 0 ? '' : undefined}
+        >
+          <h3 class="no-js-only mb-4 text-xs font-medium tracking-[0.18em] text-muted-foreground uppercase">
+            {tab.label}
+          </h3>
+          {tab.id === 'project' && <ProjectPlanner config={data.project} />}
+          {tab.id === 'specialist' && <SpecialistForm config={data.specialist} />}
+          {tab.id === 'brief' && <BriefForm config={data.brief} />}
+        </div>
+      ))}
     </div>
     <StudioCard studio={data.studio} />
   </div>

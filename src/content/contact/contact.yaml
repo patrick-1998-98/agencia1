@@ -38,7 +38,16 @@ brief:
 studio:
   title: Studio
   items:
-    - { label: Email, value: studio@zypher-agency.online, href: 'mailto:studio@zypher-agency.online', icon: envelope }
+    - {
+        label: Email,
+        value: studio@zypher-agency.online,
+        href: 'mailto:studio@zypher-agency.online',
+        icon: envelope,
+      }
     - { label: Phone, value: +1 (415) 555 0118, href: 'tel:+14155550118', icon: phone }
     - { label: Hours, value: Mon – Fri · 09:00 – 18:00 PT, icon: clock }
-    - { label: Address, value: "1055 W Georgia St, Suite 2400\nVancouver, BC V6E 3P3", icon: map-pin }
+    - {
+        label: Address,
+        value: "1055 W Georgia St, Suite 2400\nVancouver, BC V6E 3P3",
+        icon: map-pin,
+      }
