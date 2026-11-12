@@ -6,7 +6,7 @@ header:
 discovery:
   current: 20%
   target: 67%
-  summary: Entrevistas con stakeholders, auditoría y un brief escrito aprobado antes de empezar a diseñar
+  summary: Entrevistas con stakeholders, auditoría y un brief escrito aprobado antes de empezar a diseñar…
 design:
   stat: 70%
   label: Tiempo de diseño

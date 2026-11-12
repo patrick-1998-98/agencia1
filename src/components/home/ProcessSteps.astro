@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { process } = Astro.props;
-const { header, discovery, design, delivery, reliability, pace, stack } = process;
+const { header, discovery, design, person, status, delivery, reliability, pace } = process;
 
 const ringRadius = 38;
 const ringLength = 2 * Math.PI * ringRadius;
@@ -48,10 +48,10 @@ const card = 'rounded-3xl border border-border bg-card';
         <span data-bar class="inline-block h-2 w-8 rounded-full bg-foreground/15"></span>
         <span class="text-base font-semibold text-foreground/30">·</span>
       </div>
-      <p class="text-sm leading-snug text-muted-foreground">{discovery.summary}…</p>
+      <p class="text-sm leading-snug text-muted-foreground">{discovery.summary}</p>
     </div>
 
-    <!-- Senior designer -->
+    <!-- Senior team member -->
     <div class="md:row-span-2">
       <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.08),transparent_60%)]"></div>
@@ -68,7 +68,7 @@ const card = 'rounded-3xl border border-border bg-card';
                 ></path>
               </svg>
             </div>
-            <p class="text-xs tracking-eyebrow text-background/70 uppercase">Diseñador senior</p>
+            <p class="text-xs tracking-eyebrow text-background/70 uppercase">{person}</p>
           </div>
         </div>
       </div>
@@ -79,9 +79,13 @@ const card = 'rounded-3xl border border-border bg-card';
       <div class={`${card} flex min-h-[300px] flex-col justify-between gap-6 p-6 md:p-8`}>
         <p class="text-6xl leading-none font-medium tracking-tight text-foreground md:text-7xl">
           {design.stat}
+          {design.unit && (
+            <span class="mt-3 block text-2xl tracking-tight md:text-3xl">{design.unit}</span>
+          )}
         </p>
         <p class="text-sm leading-relaxed text-muted-foreground">
-          <span class="text-foreground">{design.label}.</span> {design.description}
+          {design.label && <span class="text-foreground">{design.label}.</span>}{' '}
+          {design.description}
         </p>
       </div>
     </div>
@@ -104,13 +108,13 @@ const card = 'rounded-3xl border border-border bg-card';
           data-toast
           class="rounded-xl bg-green-50 px-3 py-2 text-xs font-medium text-green-700 shadow-sm dark:bg-green-950/40 dark:text-green-400"
         >
-          ✓ Assets entregados
+          ✓ {status.done}
         </div>
         <div
           data-toast
           class="translate-x-2 rounded-xl bg-amber-50 px-3 py-2 text-xs font-medium text-amber-700 shadow-sm dark:bg-amber-950/40 dark:text-amber-400"
         >
-          ↺ Handoff del sistema
+          ↺ {status.active}
         </div>
         <div
           data-toast
@@ -172,9 +176,11 @@ const card = 'rounded-3xl border border-border bg-card';
 
     <!-- Stack -->
     <div class={`${card} flex h-full min-h-[220px] flex-col justify-between gap-4 p-6 md:p-7`}>
-      <span class="text-xs tracking-eyebrow text-muted-foreground uppercase">Nuestro stack</span>
+      <span class="text-xs tracking-eyebrow text-muted-foreground uppercase">
+        {process.stackTitle}
+      </span>
       <div class="flex flex-wrap gap-2">
-        {stack.map((tool) => (
+        {process.stack.map((tool) => (
           <span
             data-pill
             class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground"
@@ -183,9 +189,7 @@ const card = 'rounded-3xl border border-border bg-card';
           </span>
         ))}
       </div>
-      <p class="text-sm text-muted-foreground">
-        Un stack acotado: rápido para construir, fácil de traspasar.
-      </p>
+      <p class="text-sm text-muted-foreground">{process.stackNote}</p>
     </div>
   </div>
 </Section>

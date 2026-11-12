@@ -1,17 +1,21 @@
 type: process
 header:
   eyebrow: Proceso
-  title: Del brief al lanzamiento
-  description: Todos los proyectos siguen la misma forma — descubrimiento, oficio y entrega. Predecible para vos, enfocado para nosotros.
+  title: Del diagnóstico al resultado
+  description: 'Todos los proyectos siguen el mismo camino: diagnóstico, construcción y seguimiento. Sabes desde el primer día qué haremos y qué resultado esperar.'
 discovery:
-  current: 20%
-  target: 100%
-  summary: Entrevistas con stakeholders, auditorías y un brief creativo por escrito
+  current: Diagnóstico
+  target: Fase 1
+  summary: Entrevistas con tu equipo, análisis de procesos y herramientas, e informe con lo que conviene ordenar, automatizar o dejar como está.
 design:
-  stat: 70%
-  label: de diseño, 30% de revisión
-  description: Conceptualización, diseño y producción. Hitos semanales y dos rondas de revisión estructuradas por etapa.
-delivery: { step: Entrega, duration: Semana 9–10 }
-reliability: { percent: 100, label: de los proyectos arranca con un brief escrito }
-pace: { value: Semana 9–10, label: Sprint promedio }
-stack: [Astro, React, Tailwind, GSAP]
+  stat: '1'
+  unit: objetivo por fase
+  description: Construimos por fases, empezando por lo de mayor impacto. Cada una tiene un objetivo medible en horas ahorradas, errores o ventas.
+person: Consultor Senior
+status: { done: Diagnóstico entregado, active: Implementación en curso }
+delivery: { step: Seguimiento, duration: Semana 8–9 }
+reliability: { percent: 100, label: de los proyectos empiezan con un diagnóstico }
+pace: { value: Semana 1–2, label: duración del diagnóstico }
+stackTitle: Trabajamos con
+stack: [Zoho, Odoo, Google Workspace, Microsoft 365, WhatsApp, Excel, Shopify, WooCommerce]
+stackNote: Nos adaptamos a las herramientas que tu equipo ya usa.

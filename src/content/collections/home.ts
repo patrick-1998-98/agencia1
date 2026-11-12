@@ -28,11 +28,26 @@ const sections = defineCollection({
         type: z.literal('process'),
         header,
         discovery: z.object({ current: z.string(), target: z.string(), summary: z.string() }),
-        design: z.object({ stat: z.string(), label: z.string(), description: z.string() }),
+        design: z.object({
+          stat: z.string(),
+          /** Smaller text right after the big stat (e.g. "objetivo por fase"). */
+          unit: z.string().optional(),
+          /** Bold lead-in of the paragraph. */
+          label: z.string().optional(),
+          description: z.string(),
+        }),
+        person: z.string().default('Diseñador senior'),
+        status: z
+          .object({ done: z.string(), active: z.string() })
+          .default({ done: 'Assets entregados', active: 'Handoff del sistema' }),
         delivery: z.object({ step: z.string(), duration: z.string() }),
         reliability: z.object({ percent: z.number(), label: z.string() }),
         pace: z.object({ value: z.string(), label: z.string() }),
         stack: z.array(z.string()),
+        stackTitle: z.string().default('Nuestro stack'),
+        stackNote: z
+          .string()
+          .default('Un stack acotado: rápido para construir, fácil de traspasar.'),
       }),
       z.object({
         type: z.literal('showcase'),
