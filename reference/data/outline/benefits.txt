@@ -1,0 +1,634 @@
+<header class="sticky top-0 z-50 w-full px-4 pt-4">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/60 bg-foreground/95 px-2 py-2 text-background shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur">
+    <a href="/" class="flex items-center gap-2 pl-3 pr-2 text-sm font-medium tracking-tight">
+      <span class="text-base font-semibold">
+        "Zypher"
+      <sup class="text-[10px] opacity-70">
+        "z"
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      <li >
+        <a href="/benefits" class="px-3 py-1.5 rounded-full transition-colors bg-background/15 text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Faq"
+    <div class="flex items-center gap-2 pr-1">
+      <island component=ThemeToggle.rII1FBaA.js client=load>
+        <button type="button" aria-label="Toggle theme" class="grid place-items-center w-9 h-9 rounded-full border border-border bg-card text-foreground hover:bg-muted !bg-background !text-foreground !border-transparent hidden sm:grid">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="w-4 h-4">
+            
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9972 1.25399C11.0963 1.26205 11.2768 1.28887 11.453 1.41036C11.7462 1.61254 11.9082 1.94986 11.8827 2.30508C11.8664 2.5331 11.7611 2.69826 11.7082 2.77339C11.6471 2.86035 11.5759 2.93642 11.5167 2.99576C11.4029 3.10986 11.2445 3.2488 11.0707 3.40129L11.0519 3.41785C9.64041 4.65645 8.75122 6.47136 8.75122 8.49486C8.75122 12.2239 11.7742 15.2468 15.5032 15.2468C17.5277 15.2468 19.3434 14.3567 20.5821 12.944L20.5986 12.9252C20.751 12.7513 20.8899 12.5929 21.004 12.479C21.0633 12.4198 21.1393 12.3486 21.2263 12.2874C21.3014 12.2345 21.4665 12.1
+      <a href="/contact" class="hidden sm:inline-flex rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5 hover:shadow-md">
+        "Get In Touch"
+      <button type="button" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden grid h-9 w-9 place-items-center rounded-full bg-background text-foreground">
+        <svg class="menu-icon h-4 w-4" viewBox="0 0 24 24">
+           <line x1="4" y1="8" x2="20" y2="8"></line> <line x1="4" y1="16" x2="20" y2="16"></line> 
+        <svg class="close-icon h-4 w-4 hidden" viewBox="0 0 24 24">
+           <line x1="6" y1="6" x2="18" y2="18"></line> <line x1="18" y1="6" x2="6" y2="18"></line> 
+  <div id="mobile-menu" class="md:hidden fixed inset-x-4 top-20 z-40 origin-top scale-95 rounded-3xl border border-border/60 bg-foreground/95 p-6 text-background opacity-0 pointer-events-none shadow-[0_20px_60px_rgb(0,0,0,0.25)] backdrop-blur transition-all duration-300">
+    <ul class="flex flex-col gap-1 text-base">
+      <li >
+        <a href="/benefits" class="block rounded-2xl px-4 py-3 transition-colors bg-background/15 text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Faq"
+    <a href="/contact" class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground">
+      "Get In Touch"
+<island component=PageTransition.B1ds7P_U.js client=load>
+  <div class="pointer-events-none fixed inset-0 z-[100] grid place-items-center bg-foreground" style="transform: translate(0%, -100%); translate: none; rotate: none; scale: none;" aria-hidden="true">
+    <span class="text-[18vw] font-semibold leading-none tracking-tight text-background md:text-[14vw]">
+      "ZYPHER"
+      <span class="text-background/40">
+        "®"
+  <div style="opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+    <astro-slot >
+      <main class="min-h-screen" data-astro-transition-scope="astro-a2sg2g5y-1">
+        <island component=Hero.B3I_4QSE.js client=load>
+          <div class="px-4 pt-4">
+            <div class="relative mx-auto overflow-hidden rounded-[2.5rem] bg-hero-bg max-w-360">
+              <div class="hero-bg absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                <img src="/images/image-1.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                <div class="hero-grain absolute inset-0 mix-blend-overlay">
+                <div class="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/30">
+              <div class="relative grid min-h-[640px] grid-rows-[auto_1fr_auto] gap-10 p-8 md:p-14 md:min-h-[720px]">
+                <span class="absolute h-5 w-5 border-white/40 top-6 left-6 border-t border-l rounded-tl">
+                <span class="absolute h-5 w-5 border-white/40 top-6 right-6 border-t border-r rounded-tr">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 left-6 border-b border-l rounded-bl">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 right-6 border-b border-r rounded-br">
+                <div class="relative z-10 max-w-2xl pt-12 md:pt-20">
+                  <div class="hero-eyebrow flex items-center gap-2 text-white/80" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <span class="h-1.5 w-1.5 rounded-full bg-white/80">
+                    <span class="text-xs uppercase tracking-[0.18em]">
+                      "Benefits"
+                  <h1 class="hero-title mt-4 text-balance text-4xl font-medium leading-[1.05] text-white md:text-6xl lg:text-7xl" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    "Why teams choose Zypher"
+                <div class="relative z-10 mt-auto flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+                  <div class="hero-thumb relative" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
+                      <img src="/images/image-2.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                  <div class="flex flex-col items-start gap-4 md:items-end md:text-right">
+                    <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      "A studio with the discipline of a brand consultancy and the soul of an artist's atelier."
+                    <div class="hero-trust flex items-center gap-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      <span class="text-sm text-white/85">
+                        "Trusted by 25,000+ clients"
+                      <div class="flex items-center gap-2">
+                        <a href="https://instagram.com" aria-label="Instagram" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        <a href="https://twitter.com" aria-label="Twitter" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <island component=BenefitsGrid.BmVAvSHv.js client=visible>
+          <section id="benefits" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-6xl">
+              <div class="flex flex-col gap-4 mb-12 items-center text-center">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "Why us"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "Built around outcomes, not deliverables"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "Every engagement is structured to make your team faster, sharper, and more confident in the work that ships."
+              <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<path d="M14.8179 2.08629C15.0253 1.45564 15.129 1.14031 15.2844 1.0552C15.4187 0.9816 15.5813 0.9816 15.7156 1.0552C15.871 1.14031 15.9747 1.45564 16.1821 2.08629L16.4973 3.04489C16.5389 3.17115 16.5596 3.23427 16.5953 3.28664C16.6269 3.33302 16.667 3.37305 16.7134 3.40467C16.7657 3.44037 16.8289 3.46113 16.9551 3.50265L17.9137 3.81792C18.5444 4.02533 18.8597 4.12903 18.9448 4.28437C19.0184 4.4187 19.0184 4.5813 18.9448 4.71563C18.8597 4.87097 18.5444 4.97467 17.9137 5.18208L16.9551 5.49735C16.8289 5.53887 16.7657 5.55963 16.7134 5.59533C16.667 5.62695 16.6269 5.66698 16.5953 5.71336C16.5596
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Strategic Craft"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "Every visual decision is rooted in research, brand strategy, and audience insight — never just aesthetics."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "98% retention"
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7278 1.27327C13.3082 1.18189 13.8958 1.38793 14.2921 1.82182C14.6099 2.16982 14.6819 2.65457 14.7145 3.03961C14.7499 3.45713 14.7499 4.00793 14.7499 4.67675V8.40442C14.7499 8.69683 14.7505 8.87102 14.7611 9.00015C14.7675 9.07896 14.776 9.11208 14.7787 9.12096C14.8023 9.1656 14.8387 9.20208 14.8834 9.2256C14.8923 9.22836 14.9254 9.23685 15.0042 9.24329C15.1333 9.25384 15.3075 9.25442 15.5999 9.25442H17.7873C18.2897 9.25441 18.7177 9.25439 19.0525 9.2848C19.3813 9.31467 19.7733 9.3827 20.0915 9.63666C20.508 9.96908 20.7503 10.4732 20.7498 11.
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Senior-Led Teams"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "You always work with seniors. No handoffs to juniors after the kickoff call — the people who pitched are the people who execute."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "10+ yrs avg."
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5131 1.59529C12.5562 1.13636 11.4428 1.13637 10.486 1.5953L2.129 5.60345C0.956017 6.16603 0.956077 7.83614 2.1291 8.39864L10.4862 12.4061C11.4429 12.8649 12.5561 12.8649 13.5129 12.4061L21.8701 8.39864C23.0431 7.83615 23.0432 6.16603 21.8702 5.60344L13.5131 1.59529ZM11.1347 2.94778C11.6814 2.68554 12.3177 2.68554 12.8644 2.94778L21.2215 6.95593C21.2315 6.96069 21.2363 6.96466 21.2383 6.96649C21.2404 6.96846 21.2419 6.97034 21.2432 6.97252C21.2462 6.97741 21.2499 6.98722 21.2499 7.00102C21.2499 7.01482 21.2462 7.02463 21.2432 7.02952C21.2419
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Systems-First"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "We deliver design systems, not artifacts. Everything ships with documentation, components, and guidelines."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "Token-ready"
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<g clip-path="url(#clip0_9001_305229)">
+<path d="M12.75 6C12.75 5.58579 12.4142 5.25 12 5.25C11.5858 5.25 11.25 5.58579 11.25 6V12C11.25 12.2586 11.3832 12.4989 11.6025 12.636L15.6025 15.136C15.9538 15.3555 16.4165 15.2488 16.636 14.8975C16.8555 14.5462 16.7488 14.0835 16.3975 13.864L12.75 11.5843V6Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM1.75 12C1.75 6.33908 6.33908 1.75 12 1.75C17.6609 1.75 22.25 6.3390
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Predictable Pace"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "Weekly milestones, transparent timelines, no slipped deadlines. Your team always knows what's next."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "On-time, every time"
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Global Network"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "Photographers, illustrators, and motion artists in 14 cities — assembled for the project at hand."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "14 cities"
+                <div class="group flex flex-col gap-4 rounded-3xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-foreground/20 hover:shadow-[0_20px_40px_-20px_rgb(0,0,0,0.15)]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="grid h-11 w-11 place-items-center rounded-2xl bg-foreground text-background">
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
+                      
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.0776 1.21257C11.285 0.60079 12.7116 0.600688 13.919 1.21229L21.0167 4.80744C21.7732 5.19063 22.25 5.96662 22.25 6.81464V8.83929C22.25 9.34079 22.1488 10.3274 22.0344 11.2977C21.7672 13.5642 20.8916 15.7017 19.573 17.541C18.0478 19.6687 16.0449 21.4093 13.7253 22.623L12.9749 23.0156C12.3632 23.3357 11.6335 23.3357 11.0218 23.0157L10.2731 22.6241C7.95128 21.4097 5.94702 19.6671 4.42162 17.5367C3.10653 15.7 2.23322 13.5662 1.96632 11.3039C1.85159 10.3314 1.75 9.34177 1.75 8.83929V6.81449C1.75 5.96659 2.22667 5.19068 2.98302 4.80744L10.0776 1.2
+                  <div class="space-y-2">
+                    <h3 class="text-lg font-medium tracking-tight">
+                      "Long-term Partnership"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      "Most clients stay with us for 3+ years. We invest in understanding your business, not just your brief."
+                  <div class="mt-auto pt-4 text-3xl font-medium tracking-tight">
+                    "3+ yr avg."
+        <island component=ProcessSteps._q9ApWlW.js client=visible>
+          <section id="process" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-6xl">
+              <div class="flex flex-col gap-4 mb-12 items-center text-center">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "How we work"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "A predictable shape, every time"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "Three phases, weekly milestones, transparent timelines."
+              <div class="grid gap-4 md:grid-cols-3 md:gap-5">
+                <div class="md:row-span-2">
+                  <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+                    <div class="absolute inset-0" style="background-image:linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);background-size:33.333% 33.333%">
+                    <div class="relative grid h-full place-items-center p-10 min-h-[300px]">
+                      <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true" class="text-background process-float">
+                        <path d="M30 90 L90 30 L90 60 L60 60 L60 90 Z" fill="currentColor"></path>
+                <div class="flex flex-col justify-between gap-4 rounded-3xl border border-border bg-card p-6 md:p-7 min-h-[220px]">
+                  <div class="flex items-center gap-3">
+                    <span data-mini-bar="true" class="inline-block h-2 w-8 rounded-full bg-foreground/30">
+                    <span data-count="true" class="text-base font-semibold text-foreground">
+                      "20%"
+                    <span class="ml-auto text-base font-semibold text-foreground/40">
+                      "67%"
+                  <div class="flex items-center gap-3">
+                    <span data-mini-bar="true" class="inline-block h-2 w-8 rounded-full bg-foreground/15">
+                    <span class="text-base font-semibold text-foreground/30">
+                      "·"
+                  <p class="text-sm leading-snug text-muted-foreground">
+                    "Stakeholder interviews, audit, and a written brief signed off before craft begins"
+                    "…"
+                <div class="md:row-span-2">
+                  <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.08),transparent_60%)]">
+                    <div class="relative grid h-full place-items-end p-8 min-h-[300px]">
+                      <div class="flex flex-col items-center gap-3 text-background">
+                        <div class="grid h-24 w-24 place-items-center rounded-full bg-background/10 backdrop-blur-sm">
+                          <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"></circle><path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+                        <p class="text-xs uppercase tracking-[0.18em] text-background/70">
+                          "Senior designer"
+                <div class="md:row-span-2">
+                  <div class="flex flex-col justify-between gap-6 rounded-3xl border border-border bg-card p-6 md:p-8 min-h-[300px]">
+                    <p data-count="true" class="text-6xl font-medium leading-none tracking-tight text-foreground md:text-7xl">
+                      "70%"
+                    <p class="text-sm leading-relaxed text-muted-foreground">
+                      <span class="text-foreground">
+                        "Design time"
+                        "."
+                      "Concepting, design, and production with weekly working sessions and two rounds of revision."
+                <div class="relative h-full overflow-hidden rounded-3xl bg-foreground">
+                  <div class="process-glow absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(79,70,229,0.55),transparent_60%)]">
+                  <div class="process-glow process-glow-delay absolute inset-0 bg-[radial-gradient(circle_at_75%_70%,rgba(169,50,237,0.4),transparent_60%)]">
+                  <div class="relative grid h-full place-items-center p-8 min-h-[220px]">
+                    <span class="text-3xl font-semibold tracking-tight text-background md:text-4xl">
+                      "zypher"
+                      <span class="text-background/40">
+                        "®"
+                <div class="relative h-full overflow-hidden rounded-3xl border border-border bg-card p-6 md:p-7 min-h-[220px]">
+                  <div class="absolute inset-x-6 top-6 flex flex-col gap-2">
+                    <div data-toast="true" class="rounded-xl bg-green-50 dark:bg-green-950/40 px-3 py-2 text-xs font-medium text-green-700 dark:text-green-400 shadow-sm">
+                      "✓ Assets delivered"
+                    <div data-toast="true" data-x="8" class="rounded-xl bg-amber-50 dark:bg-amber-950/40 px-3 py-2 text-xs font-medium text-amber-700 dark:text-amber-400 shadow-sm translate-x-2">
+                      "↺ System handoff"
+                    <div data-toast="true" data-x="4" class="rounded-xl border border-border bg-card px-3 py-2 text-xs font-medium text-foreground shadow-sm translate-x-1">
+                      <p class="font-semibold">
+                        "Hand off"
+                      <p class="mt-0.5 text-[10px] text-muted-foreground">
+                        "1 week + 30d"
+                <div class="flex h-full flex-col items-start justify-between gap-4 rounded-3xl border border-border bg-card p-6 md:p-7 min-h-[220px]">
+                  <span class="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    "Reliability"
+                  <div class="relative grid place-items-center">
+                    <svg width="96" height="96" class="-rotate-90" aria-hidden="true">
+                      <circle cx="48" cy="48" r="38" fill="none" stroke-width="6" class="stroke-border"></circle><circle data-donut-ring="true" cx="48" cy="48" r="38" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="238.76104167282426" stroke-dashoffset="0" class="stroke-foreground"></circle>
+                    <span data-count="true" class="absolute text-sm font-semibold text-foreground">
+                      "100"
+                      "%"
+                  <p class="text-sm text-muted-foreground">
+                    "Discovery → written brief"
+                <div class="flex h-full flex-col justify-between gap-4 rounded-3xl border border-border bg-card p-6 md:p-7 min-h-[220px]">
+                  <span class="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    "Pace"
+                  <div >
+                    <p class="text-4xl font-medium tracking-tight text-foreground md:text-5xl">
+                      "1 week + 30d"
+                    <p class="mt-2 text-sm text-muted-foreground">
+                      "Average sprint"
+                  <div class="flex gap-1.5">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                    <span data-pace-bar="true" class="h-1.5 flex-1 rounded-full bg-foreground/15">
+                <div class="flex h-full flex-col justify-between gap-4 rounded-3xl border border-border bg-card p-6 md:p-7 min-h-[220px]">
+                  <span class="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    "Stack we ship with"
+                  <div class="flex flex-wrap gap-2">
+                    <span data-pill="true" class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground">
+                      "Astro"
+                    <span data-pill="true" class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground">
+                      "React"
+                    <span data-pill="true" class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground">
+                      "Tailwind"
+                    <span data-pill="true" class="rounded-full border border-border bg-muted px-3 py-1.5 text-xs font-medium text-foreground">
+                      "GSAP"
+                  <p class="text-sm text-muted-foreground">
+                    "A focused stack — fast to build with, easy to hand off."
+        <island component=FeatureShowcase.BriD7YFE.js client=visible>
+          <section id="showcase" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-6xl">
+              <div class="flex flex-col gap-4 mb-12 items-center text-center">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "Why Zypher"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "Built to work the way you do"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "Not just deliverables — a working system that plugs into your team, your tools, and your timeline."
+              <div class="border-l border-t border-dashed border-border">
+                <div class="grid md:grid-cols-3">
+                  <div data-show-cell="true" class="flex flex-col border-b border-r border-dashed border-border bg-card p-6 md:p-8">
+                    <h3 class="text-xl font-medium tracking-tight text-foreground">
+                      "One team, every discipline"
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "A single brief fans out to brand, web, product, and motion — one point of contact, zero agency ping-pong."
+                    <div class="mt-6 flex-1">
+                      <div class="flex h-full flex-col items-center justify-center py-4">
+                        <div class="flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2">
+                          <span class="grid h-9 w-9 place-items-center rounded-full bg-foreground text-background">
+                            <svg viewBox="0 0 120 120" aria-hidden="true" class="h-4 w-4">
+                              <path d="M30 90 L90 30 L90 60 L60 60 L60 90 Z" fill="currentColor"></path>
+                          <span class="text-sm text-muted-foreground">
+                            "+"
+                          <span class="grid h-9 w-9 place-items-center rounded-full border border-border bg-card text-foreground">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                              
+<path d="M7.25 13C7.25 13.4142 7.58579 13.75 8 13.75H16C16.4142 13.75 16.75 13.4142 16.75 13C16.75 12.5858 16.4142 12.25 16 12.25H8C7.58579 12.25 7.25 12.5858 7.25 13Z" fill="currentColor"></path>
+<path d="M8 17.75C7.58579 17.75 7.25 17.4142 7.25 17C7.25 16.5858 7.58579 16.25 8 16.25H12C12.4142 16.25 12.75 16.5858 12.75 17C12.75 17.4142 12.4142 17.75 12 17.75H8Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.497 1.24997L8.7679 1.24999C7.95506 1.24999 7.29944 1.24998 6.76853 1.29336C6.2219 1.33802 5.74175 1.43238 5.29754 1.65872C4.59193 2.01824 4.01825 2.5919
+                        <div class="h-6 w-px bg-border">
+                        <div class="w-full">
+                          <div class="mx-[12.5%] h-px bg-border">
+                          <div class="grid grid-cols-4">
+                            <div class="flex flex-col items-center">
+                              <div class="h-6 w-px bg-border">
+                              <div class="grid h-11 w-11 place-items-center rounded-full border border-border bg-card text-foreground">
+                                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4.5 w-4.5">
+                                  
+<path d="M15 8C15 7.44772 15.4477 7 16 7C16.5523 7 17.0001 7.44772 17.0001 8C17.0001 8.55228 16.5524 9 16.0001 9C15.4478 9 15 8.55228 15 8Z" fill="currentColor"></path>
+<path d="M11.5 5C10.9477 5 10.5 5.44772 10.5 6C10.5 6.55228 10.9477 7 11.5 7C12.0523 7 12.5001 6.55228 12.5001 6C12.5001 5.44772 12.0523 5 11.5 5Z" fill="currentColor"></path>
+<path d="M6 9C6 8.44772 6.44772 8 7 8C7.55228 8 8.0001 8.44772 8.0001 9C8.0001 9.55229 7.55238 10 7.0001 10C6.44782 10 6 9.55229 6 9Z" fill="currentColor"></path>
+<path d="M7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15C7.55228 15 8.0001 14.552
+                              <span class="mt-2 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                                "Brand"
+                            <div class="flex flex-col items-center">
+                              <div class="h-6 w-px bg-border">
+                              <div class="grid h-11 w-11 place-items-center rounded-full border border-border bg-card text-foreground">
+                                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4.5 w-4.5">
+                                  
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.9326 1.25H7.06739C6.11495 1.24999 5.35439 1.24999 4.74013 1.30018C4.11012 1.35165 3.56824 1.45963 3.07054 1.71322C2.27085 2.12068 1.62068 2.77085 1.21322 3.57054C0.959634 4.06824 0.85165 4.61012 0.800176 5.24013C0.749989 5.85439 0.749994 6.61494 0.75 7.56738V12.4326C0.749998 12.7937 0.749995 13.1272 0.752728 13.4356C0.750922 13.4568 0.75 13.4783 0.75 13.5C0.75 13.5271 0.751439 13.5539 0.754243 13.5803C0.759669 14.0248 0.772028 14.4154 0.800176 14.7599C0.85165 15.3899 0.959634 15.9318 1.21322 16.4295C1.62068 17.2291 2.27085 17.8793 3.07054 1
+                              <span class="mt-2 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                                "Web"
+                            <div class="flex flex-col items-center">
+                              <div class="h-6 w-px bg-border">
+                              <div class="grid h-11 w-11 place-items-center rounded-full border border-border bg-card text-foreground">
+                                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4.5 w-4.5">
+                                  
+<path d="M6.31605 16.2925C6.48601 15.9148 6.93001 15.7464 7.30775 15.9163L9.30775 16.8162C9.68548 16.9862 9.85392 17.4302 9.68396 17.8079C9.51399 18.1857 9.06999 18.3541 8.69226 18.1841L6.69226 17.2842C6.31452 17.1143 6.14609 16.6703 6.31605 16.2925Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.2073 1.64707C11.344 1.1183 12.656 1.11829 13.7927 1.64707L20.2927 4.67096C21.7915 5.36823 22.75 6.87131 22.75 8.52438V15.5457C22.75 17.2114 21.7769 18.7236 20.2609 19.4138L13.7609 22.3727C12.6422 22.882 11.3578 22.882 10.2392 22.3727L3.73915 19.4138C2.22311 18.7236 
+                              <span class="mt-2 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                                "Product"
+                            <div class="flex flex-col items-center">
+                              <div class="h-6 w-px bg-border">
+                              <div class="grid h-11 w-11 place-items-center rounded-full border border-border bg-card text-foreground">
+                                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4.5 w-4.5">
+                                  
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7278 1.27327C13.3082 1.18189 13.8958 1.38793 14.2921 1.82182C14.6099 2.16982 14.6819 2.65457 14.7145 3.03961C14.7499 3.45713 14.7499 4.00793 14.7499 4.67675V8.40442C14.7499 8.69683 14.7505 8.87102 14.7611 9.00015C14.7675 9.07896 14.776 9.11208 14.7787 9.12096C14.8023 9.1656 14.8387 9.20208 14.8834 9.2256C14.8923 9.22836 14.9254 9.23685 15.0042 9.24329C15.1333 9.25384 15.3075 9.25442 15.5999 9.25442H17.7873C18.2897 9.25441 18.7177 9.25439 19.0525 9.2848C19.3813 9.31467 19.7733 9.3827 20.0915 9.63666C20.508 9.96908 20.7503 10.4732 20.7498 11.
+                              <span class="mt-2 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                                "Motion"
+                  <div data-show-cell="true" class="flex flex-col border-b border-r border-dashed border-border bg-card p-6 md:p-8 md:row-span-2">
+                    <h3 class="text-xl font-medium tracking-tight text-foreground">
+                      "Start with a single brief"
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "Send a rough brief — even a paragraph — and get a scoped plan back within a day: team, timeline, and price."
+                    <div class="mt-6 flex-1">
+                      <div class="flex h-full min-h-[420px] flex-col overflow-hidden rounded-2xl border border-border bg-background">
+                        <div class="flex items-center gap-2.5 border-b border-border px-4 py-3">
+                          <span class="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background">
+                            <svg viewBox="0 0 120 120" aria-hidden="true" class="h-3.5 w-3.5">
+                              <path d="M30 90 L90 30 L90 60 L60 60 L60 90 Z" fill="currentColor"></path>
+                          <div class="leading-tight">
+                            <p class="text-sm font-semibold text-foreground">
+                              "Zypher Studio"
+                            <p class="mt-0.5 flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                              <span class="h-1.5 w-1.5 rounded-full bg-green-500">
+                              "Replies within a day"
+                        <div class="flex flex-1 flex-col gap-3 p-4">
+                          <div data-chat-msg="true" class="max-w-[85%] self-end">
+                            <div class="rounded-2xl rounded-br-md bg-foreground px-3.5 py-2.5 text-xs leading-relaxed text-background">
+                              "We're rebranding and need a new marketing site before the Q3 launch. Rough scope attached — can you take it end to end?"
+                            <p class="mt-1 text-right text-[10px] text-muted-foreground">
+                              "Tue 9:14 AM"
+                          <div data-chat-msg="true" class="max-w-[85%] self-start">
+                            <div class="rounded-2xl rounded-bl-md border border-border bg-card px-3.5 py-2.5 text-xs leading-relaxed text-foreground">
+                              "Got it — here's the shape we'd propose:"
+                          <div data-chat-msg="true" class="w-full max-w-[90%] self-start">
+                            <div class="overflow-hidden rounded-2xl rounded-bl-md border border-border bg-card">
+                              <div class="border-b border-border px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                                "Scoped plan"
+                              <div class="divide-y divide-border text-xs">
+                                <div class="flex items-center justify-between px-3.5 py-2.5">
+                                  <span class="text-muted-foreground">
+                                    "Team"
+                                  <span class="font-medium text-foreground">
+                                    "3 seniors"
+                                <div class="flex items-center justify-between px-3.5 py-2.5">
+                                  <span class="text-muted-foreground">
+                                    "Timeline"
+                                  <span class="font-medium text-foreground">
+                                    "8–10 weeks"
+                                <div class="flex items-center justify-between px-3.5 py-2.5">
+                                  <span class="text-muted-foreground">
+                                    "Price"
+                                  <span class="font-medium text-foreground">
+                                    "$45k fixed"
+                              <div class="flex flex-wrap gap-1.5 border-t border-border px-3.5 py-2.5">
+                                <span class="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
+                                  "Brand"
+                                <span class="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
+                                  "Web"
+                                <span class="rounded-full border border-border bg-background px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
+                                  "Motion"
+                            <p class="mt-1 text-[10px] text-muted-foreground">
+                              "Tue 9:58 AM · same day"
+                        <div class="flex items-center gap-3 border-t border-border px-4 py-3">
+                          <span class="flex-1 truncate text-xs text-muted-foreground">
+                            "Sounds great — when can we start?"
+                          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-foreground text-background">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-3.5 w-3.5">
+                              
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.5975 4.89077C23.33 2.7319 21.2686 0.670448 19.1097 1.40297L3.04761 6.85304C1.97295 7.21769 1.25 8.22643 1.25 9.36127C1.25 10.3395 1.78913 11.238 2.65224 11.6983L8.94565 15.0549L12.3021 21.3483C12.7625 22.2114 13.661 22.7505 14.6392 22.7505C15.7741 22.7505 16.7828 22.0276 17.1475 20.9529L22.5975 4.89077ZM19.5917 2.82343C20.573 2.49046 21.51 3.42749 21.1771 4.40879L15.727 20.4709C15.5689 20.937 15.1314 21.2505 14.6392 21.2505C14.215 21.2505 13.8253 21.0167 13.6257 20.6424L11.0026 15.724L15.3662 8.98021C15.5126 8.75397 15.2467 8.48812 15.0205 
+                  <div data-show-cell="true" class="flex flex-col border-b border-r border-dashed border-border bg-card p-6 md:p-8">
+                    <h3 class="text-xl font-medium tracking-tight text-foreground">
+                      "Handoff that actually lands"
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "Every project closes with a complete kit — Figma libraries, documented repos, and living guidelines."
+                    <div class="mt-6 flex-1">
+                      <div class="flex h-full items-center py-4">
+                        <div class="flex shrink-0 items-center gap-2 rounded-xl border border-border bg-background px-3 py-2 text-sm font-medium text-foreground">
+                          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                            
+<path d="M6 16.25C5.58579 16.25 5.25 16.5858 5.25 17C5.25 17.4142 5.58579 17.75 6 17.75H9C9.41421 17.75 9.75 17.4142 9.75 17C9.75 16.5858 9.41421 16.25 9 16.25H6Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.04508 1.25H16.9549C18.1859 1.25 19.3113 1.94551 19.8618 3.04656L22.5125 8.34787C22.6687 8.6603 22.75 9.0048 22.75 9.3541V19C22.75 21.0711 21.0711 22.75 19 22.75H5C2.92893 22.75 1.25 21.0711 1.25 19V9.3541C1.25 9.0048 1.33133 8.6603 1.48754 8.34787L4.1382 3.04656C4.68872 1.94551 5.81408 1.25 7.04508 1.25ZM5.47984 3.71738C5.77627 3.1245 6.38223 2.75 7.045
+                          "Handoff kit"
+                        <div class="h-px min-w-6 flex-1 bg-border">
+                        <div class="flex flex-col gap-4 border-l border-border py-2">
+                          <div class="flex items-center">
+                            <div class="h-px w-5 bg-border">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/figma.svg" alt="Figma" loading="lazy" class="h-5 w-5 dark:invert">
+                          <div class="flex items-center">
+                            <div class="h-px w-5 bg-border">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/github.svg" alt="GitHub" loading="lazy" class="h-5 w-5 dark:invert">
+                          <div class="flex items-center">
+                            <div class="h-px w-5 bg-border">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/notion.svg" alt="Notion" loading="lazy" class="h-5 w-5 dark:invert">
+                  <div data-show-cell="true" class="flex flex-col border-b border-r border-dashed border-border bg-card p-6 md:p-8">
+                    <h3 class="text-xl font-medium tracking-tight text-foreground">
+                      "Figma to production code"
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "No throw-it-over-the-wall handoff — the same team takes every screen from Figma to shipped front-end."
+                    <div class="mt-6 flex-1">
+                      <div class="relative grid h-full grid-cols-2 items-stretch gap-3 py-2">
+                        <div class="flex flex-col gap-2 rounded-xl border border-border bg-background p-3">
+                          <div class="flex items-center gap-1">
+                            <span class="h-1.5 w-1.5 rounded-full bg-muted-foreground/40">
+                            <span class="h-1.5 w-1.5 rounded-full bg-muted-foreground/40">
+                            <span class="ml-auto h-1.5 w-6 rounded-full bg-muted">
+                          <div class="mt-2 h-2.5 w-4/5 rounded-full bg-foreground/70">
+                          <div class="h-2 w-3/5 rounded-full bg-muted">
+                          <div class="mt-1 h-5 w-14 rounded-full bg-foreground">
+                          <div class="mt-auto h-14 rounded-lg bg-muted">
+                        <div class="flex flex-col justify-center gap-2 rounded-xl bg-foreground p-3">
+                          <div class="flex items-center gap-1.5" style="padding-left:0px">
+                            <span class="h-1.5 rounded-full w-8 bg-background/40">
+                            <span class="h-1.5 rounded-full w-16 bg-indigo-300/70">
+                          <div class="flex items-center gap-1.5" style="padding-left:8px">
+                            <span class="h-1.5 rounded-full w-12 bg-background/40">
+                            <span class="h-1.5 rounded-full w-10 bg-purple-300/70">
+                          <div class="flex items-center gap-1.5" style="padding-left:16px">
+                            <span class="h-1.5 rounded-full w-6 bg-background/40">
+                            <span class="h-1.5 rounded-full w-20 bg-background/25">
+                          <div class="flex items-center gap-1.5" style="padding-left:0px">
+                            <span class="h-1.5 rounded-full w-14 bg-emerald-300/60">
+                            <span class="h-1.5 rounded-full w-8 bg-background/25">
+                          <div class="flex items-center gap-1.5" style="padding-left:8px">
+                            <span class="h-1.5 rounded-full w-10 bg-background/40">
+                            <span class="h-1.5 rounded-full w-14 bg-indigo-300/70">
+                          <div class="flex items-center gap-1.5" style="padding-left:16px">
+                            <span class="h-1.5 rounded-full w-16 bg-background/25">
+                            <span class="h-1.5 rounded-full w-6 bg-purple-300/70">
+                        <div class="pointer-events-none absolute inset-0 grid place-items-center">
+                          <div class="flex items-center">
+                            <span class="grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/figma.svg" alt="Figma" loading="lazy" class="h-4 w-4 dark:invert">
+                            <span class="h-px w-5 bg-border">
+                            <span class="grid h-10 w-10 place-items-center rounded-full bg-foreground text-background shadow-sm">
+                              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                                
+<path d="M14.7277 4.1819C14.8281 3.78005 14.5838 3.37285 14.182 3.27239C13.7801 3.17193 13.3729 3.41625 13.2724 3.81809L9.27245 19.8181C9.17199 20.2199 9.41631 20.6271 9.81815 20.7276C10.22 20.8281 10.6272 20.5837 10.7277 20.1819L14.7277 4.1819Z" fill="currentColor"></path>
+<path d="M6.53566 7.47505C6.82558 7.77089 6.82078 8.24574 6.52495 8.53566L3.06071 11.9306L6.53548 15.475C6.82546 15.7707 6.82075 16.2456 6.52497 16.5356C6.22919 16.8255 5.75434 16.8208 5.46436 16.525L1.46444 12.445C1.32517 12.303 1.24805 12.1114 1.25004 11.9125C1.25203 11.7136 1.33297 11.5236 1.47505 11.3843L5.47505 7.4643
+                  <div data-show-cell="true" class="flex flex-col border-b border-r border-dashed border-border bg-card p-6 md:p-8">
+                    <h3 class="text-xl font-medium tracking-tight text-foreground">
+                      "Plugs into your stack"
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "We work inside your tools — design files to repos — so nothing gets lost in translation."
+                    <div class="mt-6 flex-1">
+                      <div class="relative mx-auto grid h-56 w-56 place-items-center py-2">
+                        <div class="orbit-spin absolute inset-0">
+                          <div class="absolute inset-4 rounded-full border border-dashed border-border">
+                          <div class="absolute -translate-x-1/2 -translate-y-1/2" style="left:50%;top:6%">
+                            <div class="orbit-counter grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/figma.svg" alt="Figma" loading="lazy" class="h-4 w-4 dark:invert">
+                          <div class="absolute -translate-x-1/2 -translate-y-1/2" style="left:92%;top:38%">
+                            <div class="orbit-counter grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/react.svg" alt="React" loading="lazy" class="h-4 w-4 dark:invert">
+                          <div class="absolute -translate-x-1/2 -translate-y-1/2" style="left:76%;top:90%">
+                            <div class="orbit-counter grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/gsap.svg" alt="GSAP" loading="lazy" class="h-4 w-4 dark:invert">
+                          <div class="absolute -translate-x-1/2 -translate-y-1/2" style="left:24%;top:90%">
+                            <div class="orbit-counter grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/astro.svg" alt="Astro" loading="lazy" class="h-4 w-4 dark:invert">
+                          <div class="absolute -translate-x-1/2 -translate-y-1/2" style="left:8%;top:38%">
+                            <div class="orbit-counter grid h-10 w-10 place-items-center rounded-full border border-border bg-card shadow-sm">
+                              <img src="/icon-tech/tailwindcss.svg" alt="Tailwind CSS" loading="lazy" class="h-4 w-4 dark:invert">
+                        <div class="grid h-14 w-14 place-items-center rounded-full bg-foreground text-background shadow-md">
+                          <svg viewBox="0 0 120 120" aria-hidden="true" class="h-6 w-6">
+                            <path d="M30 90 L90 30 L90 60 L60 60 L60 90 Z" fill="currentColor"></path>
+        <island component=TestimonialFeature.BxnxFDLB.js client=visible>
+          <section class="px-6 py-20">
+            <div class="mx-auto max-w-3xl">
+              <div class="rounded-3xl border border-border bg-card p-10 text-center md:p-14">
+                <p class="text-balance text-2xl font-medium leading-snug tracking-tight md:text-3xl">
+                  "“"
+                  "Working with Zypher reset what we expected from a creative partner. The clarity of process, the seniority on every call, and the level of craft — it's a different category."
+                  "”"
+                <div class="mt-8 flex items-center justify-center gap-3">
+                  <img src="/emoji/Number=32.png" alt="Hana Brink" width="40" height="40" loading="lazy" class="h-10 w-10 rounded-full bg-muted object-contain">
+                  <div class="text-left">
+                    <div class="text-sm font-medium">
+                      "Hana Brink"
+                    <div class="text-xs text-muted-foreground">
+                      "VP Brand"
+                      "· Northwind"
+<footer class="px-4 pb-4 pt-20 md:pt-32">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-foreground text-background">
+    <div class="grid gap-10 px-8 pb-0 pt-12 md:grid-cols-[1.4fr_repeat(2,1fr)] md:gap-12 md:px-14 md:pt-16">
+      <div class="space-y-5">
+        <p class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Email"
+        <a href="mailto:hello@zypher.example" class="block text-xl font-medium tracking-tight transition-opacity hover:opacity-70 md:text-2xl">
+          "hello@zypher.example"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Studio"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/benefits" class="text-background/85 transition-colors hover:text-background">
+              "Benefits"
+          <li >
+            <a href="/services" class="text-background/85 transition-colors hover:text-background">
+              "Services"
+          <li >
+            <a href="/portfolios" class="text-background/85 transition-colors hover:text-background">
+              "Portfolios"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Resources"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/faq" class="text-background/85 transition-colors hover:text-background">
+              "FAQ"
+          <li >
+            <a href="/contact" class="text-background/85 transition-colors hover:text-background">
+              "Contact"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Social"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="https://instagram.com" class="text-background/85 transition-colors hover:text-background">
+              "Instagram"
+          <li >
+            <a href="https://twitter.com" class="text-background/85 transition-colors hover:text-background">
+              "Twitter"
+          <li >
+            <a href="https://behance.net" class="text-background/85 transition-colors hover:text-background">
+              "Behance"
+    <div class="px-8 pb-6 md:px-14">
+      <div class="flex gap-3">
+        <a href="https://instagram.com" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        <a href="https://twitter.com" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <a href="https://behance.net" aria-label="Behance" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+            
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+    <div class="px-8 pb-2 md:px-14">
+      <h2 class="block max-w-full select-none truncate text-[16vw] font-semibold leading-none tracking-tight md:text-[13vw]" aria-hidden="true">
+        "ZYPHER"
+        <span class="text-background/40">
+          "®"
+    <div class="flex flex-col items-start justify-between gap-3 border-t border-background/10 px-8 py-5 text-xs text-background/60 md:flex-row md:items-center md:px-14">
+      <div class="flex flex-wrap gap-5">
+        <a href="/privacy" class="transition-colors hover:text-background">
+          "Privacy"
+        <a href="/terms" class="transition-colors hover:text-background">
+          "Terms"
+        <a href="/cookies" class="transition-colors hover:text-background">
+          "Cookies"
+      <p >
+        "© 2026 Zypher Agency. All rights reserved."
+<island component=AdminPromo.D9Zvk8sZ.js client=idle>
+  <aside class="admin-promo admin-promo--right" aria-label="Admin dashboard" style="--admin-promo-lift: 0px;">
+    <div class="admin-promo-card">
+      <button type="button" class="admin-promo-close" aria-label="Dismiss">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12"></path>
+      <a href="/admin" class="admin-promo-link">
+        <span class="admin-promo-media is-playing" style="--from-x: 23.44%; --from-y: 66.1%; --to-x: 75.31%; --to-y: 66.1%; --w: 23.75%; --h: 22.43%; --r: 20;">
+          <span class="admin-promo-stage" aria-hidden="true">
+            <img alt="" class="admin-promo-frame admin-promo-frame--board" src="/admin-preview/board.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dragging" src="/admin-preview/dragging.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--over" src="/admin-preview/over.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dropped" src="/admin-preview/dropped.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--ticket" src="/admin-preview/ticket.webp">
+            <svg class="admin-promo-cursor" viewBox="0 0 17 24">
+              <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
+        <span class="admin-promo-body">
+          <span class="admin-promo-badge">
+            "Admin dashboard"
+          <span class="admin-promo-title">
+            "A CRM built into Zypher"

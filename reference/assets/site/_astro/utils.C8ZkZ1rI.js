@@ -1,0 +1,1 @@
+import{t as e,c as i}from"./bundle-mjs.CBvgXdwM.js";function n(...t){return e(i(t))}function o(t){return!t||typeof t!="string"?!1:/\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(t.split("?")[0])}export{n as c,o as i};

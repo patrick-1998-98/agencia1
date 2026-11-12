@@ -1,0 +1,356 @@
+<header class="sticky top-0 z-50 w-full px-4 pt-4">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/60 bg-foreground/95 px-2 py-2 text-background shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur">
+    <a href="/" class="flex items-center gap-2 pl-3 pr-2 text-sm font-medium tracking-tight">
+      <span class="text-base font-semibold">
+        "Zypher"
+      <sup class="text-[10px] opacity-70">
+        "z"
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      <li >
+        <a href="/benefits" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="px-3 py-1.5 rounded-full transition-colors bg-background/15 text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Faq"
+    <div class="flex items-center gap-2 pr-1">
+      <island component=ThemeToggle.rII1FBaA.js client=load>
+        <button type="button" aria-label="Toggle theme" class="grid place-items-center w-9 h-9 rounded-full border border-border bg-card text-foreground hover:bg-muted !bg-background !text-foreground !border-transparent hidden sm:grid">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="w-4 h-4">
+            
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9972 1.25399C11.0963 1.26205 11.2768 1.28887 11.453 1.41036C11.7462 1.61254 11.9082 1.94986 11.8827 2.30508C11.8664 2.5331 11.7611 2.69826 11.7082 2.77339C11.6471 2.86035 11.5759 2.93642 11.5167 2.99576C11.4029 3.10986 11.2445 3.2488 11.0707 3.40129L11.0519 3.41785C9.64041 4.65645 8.75122 6.47136 8.75122 8.49486C8.75122 12.2239 11.7742 15.2468 15.5032 15.2468C17.5277 15.2468 19.3434 14.3567 20.5821 12.944L20.5986 12.9252C20.751 12.7513 20.8899 12.5929 21.004 12.479C21.0633 12.4198 21.1393 12.3486 21.2263 12.2874C21.3014 12.2345 21.4665 12.1
+      <a href="/contact" class="hidden sm:inline-flex rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5 hover:shadow-md">
+        "Get In Touch"
+      <button type="button" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden grid h-9 w-9 place-items-center rounded-full bg-background text-foreground">
+        <svg class="menu-icon h-4 w-4" viewBox="0 0 24 24">
+           <line x1="4" y1="8" x2="20" y2="8"></line> <line x1="4" y1="16" x2="20" y2="16"></line> 
+        <svg class="close-icon h-4 w-4 hidden" viewBox="0 0 24 24">
+           <line x1="6" y1="6" x2="18" y2="18"></line> <line x1="18" y1="6" x2="6" y2="18"></line> 
+  <div id="mobile-menu" class="md:hidden fixed inset-x-4 top-20 z-40 origin-top scale-95 rounded-3xl border border-border/60 bg-foreground/95 p-6 text-background opacity-0 pointer-events-none shadow-[0_20px_60px_rgb(0,0,0,0.25)] backdrop-blur transition-all duration-300">
+    <ul class="flex flex-col gap-1 text-base">
+      <li >
+        <a href="/benefits" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="block rounded-2xl px-4 py-3 transition-colors bg-background/15 text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Faq"
+    <a href="/contact" class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground">
+      "Get In Touch"
+<island component=PageTransition.B1ds7P_U.js client=load>
+  <div class="pointer-events-none fixed inset-0 z-[100] grid place-items-center bg-foreground" style="transform: translate(0%, -100%); translate: none; rotate: none; scale: none;" aria-hidden="true">
+    <span class="text-[18vw] font-semibold leading-none tracking-tight text-background md:text-[14vw]">
+      "ZYPHER"
+      <span class="text-background/40">
+        "®"
+  <div style="opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+    <astro-slot >
+      <main class="min-h-screen" data-astro-transition-scope="astro-a2sg2g5y-1">
+        <island component=Hero.B3I_4QSE.js client=load>
+          <div class="px-4 pt-4">
+            <div class="relative mx-auto overflow-hidden rounded-[2.5rem] bg-hero-bg max-w-360">
+              <div class="hero-bg absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                <img src="/images/image.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                <div class="hero-grain absolute inset-0 mix-blend-overlay">
+                <div class="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/30">
+              <div class="relative grid min-h-[640px] grid-rows-[auto_1fr_auto] gap-10 p-8 md:p-14 md:min-h-[720px]">
+                <span class="absolute h-5 w-5 border-white/40 top-6 left-6 border-t border-l rounded-tl">
+                <span class="absolute h-5 w-5 border-white/40 top-6 right-6 border-t border-r rounded-tr">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 left-6 border-b border-l rounded-bl">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 right-6 border-b border-r rounded-br">
+                <div class="relative z-10 max-w-2xl pt-12 md:pt-20">
+                  <div class="hero-eyebrow flex items-center gap-2 text-white/80" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <span class="h-1.5 w-1.5 rounded-full bg-white/80">
+                    <span class="text-xs uppercase tracking-[0.18em]">
+                      "Portfolios"
+                  <h1 class="hero-title mt-4 text-balance text-4xl font-medium leading-[1.05] text-white md:text-6xl lg:text-7xl" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    "Selected work, 2018 — present"
+                <div class="relative z-10 mt-auto flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+                  <div class="hero-thumb relative" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
+                      <img src="/images/image-2.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                  <div class="flex flex-col items-start gap-4 md:items-end md:text-right">
+                    <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      "A curated set of digital projects spanning product sites, web apps, and design systems."
+                    <div class="hero-trust flex items-center gap-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      <span class="text-sm text-white/85">
+                        "60 brands · 14 cities"
+                      <div class="flex items-center gap-2">
+                        <a href="https://instagram.com" aria-label="Instagram" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        <a href="https://twitter.com" aria-label="Twitter" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <island component=ClientMarquee.DNwlRi5H.js client=visible>
+          <section class="px-6 py-16">
+            <div class="mx-auto max-w-6xl" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+              <p class="mb-8 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                "Tools we ship with"
+              <div class="relative overflow-hidden">
+                <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-background to-transparent">
+                <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-background to-transparent">
+                <div class="flex animate-marquee items-center gap-14 whitespace-nowrap">
+                  <img src="/icon-tech/astro.svg" alt="Astro" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/react.svg" alt="React" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/nextjs.svg" alt="Next.js" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/tailwindcss.svg" alt="Tailwind CSS" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/gsap.svg" alt="GSAP" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/figma.svg" alt="Figma" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/nodejs.svg" alt="Node.js" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/github.svg" alt="GitHub" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/netlify.svg" alt="Vercel" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/stripe.svg" alt="Stripe" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/notion.svg" alt="Notion" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/linear.svg" alt="Linear" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/astro.svg" alt="Astro" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/react.svg" alt="React" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/nextjs.svg" alt="Next.js" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/tailwindcss.svg" alt="Tailwind CSS" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/gsap.svg" alt="GSAP" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/figma.svg" alt="Figma" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/nodejs.svg" alt="Node.js" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/github.svg" alt="GitHub" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/netlify.svg" alt="Vercel" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/stripe.svg" alt="Stripe" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/notion.svg" alt="Notion" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+                  <img src="/icon-tech/linear.svg" alt="Linear" class="h-9 w-auto opacity-60 transition-opacity hover:opacity-100 md:h-10 dark:invert" loading="lazy">
+        <island component=PortfolioCarousel.D9o1XYAu.js client=visible>
+          <section class="relative px-6 py-20">
+            <div class="mx-auto max-w-6xl">
+              <p class="mb-3 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                "Case studies"
+              <h2 class="text-balance text-center text-3xl font-medium tracking-tight md:text-5xl">
+                "Recent projects"
+              <p class="mx-auto mt-3 max-w-2xl text-center text-base text-muted-foreground md:text-lg">
+                "A small slice of recent client work — open any card for the full case study."
+              <div class="relative mt-12 select-none" style="height:min(95vh, 900px);perspective:2500px">
+                <div class="absolute left-1/2 top-1/2 cursor-grab active:cursor-grabbing" style="transform: translate(-50%, -50%); translate: none; rotate: none; scale: none; touch-action: none; cursor: grab; user-select: none;">
+                  <a href="/portfolios/liquid-brokers" class="absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]" style="width: min(70vw, 320px); height: min(85vh, 460px); top: 0px; left: 0px; transform: translate(-50%, -50%) translate3d(273.6px, 0px, 0px) scale(0.8, 0.8); translate: none; rotate: none; scale: none; z-index: 103; opacity: 1; touch-action: none;">
+                    <img src="https://cdn.dribbble.com/userupload/18532086/file/original-bcaf125d189b680400eac8d34252e068.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page" loading="lazy" class="absolute inset-0 h-full w-full object-cover" style="touch-action: none;">
+                    <span class="absolute left-3 top-3 z-10 text-xs font-bold text-white/90" style="text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px; touch-action: none;">
+                      "001"
+                    <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4" style="touch-action: none;">
+                      <p class="text-[10px] uppercase tracking-[0.16em] text-white/70" style="touch-action: none;">
+                        "Web"
+                      <p class="mt-1 truncate text-sm font-medium text-white" style="touch-action: none;">
+                        "Liquid Brokers — Trading Landing Page"
+                  <a href="/portfolios/logo-revamp" class="absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]" style="width: min(70vw, 320px); height: min(85vh, 460px); top: 0px; left: 0px; transform: translate(-50%, -50%) translate3d(0px, 273.6px, 0px) scale(0.8, 0.8); translate: none; rotate: none; scale: none; z-index: 102; opacity: 1; touch-action: none;">
+                    <video src="https://cdn.dribbble.com/userupload/47524909/file/ada088b4cf17a5069cacfafa4dee95cf.mp4" poster="https://cdn.dribbble.com/userupload/47524908/file/bbbdf239c9ef54243fafc8c3d29fbe56.png?resize=752x580&vertical=center" autoplay="" muted="" loop="" playsinline="" class="absolute inset-0 h-full w-full object-cover" style="touch-action: none;">
+                    <span class="absolute left-3 top-3 z-10 text-xs font-bold text-white/90" style="text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px; touch-action: none;">
+                      "002"
+                    <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4" style="touch-action: none;">
+                      <p class="text-[10px] uppercase tracking-[0.16em] text-white/70" style="touch-action: none;">
+                        "Brand"
+                      <p class="mt-1 truncate text-sm font-medium text-white" style="touch-action: none;">
+                        "A Logo Revamp"
+                  <a href="/portfolios/alva-commerce" class="absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]" style="width: min(70vw, 320px); height: min(85vh, 460px); top: 0px; left: 0px; transform: translate(-50%, -50%) translate3d(-273.6px, 0px, 0px) scale(0.8, 0.8); translate: none; rotate: none; scale: none; z-index: 101; opacity: 1; touch-action: none;">
+                    <video src="https://cdn.dribbble.com/userupload/46667564/file/7c54ea590990fbfc067bf77e57314509.mp4" poster="https://cdn.dribbble.com/userupload/46667563/file/89e0bf58b21a63d85a623da69fe6316b.png?resize=752x487&vertical=center" autoplay="" muted="" loop="" playsinline="" class="absolute inset-0 h-full w-full object-cover" style="touch-action: none;">
+                    <span class="absolute left-3 top-3 z-10 text-xs font-bold text-white/90" style="text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px; touch-action: none;">
+                      "003"
+                    <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4" style="touch-action: none;">
+                      <p class="text-[10px] uppercase tracking-[0.16em] text-white/70" style="touch-action: none;">
+                        "Web"
+                      <p class="mt-1 truncate text-sm font-medium text-white" style="touch-action: none;">
+                        "Alva Commerce — Website Redesign"
+                  <a href="/portfolios/axone-studio" class="absolute overflow-hidden rounded-2xl bg-muted shadow-[0_4px_16px_rgba(0,0,0,0.18)]" style="width: min(70vw, 320px); height: min(85vh, 460px); top: 0px; left: 0px; transform: translate(-50%, -50%) translate3d(0px, -273.6px, 0px) scale(0.8, 0.8); translate: none; rotate: none; scale: none; z-index: 100; opacity: 1; touch-action: none;">
+                    <video src="https://cdn.dribbble.com/userupload/45799417/file/794c8a23488158b22c543bc83256f51b.mp4" poster="https://cdn.dribbble.com/userupload/45799415/file/70174758b2c049900ab3f797029881fe.png?resize=752x564&vertical=center" autoplay="" muted="" loop="" playsinline="" class="absolute inset-0 h-full w-full object-cover" style="touch-action: none;">
+                    <span class="absolute left-3 top-3 z-10 text-xs font-bold text-white/90" style="text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px; touch-action: none;">
+                      "004"
+                    <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4" style="touch-action: none;">
+                      <p class="text-[10px] uppercase tracking-[0.16em] text-white/70" style="touch-action: none;">
+                        "Web"
+                      <p class="mt-1 truncate text-sm font-medium text-white" style="touch-action: none;">
+                        "Axone Studio — Product Site"
+              <p class="mt-6 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                "Drag to rotate"
+        <island component=HighlightCards.BuNCUhWG.js client=visible>
+          <section id="highlights" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-6xl">
+              <div class="flex flex-col gap-4 mb-12 items-center text-center">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "Beyond the case studies"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "Every project ships with proof"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "The outcomes behind the visuals — what actually lands when an engagement wraps."
+              <div class="grid gap-5 md:grid-cols-12">
+                <div class="flex flex-col gap-6 overflow-hidden rounded-3xl bg-rose-100/60 p-7 dark:bg-rose-950/20 md:col-span-6 md:flex-row md:items-center md:p-8" style="translate: none; rotate: none; scale: none; transform: translate(0px, 26px); opacity: 0;">
+                  <div class="md:w-1/2 md:self-end">
+                    <h3 class="max-w-[24ch] text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">
+                      "Launch-ready, not just design-ready."
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "Every site in this portfolio shipped to production — designed, built, and live."
+                  <div class="md:w-1/2">
+                    <div class="overflow-hidden rounded-xl border border-border bg-card shadow-[0_16px_40px_-16px_rgb(0,0,0,0.25)]">
+                      <div class="flex items-center gap-1.5 border-b border-border bg-muted/60 px-3 py-2">
+                        <span class="h-2 w-2 rounded-full bg-muted-foreground/30">
+                        <span class="h-2 w-2 rounded-full bg-muted-foreground/30">
+                        <span class="h-2 w-2 rounded-full bg-muted-foreground/30">
+                        <span class="ml-2 h-3 flex-1 rounded-full bg-background">
+                      <img src="https://cdn.dribbble.com/userupload/18532086/file/original-bcaf125d189b680400eac8d34252e068.png?resize=1024x768&vertical=center" alt="Launch-ready, not just design-ready." loading="lazy" class="aspect-4/3 w-full object-cover object-top">
+                <div class="flex flex-col justify-between gap-8 rounded-3xl bg-zinc-200/50 p-7 dark:bg-zinc-900/60 md:col-span-6 md:p-8" style="translate: none; rotate: none; scale: none; transform: translate(0px, 26px); opacity: 0;">
+                  <div class="relative pt-3">
+                    <div class="absolute inset-x-6 -top-0 h-14 rounded-xl bg-card/50">
+                    <div class="absolute inset-x-3 top-1.5 h-14 rounded-xl bg-card/70">
+                    <div class="relative flex items-center gap-3 rounded-xl bg-card px-4 py-3 shadow-sm">
+                      <img src="/emoji/Number=41.png" alt="Milestone approved" width="36" height="36" loading="lazy" class="h-9 w-9 rounded-full bg-muted object-contain">
+                      <div class="leading-tight">
+                        <p class="text-sm font-semibold text-foreground">
+                          "Milestone approved"
+                        <p class="mt-0.5 text-xs text-muted-foreground">
+                          "Today, 11:56"
+                      <span class="ml-auto text-sm font-semibold text-foreground">
+                        "$45k"
+                  <div class="">
+                    <h3 class="max-w-[24ch] text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">
+                      "Scoped and priced before we start."
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "Fixed scopes and milestone billing — no surprise invoices at the end."
+                <div class="flex flex-col justify-between gap-8 rounded-3xl bg-emerald-100/50 p-7 dark:bg-emerald-950/20 md:col-span-5 md:p-8" style="translate: none; rotate: none; scale: none; transform: translate(0px, 26px); opacity: 0;">
+                  <div class="flex -space-x-3">
+                    <img src="/emoji/Number=5.png" alt="" width="48" height="48" loading="lazy" class="h-12 w-12 rounded-full bg-card object-contain ring-4 ring-card">
+                    <img src="/emoji/Number=12.png" alt="" width="48" height="48" loading="lazy" class="h-12 w-12 rounded-full bg-card object-contain ring-4 ring-card">
+                    <img src="/emoji/Number=23.png" alt="" width="48" height="48" loading="lazy" class="h-12 w-12 rounded-full bg-card object-contain ring-4 ring-card">
+                    <img src="/emoji/Number=32.png" alt="" width="48" height="48" loading="lazy" class="h-12 w-12 rounded-full bg-card object-contain ring-4 ring-card">
+                    <img src="/emoji/Number=88.png" alt="" width="48" height="48" loading="lazy" class="h-12 w-12 rounded-full bg-card object-contain ring-4 ring-card">
+                    <span class="grid h-12 w-12 place-items-center rounded-full bg-foreground text-xs font-semibold text-background ring-4 ring-card">
+                      "+3"
+                  <div class="">
+                    <h3 class="max-w-[24ch] text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">
+                      "A senior team on every brief."
+                    <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                      "The people who shipped this work — no juniors, no handoffs to strangers."
+                <div class="relative min-h-[240px] overflow-hidden rounded-3xl bg-amber-100/50 dark:bg-amber-950/20 md:col-span-7" style="translate: none; rotate: none; scale: none; transform: translate(0px, 26px); opacity: 0;">
+                  <div class="relative z-10 flex h-full flex-col justify-center p-7 md:w-[55%] md:p-8">
+                    <div class="">
+                      <h3 class="max-w-[24ch] text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">
+                        "One partner from brief to launch."
+                      <p class="mt-2 max-w-[46ch] text-sm leading-relaxed text-muted-foreground">
+                        "Strategy, design, and build under one roof — the studio behind every case study above."
+                  <img src="/images/image-1.png" alt="" loading="lazy" class="absolute right-0 top-0 hidden h-full w-[42%] object-cover md:block">
+        <island component=CtaBanner.BG1zirnY.js client=visible>
+          <section class="px-6 py-20">
+            <div class="mx-auto max-w-6xl">
+              <div class="relative overflow-hidden rounded-[2.5rem] bg-foreground px-8 py-16 text-background md:px-16 md:py-24">
+                <div class="hero-grain absolute inset-0 opacity-30">
+                <div class="relative flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+                  <div class="max-w-xl">
+                    <p class="text-xs uppercase tracking-[0.18em] text-background/60">
+                      "New work, every season"
+                    <h2 class="mt-4 text-balance text-3xl font-medium tracking-tight md:text-5xl">
+                      "Want to be the next case study?"
+                    <p class="mt-4 max-w-md text-sm text-background/70 md:text-base">
+                      "We pick a small number of clients each quarter. If you've got a brief, we'd love to read it."
+                  <div class="flex flex-col gap-3 sm:flex-row">
+                    <a href="/contact" class="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5">
+                      "Start a project"
+                      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                        
+<path d="M19 4.25C19.4142 4.25 19.75 4.58579 19.75 5V16C19.75 16.4142 19.4142 16.75 19 16.75C18.5858 16.75 18.25 16.4142 18.25 16V6.81066L5.53033 19.5303C5.23744 19.8232 4.76256 19.8232 4.46967 19.5303C4.17678 19.2374 4.17678 18.7626 4.46967 18.4697L17.1893 5.75H8C7.58579 5.75 7.25 5.41421 7.25 5C7.25 4.58579 7.58579 4.25 8 4.25H19Z" fill="currentColor"></path>
+
+                    <a href="/services" class="inline-flex items-center gap-2 rounded-full border border-background/30 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10">
+                      "See services"
+<footer class="px-4 pb-4 pt-20 md:pt-32">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-foreground text-background">
+    <div class="grid gap-10 px-8 pb-0 pt-12 md:grid-cols-[1.4fr_repeat(2,1fr)] md:gap-12 md:px-14 md:pt-16">
+      <div class="space-y-5">
+        <p class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Email"
+        <a href="mailto:hello@zypher.example" class="block text-xl font-medium tracking-tight transition-opacity hover:opacity-70 md:text-2xl">
+          "hello@zypher.example"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Studio"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/benefits" class="text-background/85 transition-colors hover:text-background">
+              "Benefits"
+          <li >
+            <a href="/services" class="text-background/85 transition-colors hover:text-background">
+              "Services"
+          <li >
+            <a href="/portfolios" class="text-background/85 transition-colors hover:text-background">
+              "Portfolios"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Resources"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/faq" class="text-background/85 transition-colors hover:text-background">
+              "FAQ"
+          <li >
+            <a href="/contact" class="text-background/85 transition-colors hover:text-background">
+              "Contact"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Social"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="https://instagram.com" class="text-background/85 transition-colors hover:text-background">
+              "Instagram"
+          <li >
+            <a href="https://twitter.com" class="text-background/85 transition-colors hover:text-background">
+              "Twitter"
+          <li >
+            <a href="https://behance.net" class="text-background/85 transition-colors hover:text-background">
+              "Behance"
+    <div class="px-8 pb-6 md:px-14">
+      <div class="flex gap-3">
+        <a href="https://instagram.com" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        <a href="https://twitter.com" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <a href="https://behance.net" aria-label="Behance" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+            
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+    <div class="px-8 pb-2 md:px-14">
+      <h2 class="block max-w-full select-none truncate text-[16vw] font-semibold leading-none tracking-tight md:text-[13vw]" aria-hidden="true">
+        "ZYPHER"
+        <span class="text-background/40">
+          "®"
+    <div class="flex flex-col items-start justify-between gap-3 border-t border-background/10 px-8 py-5 text-xs text-background/60 md:flex-row md:items-center md:px-14">
+      <div class="flex flex-wrap gap-5">
+        <a href="/privacy" class="transition-colors hover:text-background">
+          "Privacy"
+        <a href="/terms" class="transition-colors hover:text-background">
+          "Terms"
+        <a href="/cookies" class="transition-colors hover:text-background">
+          "Cookies"
+      <p >
+        "© 2026 Zypher Agency. All rights reserved."
+<island component=AdminPromo.D9Zvk8sZ.js client=idle>
+  <aside class="admin-promo admin-promo--right" aria-label="Admin dashboard" style="--admin-promo-lift: 0px;">
+    <div class="admin-promo-card">
+      <button type="button" class="admin-promo-close" aria-label="Dismiss">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12"></path>
+      <a href="/admin" class="admin-promo-link">
+        <span class="admin-promo-media is-playing" style="--from-x: 23.44%; --from-y: 66.1%; --to-x: 75.31%; --to-y: 66.1%; --w: 23.75%; --h: 22.43%; --r: 20;">
+          <span class="admin-promo-stage" aria-hidden="true">
+            <img alt="" class="admin-promo-frame admin-promo-frame--board" src="/admin-preview/board.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dragging" src="/admin-preview/dragging.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--over" src="/admin-preview/over.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dropped" src="/admin-preview/dropped.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--ticket" src="/admin-preview/ticket.webp">
+            <svg class="admin-promo-cursor" viewBox="0 0 17 24">
+              <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
+        <span class="admin-promo-body">
+          <span class="admin-promo-badge">
+            "Admin dashboard"
+          <span class="admin-promo-title">
+            "A CRM built into Zypher"

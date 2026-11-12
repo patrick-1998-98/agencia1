@@ -1,0 +1,276 @@
+/* ---- from admin.html len 88 */
+@layer {
+  [data-react-aria-pressable] {
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+}
+/* ---- from admin.html len 59 */
+astro-island,astro-slot,astro-static-slot{display:contents}
+/* ---- from benefits.html len 846 */
+[astro route announcer + vt keyframes]
+/* ---- from benefits.html len 796 */
+[data-astro-transition-scope="astro-a2sg2g5y-1"] { view-transition-name: astro-a2sg2g5y-1; }@layer astro { ::view-transition-old(astro-a2sg2g5y-1) { animation: none; opacity: 0; mix-blend-mode: normal; }::view-transition-new(astro-a2sg2g5y-1) { animation: none; mix-blend-mode: normal; }::view-transition-group(astro-a2sg2g5y-1) { animation: none } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-a2sg2g5y-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-a2sg2g5y-1"] { animation: none; mix-blend-mode: normal; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-a2sg2g5y-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-a2sg2g5y-1"] { animation: none; mix-blend-mode: normal; }
+/* ---- from benefits.html len 8298 */
+
+        /* Phones: 1rem in from the edges and clear of the home indicator, and
+         * under the sites' menus, drawers and dialogs (z-index 40 and up),
+         * which cover the screen there. */
+        .admin-promo {
+          position: fixed;
+          bottom: calc(max(1rem, env(safe-area-inset-bottom)) + var(--admin-promo-lift, 0px));
+          z-index: 30;
+          padding: 2px;
+          border-radius: 1rem;
+          overflow: hidden;
+          isolation: isolate;
+          box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.35);
+          animation: admin-promo-in 400ms ease-out;
+        }
+        .admin-promo--right { right: 1rem; }
+        .admin-promo--left { left: 1rem; }
+        @media (min-width: 768px) {
+          .admin-promo { bottom: 1.5rem; z-index: 60; }
+          .admin-promo--right { right: 1.5rem; }
+          .admin-promo--left { left: 1.5rem; }
+        }
+        /* The metal edge: a slowly turning silver gradient behind the card. */
+        .admin-promo::before {
+          content: "";
+          position: absolute;
+          inset: -75%;
+          z-index: -1;
+          background: conic-gradient(#fafafa, #71717a, #e4e4e7, #3f3f46, #fafafa, #a1a1aa, #fafafa);
+          animation: admin-promo-turn 8s linear infinite;
+        }
+        .admin-promo-card {
+          position: relative;
+          width: min(20rem, calc(100vw - 2rem));
+          border-radius: calc(1rem - 2px);
+          overflow: hidden;
+          background: #18181b;
+          color: #fff;
+        }
+        /* A card on the left leaves the right corner's button (a chat
+         * launcher) room on phones. */
+        @media (max-width: 767.98px) {
+          .admin-promo--left .admin-promo-card { width: min(20rem, calc(100vw - 6.5rem)); }
+        }
+        .admin-promo-close {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.75rem;
+          height: 1.75rem;
+          padding: 0;
+          border: 0;
+          border-radius: 999px;
+          background: rgb(0 0 0 / 0.55);
+          color: #fff;
+          cursor: pointer;
+          backdrop-filter: blur(4px);
+          transition: background-color 150ms;
+        }
+        .admin-promo-close:hover { background: rgb(0 0 0 / 0.8); }
+        .admin-promo-close svg { width: 0.875rem; height: 0.875rem; }
+        .admin-promo-link {
+          display: block;
+          color: inherit;
+          text-decoration: none;
+        }
+        .admin-promo-media {
+          display: block;
+          position: relative;
+          aspect-ratio: 16 / 9;
+          overflow: hidden;
+          container-type: inline-size; /* the ticket's corner radius scales with it */
+          background: #09090b;
+          /* Where the cursor holds the ticket, and where it rests after. */
+          --grab-x: calc(var(--from-x) + var(--w) * 0.5);
+          --grab-y: calc(var(--from-y) + var(--h) * 0.35);
+          --drop-x: calc(var(--to-x) + var(--w) * 0.5);
+          --drop-y: calc(var(--to-y) + var(--h) * 0.35);
+          --loop: 7s;
+        }
+        .admin-promo-stage {
+          position: absolute;
+          inset: 0;
+          transition: transform 500ms;
+        }
+        .admin-promo-link:hover .admin-promo-stage { transform: scale(1.05); }
+        .admin-promo-frame {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+        }
+        .admin-promo-frame--board { opacity: 1; }
+        .admin-promo-frame--ticket {
+          inset: auto;
+          left: var(--from-x);
+          top: var(--from-y);
+          width: var(--w);
+          height: auto;
+          border-radius: calc(var(--r) * 100cqw / 1280);
+          transform-origin: 50% 35%;
+        }
+        .admin-promo-cursor {
+          position: absolute;
+          left: 96%;
+          top: 104%;
+          width: 0.75rem;
+          margin: -1px 0 0 -1px;
+          overflow: visible;
+          transform-origin: 0 0;
+          filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.35));
+        }
+        .admin-promo-cursor path {
+          fill: #111;
+          stroke: #fff;
+          stroke-width: 1.5;
+          stroke-linejoin: round;
+        }
+        .is-playing .admin-promo-frame--dragging { animation: admin-promo-dragging var(--loop) infinite; }
+        .is-playing .admin-promo-frame--over { animation: admin-promo-over var(--loop) infinite; }
+        .is-playing .admin-promo-frame--dropped { animation: admin-promo-dropped var(--loop) infinite; }
+        .is-playing .admin-promo-frame--ticket { animation: admin-promo-ticket var(--loop) infinite; }
+        .is-playing .admin-promo-cursor { animation: admin-promo-cursor var(--loop) infinite; }
+        .admin-promo-body {
+          display: block;
+          padding: 1rem;
+        }
+        .admin-promo-badge {
+          display: block;
+          margin-bottom: 0.25rem;
+          font-size: 11px;
+          line-height: 1rem;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: #a1a1aa;
+        }
+        .admin-promo-title {
+          display: block;
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: 1.375;
+        }
+        .admin-promo :focus-visible {
+          outline: 2px solid #fff;
+          outline-offset: -2px;
+        }
+
+        /* One loop: the cursor comes in and picks the ticket up (its slot
+         * dims), carries it across (the column lights up under it), drops it
+         * (the counts change), steps back, and the board resets. */
+        @keyframes admin-promo-cursor {
+          0% { left: 96%; top: 104%; transform: none; }
+          16% { left: var(--grab-x); top: var(--grab-y); transform: none; }
+          18% { transform: scale(0.8); }
+          22% { left: var(--grab-x); top: var(--grab-y); transform: scale(0.9); animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1); }
+          46% { left: var(--drop-x); top: var(--drop-y); transform: scale(0.9); }
+          50% { left: var(--drop-x); top: var(--drop-y); transform: none; }
+          62%, 86% { left: calc(var(--drop-x) + 6%); top: calc(var(--drop-y) + 10%); transform: none; }
+          100% { left: 96%; top: 104%; transform: none; }
+        }
+        @keyframes admin-promo-ticket {
+          0%, 18% { left: var(--from-x); top: var(--from-y); opacity: 0; transform: none; box-shadow: none; }
+          19% { left: var(--from-x); top: var(--from-y); opacity: 1; transform: none; box-shadow: none; }
+          22% { left: var(--from-x); top: var(--from-y); transform: scale(1.06) rotate(-3deg); box-shadow: 0 10px 16px -6px rgb(0 0 0 / 0.35); animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1); }
+          46% { left: var(--to-x); top: var(--to-y); opacity: 1; transform: scale(1.06) rotate(-3deg); box-shadow: 0 10px 16px -6px rgb(0 0 0 / 0.35); }
+          50% { left: var(--to-x); top: var(--to-y); opacity: 1; transform: none; box-shadow: none; }
+          55%, 100% { left: var(--to-x); top: var(--to-y); opacity: 0; transform: none; box-shadow: none; }
+        }
+        @keyframes admin-promo-dragging {
+          0%, 19% { opacity: 0; }
+          21%, 54% { opacity: 1; }
+          56%, 100% { opacity: 0; }
+        }
+        @keyframes admin-promo-over {
+          0%, 34% { opacity: 0; }
+          38%, 54% { opacity: 1; }
+          56%, 100% { opacity: 0; }
+        }
+        @keyframes admin-promo-dropped {
+          0%, 49% { opacity: 0; }
+          53%, 86% { opacity: 1; }
+          96%, 100% { opacity: 0; }
+        }
+        @keyframes admin-promo-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: none; }
+        }
+        @keyframes admin-promo-turn {
+          to { transform: rotate(1turn); }
+        }
+        /* Reduced motion: the still board, no cursor. */
+        @media (prefers-reduced-motion: reduce) {
+          .admin-promo, .admin-promo::before, .is-playing .admin-promo-frame, .is-playing .admin-promo-cursor { animation: none; }
+          .admin-promo-frame--ticket, .admin-promo-cursor { display: none; }
+          .admin-promo-link:hover .admin-promo-stage { transform: none; }
+        }
+      
+/* ---- from home.html len 1745 */
+
+        .odo-root {
+          display: inline-flex;
+          line-height: 1;
+          font-variant: tabular-nums;
+          writing-mode: horizontal-tb;
+        }
+        .odo-sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+        .odo-characters {
+          display: inline-flex;
+          gap: 1px;
+          align-items: center;
+        }
+        .odo-vertical .odo-characters {
+          flex-direction: column;
+          gap: 0;
+          line-height: 1;
+        }
+        .odo-character {
+          display: inline-grid;
+          height: 1lh;
+          line-height: var(--line-height);
+          font-variant: tabular-nums;
+          font-size: var(--font-size);
+          overflow: hidden;
+          -webkit-mask: linear-gradient(transparent, white calc(1lh * var(--mask-size)) calc(100% - (1lh * var(--mask-size))), transparent);
+          mask: linear-gradient(transparent, white calc(1lh * var(--mask-size)) calc(100% - (1lh * var(--mask-size))), transparent);
+        }
+        .odo-symbol {
+          overflow: visible;
+          -webkit-mask: none;
+          mask: none;
+          line-height: 1;
+          height: auto;
+        }
+        .odo-fraction {
+          font-size: calc(var(--font-size) * 0.75);
+          opacity: 0.75;
+        }
+        .odo-track {
+          display: grid;
+          translate: 0 calc((var(--v) + 1) * (var(--line-height) * -1));
+          transition: translate calc(var(--transition) * 1s) cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .odo-track > span {
+          height: 1lh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      

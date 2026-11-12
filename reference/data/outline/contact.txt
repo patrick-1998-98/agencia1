@@ -1,0 +1,573 @@
+<header class="sticky top-0 z-50 w-full px-4 pt-4">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/60 bg-foreground/95 px-2 py-2 text-background shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur">
+    <a href="/" class="flex items-center gap-2 pl-3 pr-2 text-sm font-medium tracking-tight">
+      <span class="text-base font-semibold">
+        "Zypher"
+      <sup class="text-[10px] opacity-70">
+        "z"
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      <li >
+        <a href="/benefits" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Faq"
+    <div class="flex items-center gap-2 pr-1">
+      <island component=ThemeToggle.rII1FBaA.js client=load>
+        <button type="button" aria-label="Toggle theme" class="grid place-items-center w-9 h-9 rounded-full border border-border bg-card text-foreground hover:bg-muted !bg-background !text-foreground !border-transparent hidden sm:grid">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="w-4 h-4">
+            
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9972 1.25399C11.0963 1.26205 11.2768 1.28887 11.453 1.41036C11.7462 1.61254 11.9082 1.94986 11.8827 2.30508C11.8664 2.5331 11.7611 2.69826 11.7082 2.77339C11.6471 2.86035 11.5759 2.93642 11.5167 2.99576C11.4029 3.10986 11.2445 3.2488 11.0707 3.40129L11.0519 3.41785C9.64041 4.65645 8.75122 6.47136 8.75122 8.49486C8.75122 12.2239 11.7742 15.2468 15.5032 15.2468C17.5277 15.2468 19.3434 14.3567 20.5821 12.944L20.5986 12.9252C20.751 12.7513 20.8899 12.5929 21.004 12.479C21.0633 12.4198 21.1393 12.3486 21.2263 12.2874C21.3014 12.2345 21.4665 12.1
+      <a href="/contact" class="hidden sm:inline-flex rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5 hover:shadow-md">
+        "Get In Touch"
+      <button type="button" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden grid h-9 w-9 place-items-center rounded-full bg-background text-foreground">
+        <svg class="menu-icon h-4 w-4" viewBox="0 0 24 24">
+           <line x1="4" y1="8" x2="20" y2="8"></line> <line x1="4" y1="16" x2="20" y2="16"></line> 
+        <svg class="close-icon h-4 w-4 hidden" viewBox="0 0 24 24">
+           <line x1="6" y1="6" x2="18" y2="18"></line> <line x1="18" y1="6" x2="6" y2="18"></line> 
+  <div id="mobile-menu" class="md:hidden fixed inset-x-4 top-20 z-40 origin-top scale-95 rounded-3xl border border-border/60 bg-foreground/95 p-6 text-background opacity-0 pointer-events-none shadow-[0_20px_60px_rgb(0,0,0,0.25)] backdrop-blur transition-all duration-300">
+    <ul class="flex flex-col gap-1 text-base">
+      <li >
+        <a href="/benefits" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Faq"
+    <a href="/contact" class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground">
+      "Get In Touch"
+<island component=PageTransition.B1ds7P_U.js client=load>
+  <div class="pointer-events-none fixed inset-0 z-[100] grid place-items-center bg-foreground" style="transform: translate(0%, -100%); translate: none; rotate: none; scale: none;" aria-hidden="true">
+    <span class="text-[18vw] font-semibold leading-none tracking-tight text-background md:text-[14vw]">
+      "ZYPHER"
+      <span class="text-background/40">
+        "®"
+  <div style="opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+    <astro-slot >
+      <main class="min-h-screen" data-astro-transition-scope="astro-a2sg2g5y-1">
+        <island component=Hero.B3I_4QSE.js client=load>
+          <div class="px-4 pt-4">
+            <div class="relative mx-auto overflow-hidden rounded-[2.5rem] bg-hero-bg max-w-360">
+              <div class="hero-bg absolute inset-0" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                <img src="/images/image.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                <div class="hero-grain absolute inset-0 mix-blend-overlay">
+                <div class="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/30">
+              <div class="relative grid min-h-[640px] grid-rows-[auto_1fr_auto] gap-10 p-8 md:p-14 md:min-h-[720px]">
+                <span class="absolute h-5 w-5 border-white/40 top-6 left-6 border-t border-l rounded-tl">
+                <span class="absolute h-5 w-5 border-white/40 top-6 right-6 border-t border-r rounded-tr">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 left-6 border-b border-l rounded-bl">
+                <span class="absolute h-5 w-5 border-white/40 bottom-6 right-6 border-b border-r rounded-br">
+                <div class="relative z-10 max-w-2xl pt-12 md:pt-20">
+                  <div class="hero-eyebrow flex items-center gap-2 text-white/80" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <span class="h-1.5 w-1.5 rounded-full bg-white/80">
+                    <span class="text-xs uppercase tracking-[0.18em]">
+                      "Contact"
+                  <h1 class="hero-title mt-4 text-balance text-4xl font-medium leading-[1.05] text-white md:text-6xl lg:text-7xl" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    "Let's start something"
+                <div class="relative z-10 mt-auto flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
+                  <div class="hero-thumb relative" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                    <div class="h-32 w-32 overflow-hidden rounded-2xl border border-white/30 bg-white/10 backdrop-blur-sm md:h-36 md:w-36">
+                      <img src="/images/image-1.png" alt="" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+                  <div class="flex flex-col items-start gap-4 md:items-end md:text-right">
+                    <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      "Tell us about your project. Even rough briefs are welcome — we'd rather hear early than late."
+                    <div class="hero-trust flex items-center gap-4" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                      <span class="text-sm text-white/85">
+                        "Average response · 4 hours"
+                      <div class="flex items-center gap-2">
+                        <a href="https://instagram.com" aria-label="Instagram" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                        <a href="https://twitter.com" aria-label="Twitter" class="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <island component=ContactForm.BPuOlA-o.js client=visible>
+          <section id="contact" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-6xl">
+              <div class="flex flex-col gap-4 mb-12 items-start text-left">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "Get in touch"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "Pick your way in"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "Start a project, reach the right lead, or send a brief. Every route lands with a person, and we reply within a working day. Studio details are on the right."
+              <div class="grid gap-10 md:grid-cols-[1.4fr_1fr]" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                <div class="min-w-0">
+                  <div role="tablist" aria-label="How would you like to start?" class="grid w-full grid-cols-3 gap-1 rounded-full border border-border bg-card p-1 sm:inline-grid sm:w-auto">
+                    <button type="button" role="tab" id="contact-tab-project" aria-controls="contact-panel-project" tabindex="0" class="rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground bg-foreground text-background">
+                      <span class="sm:hidden">
+                        "Project"
+                      <span class="hidden sm:inline">
+                        "Start a project"
+                    <button type="button" role="tab" id="contact-tab-specialist" aria-controls="contact-panel-specialist" tabindex="-1" class="rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground text-muted-foreground hover:text-foreground">
+                      <span class="sm:hidden">
+                        "Specialist"
+                      <span class="hidden sm:inline">
+                        "Talk to a specialist"
+                    <button type="button" role="tab" id="contact-tab-message" aria-controls="contact-panel-message" tabindex="-1" class="rounded-full px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground text-muted-foreground hover:text-foreground">
+                      <span class="sm:hidden">
+                        "Brief"
+                      <span class="hidden sm:inline">
+                        "Send a brief"
+                  <div role="tabpanel" id="contact-panel-project" class="mt-6">
+                    <div class="zy-automation w-full rounded-3xl border border-border bg-card p-6 text-card-foreground md:p-10 ">
+                      <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground ">
+                        "Step"
+                        "1"
+                        "of"
+                        "4"
+                      <div class="flex gap-1.5 mt-3" aria-hidden="true">
+                        <span class="h-1 flex-1 rounded-full transition-colors duration-300 bg-foreground">
+                        <span class="h-1 flex-1 rounded-full transition-colors duration-300 bg-muted">
+                        <span class="h-1 flex-1 rounded-full transition-colors duration-300 bg-muted">
+                        <span class="h-1 flex-1 rounded-full transition-colors duration-300 bg-muted">
+                      <h3 class="text-2xl font-medium tracking-tight mt-8">
+                        "What are you planning?"
+                      <div class="mt-5">
+                        <div class="flex-col grid gap-2 sm:grid-cols-2" data-rac="" aria-label="Project type" role="radiogroup" id="react-aria-_r10R_136_" data-orientation="vertical">
+                          <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                            <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                              <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_136H5_" value="brand" style="">
+                            <span class="flex min-w-0 flex-col gap-0.5">
+                              <span class="truncate text-body-medium text-text-primary">
+                                "Brand"
+                              <span class="truncate text-body-regular text-text-secondary">
+                                "Identity systems and tokens"
+                            <span class="flex shrink-0 items-center py-1">
+                              <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                                <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                                <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                                <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                          <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                            <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                              <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_136H5_" value="web" style="">
+                            <span class="flex min-w-0 flex-col gap-0.5">
+                              <span class="truncate text-body-medium text-text-primary">
+                                "Web"
+                              <span class="truncate text-body-regular text-text-secondary">
+                                "Marketing sites and landing pages"
+                            <span class="flex shrink-0 items-center py-1">
+                              <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                                <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                                <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                                <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                          <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                            <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                              <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_136H5_" value="product" style="">
+                            <span class="flex min-w-0 flex-col gap-0.5">
+                              <span class="truncate text-body-medium text-text-primary">
+                                "Product"
+                              <span class="truncate text-body-regular text-text-secondary">
+                                "Product design and front-end"
+                            <span class="flex shrink-0 items-center py-1">
+                              <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                                <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                                <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                                <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                          <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                            <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                              <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_136H5_" value="other" style="">
+                            <span class="flex min-w-0 flex-col gap-0.5">
+                              <span class="truncate text-body-medium text-text-primary">
+                                "Not sure yet"
+                              <span class="truncate text-body-regular text-text-secondary">
+                                "Tell us below"
+                            <span class="flex shrink-0 items-center py-1">
+                              <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                                <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                                <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                                <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                      <div class="mt-8 flex items-center justify-between">
+                        <button type="button" class="inline-flex items-center justify-center gap-0.5 whitespace-nowrap overflow-hidden font-sans select-none cursor-pointer button-press-motion outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-border-focus-ring disabled:cursor-not-allowed aria-disabled:cursor-not-allowed p-2 text-body-medium bg-background-primary-default text-text-primary border border-border-button-defa">
+                          <span class="inline-flex items-center justify-center px-1 shrink-0">
+                            "Back"
+                        <button type="button" class="inline-flex items-center justify-center gap-0.5 whitespace-nowrap overflow-hidden font-sans select-none cursor-pointer button-press-motion outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-border-focus-ring disabled:cursor-not-allowed aria-disabled:cursor-not-allowed p-2 text-body-medium bg-button-primary text-text-white shadow-xs disabled:text-button-primary-disable">
+                          <span class="inline-flex items-center justify-center px-1 shrink-0">
+                            "Next"
+                  <div role="tabpanel" id="contact-panel-specialist" class="mt-6">
+                    <div class="zy-automation w-full rounded-3xl border border-border bg-card p-6 text-card-foreground md:p-10 ">
+                      <h3 class="text-2xl font-medium tracking-tight ">
+                        "What can we help with?"
+                      <div class="flex-col mt-5 grid gap-2" data-rac="" aria-label="Service" role="radiogroup" id="react-aria-_r10R_l6_" data-orientation="vertical">
+                        <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                          <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                            <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_l6H5_" value="brand" style="">
+                          <span class="flex min-w-0 flex-col gap-0.5">
+                            <span class="truncate text-body-medium text-text-primary">
+                              "Brand"
+                            <span class="truncate text-body-regular text-text-secondary">
+                              "Goes to the brand lead · identity systems"
+                          <span class="flex shrink-0 items-center py-1">
+                            <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                              <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                              <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                        <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                          <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                            <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_l6H5_" value="web" style="">
+                          <span class="flex min-w-0 flex-col gap-0.5">
+                            <span class="truncate text-body-medium text-text-primary">
+                              "Web"
+                            <span class="truncate text-body-regular text-text-secondary">
+                              "Goes to the web lead · marketing sites"
+                          <span class="flex shrink-0 items-center py-1">
+                            <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                              <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                              <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                        <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                          <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                            <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_l6H5_" value="product" style="">
+                          <span class="flex min-w-0 flex-col gap-0.5">
+                            <span class="truncate text-body-medium text-text-primary">
+                              "Product"
+                            <span class="truncate text-body-regular text-text-secondary">
+                              "Goes to the product lead · product design and front-end"
+                          <span class="flex shrink-0 items-center py-1">
+                            <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                              <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                              <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                        <label data-react-aria-pressable="true" class="group flex w-full items-center justify-between gap-3 border border-border-button-default py-3 pe-5 ps-4 select-none transition-colors duration-150 ease bg-background-primary-default cursor-pointer rounded-2xl" data-rac="">
+                          <span style="border:0;clip:rect(0 0 0 0);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap">
+                            <input data-react-aria-pressable="true" tabindex="-1" type="radio" name="react-aria-_r10R_l6H5_" value="other" style="">
+                          <span class="flex min-w-0 flex-col gap-0.5">
+                            <span class="truncate text-body-medium text-text-primary">
+                              "Something else"
+                            <span class="truncate text-body-regular text-text-secondary">
+                              "Goes to the studio lead · new projects"
+                          <span class="flex shrink-0 items-center py-1">
+                            <span aria-hidden="true" class="relative flex shrink-0 items-center justify-center rounded-full size-4">
+                              <span class="absolute inset-0 rounded-full border-border-checkbox-default bg-background-primary-default shadow-xs transition-opacity duration-200 ease border">
+                              <span class="absolute inset-0 rounded-full transition-opacity duration-200 ease bg-gradient-to-b from-accent-500 to-accent-600 shadow-[inset_0px_0px_0px_1px_var(--color-accent-500),inset_0px_2px_0px_0px_rgba(255,255,255,0.25)] opacity-0">
+                              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-control-indicator-background transition-[scale,opacity] duration-200 ease size-1.5 scale-0 opacity-0">
+                      <div class="mt-5">
+                        <div data-input-size="medium" class="group flex h-max w-full flex-col items-start gap-1" data-rac="">
+                          <label class="flex cursor-default items-center gap-0.5 text-body-medium text-text-primary" id="react-aria-_r10R_156H1_" for="react-aria-_r10R_156_" data-label="true">
+                            "Your email"
+                          <div role="presentation" class="relative flex w-full items-center text-foreground-icon-tertiary ring-inset duration-[var(--input-transition-ms)] ease p-2 rounded-2xl bg-background py-3 text-sm ring-1 ring-border transition-shadow focus-within:ring-foreground px-4" data-rac="">
+                            <div class="flex w-full items-center gap-2 min-w-0">
+                              <div class="flex flex-1 items-center gap-0.5 min-w-0">
+                                <input type="email" tabindex="0" id="react-aria-_r10R_156_" class="min-w-0 flex-1 bg-transparent border-0 outline-none p-0 m-0 font-sans text-body-regular text-text-primary placeholder:text-text-tertiary focus:placeholder:text-text-primary disabled:text-input-disabled-text disabled:placeholder:text-input-disabled-text disabled:cursor-not-allowed aria-invalid:placeholder:text-text-error-placeholder pl-1 text-left" data-rac="" value="" style="">
+                      <button type="button" class="inline-flex items-center justify-center gap-0.5 whitespace-nowrap overflow-hidden font-sans select-none cursor-pointer button-press-motion outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-border-focus-ring disabled:cursor-not-allowed aria-disabled:cursor-not-allowed p-2 text-body-medium bg-button-primary text-text-white shadow-xs disabled:text-button-primary-disable">
+                        <span class="inline-flex items-center justify-center px-1 shrink-0">
+                          "Send"
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0">
+                          
+<path d="M19 4.25C19.4142 4.25 19.75 4.58579 19.75 5V16C19.75 16.4142 19.4142 16.75 19 16.75C18.5858 16.75 18.25 16.4142 18.25 16V6.81066L5.53033 19.5303C5.23744 19.8232 4.76256 19.8232 4.46967 19.5303C4.17678 19.2374 4.17678 18.7626 4.46967 18.4697L17.1893 5.75H8C7.58579 5.75 7.25 5.41421 7.25 5C7.25 4.58579 7.58579 4.25 8 4.25H19Z" fill="currentColor"></path>
+
+                  <div role="tabpanel" id="contact-panel-message" class="mt-6">
+                    <div class="rounded-3xl border border-border bg-card p-6 md:p-10">
+                      <form class="grid grid-cols-2 gap-5">
+                        <div class="col-span-2 sm:col-span-1">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "Your name"
+                          <input type="text" placeholder="Jane Doe" class="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none" name="name" value="" style="">
+                        <div class="col-span-2 sm:col-span-1">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "Email"
+                          <input type="email" placeholder="you@studio.com" class="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none" name="email" value="" style="">
+                        <div class="col-span-2 sm:col-span-1">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "Company"
+                          <input type="text" placeholder="Acme Inc." class="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none" name="company" value="" style="">
+                        <div class="col-span-2 sm:col-span-1">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "Budget"
+                          <select name="budget" class="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none">
+                            <option value="">
+                              "Select…"
+                            <option value="Under $15k">
+                              "Under $15k"
+                            <option value="$15k – $45k">
+                              "$15k – $45k"
+                            <option value="$45k – $120k">
+                              "$45k – $120k"
+                            <option value="$120k+">
+                              "$120k+"
+                        <div class="col-span-2">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "What do you need?"
+                          <div class="flex flex-wrap gap-2">
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Brand"
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Web"
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Product"
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Design system"
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Front-end build"
+                            <button type="button" class="rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors border-border bg-card text-muted-foreground hover:text-foreground">
+                              "Not sure yet"
+                        <div class="col-span-2">
+                          <label class="mb-2 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                            "Project brief"
+                          <textarea name="message" placeholder="Tell us about the work, the timeline, and what success looks like." class="w-full rounded-2xl border border-border bg-background px-4 py-3 text-sm transition-colors focus:border-foreground focus:outline-none" style="">
+                        <div class="col-span-2 flex flex-wrap items-center justify-between gap-4 pt-2">
+                          <p class="text-xs text-muted-foreground">
+                            "By sending you agree to our terms."
+                          <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0">
+                            "Send brief"
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                              
+<path d="M19 4.25C19.4142 4.25 19.75 4.58579 19.75 5V16C19.75 16.4142 19.4142 16.75 19 16.75C18.5858 16.75 18.25 16.4142 18.25 16V6.81066L5.53033 19.5303C5.23744 19.8232 4.76256 19.8232 4.46967 19.5303C4.17678 19.2374 4.17678 18.7626 4.46967 18.4697L17.1893 5.75H8C7.58579 5.75 7.25 5.41421 7.25 5C7.25 4.58579 7.58579 4.25 8 4.25H19Z" fill="currentColor"></path>
+
+                <aside class="flex flex-col gap-6 rounded-3xl border border-border bg-card p-6 md:p-10">
+                  <h3 class="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    "Studio"
+                  <ul class="space-y-5">
+                    <li >
+                      <a href="mailto:studio@zypher-agency.online" class="block transition-colors hover:text-foreground">
+                        <div class="flex items-start gap-3">
+                          <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                              
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.66767 3C5.78504 2.99999 5.07696 2.99999 4.50438 3.04677C3.91605 3.09484 3.40504 3.19601 2.93408 3.43597C2.18143 3.81947 1.56951 4.43139 1.18602 5.18404C0.86574 5.81262 0.797222 6.52642 0.769302 7.22127C0.742346 7.7037 0.750038 8.26094 0.750043 8.91762V15.0824C0.750036 15.965 0.75003 16.6731 0.796812 17.2457C0.84488 17.834 0.946052 18.345 1.18602 18.816C1.56951 19.5686 2.18143 20.1805 2.93408 20.564C3.40504 20.804 3.91605 20.9052 4.50438 20.9532C5.07696 21 5.78503 21 6.66765 21H17.3324C18.2151 21 18.9231 21 19.4957 20.9532C20.084 20.9052 20.5
+                          <div >
+                            <div class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                              "Email"
+                            <div class="mt-1 whitespace-pre-line text-sm">
+                              "studio@zypher-agency.online"
+                    <li >
+                      <a href="tel:+14155550118" class="block transition-colors hover:text-foreground">
+                        <div class="flex items-start gap-3">
+                          <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border">
+                            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                              
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.52257 1.44547C5.13921 1.13168 5.88282 1.21066 6.41979 1.64696C6.59229 1.78712 6.73715 1.98233 6.87679 2.17049C6.88926 2.1873 6.90169 2.20406 6.9141 2.22071L10.2508 6.69954C10.3133 6.78337 10.3825 6.87622 10.4369 6.96211C10.4995 7.06089 10.572 7.19445 10.6098 7.36476C10.661 7.595 10.6459 7.83501 10.5664 8.05706C10.5076 8.22131 10.4191 8.34477 10.3446 8.43497C10.2799 8.5134 10.1996 8.59689 10.1272 8.67228C10.123 8.6766 10.1189 8.6809 10.1148 8.68516L8.43864 10.4294C9.08193 11.6493 9.73401 12.5761 10.5254 13.3675C11.3164 14.1585 12.2714 14.839 
+                          <div >
+                            <div class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                              "Phone"
+                            <div class="mt-1 whitespace-pre-line text-sm">
+                              "+1 (415) 555 0118"
+                    <li >
+                      <div class="flex items-start gap-3">
+                        <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border">
+                          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                            
+<g clip-path="url(#clip0_9001_305229)">
+<path d="M12.75 6C12.75 5.58579 12.4142 5.25 12 5.25C11.5858 5.25 11.25 5.58579 11.25 6V12C11.25 12.2586 11.3832 12.4989 11.6025 12.636L15.6025 15.136C15.9538 15.3555 16.4165 15.2488 16.636 14.8975C16.8555 14.5462 16.7488 14.0835 16.3975 13.864L12.75 11.5843V6Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM1.75 12C1.75 6.33908 6.33908 1.75 12 1.75C17.6609 1.75 22.25 6.3390
+                        <div >
+                          <div class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                            "Hours"
+                          <div class="mt-1 whitespace-pre-line text-sm">
+                            "Mon – Fri · 09:00 – 18:00 PT"
+                    <li >
+                      <div class="flex items-start gap-3">
+                        <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border">
+                          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                            
+<path d="M10.75 7C10.75 6.30964 11.3096 5.75 12 5.75C12.4142 5.75 12.75 5.41421 12.75 5C12.75 4.58579 12.4142 4.25 12 4.25C10.4812 4.25 9.25 5.48122 9.25 7C9.25 7.41421 9.58579 7.75 10 7.75C10.4142 7.75 10.75 7.41421 10.75 7Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.75 7C17.75 9.92145 15.5713 12.334 12.75 12.7015V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V12.7015C8.42873 12.334 6.25 9.92145 6.25 7C6.25 3.82436 8.82436 1.25 12 1.25C15.1756 1.25 17.75 3.82436 17.75 7ZM12 2.75C9.65279 2.75 7.75 4.65279 7.75 7C7.75 9.34721
+                        <div >
+                          <div class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                            "Address"
+                          <div class="mt-1 whitespace-pre-line text-sm">
+                            "1055 W Georgia St, Suite 2400 Vancouver, BC V6E 3P3"
+                  <div class="mt-auto border-t border-border pt-5">
+                    <div class="mb-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                      "Follow"
+                    <div class="flex gap-2">
+                      <a href="https://instagram.com" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background hover:border-foreground">
+                        <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                      <a href="https://twitter.com" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background hover:border-foreground">
+                        <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+                          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                      <a href="https://behance.net" aria-label="Behance" class="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-foreground hover:text-background hover:border-foreground">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                          
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+        <island component=FaqList.CTprH78d.js client=visible>
+          <section id="faq" class="relative py-20 md:py-28 px-6">
+            <div class="mx-auto max-w-3xl">
+              <div class="flex flex-col gap-4 mb-12 items-center text-center">
+                <span class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                  "Before you ask"
+                <h2 class="max-w-3xl text-3xl font-medium tracking-tight md:text-5xl">
+                  "Quick answers"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "The three questions we hear most before a project kicks off."
+              <div class="space-y-12">
+                <div style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <h3 class="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    "Quick answers"
+                  <div class="w-full">
+                    <div >
+                      <button type="button" class="group relative w-full text-left">
+                        <div class="flex items-center gap-6 px-1 py-5">
+                          <div class="relative grid h-10 w-10 place-items-center">
+                            <div class="absolute inset-0 rounded-full bg-foreground" style="transform: translate(0px, 0px); opacity: 1; translate: none; rotate: none; scale: none;">
+                            <span class="relative z-10 text-sm font-medium tracking-wide transition-colors text-background">
+                              "01"
+                          <h3 class="flex-1 text-2xl font-medium tracking-tight transition-colors text-foreground" style="translate: none; rotate: none; scale: none; transform: translate(4px, 0px);">
+                            "How fast can you start?"
+                          <div class="ml-auto shrink-0">
+                            <div class="grid h-8 w-8 place-items-center" style="translate: none; rotate: none; scale: none; transform: rotate(45deg);">
+                              <svg width="16" height="16" viewBox="0 0 16 16" class="text-foreground" style="opacity: 1;">
+                                <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      <div class="overflow-hidden" style="display: block; height: auto; opacity: 1;">
+                        <p class="py-6 pl-16 pr-12 leading-relaxed text-muted-foreground" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                          "Most engagements kick off within four weeks of the first call. For sprints, two weeks is usually possible."
+                    <div >
+                      <button type="button" class="group relative w-full text-left">
+                        <div class="flex items-center gap-6 px-1 py-5">
+                          <div class="relative grid h-10 w-10 place-items-center">
+                            <div class="absolute inset-0 rounded-full bg-foreground" style="transform: scale(0, 0); opacity: 0; translate: none; rotate: none; scale: none;">
+                            <span class="relative z-10 text-sm font-medium tracking-wide transition-colors text-muted-foreground">
+                              "02"
+                          <h3 class="flex-1 text-2xl font-medium tracking-tight transition-colors text-muted-foreground" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            "Do you sign NDAs?"
+                          <div class="ml-auto shrink-0">
+                            <div class="grid h-8 w-8 place-items-center" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                              <svg width="16" height="16" viewBox="0 0 16 16" class="text-foreground" style="opacity:0.4">
+                                <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      <div class="overflow-hidden" style="display:none;height:0;opacity:0">
+                        <p class="py-6 pl-16 pr-12 leading-relaxed text-muted-foreground">
+                          "Yes — we sign mutual NDAs as a matter of course before any sensitive scoping begins."
+                    <div >
+                      <button type="button" class="group relative w-full text-left">
+                        <div class="flex items-center gap-6 px-1 py-5">
+                          <div class="relative grid h-10 w-10 place-items-center">
+                            <div class="absolute inset-0 rounded-full bg-foreground" style="transform: scale(0, 0); opacity: 0; translate: none; rotate: none; scale: none;">
+                            <span class="relative z-10 text-sm font-medium tracking-wide transition-colors text-muted-foreground">
+                              "03"
+                          <h3 class="flex-1 text-2xl font-medium tracking-tight transition-colors text-muted-foreground" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                            "Where are you based?"
+                          <div class="ml-auto shrink-0">
+                            <div class="grid h-8 w-8 place-items-center" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                              <svg width="16" height="16" viewBox="0 0 16 16" class="text-foreground" style="opacity:0.4">
+                                <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                      <div class="overflow-hidden" style="display:none;height:0;opacity:0">
+                        <p class="py-6 pl-16 pr-12 leading-relaxed text-muted-foreground">
+                          "San Francisco, but the team works remote-first across North America and EU."
+        <island component=CtaBanner.BG1zirnY.js client=visible>
+          <section class="px-6 py-20">
+            <div class="mx-auto max-w-6xl">
+              <div class="relative overflow-hidden rounded-[2.5rem] bg-foreground px-8 py-16 text-background md:px-16 md:py-24">
+                <div class="hero-grain absolute inset-0 opacity-30">
+                <div class="relative flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+                  <div class="max-w-xl">
+                    <p class="text-xs uppercase tracking-[0.18em] text-background/60">
+                      "Prefer to read first?"
+                    <h2 class="mt-4 text-balance text-3xl font-medium tracking-tight md:text-5xl">
+                      "See what we've shipped"
+                    <p class="mt-4 max-w-md text-sm text-background/70 md:text-base">
+                      "Browse the case studies before you write — it'll sharpen the brief."
+                  <div class="flex flex-col gap-3 sm:flex-row">
+                    <a href="/portfolios" class="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5">
+                      "View portfolios"
+                      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+                        
+<path d="M19 4.25C19.4142 4.25 19.75 4.58579 19.75 5V16C19.75 16.4142 19.4142 16.75 19 16.75C18.5858 16.75 18.25 16.4142 18.25 16V6.81066L5.53033 19.5303C5.23744 19.8232 4.76256 19.8232 4.46967 19.5303C4.17678 19.2374 4.17678 18.7626 4.46967 18.4697L17.1893 5.75H8C7.58579 5.75 7.25 5.41421 7.25 5C7.25 4.58579 7.58579 4.25 8 4.25H19Z" fill="currentColor"></path>
+
+                    <a href="/faq" class="inline-flex items-center gap-2 rounded-full border border-background/30 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10">
+                      "Read the FAQ"
+<footer class="px-4 pb-4 pt-20 md:pt-32">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-foreground text-background">
+    <div class="grid gap-10 px-8 pb-0 pt-12 md:grid-cols-[1.4fr_repeat(2,1fr)] md:gap-12 md:px-14 md:pt-16">
+      <div class="space-y-5">
+        <p class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Email"
+        <a href="mailto:hello@zypher.example" class="block text-xl font-medium tracking-tight transition-opacity hover:opacity-70 md:text-2xl">
+          "hello@zypher.example"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Studio"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/benefits" class="text-background/85 transition-colors hover:text-background">
+              "Benefits"
+          <li >
+            <a href="/services" class="text-background/85 transition-colors hover:text-background">
+              "Services"
+          <li >
+            <a href="/portfolios" class="text-background/85 transition-colors hover:text-background">
+              "Portfolios"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Resources"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/faq" class="text-background/85 transition-colors hover:text-background">
+              "FAQ"
+          <li >
+            <a href="/contact" class="text-background/85 transition-colors hover:text-background">
+              "Contact"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Social"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="https://instagram.com" class="text-background/85 transition-colors hover:text-background">
+              "Instagram"
+          <li >
+            <a href="https://twitter.com" class="text-background/85 transition-colors hover:text-background">
+              "Twitter"
+          <li >
+            <a href="https://behance.net" class="text-background/85 transition-colors hover:text-background">
+              "Behance"
+    <div class="px-8 pb-6 md:px-14">
+      <div class="flex gap-3">
+        <a href="https://instagram.com" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        <a href="https://twitter.com" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <a href="https://behance.net" aria-label="Behance" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+            
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+    <div class="px-8 pb-2 md:px-14">
+      <h2 class="block max-w-full select-none truncate text-[16vw] font-semibold leading-none tracking-tight md:text-[13vw]" aria-hidden="true">
+        "ZYPHER"
+        <span class="text-background/40">
+          "®"
+    <div class="flex flex-col items-start justify-between gap-3 border-t border-background/10 px-8 py-5 text-xs text-background/60 md:flex-row md:items-center md:px-14">
+      <div class="flex flex-wrap gap-5">
+        <a href="/privacy" class="transition-colors hover:text-background">
+          "Privacy"
+        <a href="/terms" class="transition-colors hover:text-background">
+          "Terms"
+        <a href="/cookies" class="transition-colors hover:text-background">
+          "Cookies"
+      <p >
+        "© 2026 Zypher Agency. All rights reserved."
+<island component=AdminPromo.D9Zvk8sZ.js client=idle>
+  <aside class="admin-promo admin-promo--right" aria-label="Admin dashboard" style="--admin-promo-lift: 0px;">
+    <div class="admin-promo-card">
+      <button type="button" class="admin-promo-close" aria-label="Dismiss">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12"></path>
+      <a href="/admin" class="admin-promo-link">
+        <span class="admin-promo-media is-playing" style="--from-x: 23.44%; --from-y: 66.1%; --to-x: 75.31%; --to-y: 66.1%; --w: 23.75%; --h: 22.43%; --r: 20;">
+          <span class="admin-promo-stage" aria-hidden="true">
+            <img alt="" class="admin-promo-frame admin-promo-frame--board" src="/admin-preview/board.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dragging" src="/admin-preview/dragging.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--over" src="/admin-preview/over.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dropped" src="/admin-preview/dropped.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--ticket" src="/admin-preview/ticket.webp">
+            <svg class="admin-promo-cursor" viewBox="0 0 17 24">
+              <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
+        <span class="admin-promo-body">
+          <span class="admin-promo-badge">
+            "Admin dashboard"
+          <span class="admin-promo-title">
+            "A CRM built into Zypher"

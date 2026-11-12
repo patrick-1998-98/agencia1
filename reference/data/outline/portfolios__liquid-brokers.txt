@@ -1,0 +1,194 @@
+<header class="sticky top-0 z-50 w-full px-4 pt-4">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-border/60 bg-foreground/95 px-2 py-2 text-background shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur">
+    <a href="/" class="flex items-center gap-2 pl-3 pr-2 text-sm font-medium tracking-tight">
+      <span class="text-base font-semibold">
+        "Zypher"
+      <sup class="text-[10px] opacity-70">
+        "z"
+    <ul class="hidden md:flex items-center gap-1 text-sm">
+      <li >
+        <a href="/benefits" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="px-3 py-1.5 rounded-full transition-colors bg-background/15 text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="px-3 py-1.5 rounded-full transition-colors text-background/70 hover:text-background">
+          "Faq"
+    <div class="flex items-center gap-2 pr-1">
+      <island component=ThemeToggle.rII1FBaA.js client=load>
+        <button type="button" aria-label="Toggle theme" class="grid place-items-center w-9 h-9 rounded-full border border-border bg-card text-foreground hover:bg-muted !bg-background !text-foreground !border-transparent hidden sm:grid">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="w-4 h-4">
+            
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9972 1.25399C11.0963 1.26205 11.2768 1.28887 11.453 1.41036C11.7462 1.61254 11.9082 1.94986 11.8827 2.30508C11.8664 2.5331 11.7611 2.69826 11.7082 2.77339C11.6471 2.86035 11.5759 2.93642 11.5167 2.99576C11.4029 3.10986 11.2445 3.2488 11.0707 3.40129L11.0519 3.41785C9.64041 4.65645 8.75122 6.47136 8.75122 8.49486C8.75122 12.2239 11.7742 15.2468 15.5032 15.2468C17.5277 15.2468 19.3434 14.3567 20.5821 12.944L20.5986 12.9252C20.751 12.7513 20.8899 12.5929 21.004 12.479C21.0633 12.4198 21.1393 12.3486 21.2263 12.2874C21.3014 12.2345 21.4665 12.1
+      <a href="/contact" class="hidden sm:inline-flex rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground transition-transform hover:-translate-y-0.5 hover:shadow-md">
+        "Get In Touch"
+      <button type="button" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden grid h-9 w-9 place-items-center rounded-full bg-background text-foreground">
+        <svg class="menu-icon h-4 w-4" viewBox="0 0 24 24">
+           <line x1="4" y1="8" x2="20" y2="8"></line> <line x1="4" y1="16" x2="20" y2="16"></line> 
+        <svg class="close-icon h-4 w-4 hidden" viewBox="0 0 24 24">
+           <line x1="6" y1="6" x2="18" y2="18"></line> <line x1="18" y1="6" x2="6" y2="18"></line> 
+  <div id="mobile-menu" class="md:hidden fixed inset-x-4 top-20 z-40 origin-top scale-95 rounded-3xl border border-border/60 bg-foreground/95 p-6 text-background opacity-0 pointer-events-none shadow-[0_20px_60px_rgb(0,0,0,0.25)] backdrop-blur transition-all duration-300">
+    <ul class="flex flex-col gap-1 text-base">
+      <li >
+        <a href="/benefits" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Benefits"
+      <li >
+        <a href="/services" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Services"
+      <li >
+        <a href="/portfolios" class="block rounded-2xl px-4 py-3 transition-colors bg-background/15 text-background">
+          "Portfolios"
+      <li >
+        <a href="/faq" class="block rounded-2xl px-4 py-3 transition-colors text-background/75 hover:bg-background/10 hover:text-background">
+          "Faq"
+    <a href="/contact" class="mt-4 inline-flex w-full items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-medium text-foreground">
+      "Get In Touch"
+<island component=PageTransition.B1ds7P_U.js client=load>
+  <div class="pointer-events-none fixed inset-0 z-[100] grid place-items-center bg-foreground" style="transform: translate(0%, -100%); translate: none; rotate: none; scale: none;" aria-hidden="true">
+    <span class="text-[18vw] font-semibold leading-none tracking-tight text-background md:text-[14vw]">
+      "ZYPHER"
+      <span class="text-background/40">
+        "®"
+  <div style="opacity: 1; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+    <astro-slot >
+      <main class="min-h-screen" data-astro-transition-scope="astro-a2sg2g5y-1">
+        <island component=PortfolioDetail.D772APrC.js client=load>
+          <article class="px-6 py-20">
+            <div class="mx-auto max-w-5xl">
+              <a href="/portfolios" class="text-sm text-muted-foreground hover:text-foreground">
+                "← All projects"
+              <header class="mt-8 flex flex-col gap-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  "Web"
+                <h1 class="text-balance text-4xl font-medium tracking-tight md:text-6xl">
+                  "Liquid Brokers — Trading Landing Page"
+                <p class="max-w-2xl text-base text-muted-foreground md:text-lg">
+                  "A trading landing page for Liquid Brokers — designed around engaging motion, clean information hierarchy, and a confident financial-product tone. Built to convert: hero with live data accents, clear product narrative, and conversion-focused CTAs paced by subtle scroll-triggered motion."
+              <dl class="mt-10 flex flex-wrap gap-x-16 gap-y-6 rounded-3xl border border-border bg-card px-6 py-5 text-sm">
+                <div >
+                  <dt class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                    "Client"
+                  <dd class="mt-1 font-medium">
+                    "Liquid Brokers"
+                <div >
+                  <dt class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                    "Year"
+                  <dd class="mt-1 font-medium">
+                    "2024"
+                <div >
+                  <dt class="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                    "Role"
+                  <dd class="mt-1 font-medium">
+                    "Web design, motion direction, art direction"
+              <div class="mt-10 aspect-16/10 overflow-hidden rounded-3xl">
+                <img src="https://cdn.dribbble.com/userupload/18532086/file/original-bcaf125d189b680400eac8d34252e068.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page" loading="lazy" class="block w-full h-full object-cover  rounded-none! h-full">
+              <div class="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2">
+                <div class="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
+                    <img src="https://cdn.dribbble.com/userupload/18532086/file/original-bcaf125d189b680400eac8d34252e068.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page 1" loading="lazy" class="block w-full h-full object-cover  absolute inset-0 h-full w-full rounded-none!">
+                <div class="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                  <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
+                    <img src="https://cdn.dribbble.com/userupload/18532085/file/original-850eafb6d33db9548fd2d8aeb8d19a62.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page 2" loading="lazy" class="block w-full h-full object-cover  absolute inset-0 h-full w-full rounded-none!">
+                <div class="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 28px); opacity: 0;">
+                  <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
+                    <img src="https://cdn.dribbble.com/userupload/18532088/file/original-b1309b259bdb82732a1aa559cf97fea4.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page 3" loading="lazy" class="block w-full h-full object-cover  absolute inset-0 h-full w-full rounded-none!">
+                <div class="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 28px); opacity: 0;">
+                  <div class="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-muted">
+                    <img src="https://cdn.dribbble.com/userupload/18532087/file/original-80ff9c407325973a7bc376175c3fa549.png?resize=1024x768&vertical=center" alt="Liquid Brokers — Trading Landing Page 4" loading="lazy" class="block w-full h-full object-cover  absolute inset-0 h-full w-full rounded-none!">
+<footer class="px-4 pb-4 pt-20 md:pt-32">
+  <div class="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-foreground text-background">
+    <div class="grid gap-10 px-8 pb-0 pt-12 md:grid-cols-[1.4fr_repeat(2,1fr)] md:gap-12 md:px-14 md:pt-16">
+      <div class="space-y-5">
+        <p class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Email"
+        <a href="mailto:hello@zypher.example" class="block text-xl font-medium tracking-tight transition-opacity hover:opacity-70 md:text-2xl">
+          "hello@zypher.example"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Studio"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/benefits" class="text-background/85 transition-colors hover:text-background">
+              "Benefits"
+          <li >
+            <a href="/services" class="text-background/85 transition-colors hover:text-background">
+              "Services"
+          <li >
+            <a href="/portfolios" class="text-background/85 transition-colors hover:text-background">
+              "Portfolios"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Resources"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="/faq" class="text-background/85 transition-colors hover:text-background">
+              "FAQ"
+          <li >
+            <a href="/contact" class="text-background/85 transition-colors hover:text-background">
+              "Contact"
+      <div class="space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.18em] text-background/50">
+          "Social"
+        <ul class="space-y-2 text-sm">
+          <li >
+            <a href="https://instagram.com" class="text-background/85 transition-colors hover:text-background">
+              "Instagram"
+          <li >
+            <a href="https://twitter.com" class="text-background/85 transition-colors hover:text-background">
+              "Twitter"
+          <li >
+            <a href="https://behance.net" class="text-background/85 transition-colors hover:text-background">
+              "Behance"
+    <div class="px-8 pb-6 md:px-14">
+      <div class="flex gap-3">
+        <a href="https://instagram.com" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-instagram h-4 w-4" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        <a href="https://twitter.com" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" class="lucide lucide-twitter h-4 w-4" aria-hidden="true">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        <a href="https://behance.net" aria-label="Behance" class="grid h-9 w-9 place-items-center rounded-full border border-background/20 text-background/80 transition-colors hover:bg-background hover:text-foreground hover:border-background">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4">
+            
+<g clip-path="url(#clip0_9001_279723)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.25C5.51065 0.25 0.25 5.51065 0.25 12C0.25 18.4893 5.51065 23.75 12 23.75C18.4893 23.75 23.75 18.4893 23.75 12C23.75 5.51065 18.4893 0.25 12 0.25ZM8.99828 2.19654C6.00504 3.11191 3.59406 5.36051 2.45764 8.25006H7.01392C7.22687 6.76367 7.56538 5.36509 8.01737 4.17184C8.29368 3.44238 8.61955 2.77051 8.99828 2.19654ZM1.75 12C1.75 11.2271 1.83556 10.4741 1.99771 9.75006H6.84422C6.78187 10.493 6.75 11.2475 6.75 12C6.75 12.7526 6.78186 13.507 6.84421 14.2499H1.99771C1.83556 13.5259 1.75 12.7729 1.75 12ZM2.
+    <div class="px-8 pb-2 md:px-14">
+      <h2 class="block max-w-full select-none truncate text-[16vw] font-semibold leading-none tracking-tight md:text-[13vw]" aria-hidden="true">
+        "ZYPHER"
+        <span class="text-background/40">
+          "®"
+    <div class="flex flex-col items-start justify-between gap-3 border-t border-background/10 px-8 py-5 text-xs text-background/60 md:flex-row md:items-center md:px-14">
+      <div class="flex flex-wrap gap-5">
+        <a href="/privacy" class="transition-colors hover:text-background">
+          "Privacy"
+        <a href="/terms" class="transition-colors hover:text-background">
+          "Terms"
+        <a href="/cookies" class="transition-colors hover:text-background">
+          "Cookies"
+      <p >
+        "© 2026 Zypher Agency. All rights reserved."
+<island component=AdminPromo.D9Zvk8sZ.js client=idle>
+  <aside class="admin-promo admin-promo--right" aria-label="Admin dashboard" style="--admin-promo-lift: 0px;">
+    <div class="admin-promo-card">
+      <button type="button" class="admin-promo-close" aria-label="Dismiss">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12"></path>
+      <a href="/admin" class="admin-promo-link">
+        <span class="admin-promo-media is-playing" style="--from-x: 23.44%; --from-y: 66.1%; --to-x: 75.31%; --to-y: 66.1%; --w: 23.75%; --h: 22.43%; --r: 20;">
+          <span class="admin-promo-stage" aria-hidden="true">
+            <img alt="" class="admin-promo-frame admin-promo-frame--board" src="/admin-preview/board.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dragging" src="/admin-preview/dragging.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--over" src="/admin-preview/over.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--dropped" src="/admin-preview/dropped.webp">
+            <img alt="" class="admin-promo-frame admin-promo-frame--ticket" src="/admin-preview/ticket.webp">
+            <svg class="admin-promo-cursor" viewBox="0 0 17 24">
+              <path d="M1.5 1.5v18.2l4.6-4.4 3 6.9 3.2-1.4-3-6.8h6.3z"></path>
+        <span class="admin-promo-body">
+          <span class="admin-promo-badge">
+            "Admin dashboard"
+          <span class="admin-promo-title">
+            "A CRM built into Zypher"
