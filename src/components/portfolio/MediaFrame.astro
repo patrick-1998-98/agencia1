@@ -1,10 +1,12 @@
 ---
 /**
  * Fills its parent with a project still, or with a muted looping video
- * (remote, preloaded lazily) that uses the still as its poster.
- * Videos only play while on screen and never autoplay with reduced motion.
+ * (remote, preloaded lazily) layered over the same still.
+ * The still is a real responsive <img> (not a video poster) so it can be the
+ * high-priority LCP image. Videos only play while on screen and never
+ * autoplay with reduced motion.
  */
-import { Image, getImage } from 'astro:assets';
+import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -28,28 +30,27 @@ const {
   class: className = 'block h-full w-full object-cover',
 } = Astro.props;
 
-const maxWidth = Math.max(...widths);
-const poster = media.video
-  ? await getImage({
-      src: media.image,
-      width: Math.min(maxWidth, media.image.width),
-      format: 'webp',
-    })
-  : undefined;
+const still = {
+  src: media.image,
+  widths: widths.filter((w) => w <= media.image.width),
+  sizes,
+  loading,
+  fetchpriority: loading === 'eager' ? ('high' as const) : undefined,
+};
 ---
 
-{media.video && poster ? (
+{media.video ? (
   <div class="relative h-full w-full overflow-hidden" data-video-frame>
+    <Image {...still} alt="" class:list={[className, 'absolute inset-0']} />
     <video
       src={media.video}
-      poster={poster.src}
       muted
       loop
       playsinline
       preload="none"
       aria-label={alt || undefined}
       aria-hidden={alt ? undefined : 'true'}
-      class={className}
+      class:list={[className, 'relative']}
       data-autoplay-video
     />
     {toggle && (
@@ -81,15 +82,7 @@ const poster = media.video
     )}
   </div>
 ) : (
-  <Image
-    src={media.image}
-    alt={alt}
-    widths={widths.filter((w) => w <= media.image.width)}
-    sizes={sizes}
-    loading={loading}
-    fetchpriority={loading === 'eager' ? 'high' : undefined}
-    class={className}
-  />
+  <Image {...still} alt={alt} class={className} />
 )}
 
 <script>
