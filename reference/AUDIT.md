@@ -200,8 +200,66 @@ Además: `::selection` invertido (fondo foreground), gradiente `hero-grain` (dos
 21. Textos legales mencionan `zypher.agency` (otro dominio distinto al canónico) — revisar cuál es el dominio real.
 22. `hello@zypher.example` es un dominio reservado de ejemplo: el email del footer/legales no funciona.
 
+### Encontrados durante la reconstrucción
+
+23. Los endpoints de "automations" del formulario (`/api/automations/{instant-enquiry-replies,lead-qualification,lead-routing}`) responden 200 vacío a cualquier POST: no validan (aceptan emails inválidos) ni crean ticket.
+24. La pantalla de éxito del brief dice "We've also emailed you a copy", pero no se envía ningún email.
+25. Los links "Book a call" apuntan a un placeholder: `cal.com/your-studio/intro`.
+26. Contenido que nunca aparece por scroll-reveals que no se disparan: las tarjetas de pricing de `/services`, las highlight cards de `/portfolios` y los últimos ítems de la galería de los casos de estudio quedan en `opacity: 0` (huecos en blanco).
+27. El carrusel autoreproducía 3 videos de Dribbble con `preload="auto"` (~37 MB) al cargar; sin control por teclado, y arrastrar podía disparar el click de la tarjeta.
+28. El logo de Netlify del marquee tiene `alt="Vercel"`.
+29. Los títulos del FAQ son `<h3>` dentro de `<button>` (heading dentro de control interactivo); las respuestas solo se ocultan por JS (parpadeo antes de hidratar). Los pasos del proceso no eran headings.
+30. Demo admin: toda edición se aplicaba y se revertía con un toast de error; sin navegación debajo de 1024 px (no se llega al tablero de setup en mobile); drag & drop solo con mouse (HTML5 DnD, sin teclado ni touch); "Live preview" abre un sitio externo (`flux-theme.online`).
+31. Cada página de detalle de servicio era una isla React `client:load` completa para contenido estático.
+
 ---
 
 ## 7. Qué cambia en la reconstrucción (sin cambios visuales)
 
 Ver el README para el detalle. Resumen: formularios reales con validación en servidor, honeypot + tiempo mínimo + Turnstile opcional, rate limiting y envío por Resend; CSP por página con hashes + HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy; `robots.txt`, `sitemap.xml` generados, `favicon.ico`, `og-image.jpg` real y OG de casos de estudio con imagen fija; 301 para barra final y `.html`; imágenes vía `astro:assets` (AVIF/WebP, tamaños responsivos), fuentes WOFF2 con preload, cero dependencias JS de runtime de terceros; headings corregidos, skip link, contraste AA, foco visible y alternativas de teclado; eliminación del bloqueo de clic derecho/teclas.
+
+---
+
+## 8. Resultados de la reconstrucción
+
+Medido sobre el build de producción (`npm run build && npm start`), en local, con una corrida previa de calentamiento por página.
+
+### Fidelidad visual (`tools/visual-compare.mjs`, % de píxeles distintos)
+
+| Página | 1440 px | 390 px | Nota |
+|---|---|---|---|
+| `/privacy`, `/terms`, `/cookies` | ~0.03% | ~0.13% | |
+| `/faq` | 0.00% | 0.00% | |
+| `/benefits` | 0.02% | 0.02% | |
+| `/contact` | 0.01% | 11% | La captura mobile del original se tomó antes de que su JS terminara de cargar |
+| `/` | 2.6% | 2.8% | Carrusel y avatares lazy en blanco en la referencia |
+| `/services` | 2.2% | 0.2% | Pricing visible (en el original nunca se revelaba, bug 26) |
+| `/services/*` | ~0.07% | 3.5–5.5% | |
+| `/portfolios` | 1.85% | 0.17% | La captura mobile original tiene 414 px de ancho |
+| `/portfolios/*` | 8–14% | 1–12% | Videos en blanco en la referencia; galería nunca revelada en el original |
+| `/admin` | 1.44% | 1.86% | |
+| `/admin/automations/setup` | 0.54% | 0.48% | |
+
+La altura total de las páginas coincide con el original en todos los casos, salvo `/contact` en mobile (por la misma causa de la nota). Ninguna página tiene errores de consola ni violaciones de CSP.
+
+### Lighthouse (Performance / Accessibility / Best Practices / SEO)
+
+| Página | Mobile | Desktop |
+|---|---|---|
+| `/` | 98/96/100/100 | 100/96/100/100 |
+| `/benefits` | 98/96/100/100 | 100/96/100/100 |
+| `/services` | 99/95/100/100 | 100/95/100/100 |
+| `/services/brand` | 100/95/100/100 | 100/95/100/100 |
+| `/services/web` | 99/95/100/100 | 100/95/100/100 |
+| `/services/product` | 99/95/100/100 | 100/95/100/100 |
+| `/portfolios` | 87–99/96/100/100 | 100/96/100/100 |
+| `/portfolios/liquid-brokers` | 90–99/96/100/100 | 100/96/100/100 |
+| `/portfolios/logo-revamp` | 89–99/96/100/100 | 100/96/100/100 |
+| `/portfolios/alva-commerce` | 69–99/96/100/100 | 97–100/96/100/100 |
+| `/portfolios/axone-studio` | 89–99/96/100/100 | 100/96/100/100 |
+| `/faq` | 99/96/100/100 | 100/96/100/100 |
+| `/contact` | 98/97/100/100 | 100/97/100/100 |
+| `/privacy`, `/terms`, `/cookies` | 100/95/100/100 | 100/95/100/100 |
+
+- **Performance mobile en portfolio:** varía entre corridas. Los videos se cargan desde `cdn.dribbble.com` y pesan hasta 9.8 MB; cuando la descarga y la decodificación caen dentro de la medición, suben el TBT. La reproducción ya se retrasa hasta `load` + idle. Para que el resultado sea estable ≥95, hay que hospedar versiones comprimidas de los videos (por ejemplo, 720p y ~1–2 MB) en lugar de usar los originales de Dribbble.
+- **Accessibility 95–97:** la única auditoría que falla es `target-size`, en la fila de íconos sociales del footer (el link "Behance" queda a menos de 24 px de su vecino). Para corregirla hay que separar esa fila 8 px, un cambio visual menor, así que quedó como decisión pendiente (ver README).
