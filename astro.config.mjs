@@ -48,7 +48,10 @@ export default defineConfig({
       PUBLIC_TURNSTILE_SITE_KEY: envField.string({ context: 'client', access: 'public', optional: true }),
     },
   },
+  devToolbar: { enabled: false },
   vite: {
     plugins: [tailwindcss()],
+    // Lets several dev servers run side by side without sharing a dep cache.
+    cacheDir: process.env.VITE_CACHE_DIR ?? 'node_modules/.vite',
   },
 });
