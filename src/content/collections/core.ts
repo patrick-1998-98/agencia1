@@ -39,7 +39,7 @@ const pages = defineCollection({
         eyebrow: z.string(),
         title: z.string(),
         description: z.string(),
-        trust: z.string(),
+        trust: z.string().optional(),
         background: image(),
         thumbnail: image().optional(),
       }),

@@ -2,10 +2,9 @@ seo:
   title: Zypher — Digital Design & Development Agency
   description: Zypher is a digital design & development agency. We design and build product sites, web apps, and brand systems for ambitious teams.
 hero:
-  eyebrow: Digital Design & Development
-  title: Marketing Sites That Convert
-  description: Fast, opinionated marketing sites — Astro, React, and a sharp design system tuned for product launches and growth.
-  trust: Trusted by 60+ product teams
+  eyebrow: Procesos, software y diseño web
+  title: Sistemas para que tu empresa crezca
+  description: Primero entendemos tu negocio; después construimos lo que de verdad aporta. Auditoría de procesos, automatización, software a medida y webs que convierten.
   background: ../../assets/images/hero-helmet-1.png
 cta:
   eyebrow: Start a project

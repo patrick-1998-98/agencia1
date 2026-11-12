@@ -1,14 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import SocialLinks from '@/components/ui/SocialLinks.astro';
-import { socials } from '@/data/site';
 
 interface Props {
   eyebrow: string;
   title: string;
   description: string;
-  trust: string;
+  /** Short line under the description (omit to hide it). */
+  trust?: string | undefined;
   background: ImageMetadata;
   /** Small square image bottom-left (inner pages). Omit for the home layout. */
   thumbnail?: ImageMetadata | undefined;
@@ -16,7 +15,6 @@ interface Props {
 
 const { eyebrow, title, description, trust, background, thumbnail } = Astro.props;
 const isHome = !thumbnail;
-const heroSocials = socials.filter((s) => s.icon !== 'globe');
 const corner = 'absolute h-5 w-5 border-white/40';
 ---
 
@@ -88,10 +86,7 @@ const corner = 'absolute h-5 w-5 border-white/40';
           <p class="hero-description max-w-md text-sm leading-relaxed text-white/85 md:text-base">
             {description}
           </p>
-          <div class="hero-trust flex items-center gap-4">
-            <span class="text-sm text-white/85">{trust}</span>
-            <SocialLinks variant="hero" items={heroSocials} />
-          </div>
+          {trust && <p class="hero-trust text-sm text-white/85">{trust}</p>}
         </div>
       </div>
     </div>
