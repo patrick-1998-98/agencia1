@@ -13,4 +13,4 @@ cta:
   title: Hablá con una persona, no con un formulario
   description: Respondemos la mayoría de las consultas en menos de cuatro horas. Si tu pregunta no está acá, mandala directo.
   primary: { label: Contactanos, href: /contact }
-  secondary: { label: Ver servicios, href: /services }
+  secondary: { label: Ver servicios, href: /servicios }

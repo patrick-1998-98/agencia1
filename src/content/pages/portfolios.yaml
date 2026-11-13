@@ -13,4 +13,4 @@ cta:
   title: ¿Querés ser el próximo caso de estudio?
   description: Cada trimestre elegimos pocos clientes. Si tenés un brief, nos encantaría leerlo.
   primary: { label: Empezá un proyecto, href: /contact }
-  secondary: { label: Ver servicios, href: /services }
+  secondary: { label: Ver servicios, href: /servicios }

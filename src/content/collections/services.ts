@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 /**
  * Service practices (brand, web, product). One YAML file per service;
- * the file name is the URL slug (/services/<slug>).
+ * the file name is the URL slug (/servicios/<slug>).
  */
 const serviceCollection = defineCollection({
   loader: glob({ pattern: '*.yaml', base: './src/content/services' }),

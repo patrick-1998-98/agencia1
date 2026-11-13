@@ -9,7 +9,7 @@ async function detailPages(): Promise<SitemapEntry[]> {
   const services = (await getCollection('services')).sort(byOrder);
   const projects = (await getCollection('portfolio')).sort(byOrder);
   return [
-    ...services.map((s) => ({ path: `/services/${s.id}`, ...detailDefaults })),
+    ...services.map((s) => ({ path: `/servicios/${s.id}`, ...detailDefaults })),
     ...projects.map((p) => ({ path: `/portfolios/${p.id}`, ...detailDefaults })),
   ];
 }

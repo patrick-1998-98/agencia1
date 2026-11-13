@@ -21,7 +21,7 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
   <div class="services-strip flex h-100 items-stretch gap-3 md:h-120">
     {services.map((service, index) => (
       <a
-        href={`/services/${service.id}`}
+        href={`/servicios/${service.id}`}
         class="service-card group relative min-w-0 cursor-pointer overflow-hidden rounded-2xl bg-muted"
       >
         <div class="absolute inset-0">

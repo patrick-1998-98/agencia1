@@ -22,6 +22,10 @@ const turnstile = Boolean(
 export default defineConfig({
   site,
   trailingSlash: 'never',
+  redirects: {
+    '/services': '/servicios',
+    '/services/[slug]': '/servicios/[slug]',
+  },
   build: { format: 'file' },
   output: 'static',
   adapter: node({ mode: 'standalone', staticHeaders: true }),

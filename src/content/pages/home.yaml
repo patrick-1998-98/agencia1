@@ -7,8 +7,8 @@ hero:
   description: Primero entendemos tu negocio; después construimos lo que de verdad aporta. Auditoría de procesos, automatización, software a medida y webs que convierten.
   background: ../../assets/images/hero-helmet-1.png
 cta:
-  eyebrow: Empezá un proyecto
-  title: ¿Tenés un brief? Hablemos.
-  description: La mayoría de los proyectos arranca en menos de cuatro semanas. Aunque estés en una etapa temprana, preferimos enterarnos ahora.
+  eyebrow: Empieza con un diagnóstico
+  title: ¿Sientes que tu empresa podría funcionar mejor? Hablemos.
+  description: 'No hace falta que tengas claro qué necesitas: para eso está el diagnóstico. Cuéntanos cómo trabajan hoy y te decimos por dónde empezar.'
   primary: { label: Contactanos, href: /contact }
   secondary: { label: Ver trabajos, href: /portfolios }

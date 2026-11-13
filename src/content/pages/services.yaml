@@ -3,14 +3,13 @@ seo:
   description: Los servicios de Zypher — sistemas de marca, sitios de marketing y diseño de producto con desarrollo front-end para equipos ambiciosos.
 hero:
   eyebrow: Servicios
-  title: Servicios digitales, de punta a punta
-  description: 'Del descubrimiento al producto lanzado: todos los proyectos siguen la misma forma — brief, diseño, desarrollo y lanzamiento.'
-  trust: Tres prácticas principales
+  title: Soluciones para tu empresa, de principio a fin
+  description: 'Del diagnóstico a la solución funcionando: todos los proyectos siguen el mismo camino. Analizamos, diseñamos, construimos y acompañamos.'
   background: ../../assets/images/hero-helmet-3.png
   thumbnail: ../../assets/images/hero-helmet-1.png
 cta:
-  eyebrow: Listos cuando vos lo estés
-  title: Definamos tu próximo proyecto
-  description: La mayoría de los proyectos arranca en menos de cuatro semanas. Mandanos un brief, aunque sea un borrador, y te respondemos en un día.
+  eyebrow: Cuando estés listo
+  title: Empecemos por entender tu empresa
+  description: Contanos cómo trabajan hoy, aunque no tengan claro qué necesitan. Te respondemos en 24 horas.
   primary: { label: Mandar un brief, href: /contact }
   secondary: { label: Ver nuestro trabajo, href: /portfolios }
