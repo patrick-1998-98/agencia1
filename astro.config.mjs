@@ -25,6 +25,7 @@ export default defineConfig({
   redirects: {
     '/services': '/servicios',
     '/services/[slug]': '/servicios/[slug]',
+    '/portfolios/axone-studio': '/portfolios/bamboostudio',
   },
   build: { format: 'file' },
   output: 'static',

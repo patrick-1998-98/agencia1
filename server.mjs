@@ -49,7 +49,10 @@ const SECURITY_HEADERS = {
 const FALLBACK_CSP = "default-src 'none'; frame-ancestors 'none'; base-uri 'none'";
 
 /** Permanent redirects for legacy / non-canonical URLs. */
-const REDIRECTS = new Map([['/index', '/']]);
+const REDIRECTS = new Map([
+  ['/index', '/'],
+  ['/portfolios/axone-studio', '/portfolios/bamboostudio'],
+]);
 
 function canonicalPath(pathname) {
   if (REDIRECTS.has(pathname)) return REDIRECTS.get(pathname);

@@ -1,0 +1,18 @@
+order: 4
+title: 'BambooStudio — E-commerce y sistema de gestión'
+category: 'Web · Software · Automatización'
+client: BambooStudio
+year: 2026
+role: 'Diagnóstico de procesos, e-commerce, software de gestión, integraciones e IA'
+description: 'BambooStudio vende pisos, revestimientos y mobiliario de bambú en tiendas físicas, online y en retail. Construimos su tienda online y, detrás de ella, el sistema con el que gestiona el negocio: presupuestos, pedidos, compras a proveedores, CRM, facturación conectada a su ERP y un panel con los números para decidir. Además, un asistente de ventas con IA atiende a los clientes con el catálogo real.'
+cover:
+  image: ../../assets/images/portfolio/axone-studio-1.png
+  video: https://cdn.dribbble.com/userupload/45799417/file/794c8a23488158b22c543bc83256f51b.mp4
+gallery:
+  - image: ../../assets/images/portfolio/axone-studio-1.png
+  - image: ../../assets/images/portfolio/axone-studio-2.png
+  - image: ../../assets/images/portfolio/axone-studio-3.jpg
+  - image: ../../assets/images/portfolio/axone-studio-2.png
+    video: https://cdn.dribbble.com/userupload/45799418/file/large-4ef4e987da954a390949d5c87dc050ef.mp4
+  - image: ../../assets/images/portfolio/axone-studio-5.jpg
+  - image: ../../assets/images/portfolio/axone-studio-6.jpg

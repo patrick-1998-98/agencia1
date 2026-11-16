@@ -39,7 +39,7 @@ brief:
     bookingUrl: https://cal.com/your-studio/intro
     caseStudies:
       - { title: Alva Commerce — Rediseño del sitio web, href: /portfolios/alva-commerce }
-      - { title: Axone Studio — Sitio de producto, href: /portfolios/axone-studio }
+      - { title: BambooStudio — E-commerce y sistema de gestión, href: /portfolios/bamboostudio }
 studio:
   title: Estudio
   items:
