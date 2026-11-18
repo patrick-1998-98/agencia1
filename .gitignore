@@ -29,3 +29,6 @@ Thumbs.db
 
 # large reference media (re-download with `npm run reference:assets`)
 reference/assets/external/**/*.mp4
+
+# original (uncompressed) source videos
+video-original/

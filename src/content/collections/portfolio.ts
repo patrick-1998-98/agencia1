@@ -10,10 +10,13 @@ import { z } from 'astro/zod';
 const projects = defineCollection({
   loader: glob({ pattern: '[!_]*.yaml', base: './src/content/portfolio' }),
   schema: ({ image }) => {
-    /** A still image, or a remote video with a local poster still. */
+    /**
+     * A still image, or a video with a local poster still. The video is a
+     * remote URL or a root-relative path to a file in public/ (/videos/…).
+     */
     const media = z.object({
       image: image(),
-      video: z.url().optional(),
+      video: z.union([z.url(), z.string().regex(/^\/(?!\/)\S+$/)]).optional(),
     });
     return z.object({
       order: z.number().int(),
