@@ -42,7 +42,16 @@ const facts = [
 
       <header class="mt-8 flex flex-col gap-4">
         <p class="text-xs tracking-eyebrow text-muted-foreground uppercase">{data.category}</p>
-        <h1 class="text-4xl font-medium tracking-tight text-balance md:text-6xl">{data.title}</h1>
+        <h1 class="text-4xl font-medium tracking-tight text-balance md:text-6xl">
+          {/* Keep hyphenated words ("E-commerce") from breaking at the hyphen. */}
+          {data.title.split(/(\S*-\S*)/).map((part) =>
+            part.includes('-') && !/\s/.test(part) ? (
+              <span class="whitespace-nowrap">{part}</span>
+            ) : (
+              part
+            ),
+          )}
+        </h1>
         <p class="max-w-2xl text-base text-muted-foreground md:text-lg">{data.description}</p>
       </header>
 
