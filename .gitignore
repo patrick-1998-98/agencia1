@@ -32,3 +32,6 @@ reference/assets/external/**/*.mp4
 
 # original (uncompressed) source videos
 video-original/
+
+# design mockups kept locally (not part of the site)
+reference/html/productividad.html
