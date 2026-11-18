@@ -7,7 +7,8 @@
  *
  * Motion follows the rest of the site (see ProcessSteps): the columns use the
  * shared scroll reveal, and the diagrams play once via an `.is-active` class
- * with the same eases. The left sequence finishes before the right one starts.
+ * with the same eases. Each diagram starts on its own when it scrolls in (so
+ * side by side they run together) and finishes within ~2 s.
  * Final positions are the default styles, so reduced motion and no-JS show
  * the end state.
  */
@@ -21,9 +22,9 @@ interface Props {
 
 const { header, individual, company, closing } = Astro.props.content;
 
-/* ---- Diagram geometry (viewBox 0 0 480 310) ---------------------------- */
+/* ---- Diagram geometry (viewBox 0 0 480 330) ---------------------------- */
 const W = 480;
-const H = 310;
+const H = 330;
 const R = 28;
 const pct = (value: number, total: number) => `${((value / total) * 100).toFixed(2)}%`;
 
@@ -48,16 +49,16 @@ const stubs = [
   };
 });
 const leaver = { x: 314, y: 160 };
-const leaveShift = 72;
+const leaveShift = 64;
 
 /** Company: a core system with people wired to it, plus the slot a newcomer fills. */
 const core = { x: 240, y: 152, size: 80 };
 const members = [
-  { x: 100, y: 80 },
-  { x: 380, y: 80 },
-  { x: 100, y: 224 },
+  { x: 112, y: 80 },
+  { x: 368, y: 80 },
+  { x: 112, y: 224 },
 ];
-const slot = { x: 380, y: 224 };
+const slot = { x: 368, y: 224 };
 const wire = (to: { x: number; y: number }) => {
   const side = to.x < core.x ? -1 : 1;
   const sx = core.x + (side * core.size) / 2;
@@ -65,23 +66,25 @@ const wire = (to: { x: number; y: number }) => {
   return `M${sx} ${core.y} C${sx + side * 32} ${core.y} ${ex - side * 32} ${to.y} ${ex} ${to.y}`;
 };
 
-/* ---- Timeline (seconds after each diagram starts) ---------------------- */
+/* ---- Timeline (seconds after each diagram starts; each ends by ~2 s) ---- */
 const t = {
   individual: {
-    people: (i: number) => i * 0.08,
-    stub: (i: number) => 0.55 + i * 0.1,
-    tick: (i: number) => 1.2 + i * 0.1,
-    leave: 1.9,
-    caption: 2.55,
+    people: (i: number) => i * 0.05,
+    stub: (i: number) => 0.3 + i * 0.06,
+    tick: (i: number) => 0.85 + i * 0.06,
+    leave: 1.0,
+    arrowHead: 1.45,
+    caption: 1.4,
   },
   company: {
     core: 0,
-    people: (i: number) => 0.3 + i * 0.08,
-    slot: 0.54,
-    wire: (i: number) => 0.7 + i * 0.1,
-    arrive: 1.6,
-    plug: 2.2,
-    caption: 2.75,
+    people: (i: number) => 0.15 + i * 0.05,
+    slot: 0.3,
+    wire: (i: number) => 0.35 + i * 0.06,
+    arrive: 0.9,
+    plug: 1.2,
+    ring: 1.3,
+    caption: 1.4,
   },
 };
 const d = (seconds: number) => ({ '--d': `${seconds}s` });
@@ -109,8 +112,18 @@ const chipRows = (chips: string[]) =>
 const chipList =
   'mt-5 flex flex-wrap justify-center gap-1.5 sm:flex-col sm:items-center md:flex-row lg:flex-col';
 const chipRow = 'contents sm:flex sm:justify-center sm:gap-1.5 md:contents lg:flex';
+/**
+ * Diagram captions: real text over the SVG, centred under their person and
+ * balanced over two lines when needed. The box is sized in container units
+ * (the stage is a size container) and nudged inward only if centring would
+ * push it past the stage edge.
+ */
 const caption =
-  'pc-pop pointer-events-none absolute w-max max-w-[36%] text-center text-[10px] leading-snug font-medium tracking-label uppercase sm:text-[11px]';
+  'pc-pop pointer-events-none absolute w-(--cw) text-center text-[10px] leading-snug font-medium text-balance tracking-[0.1em] uppercase [--cw:52cqw] sm:text-[11px] sm:tracking-label sm:[--cw:42cqw] md:text-[10px] md:tracking-[0.1em] md:[--cw:52cqw] lg:text-[11px] lg:tracking-label lg:[--cw:42cqw] @max-[17.5rem]:[--cw:60cqw] @max-[16rem]:text-[9px] @max-[16rem]:tracking-[0.06em]';
+const captionAt = (x: number, y: number) => ({
+  left: `min(calc(${((x / W) * 100).toFixed(2)}cqw - var(--cw) / 2), calc(98cqw - var(--cw)))`,
+  top: pct(y, H),
+});
 ---
 
 <Section
@@ -154,7 +167,7 @@ const caption =
         </div>
 
         <div
-          class="relative mt-6 overflow-hidden rounded-2xl border border-border bg-background"
+          class="@container relative mt-6 overflow-hidden rounded-2xl border border-border bg-background"
           data-stage="individual"
         >
           <svg
@@ -210,7 +223,7 @@ const caption =
                 d={`M${leaver.x + leaveShift + 52} ${leaver.y - 6} l7 6 l-7 6`}
                 stroke-linejoin="round"
                 class="pc-fade"
-                style={d(t.individual.leave + 0.6)}
+                style={d(t.individual.arrowHead)}
               />
             </g>
             <mask id="pc-exit" maskUnits="userSpaceOnUse">
@@ -256,9 +269,7 @@ const caption =
             class={`${caption} text-muted-foreground`}
             style={{
               ...d(t.individual.caption),
-              left: pct(leaver.x + leaveShift, W),
-              top: pct(leaver.y + R + 12, H),
-              transform: 'translateX(-50%)',
+              ...captionAt(leaver.x + leaveShift, leaver.y + R + 12),
             }}
           >
             {individual.caption}
@@ -290,7 +301,7 @@ const caption =
         </div>
 
         <div
-          class="relative mt-6 overflow-hidden rounded-2xl border border-background/10 bg-background/[0.04]"
+          class="@container relative mt-6 overflow-hidden rounded-2xl border border-background/10 bg-background/[0.04]"
           data-stage="company"
         >
           <svg
@@ -392,7 +403,7 @@ const caption =
               <circle
                 r={R}
                 class="pc-draw stroke-background/60"
-                style={d(t.company.plug + 0.35)}
+                style={d(t.company.ring)}
                 fill="none"
                 stroke-width="1.4"
                 pathLength="1"
@@ -405,9 +416,7 @@ const caption =
             class={`${caption} text-background/75`}
             style={{
               ...d(t.company.caption),
-              left: pct(slot.x, W),
-              top: pct(slot.y + R + 12, H),
-              transform: 'translateX(-50%)',
+              ...captionAt(slot.x, slot.y + R + 12),
             }}
           >
             {company.caption}
@@ -430,7 +439,7 @@ const caption =
   /* Final state is the default; the pre-animation state only applies while
      JS runs, motion is allowed and the diagram has not started yet. */
   .pc-leave {
-    translate: 72px 0;
+    translate: 64px 0;
     opacity: 0.32;
   }
 
@@ -458,13 +467,13 @@ const caption =
     }
     .pc-leave {
       transition:
-        translate 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--d, 0s),
-        opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--d, 0s);
+        translate 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--d, 0s),
+        opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--d, 0s);
     }
     .pc-arrive {
       transition:
-        translate 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) var(--d, 0s),
-        opacity 0.6s ease-out var(--d, 0s);
+        translate 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) var(--d, 0s),
+        opacity 0.5s ease-out var(--d, 0s);
     }
 
     :global(.js) [data-stage]:not(.is-active) .pc-pop {
@@ -493,9 +502,8 @@ const caption =
 </style>
 
 <script>
-  /** Start of each diagram after it scrolls in, and how long the left one runs. */
+  /** Short pause after a diagram scrolls in, so it follows its column's reveal. */
   const START_MS = 250;
-  const INDIVIDUAL_MS = 3300;
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -509,32 +517,18 @@ const caption =
       return;
     }
 
-    // The company diagram never starts before the individual one has finished,
-    // so the two read as a before and an after (also when stacked on mobile).
-    let individualDoneAt = 0;
-    const startIndividual = () => {
-      if (individualDoneAt) return;
-      individualDoneAt = performance.now() + START_MS + INDIVIDUAL_MS;
-      setTimeout(() => individual.classList.add('is-active'), START_MS);
-    };
-    const startCompany = () => {
-      startIndividual();
-      const wait = Math.max(START_MS, individualDoneAt - performance.now());
-      setTimeout(() => company.classList.add('is-active'), wait);
-    };
-
-    const onceVisible = (el: HTMLElement, callback: () => void) => {
+    // Each diagram plays on its own as soon as it is on screen: side by side
+    // on desktop they run together; stacked on mobile each starts as it enters.
+    for (const stage of [individual, company]) {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (!entry?.isIntersecting) return;
           observer.disconnect();
-          callback();
+          setTimeout(() => stage.classList.add('is-active'), START_MS);
         },
         { rootMargin: '0px 0px -18% 0px' },
       );
-      observer.observe(el);
-    };
-    onceVisible(individual, startIndividual);
-    onceVisible(company, startCompany);
+      observer.observe(stage);
+    }
   });
 </script>
