@@ -1,0 +1,17 @@
+order: 1
+title: Automatización de procesos con IA
+summary: Conectamos tus herramientas y eliminamos tareas repetitivas como presupuestos, pedidos, facturación y carga de datos, para que tu equipo dedique su tiempo a lo que aporta valor.
+intro: Identificamos mejoras en el flujo de trabajo de tu empresa y, a partir de ese análisis, diseñamos automatizaciones con inteligencia artificial que hacen tu operación más eficiente y medible.
+tags: [Automatización, Integraciones, Flujos]
+image: ../../assets/images/services/brand.jpg
+deliverables:
+  - Diagnóstico de procesos y plan de mejoras priorizado
+  - Integración entre tus sistemas y herramientas
+  - Agentes de IA para tareas específicas de tu operación
+  - Documentación y formación para tu equipo
+  - Indicadores para medir el impacto de cada mejora
+process:
+  - { step: Diagnóstico, description: Análisis de los procesos actuales y de las oportunidades de mejora. }
+  - { step: Diseño, description: 'Definición de qué conviene ordenar, automatizar o mantener.' }
+  - { step: Implementación, description: 'Desarrollo e integración por fases, priorizando el mayor impacto.' }
+  - { step: Seguimiento, description: Medición de resultados y ajustes junto a tu equipo. }

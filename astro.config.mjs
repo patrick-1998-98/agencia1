@@ -25,6 +25,8 @@ export default defineConfig({
   redirects: {
     '/services': '/servicios',
     '/services/[slug]': '/servicios/[slug]',
+    '/servicios/brand': '/servicios/automatizacion-de-procesos-con-ia',
+    '/services/brand': '/servicios/automatizacion-de-procesos-con-ia',
     '/benefits': '/beneficios',
     '/portfolios/axone-studio': '/portfolios/bamboostudio',
   },
