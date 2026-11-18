@@ -55,7 +55,10 @@ const facts = [
         ))}
       </dl>
 
-      <div class="mt-10 aspect-16/10 overflow-hidden rounded-3xl">
+      <div
+        class="mt-10 aspect-16/10 overflow-hidden rounded-3xl"
+        style={data.cover.background ? { backgroundColor: data.cover.background } : undefined}
+      >
         <MediaFrame
           media={data.cover}
           alt={data.title}
@@ -63,6 +66,9 @@ const facts = [
           sizes="(min-width: 1072px) 1024px, calc(100vw - 3rem)"
           loading="eager"
           toggle
+          class={data.cover.background
+            ? 'block h-full w-full object-contain'
+            : 'block h-full w-full object-cover'}
         />
       </div>
 

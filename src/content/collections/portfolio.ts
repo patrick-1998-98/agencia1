@@ -17,6 +17,15 @@ const projects = defineCollection({
     const media = z.object({
       image: image(),
       video: z.union([z.url(), z.string().regex(/^\/(?!\/)\S+$/)]).optional(),
+      /**
+       * Hex colour of the video's own background. When set, the case-study
+       * page shows the media uncropped (object-contain) on this colour so the
+       * letterbox bands blend in; the home carousel keeps cropping.
+       */
+      background: z
+        .string()
+        .regex(/^#[0-9a-fA-F]{6}$/)
+        .optional(),
     });
     return z.object({
       order: z.number().int(),
