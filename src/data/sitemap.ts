@@ -12,7 +12,7 @@ export interface SitemapEntry {
 
 export const staticPages: SitemapEntry[] = [
   { path: '/', changefreq: 'weekly', priority: 1.0 },
-  { path: '/benefits', changefreq: 'monthly', priority: 0.9 },
+  { path: '/beneficios', changefreq: 'monthly', priority: 0.9 },
   { path: '/servicios', changefreq: 'monthly', priority: 0.9 },
   { path: '/portfolios', changefreq: 'weekly', priority: 0.9 },
   { path: '/faq', changefreq: 'monthly', priority: 0.7 },

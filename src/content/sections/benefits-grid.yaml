@@ -2,29 +2,29 @@ type: benefits
 header:
   eyebrow: Por qué nosotros
   title: Pensado para resultados, no para entregables
-  description: Cada proyecto está armado para que tu equipo sea más rápido, más preciso y tenga más confianza en lo que lanza.
+  description: 'Cada proyecto tiene un objetivo: que tu empresa trabaje con menos esfuerzo, menos errores y más control.'
 items:
   - icon: sparkles
-    title: Oficio estratégico
-    description: Cada decisión visual parte de investigación, estrategia de marca y conocimiento de la audiencia — nunca de la estética sola.
-    stat: 98% de retención
+    title: Diagnóstico antes que solución.
+    description: Cada propuesta parte de entender cómo trabaja tu empresa hoy, nunca de la tecnología de moda.
+    stat: Primero entender
   - icon: bolt
-    title: Equipos senior
-    description: Siempre trabajás con seniors. Nada de pasarle el proyecto a juniors después del kickoff — quienes presentan son quienes ejecutan.
-    stat: 10+ años prom.
+    title: Hablas con quien construye.
+    description: Quien analiza tu empresa es quien diseña y desarrolla la solución, sin intermediarios.
+    stat: Trato directo
   - icon: layer-group
-    title: Sistemas primero
-    description: Entregamos sistemas de diseño, no piezas sueltas. Todo sale con documentación, componentes y guías.
-    stat: Listo para tokens
+    title: Sistemas, no parches.
+    description: Entregamos soluciones conectadas entre sí, documentadas y fáciles de mantener.
+    stat: Todo documentado
   - icon: clock
-    title: Ritmo predecible
-    description: Hitos semanales, plazos transparentes y cero fechas incumplidas. Tu equipo siempre sabe qué viene.
-    stat: Siempre a tiempo
+    title: Plazos claros.
+    description: Trabajamos por fases con objetivos y fechas definidos desde el inicio. Siempre sabes en qué punto está tu proyecto.
+    stat: Por fases
   - icon: globe
-    title: Red global
-    description: Fotógrafos, ilustradores y artistas de motion en 14 ciudades, reunidos según lo que pida el proyecto.
-    stat: 14 ciudades
+    title: Experiencia gestionando empresas.
+    description: Antes de construir sistemas, hemos dirigido empresas. Entendemos los problemas porque los hemos vivido.
+    stat: Visión de negocio
   - icon: shield
-    title: Relación a largo plazo
-    description: La mayoría de los clientes se queda con nosotros más de 3 años. Invertimos en entender tu negocio, no solo tu brief.
-    stat: 3+ años prom.
+    title: Relación a largo plazo.
+    description: Después de la entrega seguimos midiendo y mejorando contigo.
+    stat: Acompañamiento

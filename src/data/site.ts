@@ -26,7 +26,7 @@ export interface NavLink {
 }
 
 export const mainNav: NavLink[] = [
-  { label: 'Beneficios', href: '/benefits' },
+  { label: 'Beneficios', href: '/beneficios' },
   { label: 'Servicios', href: '/servicios' },
   { label: 'Portfolio', href: '/portfolios' },
   { label: 'FAQ', href: '/faq' },
@@ -36,7 +36,7 @@ export const footerNav: { title: string; links: NavLink[] }[] = [
   {
     title: 'Estudio',
     links: [
-      { label: 'Beneficios', href: '/benefits' },
+      { label: 'Beneficios', href: '/beneficios' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Portfolio', href: '/portfolios' },
     ],

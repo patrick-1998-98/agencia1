@@ -1,10 +1,9 @@
 seo:
-  title: Beneficios — Por qué los equipos eligen Zypher
-  description: Descubrí los beneficios de trabajar con Zypher, un estudio creativo pensado para la claridad, el oficio y los resultados medibles.
+  title: Beneficios — Por qué las empresas eligen Zypher
+  description: El criterio de una consultora y la capacidad de ejecución de un equipo técnico, en un solo lugar. Diagnóstico, procesos, software y web pensados para resultados.
 hero:
   eyebrow: Beneficios
-  title: Por qué los equipos eligen Zypher
-  description: Un estudio con la disciplina de una consultora de marca y el alma de un taller de artista.
-  trust: Más de 25.000 clientes confían en nosotros
+  title: Por qué las empresas eligen Zypher
+  description: El criterio de una consultora y la capacidad de ejecución de un equipo técnico, en un solo lugar.
   background: ../../assets/images/hero-helmet-2.png
   thumbnail: ../../assets/images/hero-helmet-3.png
