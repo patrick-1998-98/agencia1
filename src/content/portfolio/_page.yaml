@@ -17,17 +17,17 @@ tools:
 carousel:
   eyebrow: Casos de estudio
   title: Proyectos recientes
-  description: Una muestra de trabajos recientes para clientes — abrí cualquier tarjeta para ver el caso completo.
+  description: 'Abre cualquier proyecto para ver el caso completo: el problema, lo que hicimos y el resultado.'
 highlights:
-  eyebrow: Más allá de los casos
-  title: Cada proyecto llega con resultados
-  description: Los resultados detrás de lo visual — lo que realmente queda cuando termina un proyecto.
+  eyebrow: Más allá de lo visual
+  title: Cada proyecto deja resultados
+  description: 'Lo que queda cuando termina un proyecto: procesos más simples, herramientas que se usan y números para decidir.'
   cards:
-    - title: Listo para lanzar, no solo para mostrar.
-      text: Cada sitio de este portfolio llegó a producción — diseñado, desarrollado y online.
-    - title: Alcance y precio definidos antes de empezar.
-      text: Alcances cerrados y facturación por hitos — sin facturas sorpresa al final.
-    - title: Un equipo senior en cada brief.
-      text: Las personas que hicieron este trabajo — sin juniors ni traspasos a desconocidos.
-    - title: Un solo socio del brief al lanzamiento.
-      text: Estrategia, diseño y desarrollo bajo un mismo techo — el estudio detrás de cada caso.
+    - title: En producción, no en una presentación.
+      text: Todo lo que mostramos está funcionando y se usa a diario.
+    - title: Alcance y precio cerrados antes de empezar.
+      text: Facturación por fases, sin sorpresas al final.
+    - title: Hablas con quien lo construye.
+      text: Las mismas personas del diagnóstico diseñan y desarrollan tu proyecto, sin traspasos.
+    - title: Un solo equipo de principio a fin.
+      text: Diagnóstico, procesos, software y web bajo el mismo techo.

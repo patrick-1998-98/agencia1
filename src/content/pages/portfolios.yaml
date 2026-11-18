@@ -2,15 +2,14 @@ seo:
   title: Portfolios — Trabajos seleccionados
   description: Proyectos seleccionados de Zypher, una agencia de diseño y desarrollo digital que crea sitios de producto, web apps y sistemas de diseño para equipos ambiciosos.
 hero:
-  eyebrow: Portfolios
-  title: Trabajos seleccionados, 2018 — hoy
-  description: Una selección de proyectos digitales que abarca sitios de producto, web apps y sistemas de diseño.
-  trust: 60 marcas · 14 ciudades
+  eyebrow: Portfolio
+  title: Trabajos seleccionados
+  description: Proyectos de procesos, software y web, construidos para que las empresas funcionen mejor.
   background: ../../assets/images/hero-helmet-1.png
   thumbnail: ../../assets/images/hero-helmet-3.png
 cta:
   eyebrow: Trabajos nuevos, cada temporada
-  title: ¿Querés ser el próximo caso de estudio?
-  description: Cada trimestre elegimos pocos clientes. Si tenés un brief, nos encantaría leerlo.
-  primary: { label: Empezá un proyecto, href: /contact }
+  title: ¿Tu empresa podría ser el próximo caso?
+  description: Cuéntanos cómo trabajan hoy. Empezamos por entender tu negocio y te decimos con claridad si podemos ayudarte.
+  primary: { label: Solicitar diagnóstico, href: /contact }
   secondary: { label: Ver servicios, href: /servicios }
