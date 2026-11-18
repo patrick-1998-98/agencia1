@@ -8,6 +8,7 @@ import CtaBanner from '@/components/sections/CtaBanner.astro';
 import StatsRow from '@/components/home/StatsRow.astro';
 import ProcessSteps from '@/components/home/ProcessSteps.astro';
 import FeatureShowcase from '@/components/home/FeatureShowcase.astro';
+import ProductivityCompare from '@/components/home/ProductivityCompare.astro';
 import Testimonials from '@/components/home/Testimonials.astro';
 import { getSection } from '@/lib/sections';
 
@@ -15,14 +16,16 @@ const page = await getEntry('pages', 'home');
 if (!page) throw new Error('Missing src/content/pages/home.yaml');
 const { seo, hero, cta } = page.data;
 
-const [stats, services, process, showcaseHeader, showcase, testimonials] = await Promise.all([
-  getSection('home-stats', 'stats'),
-  getSection('services-home', 'header'),
-  getSection('process-home', 'process'),
-  getSection('showcase-home', 'header'),
-  getSection('showcase', 'showcase'),
-  getSection('testimonials-home', 'header'),
-]);
+const [stats, services, process, showcaseHeader, showcase, productivity, testimonials] =
+  await Promise.all([
+    getSection('home-stats', 'stats'),
+    getSection('services-home', 'header'),
+    getSection('process-home', 'process'),
+    getSection('showcase-home', 'header'),
+    getSection('showcase', 'showcase'),
+    getSection('productivity-home', 'productivity'),
+    getSection('testimonials-home', 'header'),
+  ]);
 ---
 
 <BaseLayout title={seo.title} description={seo.description}>
@@ -36,6 +39,7 @@ const [stats, services, process, showcaseHeader, showcase, testimonials] = await
     title="Proyectos recientes"
     description="Una selección de proyectos digitales: sistemas de marca, sitios de marketing y apps de producto."
   />
+  <ProductivityCompare content={productivity} />
   <Testimonials header={testimonials} />
   {cta && <CtaBanner {...cta} />}
 </BaseLayout>

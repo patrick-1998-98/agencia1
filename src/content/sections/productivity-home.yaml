@@ -1,0 +1,18 @@
+type: productivity
+header:
+  eyebrow: Nuestro enfoque
+  title: Productividad personal no es productividad empresarial
+  description: Que cada persona use herramientas de IA ayuda. Pero si la mejora vive en las personas, cuando alguien se va, se la lleva consigo.
+individual:
+  label: Enfoque individual
+  title: Productividad personal
+  chips: [No integrada, No escala, Impacto marginal, Habilidad individual, Conocimiento local]
+  caption: Se va con su conocimiento
+company:
+  label: Enfoque empresarial
+  title: Productividad empresarial
+  chips: [Integrada, Escala, Alto impacto, Capacidad de la empresa, Conocimiento global]
+  caption: El que llega, ya sabe
+closing:
+  lead: Las personas cambian.
+  rest: El conocimiento tiene que quedarse en la empresa.

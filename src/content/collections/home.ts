@@ -110,6 +110,24 @@ const sections = defineCollection({
         ),
       }),
       z.object({
+        type: z.literal('productivity'),
+        header,
+        /** Two columns: tools that live in people vs. a system the company keeps. */
+        individual: z.object({
+          label: z.string(),
+          title: z.string(),
+          chips: z.array(z.string()),
+          caption: z.string(),
+        }),
+        company: z.object({
+          label: z.string(),
+          title: z.string(),
+          chips: z.array(z.string()),
+          caption: z.string(),
+        }),
+        closing: z.object({ lead: z.string(), rest: z.string() }),
+      }),
+      z.object({
         type: z.literal('quote'),
         quote: z.string(),
         name: z.string(),
